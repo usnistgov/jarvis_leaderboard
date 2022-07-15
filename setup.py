@@ -10,7 +10,7 @@ setuptools.setup(
     author_email="kamal.choudhary@nist.gov",
     description="atombench",
     install_requires=[
-        "numpy==1.19.5",
+        "numpy==1.22.0",
         "scipy==1.6.3",
         "jarvis-tools==2021.07.19",
         "torch>=1.7.1",
