@@ -1,3 +1,4 @@
-# AtomBench
+# JARVIS-Leaderboard
 
- AtomBench is a software-package to benchamrk atomistic datasets and models available in the NIST-JARVIS infrastructure.
+This project benchmarks performances of various methods for materials science applications using the datasets available in JARVIS-Tools databases.
+

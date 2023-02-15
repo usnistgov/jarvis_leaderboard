@@ -1,0 +1,57 @@
+Single property classification model
+
+See: https://figshare.com/projects/ALIGNN_models/126478
+
+<!--number_of_benchmarks--> - Number of benchmarks: 7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--table_content--><table style="width:100%" id="j_table"><thead><tr><th>Method</th><th>Task</th><th>Property</th><th>Model name</th><th>Metric</th><th>Score</th><th>Team</th><th>Dataset</th><th>Size</th></tr></thead><tr><td><a href= "./AI" target="_blank">AI</a></td><td><a href= "./AI/SinglePropertyClass" target="_blank">SinglePropertyClass</a></td><td><a href= "./magmom_oszicar" target="_blank">magmom_oszicar</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>ACC</td><td>0.945</td><td>JARVIS</td><td>dft_3d</td><td>52210</td></tr><tr><td><a href= "./AI" target="_blank">AI</a></td><td><a href= "./AI/SinglePropertyClass" target="_blank">SinglePropertyClass</a></td><td><a href= "./mbj_bandgap" target="_blank">mbj_bandgap</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>ACC</td><td>0.923</td><td>JARVIS</td><td>dft_3d</td><td>18167</td></tr><tr><td><a href= "./AI" target="_blank">AI</a></td><td><a href= "./AI/SinglePropertyClass" target="_blank">SinglePropertyClass</a></td><td><a href= "./n_powerfact" target="_blank">n_powerfact</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>ACC</td><td>0.79</td><td>JARVIS</td><td>dft_3d</td><td>23210</td></tr><tr><td><a href= "./AI" target="_blank">AI</a></td><td><a href= "./AI/SinglePropertyClass" target="_blank">SinglePropertyClass</a></td><td><a href= "./optb88vdw_bandgap" target="_blank">optb88vdw_bandgap</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>ACC</td><td>0.933</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href= "./AI" target="_blank">AI</a></td><td><a href= "./AI/SinglePropertyClass" target="_blank">SinglePropertyClass</a></td><td><a href= "./p_Seebeck" target="_blank">p_Seebeck</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>ACC</td><td>0.926</td><td>JARVIS</td><td>dft_3d</td><td>23210</td></tr><tr><td><a href= "./AI" target="_blank">AI</a></td><td><a href= "./AI/SinglePropertyClass" target="_blank">SinglePropertyClass</a></td><td><a href= "./slme" target="_blank">slme</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>ACC</td><td>0.831</td><td>JARVIS</td><td>dft_3d</td><td>9062</td></tr><tr><td><a href= "./AI" target="_blank">AI</a></td><td><a href= "./AI/SinglePropertyClass" target="_blank">SinglePropertyClass</a></td><td><a href= "./spillage" target="_blank">spillage</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>ACC</td><td>0.814</td><td>JARVIS</td><td>dft_3d</td><td>11375</td></tr><!--table_content--></table>
