@@ -49,7 +49,10 @@ jobs:
         git config user.email "actions@github.com"
         python jarvis_leaderboard/rebuild.py
         mkdocs build
+        echo 'listing'
         ls
-        git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
+        echo 'listing tmp'
+        ls /tmp
+        git commit -a -m "Move"
         git push -f origin nist-pages1
         mkdocs gh-deploy  
