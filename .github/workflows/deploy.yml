@@ -48,4 +48,6 @@ jobs:
         git config user.name "github-actions[bot]"
         git config user.email "actions@github.com"
         python jarvis_leaderboard/rebuild.py
-        #mkdocs gh-deploy --force
+        mkdocs build
+        git push -f origin nist-pages
+        #mkdocs gh-deploy  
