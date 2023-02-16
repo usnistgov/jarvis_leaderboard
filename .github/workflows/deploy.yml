@@ -10,7 +10,13 @@
 #
 name: Deploy Site
 
-on: [push, pull_request]
+#on: [push, pull_request]
+
+on:
+  push:
+    branches:
+      - main
+      
 permissions:
   contents: write
 
