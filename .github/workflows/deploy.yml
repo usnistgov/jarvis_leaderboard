@@ -51,7 +51,7 @@ jobs:
         mkdocs build
         #rm -r /tmp/site
         cp -r site /tmp
-        git checkout nist-pages
+        git checkout nist-pages --force
         rm -r *
         cp -r /tmp/site/* .
         
