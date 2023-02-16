@@ -52,7 +52,7 @@ jobs:
         rm -r /tmp/site
         cp -r site /tmp
         git checkout nist-pages
-        rm -r *
+        #rm -r *
         cp -r /tmp/site/* .
         
         echo 'listing'
