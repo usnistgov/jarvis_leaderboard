@@ -49,10 +49,10 @@ jobs:
         git config user.email "actions@github.com"
         python jarvis_leaderboard/rebuild.py
         mkdocs build
-        rm -r /tmp/site
+        #rm -r /tmp/site
         cp -r site /tmp
         git checkout nist-pages
-        #rm -r *
+        rm -r *
         cp -r /tmp/site/* .
         
         echo 'listing'
