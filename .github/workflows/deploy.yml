@@ -50,4 +50,4 @@ jobs:
         python jarvis_leaderboard/rebuild.py
         mkdocs build
         git push -f origin nist-pages
-        #mkdocs gh-deploy  
+        mkdocs gh-deploy  
