@@ -49,5 +49,7 @@ jobs:
         git config user.email "actions@github.com"
         python jarvis_leaderboard/rebuild.py
         mkdocs build
-        git push -f origin nist-pages
+        ls
+        git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
+        git push -f origin nist-pages1
         mkdocs gh-deploy  
