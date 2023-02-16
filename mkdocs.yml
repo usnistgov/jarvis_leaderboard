@@ -28,7 +28,7 @@
 # |                                                                                                        |
 # +--------------------------------------------------------------------------------------------------------+
 site_name: JARVIS-Leaderboard
-site_url: https://github.com/knc6/jarvis_leaderboard
+site_url: https://github.com/usnistgov/jarvis_leaderboard
 site_description: 'This project benchmarks performances of various methods for materials science applications using the datasets available in JARVIS-Tools databases.'
 site_author: 'Kamal Choudhary'
 #use_directory_urls: false
@@ -77,7 +77,7 @@ docs_dir: docs/
 # |                                                                                                        |
 # +--------------------------------------------------------------------------------------------------------+
 repo_name: jarvis_leaderboard
-repo_url: https://github.com/knc6/jarvis_leaderboard
+repo_url: https://github.com/usnistgov/jarvis_leaderboard
 #edit_uri: tree/master/docs # Uncomment to define a different URI/URL for the "edit" option
 
 # +--------------------------------------------------------------------------------------------------------+
@@ -423,7 +423,7 @@ extra:
   # +------------------------------------------------------------------------------------------------------+
   social:
     - icon: 'fontawesome/brands/github'
-      link: 'https://github.com/knc6/jarvis_leaderboard'
+      link: 'https://github.com/usnistgov/jarvis_leaderboard'
   
   # +------------------------------------------------------------------------------------------------------+
   # |                                                                                                      |

@@ -545,6 +545,8 @@ def update_individual_index_md(md_path="docs/ES/index.md",key="ES",homepage = []
             content.append("<!--table_content-->")
         elif "<!--number_of_benchmarks-->" in j:
             content.append("<!--number_of_benchmarks-->")
+        elif "<!--number_of_tasks-->" in j:
+            content.append("<!--number_of_tasks-->")
         else:
             content.append(j)
     with open(md_path, "w") as file:
@@ -561,6 +563,14 @@ def update_individual_index_md(md_path="docs/ES/index.md",key="ES",homepage = []
         if "<!--table_content-->" in j:
             temp = temp + j + "</table>"
             content.append(temp)
+        elif "<!--number_of_tasks-->" in j:
+            temp2 = (
+                "<!--number_of_tasks--> - Number of tasks: "
+                + str(len(set(md_files)))
+                #+ str(len(dat))
+                #+ "\n"
+            )
+            content.append(temp2)
         elif "<!--number_of_benchmarks-->" in j:
             temp2 = (
                 "<!--number_of_benchmarks--> - Number of benchmarks: "
@@ -579,20 +589,20 @@ def update_individual_index_md(md_path="docs/ES/index.md",key="ES",homepage = []
 
 homepage = [
     "SinglePropertyPrediction-test-formation_energy_peratom-dft_3d-AI-mae",
-    #"SinglePropertyPrediction-test-optb88vdw_bandgap-dft_3d-AI-mae",
-    #"SinglePropertyPrediction-test-optb88vdw_total_energy-dft_3d-AI-mae",
-    #"SinglePropertyPrediction-test-bulk_modulus_kv-dft_3d-AI-mae",
-    #"SinglePropertyClass-test-optb88vdw_bandgap-dft_3d-AI-acc",
-    #"SinglePropertyPrediction-test-LUMO-qm9_std_jctc-AI-mae",
-    #"SinglePropertyPrediction-test-max_co2_adsp-hmof-AI-mae",
+    "SinglePropertyPrediction-test-optb88vdw_bandgap-dft_3d-AI-mae",
+    "SinglePropertyPrediction-test-optb88vdw_total_energy-dft_3d-AI-mae",
+    "SinglePropertyPrediction-test-bulk_modulus_kv-dft_3d-AI-mae",
+    "SinglePropertyClass-test-optb88vdw_bandgap-dft_3d-AI-acc",
+    "SinglePropertyPrediction-test-LUMO-qm9_std_jctc-AI-mae",
+    "SinglePropertyPrediction-test-max_co2_adsp-hmof-AI-mae",
     "MLFF-test-energy-alignn_ff_db-AI-mae",
     "ImageClass-test-bravais_class-stem_2d_image-AI-acc",
     "TextClass-test-categories-arXiv-AI-acc",
-    #"SinglePropertyPrediction-test-bulk_modulus-dft_3d-ES-mae",
+    "SinglePropertyPrediction-test-bulk_modulus-dft_3d-ES-mae",
     "SinglePropertyPrediction-test-bandgap-dft_3d-ES-mae",
-    #"SinglePropertyPrediction-test-epsx-dft_3d-ES-mae",
+    "SinglePropertyPrediction-test-epsx-dft_3d-ES-mae",
     "SinglePropertyPrediction-test-Tc_supercon-dft_3d-ES-mae",
-    #"SinglePropertyPrediction-test-slme-dft_3d-ES-mae",
+    "SinglePropertyPrediction-test-slme-dft_3d-ES-mae",
     "Spectra-test-dielectric_function-dft_3d-ES-multimae",
     "EigenSolver-test-electron_bands-dft_3d-QC-multimae",
 ]
