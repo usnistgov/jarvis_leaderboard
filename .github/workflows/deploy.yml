@@ -49,10 +49,19 @@ jobs:
         git config user.email "actions@github.com"
         python jarvis_leaderboard/rebuild.py
         mkdocs build
+        rm -r /tmp/site
+        cp -r site /tmp
+        git checkout nist-pages
+        rm -r *
+        cp -r /tmp/site/* .
+        
         echo 'listing'
         ls
         echo 'listing tmp'
         ls /tmp
-        git commit -a -m "Move"
-        git push -f origin nist-pages1
-        mkdocs gh-deploy  
+        git add * */*
+        git commit -m 'Adding files.'
+        git push origin nist-pages -f
+        #git commit -a -m "Move"
+        #git push -f origin nist-pages1
+        #mkdocs gh-deploy  
