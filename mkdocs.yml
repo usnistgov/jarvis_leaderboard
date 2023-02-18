@@ -244,7 +244,11 @@ theme:
   # |                                                                                                      |
   # +------------------------------------------------------------------------------------------------------+
   #language: 'en'
-  
+  extra:
+  analytics:
+    provider: google
+    property: G-1Q89M6QHG7
+
   # +------------------------------------------------------------------------------------------------------+
   # |                                                                                                      |
   # | The "direction" option is commonly used together with the "language" option.                         |
