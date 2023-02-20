@@ -36,7 +36,7 @@ In addition to prediction results, we attempt to capture the underlyig software 
         + [Electronic Structure (ES)](./ES)
              + [SinglePropertyPrediction](./ES/SinglePropertyPrediction)
              + [Spectra](./ES/Spectra) 
-        + [Qunatum Computation (QC](./QC)
+        + [Qunatum Computation (QC)](./QC)
              + [EigenSolver](./QC/EigenSolver)
 
     === "Adding model benchmarks to existing dataset"
