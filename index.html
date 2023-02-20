@@ -1,3 +1,4 @@
+<!--https://github.com/notenverwaltung/Notenverwaltungssoftware/blob/54aa0515f3b1b2c5db8471306eecfed18e154e7e/docs/overrides/main.html -->
 
 <!doctype html>
 <html lang="en" class="no-js">
@@ -19,7 +20,7 @@
         <link rel="next" href="AI/">
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.12">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
     
     
       
@@ -27,10 +28,10 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.0d440cfe.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.ffa9267a.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -77,6 +78,18 @@
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+  <div class="menu-logo">
+    <a href="https://www.nist.gov/" target="_blank"><img src="https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/images/nist-logo.jpg" width="90" height="auto" alt="NIST" /></a>
+  </div>
+
+          </div>
+          
+        </aside>
       
     </div>
     
@@ -166,7 +179,7 @@
     
       
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -1837,6 +1850,11 @@
   
 
 
+<!--
+<div class="menu-logo">
+    <img src="https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/images/nist-logo.jpg" alt="" width="100" height="auto"/>
+</div>
+-->
 
 <h1 id="jarvis-leaderboard-wip">JARVIS Leaderboard [WIP]</h1>
 <p>This project provides benchmark-performances of various methods for materials science applications using the datasets available in <a href="https://jarvis-tools.readthedocs.io/en/master/databases.html">JARVIS-Tools databases</a>. Some of the methods are: <a href="./AI">Artificial Intelligence (AI)</a>, <a href="./ES">Electronic Structure (ES)</a> and <a href="./QC">Qunatum Computation (QC</a>). There are a variety of properties included in the benchmark.
@@ -1844,30 +1862,36 @@ In addition to prediction results, we attempt to capture the underlyig software 
 <!--number_of_benchmarks-->
 
 <ul>
-<li>Number of benchmarks: 90
-<!--number_of_tasks--> - Number of tasks: 70
-<!-- <a href="#add">Learn how to add benchmarks below</a> -->
-<!-- <p style="text-align:center;"><img align="middle" src="https://www.ctcms.nist.gov/~knc6/images/logo/jarvis-mission.png"  width="40%" height="20%"></p>--></li>
+<li>Number of benchmarks: 90</li>
 </ul>
+<!--number_of_tasks-->
+
+<ul>
+<li>Number of tasks: 70</li>
+</ul>
+<!-- [Learn how to add benchmarks below](#add) -->
+
+<!-- <p style="text-align:center;"><img align="middle" src="https://www.ctcms.nist.gov/~knc6/images/logo/jarvis-mission.png"  width="40%" height="20%"></p>-->
+
 <details class="question"><summary>How to use this website?</summary><p>There could be three main usage of this website:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Learn about the state-of-the-art (SOTA) methods</label><label for="__tabbed_1_2">Adding model benchmarks to existing dataset</label><label for="__tabbed_1_3">Adding a new dataset and benchmarks</label><label for="__tabbed_1_4">Acronyms</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>This project provides SOTA methods in </p>
 <ul>
-<li><a href="./AI">Artificial Intelligence (AI)</a>,<ul>
+<li><a href="./AI">Artificial Intelligence (AI)</a><ul>
 <li><a href="./AI/SinglePropertyPrediction">SinglePropertyPrediction</a></li>
 <li><a href="./AI/SinglePropertyClass">SinglePropertyClass</a></li>
 <li><a href="./AI/ImageClass">ImageClass</a></li>
 <li><a href="./AI/TextClass">TextClass</a></li>
 </ul>
 </li>
-<li><a href="./ES">Electronic Structure (ES)</a>,<ul>
+<li><a href="./ES">Electronic Structure (ES)</a><ul>
 <li><a href="./ES/SinglePropertyPrediction">SinglePropertyPrediction</a></li>
 <li><a href="./ES/Spectra">Spectra</a> </li>
 </ul>
 </li>
-<li><a href="./QC">Qunatum Computation (QC</a>)<ul>
+<li><a href="./QC">Qunatum Computation (QC</a><ul>
 <li><a href="./QC/EigenSolver">EigenSolver</a></li>
 </ul>
 </li>
@@ -1875,7 +1899,7 @@ In addition to prediction results, we attempt to capture the underlyig software 
 </div>
 <div class="tabbed-block">
 <ol>
-<li><a href="https://github.com/usnistgov/jarvis_leaderboard/fork"><code>Fork</code></a> this repository</li>
+<li><a href="https://github.com/usnistgov/jarvis_leaderboard/fork"><code>Fork</code></a> the <a href="https://github.com/usnistgov/jarvis_leaderboard">jarvis_leaderboard</a> repository</li>
 <li><code>git clone https://github.com/usnistgov/jarvis_leaderboard</code>, use your GitHub username instead of usnistgov</li>
 <li><code>cd jarvis_leaderboard</code></li>
 <li>Install the package: <code>python setup.py develop</code></li>
@@ -1885,8 +1909,8 @@ In addition to prediction results, we attempt to capture the underlyig software 
 </li>
 <li>
 <p>Train you model(s), e.g.:</p>
-<p><code>pip install alignn</code>
-<code>train_folder.py --root_dir "Out" --config "config_example.json" --output_dir="temp"</code></p>
+<p><code>pip install alignn</code></p>
+<p><code>train_folder.py --root_dir "Out" --config "config_example.json" --output_dir="temp"</code></p>
 </li>
 <li>
 <p>Create a folder in the <code>jarvis_leaderboard/benchmarks</code> folder under respective submodule, e.g.:</p>
@@ -1953,7 +1977,7 @@ In addition to prediction results, we attempt to capture the underlyig software 
 </details>
 <!--table_content-->
 
-<table style="width:100%" id="j_table"><thead><tr><th>Method</th><th>Task</th><th>Property</th><th>Model name</th><th>Metric</th><th>Score</th><th>Team</th><th>Dataset</th><th>Size</th></tr></thead><tr><td><a href="./QC" target="_blank">QC</a></td><td><a href="./QC/EigenSolver" target="_blank">EigenSolver</a></td><td><a href="./QC/EigenSolver/electron_bands" target="_blank">electron_bands</a></td><td><a href="https://iopscience.iop.org/article/10.1088/1361-648X/ac1154/meta" target="_blank">qiskit_vqd_SU2</a></td><td>MULTIMAE</td><td>0.003</td><td>JARVIS</td><td>dft_3d</td><td>1</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/TextClass" target="_blank">TextClass</a></td><td><a href="./AI/TextClass/categories" target="_blank">categories</a></td><td><a href="https://arxiv.org/abs/2209.08203" target="_blank">logisticreg_model</a></td><td>ACC</td><td>0.86</td><td>JARVIS</td><td>arXiv</td><td>100994</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/Tc_supercon" target="_blank">Tc_supercon</a></td><td><a href="https://www.nature.com/articles/s41524-022-00933-1" target="_blank">qe_pbesol_gbrv</a></td><td>MAE</td><td>3.378</td><td>JARVIS</td><td>dft_3d</td><td>14</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/slme" target="_blank">slme</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>4.521</td><td>JARVIS</td><td>dft_3d</td><td>9062</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/spillage" target="_blank">spillage</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.351</td><td>JARVIS</td><td>dft_3d</td><td>11375</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/optb88vdw_bandgap" target="_blank">optb88vdw_bandgap</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.142</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/formation_energy_peratom" target="_blank">formation_energy_peratom</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.033</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/dfpt_piezo_max_dij" target="_blank">dfpt_piezo_max_dij</a></td><td><a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.145301" target="_blank">cgcnn_model</a></td><td>MAE</td><td>16.013</td><td>CGCNN</td><td>dft_3d</td><td>3345</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/optb88vdw_total_energy" target="_blank">optb88vdw_total_energy</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.037</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/mbj_bandgap" target="_blank">mbj_bandgap</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.31</td><td>JARVIS</td><td>dft_3d</td><td>18167</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/exfoliation_energy" target="_blank">exfoliation_energy</a></td><td><a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.145301" target="_blank">cgcnn_model</a></td><td>MAE</td><td>52.703</td><td>CGCNN</td><td>dft_3d</td><td>812</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/max_efg" target="_blank">max_efg</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>19.121</td><td>JARVIS</td><td>dft_3d</td><td>11865</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/magmom_oszicar" target="_blank">magmom_oszicar</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.257</td><td>JARVIS</td><td>dft_3d</td><td>52210</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/ehull" target="_blank">ehull</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.076</td><td>JARVIS</td><td>dft_3d</td><td>55364</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/n_Seebeck" target="_blank">n_Seebeck</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>40.921</td><td>JARVIS</td><td>dft_3d</td><td>23210</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/dfpt_piezo_max_dielectric" target="_blank">dfpt_piezo_max_dielectric</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>28.151</td><td>JARVIS</td><td>dft_3d</td><td>4704</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/ImageClass" target="_blank">ImageClass</a></td><td><a href="./AI/ImageClass/bravais_class" target="_blank">bravais_class</a></td><td><a href="https://arxiv.org/abs/2212.02586" target="_blank">densenet_model</a></td><td>ACC</td><td>0.83</td><td>JARVIS</td><td>stem_2d_image</td><td>9150</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/MLFF" target="_blank">MLFF</a></td><td><a href="./AI/MLFF/energy" target="_blank">energy</a></td><td><a href="https://pubs.rsc.org/en/content/articlehtml/2023/dd/d2dd00096b" target="_blank">alignnff_wt0.1</a></td><td>MAE</td><td>0.034</td><td>JARVIS</td><td>alignn_ff_db</td><td>307111</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/epsx" target="_blank">epsx</a></td><td><a href="https://www.nature.com/articles/sdata201882" target="_blank">vasp_optb88vdw_linopt</a></td><td>MAE</td><td>1.464</td><td>JARVIS</td><td>dft_3d</td><td>16</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/max_piezoelec" target="_blank">max_piezoelec</a></td><td><a href="https://www.nature.com/articles/s41524-020-0337-2" target="_blank">vasp_optb88vdw_dfpt</a></td><td>MAE</td><td>1.085</td><td>JARVIS</td><td>dft_3d</td><td>16</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/bulk_modulus" target="_blank">bulk_modulus</a></td><td><a href="https://www.nature.com/articles/s41524-020-00440-1" target="_blank">vasp_optb88vdw</a></td><td>MAE</td><td>5.732</td><td>JARVIS</td><td>dft_3d</td><td>21</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/bandgap" target="_blank">bandgap</a></td><td><a href="https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.9b02166" target="_blank">vasp_tbmbj</a></td><td>MAE</td><td>0.498</td><td>JARVIS</td><td>dft_3d</td><td>54</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/G" target="_blank">G</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.013</td><td>JARVIS</td><td>qm9_std_jctc</td><td>130829</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/mu" target="_blank">mu</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.025</td><td>JARVIS</td><td>qm9_std_jctc</td><td>130829</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">SinglePropertyClass</a></td><td><a href="./AI/SinglePropertyClass/magmom_oszicar" target="_blank">magmom_oszicar</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>ACC</td><td>0.945</td><td>JARVIS</td><td>dft_3d</td><td>52210</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/gappbe" target="_blank">gappbe</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.218</td><td>JARVIS</td><td>mp</td><td>69239</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">SinglePropertyClass</a></td><td><a href="./AI/SinglePropertyClass/n_powerfact" target="_blank">n_powerfact</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>ACC</td><td>0.79</td><td>JARVIS</td><td>dft_3d</td><td>23210</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/gap" target="_blank">gap</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.035</td><td>JARVIS</td><td>qm9_std_jctc</td><td>130829</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/alpha" target="_blank">alpha</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.056</td><td>JARVIS</td><td>qm9_std_jctc</td><td>130829</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">SinglePropertyClass</a></td><td><a href="./AI/SinglePropertyClass/slme" target="_blank">slme</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>ACC</td><td>0.831</td><td>JARVIS</td><td>dft_3d</td><td>9062</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/kpoint_length_unit" target="_blank">kpoint_length_unit</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>9.515</td><td>JARVIS</td><td>dft_3d</td><td>55392</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/surface_area_m2cm3" target="_blank">surface_area_m2cm3</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>107.808</td><td>JARVIS</td><td>hmof</td><td>137651</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/epsx" target="_blank">epsx</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>20.394</td><td>JARVIS</td><td>dft_3d</td><td>44490</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/R2" target="_blank">R2</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.652</td><td>JARVIS</td><td>qm9_std_jctc</td><td>130829</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">SinglePropertyClass</a></td><td><a href="./AI/SinglePropertyClass/spillage" target="_blank">spillage</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>ACC</td><td>0.814</td><td>JARVIS</td><td>dft_3d</td><td>11375</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/epsy" target="_blank">epsy</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>19.999</td><td>JARVIS</td><td>dft_3d</td><td>44490</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/HOMO" target="_blank">HOMO</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.019</td><td>JARVIS</td><td>qm9_std_jctc</td><td>130829</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/energy_per_atom" target="_blank">energy_per_atom</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.751</td><td>JARVIS</td><td>qe_tb</td><td>829574</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/pld" target="_blank">pld</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.92</td><td>JARVIS</td><td>hmof</td><td>137651</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/avg_hole_mass" target="_blank">avg_hole_mass</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.124</td><td>JARVIS</td><td>dft_3d</td><td>17642</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/bandgap" target="_blank">bandgap</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.202</td><td>JARVIS</td><td>qmof</td><td>20424</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/mepsz" target="_blank">mepsz</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>23.731</td><td>JARVIS</td><td>dft_3d</td><td>16809</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/mepsy" target="_blank">mepsy</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>23.648</td><td>JARVIS</td><td>dft_3d</td><td>16809</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/Cv" target="_blank">Cv</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.024</td><td>JARVIS</td><td>qm9_std_jctc</td><td>130829</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/min_co2_adsp" target="_blank">min_co2_adsp</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.038</td><td>JARVIS</td><td>hmof</td><td>137651</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/mepsx" target="_blank">mepsx</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>24.046</td><td>JARVIS</td><td>dft_3d</td><td>16809</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">SinglePropertyClass</a></td><td><a href="./AI/SinglePropertyClass/optb88vdw_bandgap" target="_blank">optb88vdw_bandgap</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>ACC</td><td>0.933</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/max_co2_adsp" target="_blank">max_co2_adsp</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.477</td><td>JARVIS</td><td>hmof</td><td>137651</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/void_fraction" target="_blank">void_fraction</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.017</td><td>JARVIS</td><td>hmof</td><td>137651</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/Band_gap_HSE" target="_blank">Band_gap_HSE</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.377</td><td>JARVIS</td><td>snumat</td><td>10386</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">SinglePropertyClass</a></td><td><a href="./AI/SinglePropertyClass/p_Seebeck" target="_blank">p_Seebeck</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>ACC</td><td>0.926</td><td>JARVIS</td><td>dft_3d</td><td>23210</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/LUMO" target="_blank">LUMO</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.018</td><td>JARVIS</td><td>qm9_std_jctc</td><td>130829</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/bulk_modulus_kv" target="_blank">bulk_modulus_kv</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>10.399</td><td>JARVIS</td><td>dft_3d</td><td>19680</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/shear_modulus_gv" target="_blank">shear_modulus_gv</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>9.476</td><td>JARVIS</td><td>dft_3d</td><td>19680</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/indir_gap" target="_blank">indir_gap</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.117</td><td>JARVIS</td><td>qe_tb</td><td>829574</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/e_form" target="_blank">e_form</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.022</td><td>JARVIS</td><td>mp</td><td>69239</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/n_powerfact" target="_blank">n_powerfact</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>442.299</td><td>JARVIS</td><td>dft_3d</td><td>23210</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/epsz" target="_blank">epsz</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>19.568</td><td>JARVIS</td><td>dft_3d</td><td>44490</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/f_enp" target="_blank">f_enp</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.102</td><td>JARVIS</td><td>qe_tb</td><td>829574</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/U0" target="_blank">U0</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.015</td><td>JARVIS</td><td>qm9_std_jctc</td><td>130829</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/avg_elec_mass" target="_blank">avg_elec_mass</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.085</td><td>JARVIS</td><td>dft_3d</td><td>17642</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/U" target="_blank">U</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.014</td><td>JARVIS</td><td>qm9_std_jctc</td><td>130829</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/ZPVE" target="_blank">ZPVE</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.002</td><td>JARVIS</td><td>qm9_std_jctc</td><td>130829</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/encut" target="_blank">encut</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>133.796</td><td>JARVIS</td><td>dft_3d</td><td>55386</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/lcd" target="_blank">lcd</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.751</td><td>JARVIS</td><td>hmof</td><td>137651</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/H" target="_blank">H</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.014</td><td>JARVIS</td><td>qm9_std_jctc</td><td>130829</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/surface_area_m2g" target="_blank">surface_area_m2g</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>91.15</td><td>JARVIS</td><td>hmof</td><td>137651</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">SinglePropertyClass</a></td><td><a href="./AI/SinglePropertyClass/mbj_bandgap" target="_blank">mbj_bandgap</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>ACC</td><td>0.923</td><td>JARVIS</td><td>dft_3d</td><td>18167</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/Spectra" target="_blank">Spectra</a></td><td><a href="./ES/Spectra/dielectric_function" target="_blank">dielectric_function</a></td><td><a href="https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.9b02166" target="_blank">vasp_tbmbj</a></td><td>MULTIMAE</td><td>11.52</td><td>JARVIS</td><td>dft_3d</td><td>4</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/slme" target="_blank">slme</a></td><td><a href="https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.9b02166" target="_blank">vasp_tbmbj</a></td><td>MAE</td><td>5.093</td><td>JARVIS</td><td>dft_3d</td><td>5</td></tr><!--table_content--></table>
+<table style="width:100%" id="j_table"><thead><tr><th>Method</th><th>Task</th><th>Property</th><th>Model name</th><th>Metric</th><th>Score</th><th>Team</th><th>Dataset</th><th>Size</th></tr></thead><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/formation_energy_peratom" target="_blank">formation_energy_peratom</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.033</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/optb88vdw_bandgap" target="_blank">optb88vdw_bandgap</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.142</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/optb88vdw_total_energy" target="_blank">optb88vdw_total_energy</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.037</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/bulk_modulus_kv" target="_blank">bulk_modulus_kv</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>10.399</td><td>JARVIS</td><td>dft_3d</td><td>19680</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">SinglePropertyClass</a></td><td><a href="./AI/SinglePropertyClass/optb88vdw_bandgap" target="_blank">optb88vdw_bandgap</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>ACC</td><td>0.933</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/LUMO" target="_blank">LUMO</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.018</td><td>JARVIS</td><td>qm9_std_jctc</td><td>130829</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/max_co2_adsp" target="_blank">max_co2_adsp</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.477</td><td>JARVIS</td><td>hmof</td><td>137651</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/MLFF" target="_blank">MLFF</a></td><td><a href="./AI/MLFF/energy" target="_blank">energy</a></td><td><a href="https://pubs.rsc.org/en/content/articlehtml/2023/dd/d2dd00096b" target="_blank">alignnff_wt0.1</a></td><td>MAE</td><td>0.034</td><td>JARVIS</td><td>alignn_ff_db</td><td>307111</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/ImageClass" target="_blank">ImageClass</a></td><td><a href="./AI/ImageClass/bravais_class" target="_blank">bravais_class</a></td><td><a href="https://arxiv.org/abs/2212.02586" target="_blank">densenet_model</a></td><td>ACC</td><td>0.83</td><td>JARVIS</td><td>stem_2d_image</td><td>9150</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/TextClass" target="_blank">TextClass</a></td><td><a href="./AI/TextClass/categories" target="_blank">categories</a></td><td><a href="https://arxiv.org/abs/2209.08203" target="_blank">logisticreg_model</a></td><td>ACC</td><td>0.86</td><td>JARVIS</td><td>arXiv</td><td>100994</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/bulk_modulus" target="_blank">bulk_modulus</a></td><td><a href="https://www.nature.com/articles/s41524-020-00440-1" target="_blank">vasp_optb88vdw</a></td><td>MAE</td><td>5.732</td><td>JARVIS</td><td>dft_3d</td><td>21</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/bandgap" target="_blank">bandgap</a></td><td><a href="https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.9b02166" target="_blank">vasp_tbmbj</a></td><td>MAE</td><td>0.498</td><td>JARVIS</td><td>dft_3d</td><td>54</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/epsx" target="_blank">epsx</a></td><td><a href="https://www.nature.com/articles/sdata201882" target="_blank">vasp_optb88vdw_linopt</a></td><td>MAE</td><td>1.464</td><td>JARVIS</td><td>dft_3d</td><td>16</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/Tc_supercon" target="_blank">Tc_supercon</a></td><td><a href="https://www.nature.com/articles/s41524-022-00933-1" target="_blank">qe_pbesol_gbrv</a></td><td>MAE</td><td>3.378</td><td>JARVIS</td><td>dft_3d</td><td>14</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/slme" target="_blank">slme</a></td><td><a href="https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.9b02166" target="_blank">vasp_tbmbj</a></td><td>MAE</td><td>5.093</td><td>JARVIS</td><td>dft_3d</td><td>5</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/Spectra" target="_blank">Spectra</a></td><td><a href="./ES/Spectra/dielectric_function" target="_blank">dielectric_function</a></td><td><a href="https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.9b02166" target="_blank">vasp_tbmbj</a></td><td>MULTIMAE</td><td>11.52</td><td>JARVIS</td><td>dft_3d</td><td>4</td></tr><tr><td><a href="./QC" target="_blank">QC</a></td><td><a href="./QC/EigenSolver" target="_blank">EigenSolver</a></td><td><a href="./QC/EigenSolver/electron_bands" target="_blank">electron_bands</a></td><td><a href="https://iopscience.iop.org/article/10.1088/1361-648X/ac1154/meta" target="_blank">qiskit_vqd_SU2</a></td><td>MULTIMAE</td><td>0.003</td><td>JARVIS</td><td>dft_3d</td><td>1</td></tr><!--table_content--></table>
 
 <!--
 <a name="add"></a>
@@ -2054,47 +2078,129 @@ python setup.py develop
         
       </main>
       
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-    <div class="md-copyright__highlight">
-      NIST Copyright, Kamal Choudhary
-    </div>
-  
-  
-</div>
+<style>
       
-        <div class="md-social">
-  
-    
-    
-    
-    
-      
-      
-    
-    <a href="https://github.com/usnistgov/jarvis_leaderboard" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-    </a>
-  
-</div>
-      
-    </div>
-  </div>
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100% !important;
+}
+
+.footer-data {
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-links ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-data li {
+    list-style: none;
+    color: #fff;
+    font-size: 7px;
+}
+
+.footer a {
+    color: #fff;
+}
+
+.footer a:hover {
+    text-decoration: none;
+    color: #12b3a8;
+}
+
+footer img {
+    width: 100px;
+}
+
+      </style>
+<footer class="md-footer">
+      <div class="footer">
+
+          <div class="container footer-data">
+            <div class="footer-links">
+              <ul>
+                <li>
+                  <a style="padding: 1rem; font-size:16px" href="https://www.nist.gov/privacy-policy">Site Privacy</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem;  font-size:16px" href="https://www.nist.gov/oism/accessibility">Accessibility</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem;  font-size:16px" href="https://www.nist.gov/privacy">Privacy Program</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem; font-size:16px" href="https://www.nist.gov/oism/copyrights">Copyrights</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem;  font-size:16px" href="https://www.commerce.gov/vulnerability-disclosure-policy">Vulnerability
+                    Disclosure</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem; font-size: 16px" href="https://www.nist.gov/no-fear-act-policy">No Fear Act Policy</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem; font-size: 16px" href="https://www.nist.gov/foia">FOIA</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem; font-size: 16px" href="https://www.nist.gov/environmental-policy-statement">Environmental Policy</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem; font-size: 16px" href="https://www.nist.gov/summary-report-scientific-integrity">Scientific
+                    Integrity</a>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a style="padding: 1rem; font-size: 16px" href="https://www.nist.gov/nist-information-quality-standards">Information Quality
+                    Standards</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem; font-size: 16px" href="https://www.commerce.gov/">Commerce.gov</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem; font-size: 16px" href="https://www.science.gov/">Science.gov</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem; font-size: 16px" href="https://www.usa.gov/">USA.gov</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem;  font-size: 16px" href="https://vote.gov/">Vote.gov</a>
+                </li>
+              </ul>
+            </div>
+            <img src="https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/images/nist_logo_centered_rev.svg" alt="National Institute of Standards and Technology logo" 
+              width="200" height="auto" />
+
+          </div>
+        </div>
+
 </footer>
-      
+
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "toc.integrate"], "search": "assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "toc.integrate"], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.4b2c34cd.min.js"></script>
+      <script src="assets/javascripts/bundle.2a6f1dda.min.js"></script>
       
         <script src="javascripts/tablesort.min.js"></script>
       
