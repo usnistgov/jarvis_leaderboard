@@ -1,4 +1,4 @@
-mkdocs-material==9.0.5
+mkdocs-material==9.0.13
 pandas
 jarvis-tools
 scikit-learn
