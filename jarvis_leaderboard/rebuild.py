@@ -608,8 +608,11 @@ homepage = [
 ]
 x=[]
 for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
-   x.append(i.split('/')[-1].split('.csv.zip')[0])
-update_individual_index_md(md_path="docs/index.md",homepage=x)
+   x.append(i.split('.csv.zip')[0])
+   #x.append(i.split('/')[-1].split('.csv.zip')[0])
+print (x)
+update_individual_index_md(md_path="docs/index.md",homepage=homepage)
+#update_individual_index_md(md_path="docs/index.md",homepage=sorted(x))
 update_individual_index_md(md_path="docs/ES/index.md",key='ES')
 update_individual_index_md(md_path="docs/AI/index.md",key='AI')
 update_individual_index_md(md_path="docs/QC/index.md",key='QC')

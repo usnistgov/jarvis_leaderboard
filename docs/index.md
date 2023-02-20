@@ -1,13 +1,18 @@
 [LICENSE]: https://github.com/usnistgov/jarvis/blob/master/LICENSE.rst
-
+<!--
+<div class="menu-logo">
+    <img src="https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/images/nist-logo.jpg" alt="" width="100" height="auto"/>
+</div>
+-->
 # JARVIS Leaderboard [WIP]
 
 This project provides benchmark-performances of various methods for materials science applications using the datasets available in [JARVIS-Tools databases](https://jarvis-tools.readthedocs.io/en/master/databases.html). Some of the methods are: [Artificial Intelligence (AI)](./AI), [Electronic Structure (ES)](./ES) and [Qunatum Computation (QC](./QC)). There are a variety of properties included in the benchmark.
 In addition to prediction results, we attempt to capture the underlyig software and hardware frameworks in training models to enhance reproducibility. This project is a part of the [NIST-JARVIS](https://jarvis.nist.gov) infrastructure.
 
-
 <!--number_of_benchmarks--> - Number of benchmarks: 90
+
 <!--number_of_tasks--> - Number of tasks: 70
+
 <!-- [Learn how to add benchmarks below](#add) -->
 <!-- <p style="text-align:center;"><img align="middle" src="https://www.ctcms.nist.gov/~knc6/images/logo/jarvis-mission.png"  width="40%" height="20%"></p>-->
 
@@ -23,20 +28,20 @@ In addition to prediction results, we attempt to capture the underlyig software 
 
         This project provides SOTA methods in 
 
-        + [Artificial Intelligence (AI)](./AI),
+        + [Artificial Intelligence (AI)](./AI)
              + [SinglePropertyPrediction](./AI/SinglePropertyPrediction)
              + [SinglePropertyClass](./AI/SinglePropertyClass)
              + [ImageClass](./AI/ImageClass)
              + [TextClass](./AI/TextClass)
-        + [Electronic Structure (ES)](./ES),
+        + [Electronic Structure (ES)](./ES)
              + [SinglePropertyPrediction](./ES/SinglePropertyPrediction)
              + [Spectra](./ES/Spectra) 
-        + [Qunatum Computation (QC](./QC))
+        + [Qunatum Computation (QC](./QC)
              + [EigenSolver](./QC/EigenSolver)
 
     === "Adding model benchmarks to existing dataset"
 
-        1.  [`Fork`](https://github.com/usnistgov/jarvis_leaderboard/fork) this repository
+        1.  [`Fork`](https://github.com/usnistgov/jarvis_leaderboard/fork) the [jarvis_leaderboard](https://github.com/usnistgov/jarvis_leaderboard) repository
         2.  `git clone https://github.com/usnistgov/jarvis_leaderboard`, use your GitHub username instead of usnistgov
         3.  `cd jarvis_leaderboard`
         4.  Install the package: `python setup.py develop`
@@ -46,6 +51,7 @@ In addition to prediction results, we attempt to capture the underlyig software 
         6. Train you model(s), e.g.:
 
             `pip install alignn`
+
             `train_folder.py --root_dir "Out" --config "config_example.json" --output_dir="temp"`
 
         7. Create a folder in the `jarvis_leaderboard/benchmarks` folder under respective submodule, e.g.:

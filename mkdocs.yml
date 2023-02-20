@@ -124,7 +124,7 @@ theme:
   # |                                                                                                      |
   # +------------------------------------------------------------------------------------------------------+
   name: 'material'
-  
+  custom_dir: overrides
   # +------------------------------------------------------------------------------------------------------+
   # |                                                                                                      |
   # | The Material theme allows "theme-extsnions", meaning that you can override parts of it by either     |

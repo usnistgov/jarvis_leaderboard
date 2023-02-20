@@ -1,0 +1,123 @@
+<!--https://github.com/notenverwaltung/Notenverwaltungssoftware/blob/54aa0515f3b1b2c5db8471306eecfed18e154e7e/docs/overrides/main.html -->
+{% extends "base.html" %}
+{% block announce %}
+  <div class="menu-logo">
+    <a href="https://www.nist.gov/" target="_blank"><img src="https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/images/nist-logo.jpg" width="90" height="auto" alt="NIST" /></a>
+  </div>
+{% endblock %}
+
+{% block footer %}
+<style>
+      
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100% !important;
+}
+
+.footer-data {
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-links ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-data li {
+    list-style: none;
+    color: #fff;
+    font-size: 7px;
+}
+
+.footer a {
+    color: #fff;
+}
+
+.footer a:hover {
+    text-decoration: none;
+    color: #12b3a8;
+}
+
+footer img {
+    width: 100px;
+}
+
+      </style>
+<footer class="md-footer">
+      <div class="footer">
+
+          <div class="container footer-data">
+            <div class="footer-links">
+              <ul>
+                <li>
+                  <a style="padding: 1rem; font-size:16px" href="https://www.nist.gov/privacy-policy">Site Privacy</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem;  font-size:16px" href="https://www.nist.gov/oism/accessibility">Accessibility</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem;  font-size:16px" href="https://www.nist.gov/privacy">Privacy Program</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem; font-size:16px" href="https://www.nist.gov/oism/copyrights">Copyrights</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem;  font-size:16px" href="https://www.commerce.gov/vulnerability-disclosure-policy">Vulnerability
+                    Disclosure</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem; font-size: 16px" href="https://www.nist.gov/no-fear-act-policy">No Fear Act Policy</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem; font-size: 16px" href="https://www.nist.gov/foia">FOIA</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem; font-size: 16px" href="https://www.nist.gov/environmental-policy-statement">Environmental Policy</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem; font-size: 16px" href="https://www.nist.gov/summary-report-scientific-integrity">Scientific
+                    Integrity</a>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <a style="padding: 1rem; font-size: 16px" href="https://www.nist.gov/nist-information-quality-standards">Information Quality
+                    Standards</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem; font-size: 16px" href="https://www.commerce.gov/">Commerce.gov</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem; font-size: 16px" href="https://www.science.gov/">Science.gov</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem; font-size: 16px" href="https://www.usa.gov/">USA.gov</a>
+                </li>
+                <li>
+                  <a style="padding: 1rem;  font-size: 16px" href="https://vote.gov/">Vote.gov</a>
+                </li>
+              </ul>
+            </div>
+            <img src="https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/images/nist_logo_centered_rev.svg" alt="National Institute of Standards and Technology logo" 
+              width="200" height="auto" />
+
+          </div>
+        </div>
+
+</footer>
+{% endblock %}
