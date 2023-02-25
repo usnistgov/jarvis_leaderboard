@@ -1,4 +1,7 @@
 Quantum computation benchmarks
+
+See: https://github.com/usnistgov/atomqc
+
 <!--number_of_benchmarks--> - Number of benchmarks: 1
 
 
