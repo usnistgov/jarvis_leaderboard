@@ -2,6 +2,7 @@ Image classification for 2D Bravais lattice
 
 See: https://github.com/usnistgov/atomvision
 
+[Colab notebook example](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/AtomVisionExample.ipynb) 
 <!--number_of_benchmarks--> - Number of benchmarks: 1
 
 
