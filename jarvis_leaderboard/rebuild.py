@@ -287,11 +287,12 @@ for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
 # print("dat", dat)
 print ('mdfiles',len(set(md_files)))
 
-def update_individual_index_md(md_path="docs/ES/index.md",key="ES",homepage = []):
+def update_individual_index_md(md_path="docs/ES/index.md",key="ES",extra_key="-",homepage = []):
     if not homepage:
      homepage = []
      for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
-        if key in i:
+        
+        if key in i and extra_key in i:
             p = i.split('/')[-1].split('.csv.zip')[0]
             homepage.append(p)
     #print ('index pages',homepage)
@@ -605,6 +606,7 @@ homepage = [
     "SinglePropertyPrediction-test-slme-dft_3d-ES-mae",
     "Spectra-test-dielectric_function-dft_3d-ES-multimae",
     "EigenSolver-test-electron_bands-dft_3d-QC-multimae",
+    "Spectra-test-XRD_JVASP_19821-dft_3d-EXP-multimae",
 ]
 x=[]
 for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
@@ -614,15 +616,17 @@ print (x)
 update_individual_index_md(md_path="docs/index.md",homepage=homepage)
 #update_individual_index_md(md_path="docs/index.md",homepage=sorted(x))
 update_individual_index_md(md_path="docs/ES/index.md",key='ES')
+update_individual_index_md(md_path="docs/ES/SinglePropertyPrediction/index.md",key='ES',extra_key="SinglePropertyPrediction")
+update_individual_index_md(md_path="docs/ES/Spectra/index.md",key='ES',extra_key="Spectra")
 update_individual_index_md(md_path="docs/AI/index.md",key='AI')
+update_individual_index_md(md_path="docs/AI/SinglePropertyPrediction/index.md",key="AI",extra_key='SinglePropertyPrediction')
+update_individual_index_md(md_path="docs/AI/SinglePropertyClass/index.md",key="AI",extra_key='SinglePropertyClass')
+update_individual_index_md(md_path="docs/AI/MLFF/index.md",key="AI",extra_key='MLFF')
+update_individual_index_md(md_path="docs/AI/ImageClass/index.md",key="AI",extra_key='ImageClass')
+update_individual_index_md(md_path="docs/AI/TextClass/index.md",key="AI",extra_key='TextClass')
 update_individual_index_md(md_path="docs/QC/index.md",key='QC')
-update_individual_index_md(md_path="docs/AI/SinglePropertyPrediction/index.md",key='SinglePropertyPrediction')
-update_individual_index_md(md_path="docs/AI/SinglePropertyClass/index.md",key='SinglePropertyClass')
-update_individual_index_md(md_path="docs/AI/MLFF/index.md",key='MLFF')
-update_individual_index_md(md_path="docs/AI/ImageClass/index.md",key='ImageClass')
-update_individual_index_md(md_path="docs/AI/TextClass/index.md",key='TextClass')
-update_individual_index_md(md_path="docs/ES/SinglePropertyPrediction/index.md",key='SinglePropertyPrediction')
-update_individual_index_md(md_path="docs/ES/Spectra/index.md",key='Spectra')
-update_individual_index_md(md_path="docs/QC/EigenSolver/index.md",key='EigenSolver')
+update_individual_index_md(md_path="docs/QC/EigenSolver/index.md",key="QC",extra_key='EigenSolver')
+update_individual_index_md(md_path="docs/EXP/index.md",key='EXP')
+update_individual_index_md(md_path="docs/EXP/Spectra/index.md",key='EXP',extra_key='Spectra')
 print ('errors',errors)
 # print("dat", dat)

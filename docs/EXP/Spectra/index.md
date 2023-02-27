@@ -1,0 +1,55 @@
+Getting X-ray diffraction patterns
+
+[Colab notebook](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/Simple_Silicon_atomic_structure_and_analysis_example.ipynb)
+<!--number_of_benchmarks--> - Number of benchmarks: 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--table_content--><table style="width:100%" id="j_table"><thead><tr><th>Method</th><th>Task</th><th>Property</th><th>Model name</th><th>Metric</th><th>Score</th><th>Team</th><th>Dataset</th><th>Size</th></tr></thead><tr><td><a href= "./EXP" target="_blank">EXP</a></td><td><a href= "./EXP/Spectra" target="_blank">Spectra</a></td><td><a href= "./XRD_JVASP_19821" target="_blank">XRD_JVASP_19821</a></td><td><a href="https://iopscience.iop.org/article/10.1088/1361-648X/ac1154/meta" target="_blank">bruker_d8</a></td><td>MULTIMAE</td><td>0.02</td><td>JARVIS</td><td>dft_3d</td><td>1</td></tr><!--table_content--></table>

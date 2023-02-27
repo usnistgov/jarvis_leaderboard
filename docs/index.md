@@ -6,7 +6,7 @@
 -->
 # JARVIS Leaderboard
 
-This project provides benchmark-performances of various methods for materials science applications using the datasets available in [JARVIS-Tools databases](https://jarvis-tools.readthedocs.io/en/master/databases.html). Some of the methods are: [Artificial Intelligence (AI)](./AI), [Electronic Structure (ES)](./ES) and [Qunatum Computation (QC](./QC)). There are a variety of properties included in the benchmark.
+This project provides benchmark-performances of various methods for materials science applications using the datasets available in [JARVIS-Tools databases](https://jarvis-tools.readthedocs.io/en/master/databases.html). Some of the methods are: [Artificial Intelligence (AI)](./AI), [Electronic Structure (ES)](./ES), [Qunatum Computation (QC)](./QC) and [Experiments (EXP)](./EXP). There are a variety of properties included in the benchmark.
 In addition to prediction results, we attempt to capture the underlyig software and hardware frameworks in training models to enhance reproducibility. This project is a part of the [NIST-JARVIS](https://jarvis.nist.gov) infrastructure.
 
 <!--number_of_benchmarks--> - Number of benchmarks: 91
@@ -38,6 +38,8 @@ In addition to prediction results, we attempt to capture the underlyig software 
              + [Spectra](./ES/Spectra) 
         + [Qunatum Computation (QC)](./QC)
              + [EigenSolver](./QC/EigenSolver)
+        + [Experiments (EXP)](./EXP)
+             + [Spectra](./EXP/Spectra)
 
     === "Adding model benchmarks to existing dataset"
 
@@ -74,7 +76,12 @@ In addition to prediction results, we attempt to capture the underlyig software 
 
              Also, add a `run.py`, `run.sh` and `Dockerfile` scripts to reproduce the model predictions.
 
-        10. Add. commit and push your changes, e.g.:
+        10. Run `python jarvis_leaderboard/rebuild.py` to check there are no errors
+
+        11. Run `mkdocs serve` to check if the new benchmark exists, e.g. at page
+            `http://127.0.0.1:8000/usnistgov/jarvis_leaderboard/AI/SinglePropertyPrediction/exfoliation_energy/`
+
+        12.    Add. commit and push your changes, e.g.:
 
             `git add jarvis_leaderboard/benchmarks/my_awesome_model`
 
@@ -82,13 +89,15 @@ In addition to prediction results, we attempt to capture the underlyig software 
 
             `git push origin main` 
     
-        11. Make a pull request from your fork to the source repo at usnistgov/jarvis_leaderboard
+        13. Make a pull request from your fork to the source repo at usnistgov/jarvis_leaderboard
 
         Notes:
 
-           The word: `SinglePropertyPrediction`: task type, `test`, property: `exfoliation_energy`, dataset: `dft_3d`, 
+           1. The word: `SinglePropertyPrediction`: task type, `test`, property: `exfoliation_energy`, dataset: `dft_3d`, 
            method: `AI`, metric: `mae` have been joined with '-' sign. This format should be used for consistency in webpage generation.
-           The test data splits are pre-determined, if the exact test IDs are not used, then the code might result in errors.
+           
+           2. The test data splits are pre-determined, if the exact test IDs are not used, then the code might result in errors.
+ 
 
     === "Adding a new dataset and benchmarks"
 
@@ -98,14 +107,39 @@ In addition to prediction results, we attempt to capture the underlyig software 
          
         2.  In the `.json` file should have `train`, `val`, `test` keys with array of ids and their values.
    
-        3. An example for creating such a file is provided in:
+        3.  Add a .md file, e.g.: "jarvis_leaderboard/docs/AI/SinglePropertyPrediction/exfoliation_energy.md".
+   
+        4. An example for creating such a file is provided in:
            `jarvis_leaderboard/dataset/AI/SinglePropertyPrediction/transform_from_figshare.py`
 
-        4. Then follow the instructions for "Adding model benchmarks to existing dataset"
+        5. Then follow the instructions for "Adding model benchmarks to existing dataset"
 
         Notes:
             We recommend adding your large dataset in Figshare or similar repository and then integrate it in [JARVIS-Tools](https://jarvis-tools.readthedocs.io/en/master/databases.html)
             We also recommend to use JARVIS-Tools for generating dataset/models/benchmarks which can help us maintain the benchmark for long term.       
+            Methods used for generating the data and referece are given below:
+                <table>
+		    <tr>
+			<td>Method used for results</td>
+			<td>Methods for comparison</td>
+		    </tr>
+		    <tr>
+			<td>EXP</td>
+			<td>EXP/ES/analytical results</td>
+		    </tr>
+		    <tr>
+			<td>ES</td>
+			<td>ES/EXP</td>
+		    </tr>
+		    <tr>
+			<td>QC</td>
+			<td>Classical/analytical results</td>
+		    </tr>
+		    <tr>
+			<td>AI</td>
+			<td>Test set data</td>
+		    </tr>
+                </table>
 
 
     === "Acronyms"
@@ -118,8 +152,22 @@ In addition to prediction results, we attempt to capture the underlyig software 
     === "Help"
         Ask a question/raise an [issue on GitHub](https://github.com/usnistgov/jarvis_leaderboard/issues).
         You can also email Kamal Choudhary if needed (kamal.choudhary@nist.gov). However, we recommend using the GitHub issues for any questions/concerns.
-        
-<!--table_content--><table style="width:100%" id="j_table"><thead><tr><th>Method</th><th>Task</th><th>Property</th><th>Model name</th><th>Metric</th><th>Score</th><th>Team</th><th>Dataset</th><th>Size</th></tr></thead><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/formation_energy_peratom" target="_blank">formation_energy_peratom</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.033</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/optb88vdw_bandgap" target="_blank">optb88vdw_bandgap</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.142</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/optb88vdw_total_energy" target="_blank">optb88vdw_total_energy</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.037</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/bulk_modulus_kv" target="_blank">bulk_modulus_kv</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>10.399</td><td>JARVIS</td><td>dft_3d</td><td>19680</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">SinglePropertyClass</a></td><td><a href="./AI/SinglePropertyClass/optb88vdw_bandgap" target="_blank">optb88vdw_bandgap</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>ACC</td><td>0.933</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/LUMO" target="_blank">LUMO</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.018</td><td>JARVIS</td><td>qm9_std_jctc</td><td>130829</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/max_co2_adsp" target="_blank">max_co2_adsp</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.477</td><td>JARVIS</td><td>hmof</td><td>137651</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/MLFF" target="_blank">MLFF</a></td><td><a href="./AI/MLFF/energy" target="_blank">energy</a></td><td><a href="https://pubs.rsc.org/en/content/articlehtml/2023/dd/d2dd00096b" target="_blank">alignnff_wt0.1</a></td><td>MAE</td><td>0.034</td><td>JARVIS</td><td>alignn_ff_db</td><td>307111</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/ImageClass" target="_blank">ImageClass</a></td><td><a href="./AI/ImageClass/bravais_class" target="_blank">bravais_class</a></td><td><a href="https://arxiv.org/abs/2212.02586" target="_blank">densenet_model</a></td><td>ACC</td><td>0.83</td><td>JARVIS</td><td>stem_2d_image</td><td>9150</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/TextClass" target="_blank">TextClass</a></td><td><a href="./AI/TextClass/categories" target="_blank">categories</a></td><td><a href="https://arxiv.org/abs/2209.08203" target="_blank">logisticreg_model</a></td><td>ACC</td><td>0.86</td><td>JARVIS</td><td>arXiv</td><td>100994</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/bulk_modulus" target="_blank">bulk_modulus</a></td><td><a href="https://www.nature.com/articles/s41524-020-00440-1" target="_blank">vasp_optb88vdw</a></td><td>MAE</td><td>5.732</td><td>JARVIS</td><td>dft_3d</td><td>21</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/bandgap" target="_blank">bandgap</a></td><td><a href="https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.9b02166" target="_blank">vasp_tbmbj</a></td><td>MAE</td><td>0.498</td><td>JARVIS</td><td>dft_3d</td><td>54</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/epsx" target="_blank">epsx</a></td><td><a href="https://www.nature.com/articles/sdata201882" target="_blank">vasp_optb88vdw_linopt</a></td><td>MAE</td><td>1.464</td><td>JARVIS</td><td>dft_3d</td><td>16</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/Tc_supercon" target="_blank">Tc_supercon</a></td><td><a href="https://www.nature.com/articles/s41524-022-00933-1" target="_blank">qe_pbesol_gbrv</a></td><td>MAE</td><td>3.378</td><td>JARVIS</td><td>dft_3d</td><td>14</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/slme" target="_blank">slme</a></td><td><a href="https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.9b02166" target="_blank">vasp_tbmbj</a></td><td>MAE</td><td>5.093</td><td>JARVIS</td><td>dft_3d</td><td>5</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/Spectra" target="_blank">Spectra</a></td><td><a href="./ES/Spectra/dielectric_function" target="_blank">dielectric_function</a></td><td><a href="https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.9b02166" target="_blank">vasp_tbmbj</a></td><td>MULTIMAE</td><td>11.52</td><td>JARVIS</td><td>dft_3d</td><td>4</td></tr><tr><td><a href="./QC" target="_blank">QC</a></td><td><a href="./QC/EigenSolver" target="_blank">EigenSolver</a></td><td><a href="./QC/EigenSolver/electron_bands" target="_blank">electron_bands</a></td><td><a href="https://iopscience.iop.org/article/10.1088/1361-648X/ac1154/meta" target="_blank">qiskit_vqd_SU2</a></td><td>MULTIMAE</td><td>0.003</td><td>JARVIS</td><td>dft_3d</td><td>1</td></tr><!--table_content--></table>
+       
+    === "Citation"
+		@article{choudhary2020joint,
+		  title={The joint automated repository for various integrated simulations (JARVIS) for data-driven materials design},
+		  author={Choudhary, Kamal and Garrity, Kevin F and Reid, Andrew CE and DeCost, Brian and Biacchi, Adam J and Hight Walker, Angela R and Trautt, Zachary and Hattrick-Simpers, Jason and Kusne, A Gilad and Centrone, Andrea and others},
+		  journal={npj computational materials},
+		  volume={6},
+		  number={1},
+		  pages={173},
+		  year={2020},
+		  publisher={Nature Publishing Group UK London}
+		}
+ 
+# Example benchmarks
+
+<!--table_content--><table style="width:100%" id="j_table"><thead><tr><th>Method</th><th>Task</th><th>Property</th><th>Model name</th><th>Metric</th><th>Score</th><th>Team</th><th>Dataset</th><th>Size</th></tr></thead><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/formation_energy_peratom" target="_blank">formation_energy_peratom</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.033</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/optb88vdw_bandgap" target="_blank">optb88vdw_bandgap</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.142</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/optb88vdw_total_energy" target="_blank">optb88vdw_total_energy</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.037</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/bulk_modulus_kv" target="_blank">bulk_modulus_kv</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>10.399</td><td>JARVIS</td><td>dft_3d</td><td>19680</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">SinglePropertyClass</a></td><td><a href="./AI/SinglePropertyClass/optb88vdw_bandgap" target="_blank">optb88vdw_bandgap</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>ACC</td><td>0.933</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/LUMO" target="_blank">LUMO</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.018</td><td>JARVIS</td><td>qm9_std_jctc</td><td>130829</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/max_co2_adsp" target="_blank">max_co2_adsp</a></td><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>MAE</td><td>0.477</td><td>JARVIS</td><td>hmof</td><td>137651</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/MLFF" target="_blank">MLFF</a></td><td><a href="./AI/MLFF/energy" target="_blank">energy</a></td><td><a href="https://pubs.rsc.org/en/content/articlehtml/2023/dd/d2dd00096b" target="_blank">alignnff_wt0.1</a></td><td>MAE</td><td>0.034</td><td>JARVIS</td><td>alignn_ff_db</td><td>307111</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/ImageClass" target="_blank">ImageClass</a></td><td><a href="./AI/ImageClass/bravais_class" target="_blank">bravais_class</a></td><td><a href="https://arxiv.org/abs/2212.02586" target="_blank">densenet_model</a></td><td>ACC</td><td>0.83</td><td>JARVIS</td><td>stem_2d_image</td><td>9150</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/TextClass" target="_blank">TextClass</a></td><td><a href="./AI/TextClass/categories" target="_blank">categories</a></td><td><a href="https://arxiv.org/abs/2209.08203" target="_blank">logisticreg_model</a></td><td>ACC</td><td>0.86</td><td>JARVIS</td><td>arXiv</td><td>100994</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/bulk_modulus" target="_blank">bulk_modulus</a></td><td><a href="https://www.nature.com/articles/s41524-020-00440-1" target="_blank">vasp_optb88vdw</a></td><td>MAE</td><td>5.732</td><td>JARVIS</td><td>dft_3d</td><td>21</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/bandgap" target="_blank">bandgap</a></td><td><a href="https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.9b02166" target="_blank">vasp_tbmbj</a></td><td>MAE</td><td>0.498</td><td>JARVIS</td><td>dft_3d</td><td>54</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/epsx" target="_blank">epsx</a></td><td><a href="https://www.nature.com/articles/sdata201882" target="_blank">vasp_optb88vdw_linopt</a></td><td>MAE</td><td>1.464</td><td>JARVIS</td><td>dft_3d</td><td>16</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/Tc_supercon" target="_blank">Tc_supercon</a></td><td><a href="https://www.nature.com/articles/s41524-022-00933-1" target="_blank">qe_pbesol_gbrv</a></td><td>MAE</td><td>3.378</td><td>JARVIS</td><td>dft_3d</td><td>14</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/slme" target="_blank">slme</a></td><td><a href="https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.9b02166" target="_blank">vasp_tbmbj</a></td><td>MAE</td><td>5.093</td><td>JARVIS</td><td>dft_3d</td><td>5</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/Spectra" target="_blank">Spectra</a></td><td><a href="./ES/Spectra/dielectric_function" target="_blank">dielectric_function</a></td><td><a href="https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.9b02166" target="_blank">vasp_tbmbj</a></td><td>MULTIMAE</td><td>11.52</td><td>JARVIS</td><td>dft_3d</td><td>4</td></tr><tr><td><a href="./QC" target="_blank">QC</a></td><td><a href="./QC/EigenSolver" target="_blank">EigenSolver</a></td><td><a href="./QC/EigenSolver/electron_bands" target="_blank">electron_bands</a></td><td><a href="https://iopscience.iop.org/article/10.1088/1361-648X/ac1154/meta" target="_blank">qiskit_vqd_SU2</a></td><td>MULTIMAE</td><td>0.003</td><td>JARVIS</td><td>dft_3d</td><td>1</td></tr><tr><td><a href="./EXP" target="_blank">EXP</a></td><td><a href="./EXP/Spectra" target="_blank">Spectra</a></td><td><a href="./EXP/Spectra/XRD_JVASP_19821" target="_blank">XRD_JVASP_19821</a></td><td><a href="https://iopscience.iop.org/article/10.1088/1361-648X/ac1154/meta" target="_blank">bruker_d8</a></td><td>MULTIMAE</td><td>0.02</td><td>JARVIS</td><td>dft_3d</td><td>1</td></tr><!--table_content--></table>
 
 <!--
 <a name="add"></a>
