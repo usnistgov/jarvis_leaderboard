@@ -9,9 +9,9 @@
 This project provides benchmark-performances of various methods for materials science applications using the datasets available in [JARVIS-Tools databases](https://jarvis-tools.readthedocs.io/en/master/databases.html). Some of the methods are: [Artificial Intelligence (AI)](./AI), [Electronic Structure (ES)](./ES) and [Qunatum Computation (QC](./QC)). There are a variety of properties included in the benchmark.
 In addition to prediction results, we attempt to capture the underlyig software and hardware frameworks in training models to enhance reproducibility. This project is a part of the [NIST-JARVIS](https://jarvis.nist.gov) infrastructure.
 
-<!--number_of_benchmarks--> - Number of benchmarks: 90
+<!--number_of_benchmarks--> - Number of benchmarks: 91
 
-<!--number_of_tasks--> - Number of tasks: 70
+<!--number_of_tasks--> - Number of tasks: 71
 
 <!-- [Learn how to add benchmarks below](#add) -->
 <!-- <p style="text-align:center;"><img align="middle" src="https://www.ctcms.nist.gov/~knc6/images/logo/jarvis-mission.png"  width="40%" height="20%"></p>-->
