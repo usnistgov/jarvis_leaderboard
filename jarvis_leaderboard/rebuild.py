@@ -68,7 +68,7 @@ def get_metric_value(
     # print("csv_data", csv_path)
     # dataset with actual values
     temp = dataset + "_" + prop + ".json"
-    print ('json temp',temp)
+    #print ('json temp',temp)
     temp2 = temp + ".zip"
     fname = os.path.join("dataset", method, submod, temp2)
     fname2 = os.path.join(root_dir, fname)
@@ -160,19 +160,19 @@ for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
     # print(i)
     fname = i.split("/")[-1].split(".csv.zip")[0]
     temp = fname.split("-")
-    print ('temp',temp)
+    #print ('temp',temp)
     submod = temp[0]
     data_split = temp[1]
     prop = temp[2]
     dataset = temp[3]
     method = temp[-2]
     metric = temp[-1]
-    print ('metric',metric)
-    print ('dataset',dataset)
+    #print ('metric',metric)
+    #print ('dataset',dataset)
     team = i.split("/")[-2]
     # md_filename = os.path.join("../docs",method,submod,prop) #"../docs/" + method + "/" +submod+"/"+ prop + ".md"
     md_filename = "../docs/" + method + "/" + submod + "/" + prop + ".md"
-    print ('md_filename',md_filename)
+    #print ('md_filename',md_filename)
     md_path = os.path.join(root_dir, md_filename)
     # print(
     #    fname,
