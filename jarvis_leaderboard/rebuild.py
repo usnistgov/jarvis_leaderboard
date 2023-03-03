@@ -68,6 +68,7 @@ def get_metric_value(
     # print("csv_data", csv_path)
     # dataset with actual values
     temp = dataset + "_" + prop + ".json"
+    print ('json temp',temp)
     temp2 = temp + ".zip"
     fname = os.path.join("dataset", method, submod, temp2)
     fname2 = os.path.join(root_dir, fname)
@@ -159,15 +160,19 @@ for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
     # print(i)
     fname = i.split("/")[-1].split(".csv.zip")[0]
     temp = fname.split("-")
+    print ('temp',temp)
     submod = temp[0]
     data_split = temp[1]
     prop = temp[2]
     dataset = temp[3]
-    method = temp[4]
-    metric = temp[5]
+    method = temp[-2]
+    metric = temp[-1]
+    print ('metric',metric)
+    print ('dataset',dataset)
     team = i.split("/")[-2]
     # md_filename = os.path.join("../docs",method,submod,prop) #"../docs/" + method + "/" +submod+"/"+ prop + ".md"
     md_filename = "../docs/" + method + "/" + submod + "/" + prop + ".md"
+    print ('md_filename',md_filename)
     md_path = os.path.join(root_dir, md_filename)
     # print(
     #    fname,
@@ -195,13 +200,15 @@ dat = []
 md_files = []
 for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
     fname = i.split("/")[-1].split(".csv.zip")[0]
-    temp = fname.split("-")
+    temp = fname.split("-")    #['SinglePropertyPrediction', 'test', 'bandgap', 'dft_3d_JVASP_1002_Si', 'ES', 'mae']
     submod = temp[0]
     data_split = temp[1]
     prop = temp[2]
     dataset = temp[3]
-    method = temp[4]
-    metric = temp[5]
+    #method = temp[4]
+    #metric = temp[5]
+    method = temp[-2]
+    metric = temp[-1]
     team = i.split("/")[-2]
     md_filename = "../docs/" + method + "/" + submod + "/" + prop + ".md"
     md_path = os.path.join(root_dir, md_filename)
@@ -590,9 +597,9 @@ def update_individual_index_md(md_path="docs/ES/index.md",key="ES",extra_key="-"
 
 homepage = [
     "SinglePropertyPrediction-test-formation_energy_peratom-dft_3d-AI-mae",
-    "SinglePropertyPrediction-test-optb88vdw_bandgap-dft_3d-AI-mae",
-    "SinglePropertyPrediction-test-optb88vdw_total_energy-dft_3d-AI-mae",
-    "SinglePropertyPrediction-test-bulk_modulus_kv-dft_3d-AI-mae",
+    #"SinglePropertyPrediction-test-optb88vdw_bandgap-dft_3d-AI-mae",
+    #"SinglePropertyPrediction-test-optb88vdw_total_energy-dft_3d-AI-mae",
+    #"SinglePropertyPrediction-test-bulk_modulus_kv-dft_3d-AI-mae",
     "SinglePropertyClass-test-optb88vdw_bandgap-dft_3d-AI-acc",
     "SinglePropertyPrediction-test-LUMO-qm9_std_jctc-AI-mae",
     "SinglePropertyPrediction-test-max_co2_adsp-hmof-AI-mae",
@@ -600,13 +607,15 @@ homepage = [
     "ImageClass-test-bravais_class-stem_2d_image-AI-acc",
     "TextClass-test-categories-arXiv-AI-acc",
     "SinglePropertyPrediction-test-bulk_modulus-dft_3d-ES-mae",
+    "SinglePropertyPrediction-test-bulk_modulus_JVASP_1002_Si-dft_3d-ES-mae",
     "SinglePropertyPrediction-test-bandgap-dft_3d-ES-mae",
+    "SinglePropertyPrediction-test-bandgap_JVASP_1002_Si-dft_3d-ES-mae",
     "SinglePropertyPrediction-test-epsx-dft_3d-ES-mae",
     "SinglePropertyPrediction-test-Tc_supercon-dft_3d-ES-mae",
     "SinglePropertyPrediction-test-slme-dft_3d-ES-mae",
     "Spectra-test-dielectric_function-dft_3d-ES-multimae",
-    "EigenSolver-test-electron_bands-dft_3d-QC-multimae",
-    "Spectra-test-XRD_JVASP_19821-dft_3d-EXP-multimae",
+    "EigenSolver-test-electron_bands_JVASP_816_Al_WTBH-dft_3d-QC-multimae",
+    "Spectra-test-XRD_JVASP_19821_MgB2-dft_3d-EXP-multimae",
 ]
 x=[]
 for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
