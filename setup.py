@@ -18,7 +18,7 @@ setuptools.setup(
         # "alignn>=2022.10.23",
         "mkdocs-material>=9.0.5",
         "pydantic>=1.8.1",
-        "markdown==3.2.1",
+        "markdown==3.4.2",
         "flake8>=3.9.1",
         "pycodestyle>=2.7.0",
         "pydocstyle>=6.0.0",
