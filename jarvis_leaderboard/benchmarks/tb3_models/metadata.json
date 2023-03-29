@@ -1,0 +1,1 @@
+{"model_name":"TB3-inprogress","project_url":"https://github.com/usnistgov/ThreeBodyTB.jl/","date_submitted":"03-29-2023","author_email":"kevin.garrity@nist.gov","database_version": "12-12-2022", "team_name": "TB3", "time_taken_seconds": 1.0, "language": "julia", "os": "linux", "software_used": "ThreeBodyTB.jl", "harware_used": "lappy"}
