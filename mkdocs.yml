@@ -172,7 +172,22 @@ theme:
   # |                                                                                                      |
   # +------------------------------------------------------------------------------------------------------+
   palette:
-  
+      - media: "(prefers-color-scheme: light)"
+        scheme: default
+        toggle:
+            icon: material/toggle-switch-off-outline
+            name: Switch to dark mode
+        primary: 'teal'
+        accent: 'light blue'
+        #primary: blue
+        #accent: blue
+      - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        toggle:
+            icon: material/toggle-switch
+            name: Switch to light mode
+        primary: 'teal'
+        accent: 'light blue'
     # +----------------------------------------------------------------------------------------------------+
     # |                                                                                                    |
     # | The "scheme" option is used to define the Color Scheme used by Material.                           |
@@ -184,7 +199,7 @@ theme:
     # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-scheme              |
     # |                                                                                                    |
     # +----------------------------------------------------------------------------------------------------+
-    scheme: 'slate'
+    ##scheme: 'slate'
     
     # +----------------------------------------------------------------------------------------------------+
     # |                                                                                                    |
@@ -196,7 +211,7 @@ theme:
     # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#primary-color             |
     # |                                                                                                    |
     # +----------------------------------------------------------------------------------------------------+
-    primary: 'blue'
+    ##primary: 'blue'
     #primary: 'indigo'
     
     # +----------------------------------------------------------------------------------------------------+
@@ -208,9 +223,9 @@ theme:
     # |                                                                                                    |
     # +----------------------------------------------------------------------------------------------------+
     #accent: 'indigo'
-    primary: 'deep orange'
+    ##primary: 'deep orange'
     #primary: 'light blue'
-    accent: 'light blue'
+    ##accent: 'light blue'
     
   # +------------------------------------------------------------------------------------------------------+
   # |                                                                                                      |
