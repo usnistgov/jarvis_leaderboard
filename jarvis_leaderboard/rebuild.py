@@ -200,8 +200,9 @@ dat = []
 md_files = []
 for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
     fname = i.split("/")[-1].split(".csv.zip")[0]
+    bench_name = i.split('/')[-2]
     temp = fname.split("-")    #['SinglePropertyPrediction', 'test', 'bandgap', 'dft_3d_JVASP_1002_Si', 'ES', 'mae']
-    submod = temp[0]
+    submod = temp[0] 
     data_split = temp[1]
     prop = temp[2]
     dataset = temp[3]
@@ -214,6 +215,13 @@ for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
     md_path = os.path.join(root_dir, md_filename)
     md_files.append(md_path)
     notes = ""
+    notes = '<a href="'+'https://github.com/usnistgov/jarvis_leaderboard/tree/main/'+i+'" target="_blank">CSV</a>'
+    json_name = dataset + "_" + prop + ".json.zip"
+    json_path = method + "/" + submod + "/" +json_name
+    json_url = '<a href="'+'https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/dataset/'+json_path+'" target="_blank">JSON</a>'
+    metadata = '<a href="'+'https://github.com/usnistgov/jarvis_leaderboard/tree/main/'+'jarvis_leaderboard/benchmarks/'+bench_name+'/metadata.json '+'" target="_blank">Info</a>'
+    runsh = '<a href="'+'https://github.com/usnistgov/jarvis_leaderboard/tree/main/'+'jarvis_leaderboard/benchmarks/'+bench_name+'/run.sh '+'" target="_blank">run.sh</a>'
+    notes = notes+', '+json_url+', '+runsh+', '+metadata
     # print(
     #    fname,
     #    data_split,
@@ -227,7 +235,7 @@ for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
     # )
     with open(md_path, "r") as file:
         filedata = file.read().splitlines()
-    print(i)
+    print('names',i)
     # print()
     res = get_metric_value(
         submod=submod,

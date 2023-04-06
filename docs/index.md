@@ -44,7 +44,9 @@ In addition to prediction results, we attempt to capture the underlyig software,
     === "Adding model benchmarks to existing dataset"
 
         1.  [`Fork`](https://github.com/usnistgov/jarvis_leaderboard/fork) the [jarvis_leaderboard](https://github.com/usnistgov/jarvis_leaderboard) repository
-        2.  `git clone https://github.com/usnistgov/jarvis_leaderboard`, use your GitHub username instead of usnistgov
+        2.  `git clone https://github.com/USERNAME/jarvis_leaderboard`, use your own GitHub USERNAME, e.g. knc6, instead of `usnistgov`
+
+             Note if you do not use forked version, you won't be able to make a pull request
         3.  `cd jarvis_leaderboard`
         4.  `conda create --name leaderboard python=3.8`
         5.  `source activate leaderboard`
@@ -53,17 +55,24 @@ In addition to prediction results, we attempt to capture the underlyig software,
 
           `cd jarvis_leaderboard/benchmarks/`
 
-          `cp -r vasp_lda/ vasp_my_pbe` , you can give any reaosnable name to the benchmark folder
+          `mkdir vasp_pbe_teamX` , you can give any reaosnable name to the benchmark folder in place of `vasp_pbe_teamX`
 
-          `cd  vasp_my_pbe`
+          `cd  vasp_pbe_teamX`
 
           `cp ../vasp_optb88vdw/SinglePropertyPrediction-test-bandgap_JVASP_1002_Si-dft_3d-ES-mae.csv.zip .`
 
-          `vi SinglePropertyPrediction-test-bulk_modulus_JVASP_1002_Si-dft_3d-ES-mae.csv.zip`
+          `vi SinglePropertyPrediction-test-bandgap_JVASP_1002_Si-dft_3d-ES-mae.csv.zip`
+          
+          Note: do not change filenames, e.g., replace dft with qmc etc., which will cause errors
 
           After pressing eneter twice, you'll see the file content as `id,predictions`
+
           Just modify the predicting value to your model/measurement value
-          Save the file (":wq!" twice)
+          Save the file (":wq!" and ":q!")
+
+          Add `metadata.json` and `run.sh` files to capture metadata and enhance reproducibility
+       
+          Note: An admin will run your `run.sh` to check if he/she can reproduce your benchmark
 
           Now, `cd ../../../`
 
@@ -73,39 +82,47 @@ In addition to prediction results, we attempt to capture the underlyig software,
 
           Hoping there's no error, try: `mkdocs serve`
 
-          Now add changes, `git add jarvis_leaderboard/benchmarks/vasp_my_pbe`
+          Ensure `vasp_pbe_teamX` row exists at:
+          `http://127.0.0.1:8000/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/bandgap_JVASP_1002_Si/`
+
+          Now add changes, `git add jarvis_leaderboard/benchmarks/vasp_pbe_teamX`
 
           Commit your changes, `git commmit -m 'Adding my PBE Si result.'`
+
           `git push`
 
-          Now go to your forked github repo and make a pull reuqest to usnistgov/jarvis_leaderboard
+          Now go to your forked github repo and make a pull reuqest (PR) to `usnistgov/jarvis_leaderboard` in `develop` branch
+
+          If you are not familiar with pull requests checkout this [link](https://makeapullrequest.com/)
+ 
+          Note: only admins are allowed to make pull requests to `main` branch
 
           Once the admin approve the PR, you'll see your results on the official leaderboard
 
+        8. Another example for AI mode as follows:
 
-          Another example for AI mode as follows:
-           Populate the dataset for a benchmark, e.g.:
+          Populate the dataset for a benchmark, e.g.:
 
-            `python jarvis_leaderboard/populate_data.py --benchmark_file SinglePropertyPrediction-test-exfoliation_energy-dft_3d-AI-mae --output_path=Out`
-           Train you model(s), e.g.:
+          `python jarvis_leaderboard/populate_data.py --benchmark_file SinglePropertyPrediction-test-exfoliation_energy-dft_3d-AI-mae --output_path=Out`
+          Train you model(s), e.g.:
 
-            `pip install alignn`
-            `wget https://raw.githubusercontent.com/usnistgov/alignn/main/alignn/examples/sample_data/config_example.json`
-            `train_folder.py --root_dir "Out" --config "config_example.json" --output_dir="temp"`
+          `pip install alignn`
+          `wget https://raw.githubusercontent.com/usnistgov/alignn/main/alignn/examples/sample_data/config_example.json`
+          `train_folder.py --root_dir "Out" --config "config_example.json" --output_dir="temp"`
 
           Create a folder in the `jarvis_leaderboard/benchmarks` folder under respective submodule, e.g.:
 
-            `mkdir benchmarks/my_awesome_model`
+          `mkdir benchmarks/my_awesome_model`
 
           Add comma-separated zip file (`.csv.zip`) file(s) corresponding to benchmark(s), e.g.:
 
-            `cp temp/prediction_results_test_set.csv .`
+          `cp temp/prediction_results_test_set.csv .`
 
-            `mv prediction_results_test_set.csv SinglePropertyPrediction-test-exfoliation_energy-dft_2d-AI-mae.csv`
+          `mv prediction_results_test_set.csv SinglePropertyPrediction-test-exfoliation_energy-dft_2d-AI-mae.csv`
 
-            `zip SinglePropertyPrediction-test-exfoliation_energy-dft_2d-AI-mae.csv SinglePropertyPrediction-test-exfoliation_energy-dft_2d-AI-mae.csv.zip`
+          `zip SinglePropertyPrediction-test-exfoliation_energy-dft_2d-AI-mae.csv SinglePropertyPrediction-test-exfoliation_energy-dft_2d-AI-mae.csv.zip`
 
-            `mv SinglePropertyPrediction-test-exfoliation_energy-dft_2d-AI-mae.csv.zip jarvis_leaderboard/benchmarks/my_awesome_model`
+          `mv SinglePropertyPrediction-test-exfoliation_energy-dft_2d-AI-mae.csv.zip jarvis_leaderboard/benchmarks/my_awesome_model`
            
           Add metadata info in the `metadata.json` file, e.g.:
 
@@ -120,13 +137,13 @@ In addition to prediction results, we attempt to capture the underlyig software,
 
            Add. commit and push your changes, e.g.:
 
-            `git add jarvis_leaderboard/benchmarks/my_awesome_model`
+           `git add jarvis_leaderboard/benchmarks/my_awesome_model`
 
-            `git commit -m 'Adding my awesome_model to jarvis_leaderboard`
+           `git commit -m 'Adding my awesome_model to jarvis_leaderboard`
 
-            `git push origin main` 
+           `git push origin main` 
     
-          Make a pull request from your fork to the source repo at usnistgov/jarvis_leaderboard
+          Make a pull request from your fork to the source repo at usnistgov/jarvis_leaderboard `develop` branch
 
         Notes:
 
@@ -144,7 +161,9 @@ In addition to prediction results, we attempt to capture the underlyig software,
          
         2.  In the `.json` file should have `train`, `val`, `test` keys with array of ids and their values.
    
-        3.  Add a .md file, e.g.: "jarvis_leaderboard/docs/AI/SinglePropertyPrediction/exfoliation_energy.md".
+            Note `train` and 'val` can be empty dictionaries if the benchmarks are other than AI method
+
+        3.  Add a .md file, e.g.: `jarvis_leaderboard/docs/AI/SinglePropertyPrediction/exfoliation_energy.md`.
    
         4. An example for creating such a file is provided in:
            `jarvis_leaderboard/dataset/AI/SinglePropertyPrediction/transform_from_figshare.py`
