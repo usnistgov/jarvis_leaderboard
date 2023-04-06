@@ -172,7 +172,7 @@ theme:
   # |                                                                                                      |
   # +------------------------------------------------------------------------------------------------------+
   palette:
-      - media: "(prefers-color-scheme: light)"
+      - media: "(prefers-color-scheme: dark)"
         scheme: default
         toggle:
             icon: material/toggle-switch-off-outline
@@ -181,7 +181,7 @@ theme:
         accent: 'light blue'
         #primary: blue
         #accent: blue
-      - media: "(prefers-color-scheme: dark)"
+      - media: "(prefers-color-scheme: light)"
         scheme: slate
         toggle:
             icon: material/toggle-switch
