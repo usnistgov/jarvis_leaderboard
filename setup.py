@@ -14,7 +14,7 @@ setuptools.setup(
         "scipy>=1.6.3",
         "jarvis-tools>=2021.07.19",
         "scikit-learn>=0.24.1",
-        "pandas==1.2.4",
+        "pandas==2.0.0",
         # "alignn>=2022.10.23",
         "mkdocs-material>=9.0.5",
         "pydantic>=1.8.1",
