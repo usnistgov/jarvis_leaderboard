@@ -53,17 +53,19 @@ In addition to prediction results, we attempt to capture the underlyig software,
 
           `cd jarvis_leaderboard/benchmarks/`
 
-          `cp -r vasp_lda/ vasp_my_pbe` , you can give any reaosnable name to the benchmark folder
+          `mkdir vasp_pbe_teamX` , you can give any reaosnable name to the benchmark folder in place of `vasp_pbe_teamX`
 
-          `cd  vasp_my_pbe`
+          `cd  vasp_pbe_teamX`
 
           `cp ../vasp_optb88vdw/SinglePropertyPrediction-test-bandgap_JVASP_1002_Si-dft_3d-ES-mae.csv.zip .`
 
-          `vi SinglePropertyPrediction-test-bulk_modulus_JVASP_1002_Si-dft_3d-ES-mae.csv.zip`
+          `vi SinglePropertyPrediction-test-bandgap_JVASP_1002_Si-dft_3d-ES-mae.csv.zip`
+          
+          Note: do not change filenames, e.g., replace dft with qmc etc., which will cause errors
 
           After pressing eneter twice, you'll see the file content as `id,predictions`
           Just modify the predicting value to your model/measurement value
-          Save the file (":wq!" twice)
+          Save the file (":wq!" and ":q")
 
           Now, `cd ../../../`
 
@@ -73,7 +75,10 @@ In addition to prediction results, we attempt to capture the underlyig software,
 
           Hoping there's no error, try: `mkdocs serve`
 
-          Now add changes, `git add jarvis_leaderboard/benchmarks/vasp_my_pbe`
+          Ensure `vasp_pbe_teamX' row exists at:
+          `http://127.0.0.1:8000/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/bandgap_JVASP_1002_Si/`
+
+          Now add changes, `git add jarvis_leaderboard/benchmarks/vasp_pbe_teamX`
 
           Commit your changes, `git commmit -m 'Adding my PBE Si result.'`
           `git push`
@@ -84,10 +89,11 @@ In addition to prediction results, we attempt to capture the underlyig software,
 
 
           Another example for AI mode as follows:
-           Populate the dataset for a benchmark, e.g.:
+
+          Populate the dataset for a benchmark, e.g.:
 
             `python jarvis_leaderboard/populate_data.py --benchmark_file SinglePropertyPrediction-test-exfoliation_energy-dft_3d-AI-mae --output_path=Out`
-           Train you model(s), e.g.:
+          Train you model(s), e.g.:
 
             `pip install alignn`
             `wget https://raw.githubusercontent.com/usnistgov/alignn/main/alignn/examples/sample_data/config_example.json`
