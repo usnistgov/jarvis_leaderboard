@@ -341,6 +341,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/AI/Spectra/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/AI/Spectra/ph_dos/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/usnistgov/jarvis_leaderboard/AI/TextClass/</loc>
          <lastmod>2023-04-06</lastmod>
          <changefreq>daily</changefreq>
