@@ -222,6 +222,12 @@ for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
     metadata = '<a href="'+'https://github.com/usnistgov/jarvis_leaderboard/tree/main/'+'jarvis_leaderboard/benchmarks/'+bench_name+'/metadata.json '+'" target="_blank">Info</a>'
     runsh = '<a href="'+'https://github.com/usnistgov/jarvis_leaderboard/tree/main/'+'jarvis_leaderboard/benchmarks/'+bench_name+'/run.sh '+'" target="_blank">run.sh</a>'
     notes = notes+', '+json_url+', '+runsh+', '+metadata
+    if 'JVASP' in prop:
+          jid='JVASP-'+prop.split('_')[3]
+          jid_url = '<a href="'+'https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/'+jid+'.xml '+'" target="_blank">'+jid+'</a>'
+          notes+=', '+jid_url
+          
+        
     # print(
     #    fname,
     #    data_split,
@@ -632,6 +638,7 @@ homepage = [
     "SinglePropertyPrediction-test-bandgap-dft_3d-ES-mae",
     "SinglePropertyPrediction-test-bandgap_JVASP_1002_Si-dft_3d-ES-mae",
     "SinglePropertyPrediction-test-epsx-dft_3d-ES-mae",
+    "SinglePropertyPrediction-test-Tc_supercon_JVASP_1151_MgB2-dft_3d-ES-mae",
     "SinglePropertyPrediction-test-Tc_supercon-dft_3d-ES-mae",
     "SinglePropertyPrediction-test-slme-dft_3d-ES-mae",
     "Spectra-test-dielectric_function-dft_3d-ES-multimae",
