@@ -303,6 +303,9 @@ for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
 print ('mdfiles',len(set(md_files)))
 
 def update_individual_index_md(md_path="docs/ES/index.md",key="ES",extra_key="-",homepage = []):
+    n_methods = 0
+    for i in glob.glob("jarvis_leaderboard/benchmarks/*/metadata.json"):
+          n_methods+=1
     if not homepage:
      homepage = []
      for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
@@ -563,6 +566,8 @@ def update_individual_index_md(md_path="docs/ES/index.md",key="ES",extra_key="-"
             content.append("<!--number_of_benchmarks-->")
         elif "<!--number_of_tasks-->" in j:
             content.append("<!--number_of_tasks-->")
+        elif "<!--number_of_methods-->" in j:
+            content.append("<!--number_of_methods-->")
         else:
             content.append(j)
     with open(md_path, "w") as file:
@@ -587,6 +592,14 @@ def update_individual_index_md(md_path="docs/ES/index.md",key="ES",extra_key="-"
                 #+ "\n"
             )
             content.append(temp2)
+        elif "<!--number_of_methods-->" in j:
+            temp2 = (
+                "<!--number_of_methods--> - Number of methods: "
+                + str(n_methods)
+                #+ str(len(dat))
+                #+ "\n"
+            )
+            content.append(temp2)
         elif "<!--number_of_benchmarks-->" in j:
             temp2 = (
                 "<!--number_of_benchmarks--> - Number of benchmarks: "
@@ -605,9 +618,9 @@ def update_individual_index_md(md_path="docs/ES/index.md",key="ES",extra_key="-"
 
 homepage = [
     "SinglePropertyPrediction-test-formation_energy_peratom-dft_3d-AI-mae",
-    #"SinglePropertyPrediction-test-optb88vdw_bandgap-dft_3d-AI-mae",
-    #"SinglePropertyPrediction-test-optb88vdw_total_energy-dft_3d-AI-mae",
-    #"SinglePropertyPrediction-test-bulk_modulus_kv-dft_3d-AI-mae",
+    "SinglePropertyPrediction-test-optb88vdw_bandgap-dft_3d-AI-mae",
+    "SinglePropertyPrediction-test-optb88vdw_total_energy-dft_3d-AI-mae",
+    "SinglePropertyPrediction-test-bulk_modulus_kv-dft_3d-AI-mae",
     "SinglePropertyClass-test-optb88vdw_bandgap-dft_3d-AI-acc",
     "SinglePropertyPrediction-test-LUMO-qm9_std_jctc-AI-mae",
     "SinglePropertyPrediction-test-max_co2_adsp-hmof-AI-mae",
