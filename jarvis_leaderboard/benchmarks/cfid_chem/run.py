@@ -16,6 +16,8 @@ from jarvis.core.atoms import Atoms
 import zipfile
 import json
 import time
+from jarvis.ai.descriptors.cfid import CFID
+
 props = [
     "formation_energy_peratom",
     "optb88vdw_bandgap",
@@ -82,9 +84,9 @@ def load_dataset(
     multioutput = False
     lists_length_equal = True
 
-    def get_desc(id=""):
-        return (df[df["jid"] == id]["desc"]).values[0]
-
+    def get_desc(atoms=""):
+        #return (df[df["jid"] == id]["desc"]).values[0]
+        return CFID(atoms).get_comp_descp(jrdf=False, jrdf_adf=False)
     X = []
     y = []
     ids = []
@@ -121,7 +123,7 @@ def load_dataset(
         info["target"] = tmp  # float(i[1])
         n_outputs.append(info["target"])
         dataset.append(info)
-        X.append(get_desc(file_name))
+        X.append(get_desc(atoms))
         y.append(tmp)
         ids.append(file_name)
     X = np.array(X)
@@ -157,7 +159,7 @@ lgbm = lgb.LGBMRegressor(
 )
 
 prop = ["exfoliation_energy"]
-#lgbm = lgb.LGBMRegressor()
+lgbm = lgb.LGBMRegressor()
 
 for prop in props:
     json_zip = '../../dataset/AI/SinglePropertyPrediction/dft_3d_'+prop+'.json.zip'

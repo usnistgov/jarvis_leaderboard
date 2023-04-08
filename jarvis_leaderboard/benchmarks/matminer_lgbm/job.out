@@ -1,0 +1,153 @@
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+number of training samples 44569
+number of validation samples 5572
+number of test samples 5572
+formation_energy_peratom 0.10231528361043313
+Time 321.59543466567993
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+number of training samples 44569
+number of validation samples 5572
+number of test samples 5572
+optb88vdw_bandgap 0.2020806288729042
+Time 320.97569966316223
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+number of training samples 15744
+number of validation samples 1968
+number of test samples 1968
+bulk_modulus_kv 15.475176866818563
+Time 160.375013589859
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+number of training samples 15744
+number of validation samples 1968
+number of test samples 1968
+shear_modulus_gv 11.612373206218729
+Time 157.9423213005066
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+number of training samples 14535
+number of validation samples 1817
+number of test samples 1815
+mbj_bandgap 0.39088879153393224
+Time 152.40943217277527
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+number of training samples 7250
+number of validation samples 906
+number of test samples 906
+slme 5.4242204260043145
+Time 101.38580513000488
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+number of training samples 41766
+number of validation samples 5222
+number of test samples 5222
+magmom_oszicar 0.3987134216253335
+Time 309.8275065422058
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+number of training samples 9101
+number of validation samples 1137
+number of test samples 1137
+spillage 0.38064876926573354
+Time 114.02741479873657
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+number of training samples 44313
+number of validation samples 5540
+number of test samples 5539
+kpoint_length_unit 9.327535619351067
+Time 319.5326578617096
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+number of training samples 44308
+number of validation samples 5539
+number of test samples 5539
+encut 144.5572100813855
+Time 320.95371317863464
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+number of training samples 44569
+number of validation samples 5572
+number of test samples 5572
+optb88vdw_total_energy 0.15091305194798824
+Time 324.71032905578613
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+number of training samples 35592
+number of validation samples 4449
+number of test samples 4449
+epsx 22.857180994769763
+Time 267.9558138847351
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+number of training samples 35592
+number of validation samples 4449
+number of test samples 4449
+epsy 22.954728951005592
+Time 272.0431134700775
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+number of training samples 35592
+number of validation samples 4449
+number of test samples 4449
+epsz 22.28801805254687
+Time 272.02459740638733
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+number of training samples 13447
+number of validation samples 1681
+number of test samples 1681
+mepsx 28.00943462327703
+Time 146.4551980495453
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+number of training samples 13447
+number of validation samples 1681
+number of test samples 1681
+mepsy 27.527384545505708
+Time 145.8938603401184
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+number of training samples 13447
+number of validation samples 1681
+number of test samples 1681
+mepsz 26.282746288700906
+Time 145.6880397796631
