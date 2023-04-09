@@ -1,0 +1,55 @@
+category_to_id {'cond-mat.mes-hall': 0, 'cond-mat.mtrl-sci': 1, 'cond-mat.str-el': 2, 'cond-mat.supr-con': 3, 'cond-mat.dis-nn': 4, 'cond-mat.stat-mech': 5, 'cond-mat.soft': 6, 'cond-mat.other': 7, 'cond-mat.quant-gas': 8}
+       Unnamed: 0  ... category_id
+0         1518423  ...           0
+1           55224  ...           0
+2          607274  ...           1
+3         1485200  ...           2
+4          905467  ...           1
+...           ...  ...         ...
+137922      13701  ...           5
+137923    1478477  ...           0
+137924     930390  ...           2
+137925     426361  ...           1
+137926    1177971  ...           2
+
+[137927 rows x 7 columns]
+cond-mat.mtrl-sci     30060
+cond-mat.mes-hall     29831
+cond-mat.str-el       22314
+cond-mat.stat-mech    17528
+cond-mat.supr-con     14584
+cond-mat.soft         10928
+cond-mat.quant-gas     5052
+cond-mat.other         3943
+cond-mat.dis-nn        3687
+Name: categories, dtype: int64
+title_features.shape (137927, 394649)
+Logistic model accuracy 0.884941637062278
+Time 1132.558153629303
+category_to_id {'virtual_reality': 0, 'deep_learning': 1, 'pedot_electrodes': 2, 'covid_19': 3, 'human_connectome': 4, 'brain_machine_interfaces': 5, 'electroactive_polymers': 6, 'neuroprosthetics': 7}
+                                                   title  ... category_id
+0      Development of allocentric spatial recall from...  ...           0
+1      Bottom-Up Visual Saliency Estimation With Deep...  ...           1
+2      Machine learning improves forecasts of aftersh...  ...           1
+3      The Applications of Virtual Reality Technology...  ...           0
+4      Ionic Liquid Designed for PEDOT:PSS Conductivi...  ...           2
+...                                                  ...  ...         ...
+44495  Characterizing Computer Access Using a One-Cha...  ...           5
+44496                    Digital health: a game changer.  ...           0
+44497  Reducing systems biology to practice in pharma...  ...           0
+44498  Digital Technologies in the Treatment of Anxie...  ...           0
+44499  , "Addressing General Surgery Residents' Conce...  ...           3
+
+[44500 rows x 6 columns]
+deep_learning               13015
+virtual_reality             11468
+covid_19                     8674
+human_connectome             4802
+brain_machine_interfaces     4172
+electroactive_polymers        893
+pedot_electrodes              742
+neuroprosthetics              734
+Name: label_name, dtype: int64
+title_features.shape (44500, 134751)
+Logistic model accuracy 0.9316853932584269
+Time 318.9731938838959

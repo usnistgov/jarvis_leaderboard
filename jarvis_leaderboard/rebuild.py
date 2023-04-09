@@ -44,6 +44,7 @@ def get_metric_value(
     data_split="",
     method="",
     metric="",
+    bench_name="",
 ):
     results = {}
     results["method"] = method
@@ -62,6 +63,7 @@ def get_metric_value(
     results["team_name"] = meta_data["team_name"]
     results["date_submitted"] = meta_data["date_submitted"]
     results["project_url"] = meta_data["project_url"]
+    results["github_url"] = 'https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/'+bench_name #meta_path.split('metadata.json')[0]
 
     # print("meta_path", meta_data)
     # meta_data=loadjson()
@@ -227,7 +229,7 @@ for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
           jid_url = '<a href="'+'https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/'+jid+'.xml '+'" target="_blank">'+jid+'</a>'
           notes+=', '+jid_url
           
-        
+    # print ('bench_name', bench_name)    
     # print(
     #    fname,
     #    data_split,
@@ -241,7 +243,7 @@ for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
     # )
     with open(md_path, "r") as file:
         filedata = file.read().splitlines()
-    print('names',i)
+    #print('names',i)
     # print()
     res = get_metric_value(
         submod=submod,
@@ -251,11 +253,14 @@ for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
         data_split=data_split,
         method=method,
         metric=metric,
+        bench_name=bench_name,
     )
     # res = 5
     # if clean:
+    
     team = (
-        '<a href="' + res["project_url"] + '" target="_blank">' + team + "</a>"
+        '<a href="' + res["github_url"] + '" target="_blank">' + team + "</a>"
+        #'<a href="' + res["project_url"] + '" target="_blank">' + team + "</a>"
     )
     # team='['+team+']'+'('+res['project_url']+')'
     info = {}

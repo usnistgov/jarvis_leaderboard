@@ -1,0 +1,74 @@
+category_to_id {'cond-mat.mes-hall': 0, 'cond-mat.mtrl-sci': 1, 'cond-mat.str-el': 2, 'cond-mat.supr-con': 3, 'cond-mat.dis-nn': 4, 'cond-mat.stat-mech': 5, 'cond-mat.soft': 6, 'cond-mat.other': 7, 'cond-mat.quant-gas': 8}
+       Unnamed: 0                id                                              title  ...          categories                                     title_abstract category_id
+0         1518423  cond-mat/0610381  Transition from isolated to overlapping resona...  ...   cond-mat.mes-hall  Transition from isolated to overlapping resona...           0
+1           55224         0803.3464  Room Temperature All Semiconducting sub-10nm G...  ...   cond-mat.mes-hall  Room Temperature All Semiconducting sub-10nm G...           0
+2          607274        1503.04560  Dynamics of Current and Field Driven Domain Wa...  ...   cond-mat.mtrl-sci  Dynamics of Current and Field Driven Domain Wa...           1
+3         1485200  cond-mat/0301577  Neutron Diffraction Study of the Pressure-Indu...  ...     cond-mat.str-el  Neutron Diffraction Study of the Pressure-Indu...           2
+4          905467        1710.10084  Atomic adsorption on graphene with a single va...  ...   cond-mat.mtrl-sci  Atomic adsorption on graphene with a single va...           1
+...           ...               ...                                                ...  ...                 ...                                                ...         ...
+137922      13701         0707.0531  Construction of equilibrium networks with an e...  ...  cond-mat.stat-mech  Construction of equilibrium networks with an e...           5
+137923    1478477  cond-mat/0203487  Thermally-Activated Magnetic Reversal Induced ...  ...   cond-mat.mes-hall  Thermally-Activated Magnetic Reversal Induced ...           0
+137924     930390        1801.01459  Formation of an incoherent metallic state in R...  ...     cond-mat.str-el  Formation of an incoherent metallic state in R...           2
+137925     426361         1304.7228  CdS nanoparticles capped with 1-substituted 5-...  ...   cond-mat.mtrl-sci  CdS nanoparticles capped with 1-substituted 5-...           1
+137926    1177971        1909.07933  Fock space embedding theory for strongly corre...  ...     cond-mat.str-el  Fock space embedding theory for strongly corre...           2
+
+[137927 rows x 7 columns]
+cond-mat.mtrl-sci     30060
+cond-mat.mes-hall     29831
+cond-mat.str-el       22314
+cond-mat.stat-mech    17528
+cond-mat.supr-con     14584
+cond-mat.soft         10928
+cond-mat.quant-gas     5052
+cond-mat.other         3943
+cond-mat.dis-nn        3687
+Name: categories, dtype: int64
+title_features.shape (137927, 43454)
+/home/knc6/.conda/envs/chemdata/lib/python3.8/site-packages/sklearn/linear_model/_logistic.py:444: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+Logistic model accuracy 0.7920321902414268
+Time 24.049041748046875
+
+
+category_to_id {'virtual_reality': 0, 'deep_learning': 1, 'pedot_electrodes': 2, 'covid_19': 3, 'human_connectome': 4, 'brain_machine_interfaces': 5, 'electroactive_polymers': 6, 'neuroprosthetics': 7}
+                                                   title                                           abstract  ...     id category_id
+0      Development of allocentric spatial recall from...  Using landmarks and other scene features to re...  ...      0           0
+1      Bottom-Up Visual Saliency Estimation With Deep...  Research on visual perception indicates that t...  ...      1           1
+2      Machine learning improves forecasts of aftersh...                                                 []  ...      2           1
+3      The Applications of Virtual Reality Technology...  Virtual reality is a new method for training d...  ...      3           0
+4      Ionic Liquid Designed for PEDOT:PSS Conductivi...  Poly-3,4-ethylenedioxythiophene:polystyrenesul...  ...      4           2
+...                                                  ...                                                ...  ...    ...         ...
+44495  Characterizing Computer Access Using a One-Cha...  This work studies the feasibility of using men...  ...  44495           5
+44496                    Digital health: a game changer.                                                 []  ...  44496           0
+44497  Reducing systems biology to practice in pharma...  Reviews of the productivity of the pharmaceuti...  ...  44497           0
+44498  Digital Technologies in the Treatment of Anxie...  This review aims to provide a comprehensive ov...  ...  44498           0
+44499  , "Addressing General Surgery Residents' Conce...  The purpose of this study was to determine the...  ...  44499           3
+
+[44500 rows x 6 columns]
+deep_learning               13015
+virtual_reality             11468
+covid_19                     8674
+human_connectome             4802
+brain_machine_interfaces     4172
+electroactive_polymers        893
+pedot_electrodes              742
+neuroprosthetics              734
+Name: label_name, dtype: int64
+title_features.shape (44500, 20190)
+/home/knc6/.conda/envs/chemdata/lib/python3.8/site-packages/sklearn/linear_model/_logistic.py:444: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+Logistic model accuracy 0.920561797752809
+Time 9.956245183944702
+
