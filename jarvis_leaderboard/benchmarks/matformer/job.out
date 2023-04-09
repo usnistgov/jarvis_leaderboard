@@ -1,0 +1,119 @@
+name='matformer' conv_layers=5 edge_layers=0 atom_input_features=92 edge_features=128 triplet_input_features=40 node_features=128 fc_layers=1 fc_features=128 output_features=1 node_layer_head=4 edge_layer_head=4 nn_based=False link='identity' zero_inflated=False use_angle=False angle_lattice=False classification=False
+{'dataset': 'dft_3d', 'target': 'exfoliation_energy', 'epochs': 50, 'batch_size': 64, 'weight_decay': 1e-05, 'learning_rate': 0.001, 'criterion': 'mse', 'optimizer': 'adamw', 'scheduler': 'onecycle', 'save_dataloader': False, 'pin_memory': False, 'write_predictions': True, 'num_workers': 10, 'classification_threshold': None, 'atom_features': 'cgcnn', 'model': {'name': 'matformer', 'use_angle': False}, 'matrix_input': False, 'pyg_input': True, 'use_lattice': True, 'use_angle': False, 'neighbor_strategy': 'k-nearest', 'output_dir': 'out_exfoliation_energy'}
+config:
+{'atom_features': 'cgcnn',
+ 'batch_size': 64,
+ 'classification_threshold': None,
+ 'criterion': 'mse',
+ 'cutoff': 8.0,
+ 'dataset': 'dft_3d',
+ 'distributed': False,
+ 'epochs': 50,
+ 'filename': 'sample',
+ 'id_tag': 'jid',
+ 'keep_data_order': False,
+ 'learning_rate': 0.001,
+ 'log_tensorboard': False,
+ 'matrix_input': False,
+ 'max_neighbors': 12,
+ 'model': {'angle_lattice': False,
+           'atom_input_features': 92,
+           'classification': False,
+           'conv_layers': 5,
+           'edge_features': 128,
+           'edge_layer_head': 4,
+           'edge_layers': 0,
+           'fc_features': 128,
+           'fc_layers': 1,
+           'link': 'identity',
+           'name': 'matformer',
+           'nn_based': False,
+           'node_features': 128,
+           'node_layer_head': 4,
+           'output_features': 1,
+           'triplet_input_features': 40,
+           'use_angle': False,
+           'zero_inflated': False},
+ 'n_early_stopping': None,
+ 'n_test': None,
+ 'n_train': None,
+ 'n_val': None,
+ 'neighbor_strategy': 'k-nearest',
+ 'num_workers': 10,
+ 'optimizer': 'adamw',
+ 'output_dir': 'out_exfoliation_energy',
+ 'pin_memory': False,
+ 'progress': True,
+ 'pyg_input': True,
+ 'random_seed': 123,
+ 'save_dataloader': False,
+ 'scheduler': 'onecycle',
+ 'standard_scalar_and_pca': False,
+ 'store_outputs': True,
+ 'target': 'exfoliation_energy',
+ 'target_multiplication_factor': None,
+ 'test_ratio': 0.1,
+ 'train_ratio': 0.8,
+ 'use_angle': False,
+ 'use_canonize': True,
+ 'use_lattice': True,
+ 'val_ratio': 0.1,
+ 'version': '47f28b30adbdb2bcc3ba3a623575c6121f56d16b',
+ 'warmup_steps': 2000,
+ 'weight_decay': 1e-05,
+ 'write_checkpoint': True,
+ 'write_predictions': True}
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+MAX val: 948.93
+MIN val: 0.03
+MAD: 62.629814227293544
+Baseline MAE: 61.033631528964854
+data range 948.93 0.03
+./saved_data/train_datatest_graph_angle.pkl
+graphs not saved
+mean 112.662163 std 115.449341
+normalize using training mean 112.662154 and std 115.360502
+warning: could not load CGCNN features for 103
+Setting it to max atomic number available here, 103
+warning: could not load CGCNN features for 101
+Setting it to max atomic number available here, 103
+warning: could not load CGCNN features for 102
+Setting it to max atomic number available here, 103
+building line graphs
+data range 388.51 18.3
+./saved_data/val_datatest_graph_angle.pkl
+graphs not saved
+mean 102.074806 std 63.820377
+normalize using training mean 112.662154 and std 115.360502
+building line graphs
+data range 903.94 0.95
+./saved_data/test_datatest_graph_angle.pkl
+graphs not saved
+mean 107.253204 std 119.360497
+normalize using training mean 112.662154 and std 115.360502
+building line graphs
+n_train: 650
+n_val: 81
+n_test: 81
+config:
+{'angle_lattice': False,
+ 'atom_input_features': 92,
+ 'classification': False,
+ 'conv_layers': 5,
+ 'edge_features': 128,
+ 'edge_layer_head': 4,
+ 'edge_layers': 0,
+ 'fc_features': 128,
+ 'fc_layers': 1,
+ 'link': 'identity',
+ 'name': 'matformer',
+ 'nn_based': False,
+ 'node_features': 128,
+ 'node_layer_head': 4,
+ 'output_features': 1,
+ 'triplet_input_features': 40,
+ 'use_angle': False,
+ 'zero_inflated': False}

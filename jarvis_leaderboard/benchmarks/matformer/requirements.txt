@@ -1,0 +1,66 @@
+annotated-types==0.4.0
+brotlipy==0.7.0
+certifi @ file:///croot/certifi_1671487769961/work/certifi
+cffi @ file:///croot/cffi_1670423208954/work
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+contourpy==1.0.7
+cryptography @ file:///croot/cryptography_1677533068310/work
+cycler==0.11.0
+filelock @ file:///croot/filelock_1672387128942/work
+flake8==6.0.0
+flit_core @ file:///croot/flit-core_1679397103445/work/source/flit_core
+fonttools==4.39.3
+gmpy2 @ file:///tmp/build/80754af9/gmpy2_1645455533097/work
+idna @ file:///croot/idna_1666125576474/work
+jarvis-tools==2022.9.16
+Jinja2 @ file:///croot/jinja2_1666908132255/work
+joblib==1.2.0
+kiwisolver==1.4.4
+MarkupSafe @ file:///opt/conda/conda-bld/markupsafe_1654597864307/work
+-e git+https://github.com/YKQ98/Matformer.git@48f29d7e244974128f64a5a662486a8a10e2bb9f#egg=matformer
+matplotlib==3.7.1
+mccabe==0.7.0
+mkl-fft==1.3.1
+mkl-random @ file:///home/builder/ci_310/mkl_random_1641843545607/work
+mkl-service==2.4.0
+mpmath==1.2.1
+networkx @ file:///croot/networkx_1678964333703/work
+numpy @ file:///croot/numpy_and_numpy_base_1672336185480/work
+packaging==23.0
+pandas==2.0.0
+Pillow==9.4.0
+psutil==5.9.4
+pycodestyle==2.10.0
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pydantic==1.8.1
+pydantic_core==0.23.0
+pydocstyle==6.3.0
+pyflakes==3.0.1
+pyOpenSSL @ file:///croot/pyopenssl_1677607685877/work
+pyparsing==3.0.9
+PySocks @ file:///home/builder/ci_310/pysocks_1640793678128/work
+python-dateutil==2.8.2
+pytorch-ignite==0.5.0.dev20230408
+pytz==2023.3
+requests @ file:///croot/requests_1678709721434/work
+scikit-learn==1.2.2
+scipy==1.10.1
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+snowballstemmer==2.2.0
+spglib==2.0.2
+sympy @ file:///croot/sympy_1668202399572/work
+threadpoolctl==3.1.0
+toolz==0.12.0
+torch==2.0.0
+torch-cluster==1.6.1
+torch-scatter==2.1.1
+torch-sparse==0.6.17
+torch-spline-conv==1.2.2
+torch_geometric @ git+https://github.com/pyg-team/pytorch_geometric.git@87744e28ebb392b22829048b2cb94ff98e720987
+torchaudio==2.0.0
+torchvision==0.15.0
+tqdm==4.65.0
+typing_extensions @ file:///croot/typing_extensions_1669924550328/work
+tzdata==2023.3
+urllib3 @ file:///croot/urllib3_1680254681959/work
+xmltodict==0.13.0
