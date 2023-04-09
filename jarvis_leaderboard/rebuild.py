@@ -38,7 +38,7 @@ scaling = {
 
 
 def make_summary_table():
-    methods = ["AI", "ES", "MLFF", "QC", "EXP"]
+    methods = ["AI", "ES", "FF", "QC", "EXP"]
     tasks = [
         "SinglePropertyPrediction",
         "SinglePropertyClass",
@@ -743,8 +743,10 @@ def update_individual_index_md(
             content.append(temp2)
         elif "<!--number_of_methods-->" in j:
             temp2 = (
-                "<!--number_of_methods--> - Number of methods: "
-                + str(n_methods)
+                #"<!--number_of_methods--> - Number of methods: "
+                 "<!--number_of_methods--> - Number of methods: "+'['+str(n_methods)+']'+"(https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks)" 
+                 #"<!--number_of_methods--> - Number of methods: "+'<a href = "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks" target="_blank"> '+str(n_methods)+'</a>'
+                #+ str(n_methods)
                 # + str(len(dat))
                 # + "\n"
             )
