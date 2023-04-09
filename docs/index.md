@@ -14,7 +14,7 @@ In addition to prediction results, we attempt to capture the underlyig software,
 <!--number_of_tasks--> - Number of tasks: 203
 
 
-<!--number_of_methods--> - Number of methods: 37
+<!--number_of_methods--> - Number of methods: [37](https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks)
 
 <!-- [Learn how to add benchmarks below](#add) -->
 <!-- <p style="text-align:center;"><img align="middle" src="https://www.ctcms.nist.gov/~knc6/images/logo/jarvis-mission.png"  width="40%" height="20%"></p>-->
@@ -213,7 +213,9 @@ In addition to prediction results, we attempt to capture the underlyig software,
         You can also email Kamal Choudhary if needed (kamal.choudhary@nist.gov). However, we recommend using the GitHub issues for any questions/concerns.
        
     === "Citation"
-		@article{choudhary2020joint,
+                
+		```
+                @article{choudhary2020joint,
 		  title={The joint automated repository for various integrated simulations (JARVIS) for data-driven materials design},
 		  author={Choudhary, Kamal and Garrity, Kevin F and Reid, Andrew CE and DeCost, Brian and Biacchi, Adam J and Hight Walker, Angela R and Trautt, Zachary and Hattrick-Simpers, Jason and Kusne, A Gilad and Centrone, Andrea and others},
 		  journal={npj computational materials},
@@ -223,6 +225,7 @@ In addition to prediction results, we attempt to capture the underlyig software,
 		  year={2020},
 		  publisher={Nature Publishing Group UK London}
 		}
+                ```
  
 # Example benchmarks
 
@@ -313,7 +316,7 @@ python setup.py develop
 
 
 
-<!--summary_table--><table style="width:100%" id="j_table"><thead><td>Methods</td><td>SinglePropertyPrediction</td><td>SinglePropertyClass</td><td>MLFF</td><td>TextClass</td><td>ImageClass</td><td>Spectra</td><td>EigenSolver</td><tr><td>AI</td><td><a href="./AI/SinglePropertyPrediction" target="_blank">120</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">7</a></td><td><a href="./AI/MLFF" target="_blank">4</a></td><td><a href="./AI/TextClass" target="_blank">18</a></td><td><a href="./AI/ImageClass" target="_blank">1</a></td><td><a href="./AI/Spectra" target="_blank">1</a></td><td>-</td><tr><tr><td>ES</td><td><a href="./ES/SinglePropertyPrediction" target="_blank">501</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./ES/Spectra" target="_blank">10</a></td><td>-</td><tr><tr><td>MLFF</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><tr><tr><td>QC</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./QC/EigenSolver" target="_blank">1</a></td><tr><tr><td>EXP</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./EXP/Spectra" target="_blank">1</a></td><td>-</td><tr></table>
+<!--summary_table--><table style="width:100%" id="j_table"><thead><td>Methods</td><td>SinglePropertyPrediction</td><td>SinglePropertyClass</td><td>MLFF</td><td>TextClass</td><td>ImageClass</td><td>Spectra</td><td>EigenSolver</td><tr><td>AI</td><td><a href="./AI/SinglePropertyPrediction" target="_blank">120</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">7</a></td><td><a href="./AI/MLFF" target="_blank">4</a></td><td><a href="./AI/TextClass" target="_blank">18</a></td><td><a href="./AI/ImageClass" target="_blank">1</a></td><td><a href="./AI/Spectra" target="_blank">1</a></td><td>-</td><tr><tr><td>ES</td><td><a href="./ES/SinglePropertyPrediction" target="_blank">501</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./ES/Spectra" target="_blank">10</a></td><td>-</td><tr><tr><td>FF</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><tr><tr><td>QC</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./QC/EigenSolver" target="_blank">1</a></td><tr><tr><td>EXP</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./EXP/Spectra" target="_blank">1</a></td><td>-</td><tr></table>
 
 # License
    This template is served under the NIST license.  

@@ -1,0 +1,83 @@
+Training-Epoch:1  Avg acc: 62.96 Avg loss: 0.99
+Validation-Epoch: 1  Avg acc: 61.84 Avg loss: 0.99
+Training-Epoch:2  Avg acc: 68.57 Avg loss: 0.80
+Validation-Epoch: 2  Avg acc: 69.01 Avg loss: 0.82
+Training-Epoch:3  Avg acc: 68.57 Avg loss: 0.83
+Validation-Epoch: 3  Avg acc: 68.66 Avg loss: 0.84
+Training-Epoch:4  Avg acc: 70.30 Avg loss: 0.75
+Validation-Epoch: 4  Avg acc: 69.36 Avg loss: 0.77
+Training-Epoch:5  Avg acc: 67.78 Avg loss: 0.94
+Validation-Epoch: 5  Avg acc: 68.79 Avg loss: 0.97
+Training-Epoch:6  Avg acc: 76.23 Avg loss: 0.64
+Validation-Epoch: 6  Avg acc: 74.04 Avg loss: 0.67
+Training-Epoch:7  Avg acc: 74.26 Avg loss: 0.67
+Validation-Epoch: 7  Avg acc: 72.60 Avg loss: 0.73
+Training-Epoch:8  Avg acc: 78.67 Avg loss: 0.61
+Validation-Epoch: 8  Avg acc: 77.53 Avg loss: 0.65
+Training-Epoch:9  Avg acc: 77.11 Avg loss: 0.64
+Validation-Epoch: 9  Avg acc: 75.79 Avg loss: 0.67
+Training-Epoch:10  Avg acc: 78.91 Avg loss: 0.63
+Validation-Epoch: 10  Avg acc: 77.75 Avg loss: 0.71
+Training-Epoch:11  Avg acc: 80.50 Avg loss: 0.56
+Validation-Epoch: 11  Avg acc: 78.32 Avg loss: 0.62
+Training-Epoch:12  Avg acc: 81.61 Avg loss: 0.52
+Validation-Epoch: 12  Avg acc: 78.80 Avg loss: 0.59
+Training-Epoch:13  Avg acc: 81.84 Avg loss: 0.54
+Validation-Epoch: 13  Avg acc: 79.20 Avg loss: 0.61
+Training-Epoch:14  Avg acc: 83.08 Avg loss: 0.51
+Validation-Epoch: 14  Avg acc: 80.51 Avg loss: 0.61
+Training-Epoch:15  Avg acc: 81.33 Avg loss: 0.66
+Validation-Epoch: 15  Avg acc: 78.10 Avg loss: 0.72
+Training-Epoch:16  Avg acc: 83.93 Avg loss: 0.47
+Validation-Epoch: 16  Avg acc: 79.59 Avg loss: 0.60
+Training-Epoch:17  Avg acc: 85.28 Avg loss: 0.42
+Validation-Epoch: 17  Avg acc: 81.29 Avg loss: 0.56
+Training-Epoch:18  Avg acc: 83.72 Avg loss: 0.46
+Validation-Epoch: 18  Avg acc: 79.90 Avg loss: 0.57
+Training-Epoch:19  Avg acc: 86.99 Avg loss: 0.38
+Validation-Epoch: 19  Avg acc: 82.87 Avg loss: 0.53
+Training-Epoch:20  Avg acc: 86.05 Avg loss: 0.40
+Validation-Epoch: 20  Avg acc: 81.51 Avg loss: 0.57
+Training-Epoch:21  Avg acc: 87.70 Avg loss: 0.36
+Validation-Epoch: 21  Avg acc: 82.65 Avg loss: 0.54
+Training-Epoch:22  Avg acc: 87.32 Avg loss: 0.36
+Validation-Epoch: 22  Avg acc: 82.60 Avg loss: 0.54
+Training-Epoch:23  Avg acc: 85.65 Avg loss: 0.42
+Validation-Epoch: 23  Avg acc: 81.03 Avg loss: 0.60
+Training-Epoch:24  Avg acc: 88.23 Avg loss: 0.35
+Validation-Epoch: 24  Avg acc: 82.91 Avg loss: 0.55
+Training-Epoch:25  Avg acc: 89.06 Avg loss: 0.33
+Validation-Epoch: 25  Avg acc: 82.65 Avg loss: 0.54
+Training-Epoch:26  Avg acc: 88.53 Avg loss: 0.34
+Validation-Epoch: 26  Avg acc: 82.52 Avg loss: 0.62
+Training-Epoch:27  Avg acc: 89.25 Avg loss: 0.32
+Validation-Epoch: 27  Avg acc: 82.34 Avg loss: 0.58
+Training-Epoch:28  Avg acc: 89.11 Avg loss: 0.31
+Validation-Epoch: 28  Avg acc: 81.29 Avg loss: 0.57
+Training-Epoch:29  Avg acc: 90.41 Avg loss: 0.28
+Validation-Epoch: 29  Avg acc: 82.87 Avg loss: 0.55
+Training-Epoch:30  Avg acc: 91.10 Avg loss: 0.26
+Validation-Epoch: 30  Avg acc: 82.08 Avg loss: 0.57
+Training-Epoch:31  Avg acc: 90.67 Avg loss: 0.28
+Validation-Epoch: 31  Avg acc: 82.17 Avg loss: 0.55
+Training-Epoch:32  Avg acc: 90.70 Avg loss: 0.26
+Validation-Epoch: 32  Avg acc: 82.56 Avg loss: 0.57
+Training-Epoch:33  Avg acc: 90.99 Avg loss: 0.28
+Validation-Epoch: 33  Avg acc: 82.95 Avg loss: 0.65
+Training-Epoch:34  Avg acc: 91.39 Avg loss: 0.25
+Validation-Epoch: 34  Avg acc: 83.87 Avg loss: 0.64
+Training-Epoch:35  Avg acc: 92.52 Avg loss: 0.22
+Validation-Epoch: 35  Avg acc: 83.22 Avg loss: 0.58
+Training-Epoch:36  Avg acc: 92.90 Avg loss: 0.19
+Validation-Epoch: 36  Avg acc: 82.95 Avg loss: 0.67
+Training-Epoch:37  Avg acc: 93.15 Avg loss: 0.20
+Validation-Epoch: 37  Avg acc: 83.22 Avg loss: 0.60
+Training-Epoch:38  Avg acc: 93.95 Avg loss: 0.18
+Validation-Epoch: 38  Avg acc: 83.74 Avg loss: 0.67
+Training-Epoch:39  Avg acc: 93.35 Avg loss: 0.19
+Validation-Epoch: 39  Avg acc: 83.04 Avg loss: 0.66
+CM [[0.9625     0.         0.00625    0.0109375  0.0203125 ]
+ [0.0026178  0.97643979 0.0078534  0.0104712  0.0026178 ]
+ [0.01943199 0.05829596 0.8490284  0.00298954 0.07025411]
+ [0.43258427 0.07865169 0.01123596 0.33707865 0.14044944]
+ [0.09307876 0.01670644 0.16229117 0.05250597 0.67541766]]
