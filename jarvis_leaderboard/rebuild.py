@@ -229,7 +229,7 @@ for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
           jid_url = '<a href="'+'https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/'+jid+'.xml '+'" target="_blank">'+jid+'</a>'
           notes+=', '+jid_url
           
-    print ('bench_name', bench_name)    
+    # print ('bench_name', bench_name)    
     # print(
     #    fname,
     #    data_split,
@@ -243,7 +243,7 @@ for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
     # )
     with open(md_path, "r") as file:
         filedata = file.read().splitlines()
-    print('names',i)
+    #print('names',i)
     # print()
     res = get_metric_value(
         submod=submod,
