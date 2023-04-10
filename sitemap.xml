@@ -211,6 +211,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/AI/SinglePropertyPrediction/formula_energy/</loc>
+         <lastmod>2023-04-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/usnistgov/jarvis_leaderboard/AI/SinglePropertyPrediction/gap/</loc>
          <lastmod>2023-04-10</lastmod>
          <changefreq>daily</changefreq>
