@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH --time=59:00:00
+#SBATCH --time=8:00:00
 #SBATCH --mem=80G
 #SBATCH --gres=gpu:1
-#SBATCH --partition=general,batch,singlegpu
+#SBATCH --partition=interactive,general,batch,singlegpu
 #SBATCH --error=job.err
 #SBATCH --output=job.out
 . ~/.bashrc
