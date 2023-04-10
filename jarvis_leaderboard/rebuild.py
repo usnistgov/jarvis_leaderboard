@@ -778,6 +778,8 @@ homepage = [
     "MLFF-test-energy-alignn_ff_db-AI-mae",
     "ImageClass-test-bravais_class-stem_2d_image-AI-acc",
     "TextClass-test-categories-arXiv-AI-acc",
+    "SinglePropertyPrediction-test-bulk_modulus_JVASP_816_Al-dft_3d-FF-mae",
+    "SinglePropertyPrediction-test-bulk_modulus_JVASP_816_Al-dft_3d-ES-mae",
     "SinglePropertyPrediction-test-bulk_modulus-dft_3d-ES-mae",
     "SinglePropertyPrediction-test-bulk_modulus_JVASP_1002_Si-dft_3d-ES-mae",
     "SinglePropertyPrediction-test-bandgap-dft_3d-ES-mae",
@@ -798,9 +800,15 @@ print(x, len(x))
 update_individual_index_md(md_path="docs/index.md", homepage=homepage)
 # update_individual_index_md(md_path="docs/index.md",homepage=sorted(x))
 update_individual_index_md(md_path="docs/ES/index.md", key="ES")
+update_individual_index_md(md_path="docs/FF/index.md", key="FF")
 update_individual_index_md(
     md_path="docs/ES/SinglePropertyPrediction/index.md",
     key="ES",
+    extra_key="SinglePropertyPrediction",
+)
+update_individual_index_md(
+    md_path="docs/FF/SinglePropertyPrediction/index.md",
+    key="FF",
     extra_key="SinglePropertyPrediction",
 )
 update_individual_index_md(

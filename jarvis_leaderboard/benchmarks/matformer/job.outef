@@ -1,0 +1,1047 @@
+name='matformer' conv_layers=5 edge_layers=0 atom_input_features=92 edge_features=128 triplet_input_features=40 node_features=128 fc_layers=1 fc_features=128 output_features=1 node_layer_head=4 edge_layer_head=4 nn_based=False link='identity' zero_inflated=False use_angle=False angle_lattice=False classification=False
+{'dataset': 'dft_3d', 'target': 'exfoliation_energy', 'epochs': 50, 'batch_size': 64, 'weight_decay': 1e-05, 'learning_rate': 0.001, 'criterion': 'mse', 'optimizer': 'adamw', 'scheduler': 'onecycle', 'save_dataloader': False, 'pin_memory': False, 'write_predictions': True, 'num_workers': 10, 'classification_threshold': None, 'atom_features': 'cgcnn', 'model': {'name': 'matformer', 'use_angle': False}, 'matrix_input': False, 'pyg_input': True, 'use_lattice': True, 'use_angle': False, 'neighbor_strategy': 'k-nearest', 'output_dir': 'out_exfoliation_energy'}
+config:
+{'atom_features': 'cgcnn',
+ 'batch_size': 64,
+ 'classification_threshold': None,
+ 'criterion': 'mse',
+ 'cutoff': 8.0,
+ 'dataset': 'dft_3d',
+ 'distributed': False,
+ 'epochs': 50,
+ 'filename': 'sample',
+ 'id_tag': 'jid',
+ 'keep_data_order': False,
+ 'learning_rate': 0.001,
+ 'log_tensorboard': False,
+ 'matrix_input': False,
+ 'max_neighbors': 12,
+ 'model': {'angle_lattice': False,
+           'atom_input_features': 92,
+           'classification': False,
+           'conv_layers': 5,
+           'edge_features': 128,
+           'edge_layer_head': 4,
+           'edge_layers': 0,
+           'fc_features': 128,
+           'fc_layers': 1,
+           'link': 'identity',
+           'name': 'matformer',
+           'nn_based': False,
+           'node_features': 128,
+           'node_layer_head': 4,
+           'output_features': 1,
+           'triplet_input_features': 40,
+           'use_angle': False,
+           'zero_inflated': False},
+ 'n_early_stopping': None,
+ 'n_test': None,
+ 'n_train': None,
+ 'n_val': None,
+ 'neighbor_strategy': 'k-nearest',
+ 'num_workers': 10,
+ 'optimizer': 'adamw',
+ 'output_dir': 'out_exfoliation_energy',
+ 'pin_memory': False,
+ 'progress': True,
+ 'pyg_input': True,
+ 'random_seed': 123,
+ 'save_dataloader': False,
+ 'scheduler': 'onecycle',
+ 'standard_scalar_and_pca': False,
+ 'store_outputs': True,
+ 'target': 'exfoliation_energy',
+ 'target_multiplication_factor': None,
+ 'test_ratio': 0.1,
+ 'train_ratio': 0.8,
+ 'use_angle': False,
+ 'use_canonize': True,
+ 'use_lattice': True,
+ 'val_ratio': 0.1,
+ 'version': '5a3009ec0359b75304ab9e413dd0577ffd022628',
+ 'warmup_steps': 2000,
+ 'weight_decay': 1e-05,
+ 'write_checkpoint': True,
+ 'write_predictions': True}
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+MAX val: 948.93
+MIN val: 0.03
+MAD: 62.629814227293544
+Baseline MAE: 61.033631528964854
+data range 948.93 0.03
+./saved_data/train_datatest_graph_angle.pkl
+graphs not saved
+mean 112.662163 std 115.449341
+normalize using training mean 112.662154 and std 115.360502
+warning: could not load CGCNN features for 103
+Setting it to max atomic number available here, 103
+warning: could not load CGCNN features for 101
+Setting it to max atomic number available here, 103
+warning: could not load CGCNN features for 102
+Setting it to max atomic number available here, 103
+building line graphs
+data range 388.51 18.3
+./saved_data/val_datatest_graph_angle.pkl
+graphs not saved
+mean 102.074806 std 63.820377
+normalize using training mean 112.662154 and std 115.360502
+building line graphs
+data range 903.94 0.95
+./saved_data/test_datatest_graph_angle.pkl
+graphs not saved
+mean 107.253204 std 119.360497
+normalize using training mean 112.662154 and std 115.360502
+building line graphs
+n_train: 650
+n_val: 81
+n_test: 81
+config:
+{'angle_lattice': False,
+ 'atom_input_features': 92,
+ 'classification': False,
+ 'conv_layers': 5,
+ 'edge_features': 128,
+ 'edge_layer_head': 4,
+ 'edge_layers': 0,
+ 'fc_features': 128,
+ 'fc_layers': 1,
+ 'link': 'identity',
+ 'name': 'matformer',
+ 'nn_based': False,
+ 'node_features': 128,
+ 'node_layer_head': 4,
+ 'output_features': 1,
+ 'triplet_input_features': 40,
+ 'use_angle': False,
+ 'zero_inflated': False}
+Val_MAE: 44.7243
+Train_MAE: -1.0000
+Val_MAE: 46.6923
+Train_MAE: -1.0000
+Val_MAE: 54.3182
+Train_MAE: -1.0000
+Val_MAE: 55.4969
+Train_MAE: -1.0000
+Val_MAE: 38.7039
+Train_MAE: -1.0000
+Val_MAE: 40.7669
+Train_MAE: -1.0000
+Val_MAE: 56.3232
+Train_MAE: -1.0000
+Val_MAE: 52.5379
+Train_MAE: -1.0000
+Val_MAE: 48.0220
+Train_MAE: -1.0000
+Val_MAE: 38.2292
+Train_MAE: -1.0000
+Val_MAE: 68.6267
+Train_MAE: -1.0000
+Val_MAE: 783.9631
+Train_MAE: -1.0000
+Val_MAE: 40.3370
+Train_MAE: -1.0000
+Val_MAE: 607.3818
+Train_MAE: -1.0000
+Val_MAE: 55.6862
+Train_MAE: -1.0000
+Val_MAE: 72.7796
+Train_MAE: -1.0000
+Val_MAE: 62.4789
+Train_MAE: -1.0000
+Val_MAE: 45.0657
+Train_MAE: -1.0000
+Val_MAE: 43.0603
+Train_MAE: -1.0000
+Val_MAE: 52.9665
+Train_MAE: 49.9193
+Val_MAE: 89.6955
+Train_MAE: -1.0000
+Val_MAE: 54.6221
+Train_MAE: -1.0000
+Val_MAE: 66.4051
+Train_MAE: -1.0000
+Val_MAE: 40.7820
+Train_MAE: -1.0000
+Val_MAE: 88.0920
+Train_MAE: -1.0000
+Val_MAE: 56.0948
+Train_MAE: -1.0000
+Val_MAE: 38.7460
+Train_MAE: -1.0000
+Val_MAE: 49.1765
+Train_MAE: -1.0000
+Val_MAE: 62.4763
+Train_MAE: -1.0000
+Val_MAE: 56.6766
+Train_MAE: -1.0000
+Val_MAE: 42.1489
+Train_MAE: -1.0000
+Val_MAE: 47.4818
+Train_MAE: -1.0000
+Val_MAE: 45.6135
+Train_MAE: -1.0000
+Val_MAE: 51.7937
+Train_MAE: -1.0000
+Val_MAE: 49.3339
+Train_MAE: -1.0000
+Val_MAE: 44.4757
+Train_MAE: -1.0000
+Val_MAE: 45.5482
+Train_MAE: -1.0000
+Val_MAE: 57.9876
+Train_MAE: -1.0000
+Val_MAE: 48.8038
+Train_MAE: -1.0000
+Val_MAE: 45.9809
+Train_MAE: 21.1465
+Val_MAE: 44.4304
+Train_MAE: -1.0000
+Val_MAE: 46.7840
+Train_MAE: -1.0000
+Val_MAE: 48.1770
+Train_MAE: -1.0000
+Val_MAE: 48.3186
+Train_MAE: -1.0000
+Val_MAE: 47.6845
+Train_MAE: -1.0000
+Val_MAE: 47.2850
+Train_MAE: -1.0000
+Val_MAE: 47.0288
+Train_MAE: -1.0000
+Val_MAE: 47.0786
+Train_MAE: -1.0000
+Val_MAE: 46.8637
+Train_MAE: -1.0000
+Val_MAE: 47.1652
+Train_MAE: -1.0000
+Test MAE: 5959.640291224584
+train= {'loss': [0.36458113193511965, 0.07211562395095825], 'mae': [49.91931832923811, 21.146473289059557], 'neg_mae': [-49.91931832923811, -21.146473289059557]}
+validation= {'loss': [0.34412646293640137, 0.37879496812820435, 0.46585574746131897, 0.5089921355247498, 0.2819479703903198, 0.31846940517425537, 0.48584941029548645, 0.3780369460582733, 0.35771653056144714, 0.2669592797756195, 0.71092289686203, 47.1300048828125, 0.27810293436050415, 28.144392013549805, 0.6843883991241455, 1.0623420476913452, 0.6706944704055786, 0.4742186963558197, 0.4307679533958435, 0.5167466402053833, 1.6749629974365234, 0.6504490375518799, 1.0410057306289673, 0.2859760820865631, 2.076138734817505, 0.8064639568328857, 0.31225600838661194, 0.5169610381126404, 0.9454343318939209, 0.7744240760803223, 0.32025593519210815, 0.6042641997337341, 0.527198851108551, 0.6865024566650391, 0.6518043279647827, 0.5405662655830383, 0.6139783263206482, 0.9745158553123474, 0.7567896246910095, 0.6060541272163391, 0.5746678113937378, 0.6438298225402832, 0.704498291015625, 0.6863474249839783, 0.6619579195976257, 0.6512202620506287, 0.6589999198913574, 0.6624614596366882, 0.6602465510368347, 0.6687224507331848], 'mae': [44.72431337038599, 46.69226173785956, 54.318178983940754, 55.49685288059711, 38.70387156711941, 40.766880935312116, 56.32315472854796, 52.537853183998685, 48.02198808036026, 38.22921978559012, 68.62669892799042, 783.9630740629603, 40.33695079925677, 607.381774723783, 55.68621508163182, 72.77956852931676, 62.47893726795595, 45.06570441235381, 43.06028860235449, 52.96646312387768, 89.69551717779343, 54.622054451230554, 66.40508380405898, 40.78196005101389, 88.09202202924335, 56.094757352028076, 38.74603877051255, 49.17648932254803, 62.47634500775551, 56.67657537057062, 42.14894067936605, 47.481849067666474, 45.61349299924652, 51.79366822581915, 49.33391927856721, 44.47573487002447, 45.548232676799834, 57.98762987600421, 48.80376081144622, 45.98089259349066, 44.43041844866899, 46.784039438192195, 48.17703549484243, 48.31859215464749, 47.68450949476924, 47.28497825087876, 47.02877080438357, 47.07863915213877, 46.863691274165475, 47.16517732389651], 'neg_mae': [-44.72431337038599, -46.69226173785956, -54.318178983940754, -55.49685288059711, -38.70387156711941, -40.766880935312116, -56.32315472854796, -52.537853183998685, -48.02198808036026, -38.22921978559012, -68.62669892799042, -783.9630740629603, -40.33695079925677, -607.381774723783, -55.68621508163182, -72.77956852931676, -62.47893726795595, -45.06570441235381, -43.06028860235449, -52.96646312387768, -89.69551717779343, -54.622054451230554, -66.40508380405898, -40.78196005101389, -88.09202202924335, -56.094757352028076, -38.74603877051255, -49.17648932254803, -62.47634500775551, -56.67657537057062, -42.14894067936605, -47.481849067666474, -45.61349299924652, -51.79366822581915, -49.33391927856721, -44.47573487002447, -45.548232676799834, -57.98762987600421, -48.80376081144622, -45.98089259349066, -44.43041844866899, -46.784039438192195, -48.17703549484243, -48.31859215464749, -47.68450949476924, -47.28497825087876, -47.02877080438357, -47.07863915213877, -46.863691274165475, -47.16517732389651]}
+Toal time: 5028.130652427673
+
+
+
+TIME for training 5028.130825042725
+{'dataset': 'dft_3d', 'target': 'exfoliation_energy', 'epochs': 50, 'batch_size': 64, 'weight_decay': 1e-05, 'learning_rate': 0.001, 'criterion': 'mse', 'optimizer': 'adamw', 'scheduler': 'onecycle', 'save_dataloader': False, 'pin_memory': False, 'write_predictions': True, 'num_workers': 10, 'classification_threshold': None, 'atom_features': 'cgcnn', 'model': {'name': 'matformer', 'use_angle': False}, 'matrix_input': False, 'pyg_input': True, 'use_lattice': True, 'use_angle': False, 'neighbor_strategy': 'k-nearest', 'output_dir': 'out_formation_energy_peratom'}
+config:
+{'atom_features': 'cgcnn',
+ 'batch_size': 64,
+ 'classification_threshold': None,
+ 'criterion': 'mse',
+ 'cutoff': 8.0,
+ 'dataset': 'dft_3d',
+ 'distributed': False,
+ 'epochs': 50,
+ 'filename': 'sample',
+ 'id_tag': 'jid',
+ 'keep_data_order': False,
+ 'learning_rate': 0.001,
+ 'log_tensorboard': False,
+ 'matrix_input': False,
+ 'max_neighbors': 12,
+ 'model': {'angle_lattice': False,
+           'atom_input_features': 92,
+           'classification': False,
+           'conv_layers': 5,
+           'edge_features': 128,
+           'edge_layer_head': 4,
+           'edge_layers': 0,
+           'fc_features': 128,
+           'fc_layers': 1,
+           'link': 'identity',
+           'name': 'matformer',
+           'nn_based': False,
+           'node_features': 128,
+           'node_layer_head': 4,
+           'output_features': 1,
+           'triplet_input_features': 40,
+           'use_angle': False,
+           'zero_inflated': False},
+ 'n_early_stopping': None,
+ 'n_test': None,
+ 'n_train': None,
+ 'n_val': None,
+ 'neighbor_strategy': 'k-nearest',
+ 'num_workers': 10,
+ 'optimizer': 'adamw',
+ 'output_dir': 'out_formation_energy_peratom',
+ 'pin_memory': False,
+ 'progress': True,
+ 'pyg_input': True,
+ 'random_seed': 123,
+ 'save_dataloader': False,
+ 'scheduler': 'onecycle',
+ 'standard_scalar_and_pca': False,
+ 'store_outputs': True,
+ 'target': 'exfoliation_energy',
+ 'target_multiplication_factor': None,
+ 'test_ratio': 0.1,
+ 'train_ratio': 0.8,
+ 'use_angle': False,
+ 'use_canonize': True,
+ 'use_lattice': True,
+ 'val_ratio': 0.1,
+ 'version': '5a3009ec0359b75304ab9e413dd0577ffd022628',
+ 'warmup_steps': 2000,
+ 'weight_decay': 1e-05,
+ 'write_checkpoint': True,
+ 'write_predictions': True}
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+MAX val: 948.93
+MIN val: 0.03
+MAD: 62.629814227293544
+Baseline MAE: 61.033631528964854
+data range 948.93 0.03
+./saved_data/train_datatest_graph_angle.pkl
+graphs not saved
+mean 112.662163 std 115.449341
+normalize using training mean 112.662154 and std 115.360502
+building line graphs
+data range 388.51 18.3
+./saved_data/val_datatest_graph_angle.pkl
+graphs not saved
+mean 102.074806 std 63.820377
+normalize using training mean 112.662154 and std 115.360502
+building line graphs
+data range 903.94 0.95
+./saved_data/test_datatest_graph_angle.pkl
+graphs not saved
+mean 107.253204 std 119.360497
+normalize using training mean 112.662154 and std 115.360502
+building line graphs
+n_train: 650
+n_val: 81
+n_test: 81
+config:
+{'angle_lattice': False,
+ 'atom_input_features': 92,
+ 'classification': False,
+ 'conv_layers': 5,
+ 'edge_features': 128,
+ 'edge_layer_head': 4,
+ 'edge_layers': 0,
+ 'fc_features': 128,
+ 'fc_layers': 1,
+ 'link': 'identity',
+ 'name': 'matformer',
+ 'nn_based': False,
+ 'node_features': 128,
+ 'node_layer_head': 4,
+ 'output_features': 1,
+ 'triplet_input_features': 40,
+ 'use_angle': False,
+ 'zero_inflated': False}
+Val_MAE: 44.7243
+Train_MAE: -1.0000
+Val_MAE: 46.6923
+Train_MAE: -1.0000
+Val_MAE: 54.3182
+Train_MAE: -1.0000
+Val_MAE: 55.4969
+Train_MAE: -1.0000
+Val_MAE: 38.7039
+Train_MAE: -1.0000
+Val_MAE: 40.7669
+Train_MAE: -1.0000
+Val_MAE: 56.3232
+Train_MAE: -1.0000
+Val_MAE: 52.5379
+Train_MAE: -1.0000
+Val_MAE: 48.0220
+Train_MAE: -1.0000
+Val_MAE: 38.2292
+Train_MAE: -1.0000
+Val_MAE: 68.6267
+Train_MAE: -1.0000
+Val_MAE: 783.9631
+Train_MAE: -1.0000
+Val_MAE: 40.3370
+Train_MAE: -1.0000
+Val_MAE: 607.3818
+Train_MAE: -1.0000
+Val_MAE: 55.6862
+Train_MAE: -1.0000
+Val_MAE: 72.7796
+Train_MAE: -1.0000
+Val_MAE: 62.4789
+Train_MAE: -1.0000
+Val_MAE: 45.0657
+Train_MAE: -1.0000
+Val_MAE: 43.0603
+Train_MAE: -1.0000
+Val_MAE: 52.9665
+Train_MAE: 49.9193
+Val_MAE: 89.6955
+Train_MAE: -1.0000
+Val_MAE: 54.6221
+Train_MAE: -1.0000
+Val_MAE: 66.4051
+Train_MAE: -1.0000
+Val_MAE: 40.7820
+Train_MAE: -1.0000
+Val_MAE: 88.0920
+Train_MAE: -1.0000
+Val_MAE: 56.0948
+Train_MAE: -1.0000
+Val_MAE: 38.7460
+Train_MAE: -1.0000
+Val_MAE: 49.1765
+Train_MAE: -1.0000
+Val_MAE: 62.4763
+Train_MAE: -1.0000
+Val_MAE: 56.6766
+Train_MAE: -1.0000
+Val_MAE: 42.1489
+Train_MAE: -1.0000
+Val_MAE: 47.4818
+Train_MAE: -1.0000
+Val_MAE: 45.6135
+Train_MAE: -1.0000
+Val_MAE: 51.7937
+Train_MAE: -1.0000
+Val_MAE: 49.3339
+Train_MAE: -1.0000
+Val_MAE: 44.4757
+Train_MAE: -1.0000
+Val_MAE: 45.5482
+Train_MAE: -1.0000
+Val_MAE: 57.9876
+Train_MAE: -1.0000
+Val_MAE: 48.8038
+Train_MAE: -1.0000
+Val_MAE: 45.9809
+Train_MAE: 21.1465
+Val_MAE: 44.4304
+Train_MAE: -1.0000
+Val_MAE: 46.7840
+Train_MAE: -1.0000
+Val_MAE: 48.1770
+Train_MAE: -1.0000
+Val_MAE: 48.3186
+Train_MAE: -1.0000
+Val_MAE: 47.6845
+Train_MAE: -1.0000
+Val_MAE: 47.2850
+Train_MAE: -1.0000
+Val_MAE: 47.0288
+Train_MAE: -1.0000
+Val_MAE: 47.0786
+Train_MAE: -1.0000
+Val_MAE: 46.8637
+Train_MAE: -1.0000
+Val_MAE: 47.1652
+Train_MAE: -1.0000
+Test MAE: 5959.640291224584
+train= {'loss': [0.36458113193511965, 0.07211562395095825], 'mae': [49.91931832923811, 21.146473289059557], 'neg_mae': [-49.91931832923811, -21.146473289059557]}
+validation= {'loss': [0.34412646293640137, 0.37879496812820435, 0.46585574746131897, 0.5089921355247498, 0.2819479703903198, 0.31846940517425537, 0.48584941029548645, 0.3780369460582733, 0.35771653056144714, 0.2669592797756195, 0.71092289686203, 47.1300048828125, 0.27810293436050415, 28.144392013549805, 0.6843883991241455, 1.0623420476913452, 0.6706944704055786, 0.4742186963558197, 0.4307679533958435, 0.5167466402053833, 1.6749629974365234, 0.6504490375518799, 1.0410057306289673, 0.2859760820865631, 2.076138734817505, 0.8064639568328857, 0.31225600838661194, 0.5169610381126404, 0.9454343318939209, 0.7744240760803223, 0.32025593519210815, 0.6042641997337341, 0.527198851108551, 0.6865024566650391, 0.6518043279647827, 0.5405662655830383, 0.6139783263206482, 0.9745158553123474, 0.7567896246910095, 0.6060541272163391, 0.5746678113937378, 0.6438298225402832, 0.704498291015625, 0.6863474249839783, 0.6619579195976257, 0.6512202620506287, 0.6589999198913574, 0.6624614596366882, 0.6602465510368347, 0.6687224507331848], 'mae': [44.72431337038599, 46.69226173785956, 54.318178983940754, 55.49685288059711, 38.70387156711941, 40.766880935312116, 56.32315472854796, 52.537853183998685, 48.02198808036026, 38.22921978559012, 68.62669892799042, 783.9630740629603, 40.33695079925677, 607.381774723783, 55.68621508163182, 72.77956852931676, 62.47893726795595, 45.06570441235381, 43.06028860235449, 52.96646312387768, 89.69551717779343, 54.622054451230554, 66.40508380405898, 40.78196005101389, 88.09202202924335, 56.094757352028076, 38.74603877051255, 49.17648932254803, 62.47634500775551, 56.67657537057062, 42.14894067936605, 47.481849067666474, 45.61349299924652, 51.79366822581915, 49.33391927856721, 44.47573487002447, 45.548232676799834, 57.98762987600421, 48.80376081144622, 45.98089259349066, 44.43041844866899, 46.784039438192195, 48.17703549484243, 48.31859215464749, 47.68450949476924, 47.28497825087876, 47.02877080438357, 47.07863915213877, 46.863691274165475, 47.16517732389651], 'neg_mae': [-44.72431337038599, -46.69226173785956, -54.318178983940754, -55.49685288059711, -38.70387156711941, -40.766880935312116, -56.32315472854796, -52.537853183998685, -48.02198808036026, -38.22921978559012, -68.62669892799042, -783.9630740629603, -40.33695079925677, -607.381774723783, -55.68621508163182, -72.77956852931676, -62.47893726795595, -45.06570441235381, -43.06028860235449, -52.96646312387768, -89.69551717779343, -54.622054451230554, -66.40508380405898, -40.78196005101389, -88.09202202924335, -56.094757352028076, -38.74603877051255, -49.17648932254803, -62.47634500775551, -56.67657537057062, -42.14894067936605, -47.481849067666474, -45.61349299924652, -51.79366822581915, -49.33391927856721, -44.47573487002447, -45.548232676799834, -57.98762987600421, -48.80376081144622, -45.98089259349066, -44.43041844866899, -46.784039438192195, -48.17703549484243, -48.31859215464749, -47.68450949476924, -47.28497825087876, -47.02877080438357, -47.07863915213877, -46.863691274165475, -47.16517732389651]}
+Toal time: 4837.808041095734
+
+
+
+TIME for training 4837.808344364166
+{'dataset': 'dft_3d', 'target': 'exfoliation_energy', 'epochs': 50, 'batch_size': 64, 'weight_decay': 1e-05, 'learning_rate': 0.001, 'criterion': 'mse', 'optimizer': 'adamw', 'scheduler': 'onecycle', 'save_dataloader': False, 'pin_memory': False, 'write_predictions': True, 'num_workers': 10, 'classification_threshold': None, 'atom_features': 'cgcnn', 'model': {'name': 'matformer', 'use_angle': False}, 'matrix_input': False, 'pyg_input': True, 'use_lattice': True, 'use_angle': False, 'neighbor_strategy': 'k-nearest', 'output_dir': 'out_optb88vdw_bandgap'}
+config:
+{'atom_features': 'cgcnn',
+ 'batch_size': 64,
+ 'classification_threshold': None,
+ 'criterion': 'mse',
+ 'cutoff': 8.0,
+ 'dataset': 'dft_3d',
+ 'distributed': False,
+ 'epochs': 50,
+ 'filename': 'sample',
+ 'id_tag': 'jid',
+ 'keep_data_order': False,
+ 'learning_rate': 0.001,
+ 'log_tensorboard': False,
+ 'matrix_input': False,
+ 'max_neighbors': 12,
+ 'model': {'angle_lattice': False,
+           'atom_input_features': 92,
+           'classification': False,
+           'conv_layers': 5,
+           'edge_features': 128,
+           'edge_layer_head': 4,
+           'edge_layers': 0,
+           'fc_features': 128,
+           'fc_layers': 1,
+           'link': 'identity',
+           'name': 'matformer',
+           'nn_based': False,
+           'node_features': 128,
+           'node_layer_head': 4,
+           'output_features': 1,
+           'triplet_input_features': 40,
+           'use_angle': False,
+           'zero_inflated': False},
+ 'n_early_stopping': None,
+ 'n_test': None,
+ 'n_train': None,
+ 'n_val': None,
+ 'neighbor_strategy': 'k-nearest',
+ 'num_workers': 10,
+ 'optimizer': 'adamw',
+ 'output_dir': 'out_optb88vdw_bandgap',
+ 'pin_memory': False,
+ 'progress': True,
+ 'pyg_input': True,
+ 'random_seed': 123,
+ 'save_dataloader': False,
+ 'scheduler': 'onecycle',
+ 'standard_scalar_and_pca': False,
+ 'store_outputs': True,
+ 'target': 'exfoliation_energy',
+ 'target_multiplication_factor': None,
+ 'test_ratio': 0.1,
+ 'train_ratio': 0.8,
+ 'use_angle': False,
+ 'use_canonize': True,
+ 'use_lattice': True,
+ 'val_ratio': 0.1,
+ 'version': '5a3009ec0359b75304ab9e413dd0577ffd022628',
+ 'warmup_steps': 2000,
+ 'weight_decay': 1e-05,
+ 'write_checkpoint': True,
+ 'write_predictions': True}
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+MAX val: 948.93
+MIN val: 0.03
+MAD: 62.629814227293544
+Baseline MAE: 61.033631528964854
+data range 948.93 0.03
+./saved_data/train_datatest_graph_angle.pkl
+graphs not saved
+mean 112.662163 std 115.449341
+normalize using training mean 112.662154 and std 115.360502
+building line graphs
+data range 388.51 18.3
+./saved_data/val_datatest_graph_angle.pkl
+graphs not saved
+mean 102.074806 std 63.820377
+normalize using training mean 112.662154 and std 115.360502
+building line graphs
+data range 903.94 0.95
+./saved_data/test_datatest_graph_angle.pkl
+graphs not saved
+mean 107.253204 std 119.360497
+normalize using training mean 112.662154 and std 115.360502
+building line graphs
+n_train: 650
+n_val: 81
+n_test: 81
+config:
+{'angle_lattice': False,
+ 'atom_input_features': 92,
+ 'classification': False,
+ 'conv_layers': 5,
+ 'edge_features': 128,
+ 'edge_layer_head': 4,
+ 'edge_layers': 0,
+ 'fc_features': 128,
+ 'fc_layers': 1,
+ 'link': 'identity',
+ 'name': 'matformer',
+ 'nn_based': False,
+ 'node_features': 128,
+ 'node_layer_head': 4,
+ 'output_features': 1,
+ 'triplet_input_features': 40,
+ 'use_angle': False,
+ 'zero_inflated': False}
+Val_MAE: 44.7243
+Train_MAE: -1.0000
+Val_MAE: 46.6923
+Train_MAE: -1.0000
+Val_MAE: 54.3182
+Train_MAE: -1.0000
+Val_MAE: 55.4969
+Train_MAE: -1.0000
+Val_MAE: 38.7039
+Train_MAE: -1.0000
+Val_MAE: 40.7669
+Train_MAE: -1.0000
+Val_MAE: 56.3232
+Train_MAE: -1.0000
+Val_MAE: 52.5379
+Train_MAE: -1.0000
+Val_MAE: 48.0220
+Train_MAE: -1.0000
+Val_MAE: 38.2292
+Train_MAE: -1.0000
+Val_MAE: 68.6267
+Train_MAE: -1.0000
+Val_MAE: 783.9631
+Train_MAE: -1.0000
+Val_MAE: 40.3370
+Train_MAE: -1.0000
+Val_MAE: 607.3818
+Train_MAE: -1.0000
+Val_MAE: 55.6862
+Train_MAE: -1.0000
+Val_MAE: 72.7796
+Train_MAE: -1.0000
+Val_MAE: 62.4789
+Train_MAE: -1.0000
+Val_MAE: 45.0657
+Train_MAE: -1.0000
+Val_MAE: 43.0603
+Train_MAE: -1.0000
+Val_MAE: 52.9665
+Train_MAE: 49.9193
+Val_MAE: 89.6955
+Train_MAE: -1.0000
+Val_MAE: 54.6221
+Train_MAE: -1.0000
+Val_MAE: 66.4051
+Train_MAE: -1.0000
+Val_MAE: 40.7820
+Train_MAE: -1.0000
+Val_MAE: 88.0920
+Train_MAE: -1.0000
+Val_MAE: 56.0948
+Train_MAE: -1.0000
+Val_MAE: 38.7460
+Train_MAE: -1.0000
+Val_MAE: 49.1765
+Train_MAE: -1.0000
+Val_MAE: 62.4763
+Train_MAE: -1.0000
+Val_MAE: 56.6766
+Train_MAE: -1.0000
+Val_MAE: 42.1489
+Train_MAE: -1.0000
+Val_MAE: 47.4818
+Train_MAE: -1.0000
+Val_MAE: 45.6135
+Train_MAE: -1.0000
+Val_MAE: 51.7937
+Train_MAE: -1.0000
+Val_MAE: 49.3339
+Train_MAE: -1.0000
+Val_MAE: 44.4757
+Train_MAE: -1.0000
+Val_MAE: 45.5482
+Train_MAE: -1.0000
+Val_MAE: 57.9876
+Train_MAE: -1.0000
+Val_MAE: 48.8038
+Train_MAE: -1.0000
+Val_MAE: 45.9809
+Train_MAE: 21.1465
+Val_MAE: 44.4304
+Train_MAE: -1.0000
+Val_MAE: 46.7840
+Train_MAE: -1.0000
+Val_MAE: 48.1770
+Train_MAE: -1.0000
+Val_MAE: 48.3186
+Train_MAE: -1.0000
+Val_MAE: 47.6845
+Train_MAE: -1.0000
+Val_MAE: 47.2850
+Train_MAE: -1.0000
+Val_MAE: 47.0288
+Train_MAE: -1.0000
+Val_MAE: 47.0786
+Train_MAE: -1.0000
+Val_MAE: 46.8637
+Train_MAE: -1.0000
+Val_MAE: 47.1652
+Train_MAE: -1.0000
+Test MAE: 5959.640291224584
+train= {'loss': [0.36458113193511965, 0.07211562395095825], 'mae': [49.91931832923811, 21.146473289059557], 'neg_mae': [-49.91931832923811, -21.146473289059557]}
+validation= {'loss': [0.34412646293640137, 0.37879496812820435, 0.46585574746131897, 0.5089921355247498, 0.2819479703903198, 0.31846940517425537, 0.48584941029548645, 0.3780369460582733, 0.35771653056144714, 0.2669592797756195, 0.71092289686203, 47.1300048828125, 0.27810293436050415, 28.144392013549805, 0.6843883991241455, 1.0623420476913452, 0.6706944704055786, 0.4742186963558197, 0.4307679533958435, 0.5167466402053833, 1.6749629974365234, 0.6504490375518799, 1.0410057306289673, 0.2859760820865631, 2.076138734817505, 0.8064639568328857, 0.31225600838661194, 0.5169610381126404, 0.9454343318939209, 0.7744240760803223, 0.32025593519210815, 0.6042641997337341, 0.527198851108551, 0.6865024566650391, 0.6518043279647827, 0.5405662655830383, 0.6139783263206482, 0.9745158553123474, 0.7567896246910095, 0.6060541272163391, 0.5746678113937378, 0.6438298225402832, 0.704498291015625, 0.6863474249839783, 0.6619579195976257, 0.6512202620506287, 0.6589999198913574, 0.6624614596366882, 0.6602465510368347, 0.6687224507331848], 'mae': [44.72431337038599, 46.69226173785956, 54.318178983940754, 55.49685288059711, 38.70387156711941, 40.766880935312116, 56.32315472854796, 52.537853183998685, 48.02198808036026, 38.22921978559012, 68.62669892799042, 783.9630740629603, 40.33695079925677, 607.381774723783, 55.68621508163182, 72.77956852931676, 62.47893726795595, 45.06570441235381, 43.06028860235449, 52.96646312387768, 89.69551717779343, 54.622054451230554, 66.40508380405898, 40.78196005101389, 88.09202202924335, 56.094757352028076, 38.74603877051255, 49.17648932254803, 62.47634500775551, 56.67657537057062, 42.14894067936605, 47.481849067666474, 45.61349299924652, 51.79366822581915, 49.33391927856721, 44.47573487002447, 45.548232676799834, 57.98762987600421, 48.80376081144622, 45.98089259349066, 44.43041844866899, 46.784039438192195, 48.17703549484243, 48.31859215464749, 47.68450949476924, 47.28497825087876, 47.02877080438357, 47.07863915213877, 46.863691274165475, 47.16517732389651], 'neg_mae': [-44.72431337038599, -46.69226173785956, -54.318178983940754, -55.49685288059711, -38.70387156711941, -40.766880935312116, -56.32315472854796, -52.537853183998685, -48.02198808036026, -38.22921978559012, -68.62669892799042, -783.9630740629603, -40.33695079925677, -607.381774723783, -55.68621508163182, -72.77956852931676, -62.47893726795595, -45.06570441235381, -43.06028860235449, -52.96646312387768, -89.69551717779343, -54.622054451230554, -66.40508380405898, -40.78196005101389, -88.09202202924335, -56.094757352028076, -38.74603877051255, -49.17648932254803, -62.47634500775551, -56.67657537057062, -42.14894067936605, -47.481849067666474, -45.61349299924652, -51.79366822581915, -49.33391927856721, -44.47573487002447, -45.548232676799834, -57.98762987600421, -48.80376081144622, -45.98089259349066, -44.43041844866899, -46.784039438192195, -48.17703549484243, -48.31859215464749, -47.68450949476924, -47.28497825087876, -47.02877080438357, -47.07863915213877, -46.863691274165475, -47.16517732389651]}
+Toal time: 4952.429392337799
+
+
+
+TIME for training 4952.429732084274
+{'dataset': 'dft_3d', 'target': 'exfoliation_energy', 'epochs': 50, 'batch_size': 64, 'weight_decay': 1e-05, 'learning_rate': 0.001, 'criterion': 'mse', 'optimizer': 'adamw', 'scheduler': 'onecycle', 'save_dataloader': False, 'pin_memory': False, 'write_predictions': True, 'num_workers': 10, 'classification_threshold': None, 'atom_features': 'cgcnn', 'model': {'name': 'matformer', 'use_angle': False}, 'matrix_input': False, 'pyg_input': True, 'use_lattice': True, 'use_angle': False, 'neighbor_strategy': 'k-nearest', 'output_dir': 'out_bulk_modulus_kv'}
+config:
+{'atom_features': 'cgcnn',
+ 'batch_size': 64,
+ 'classification_threshold': None,
+ 'criterion': 'mse',
+ 'cutoff': 8.0,
+ 'dataset': 'dft_3d',
+ 'distributed': False,
+ 'epochs': 50,
+ 'filename': 'sample',
+ 'id_tag': 'jid',
+ 'keep_data_order': False,
+ 'learning_rate': 0.001,
+ 'log_tensorboard': False,
+ 'matrix_input': False,
+ 'max_neighbors': 12,
+ 'model': {'angle_lattice': False,
+           'atom_input_features': 92,
+           'classification': False,
+           'conv_layers': 5,
+           'edge_features': 128,
+           'edge_layer_head': 4,
+           'edge_layers': 0,
+           'fc_features': 128,
+           'fc_layers': 1,
+           'link': 'identity',
+           'name': 'matformer',
+           'nn_based': False,
+           'node_features': 128,
+           'node_layer_head': 4,
+           'output_features': 1,
+           'triplet_input_features': 40,
+           'use_angle': False,
+           'zero_inflated': False},
+ 'n_early_stopping': None,
+ 'n_test': None,
+ 'n_train': None,
+ 'n_val': None,
+ 'neighbor_strategy': 'k-nearest',
+ 'num_workers': 10,
+ 'optimizer': 'adamw',
+ 'output_dir': 'out_bulk_modulus_kv',
+ 'pin_memory': False,
+ 'progress': True,
+ 'pyg_input': True,
+ 'random_seed': 123,
+ 'save_dataloader': False,
+ 'scheduler': 'onecycle',
+ 'standard_scalar_and_pca': False,
+ 'store_outputs': True,
+ 'target': 'exfoliation_energy',
+ 'target_multiplication_factor': None,
+ 'test_ratio': 0.1,
+ 'train_ratio': 0.8,
+ 'use_angle': False,
+ 'use_canonize': True,
+ 'use_lattice': True,
+ 'val_ratio': 0.1,
+ 'version': '5a3009ec0359b75304ab9e413dd0577ffd022628',
+ 'warmup_steps': 2000,
+ 'weight_decay': 1e-05,
+ 'write_checkpoint': True,
+ 'write_predictions': True}
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+MAX val: 948.93
+MIN val: 0.03
+MAD: 62.629814227293544
+Baseline MAE: 61.033631528964854
+data range 948.93 0.03
+./saved_data/train_datatest_graph_angle.pkl
+graphs not saved
+mean 112.662163 std 115.449341
+normalize using training mean 112.662154 and std 115.360502
+building line graphs
+data range 388.51 18.3
+./saved_data/val_datatest_graph_angle.pkl
+graphs not saved
+mean 102.074806 std 63.820377
+normalize using training mean 112.662154 and std 115.360502
+building line graphs
+data range 903.94 0.95
+./saved_data/test_datatest_graph_angle.pkl
+graphs not saved
+mean 107.253204 std 119.360497
+normalize using training mean 112.662154 and std 115.360502
+building line graphs
+n_train: 650
+n_val: 81
+n_test: 81
+config:
+{'angle_lattice': False,
+ 'atom_input_features': 92,
+ 'classification': False,
+ 'conv_layers': 5,
+ 'edge_features': 128,
+ 'edge_layer_head': 4,
+ 'edge_layers': 0,
+ 'fc_features': 128,
+ 'fc_layers': 1,
+ 'link': 'identity',
+ 'name': 'matformer',
+ 'nn_based': False,
+ 'node_features': 128,
+ 'node_layer_head': 4,
+ 'output_features': 1,
+ 'triplet_input_features': 40,
+ 'use_angle': False,
+ 'zero_inflated': False}
+Val_MAE: 44.7243
+Train_MAE: -1.0000
+Val_MAE: 46.6923
+Train_MAE: -1.0000
+Val_MAE: 54.3182
+Train_MAE: -1.0000
+Val_MAE: 55.4969
+Train_MAE: -1.0000
+Val_MAE: 38.7039
+Train_MAE: -1.0000
+Val_MAE: 40.7669
+Train_MAE: -1.0000
+Val_MAE: 56.3232
+Train_MAE: -1.0000
+Val_MAE: 52.5379
+Train_MAE: -1.0000
+Val_MAE: 48.0220
+Train_MAE: -1.0000
+Val_MAE: 38.2292
+Train_MAE: -1.0000
+Val_MAE: 68.6267
+Train_MAE: -1.0000
+Val_MAE: 783.9631
+Train_MAE: -1.0000
+Val_MAE: 40.3370
+Train_MAE: -1.0000
+Val_MAE: 607.3818
+Train_MAE: -1.0000
+Val_MAE: 55.6862
+Train_MAE: -1.0000
+Val_MAE: 72.7796
+Train_MAE: -1.0000
+Val_MAE: 62.4789
+Train_MAE: -1.0000
+Val_MAE: 45.0657
+Train_MAE: -1.0000
+Val_MAE: 43.0603
+Train_MAE: -1.0000
+Val_MAE: 52.9665
+Train_MAE: 49.9193
+Val_MAE: 89.6955
+Train_MAE: -1.0000
+Val_MAE: 54.6221
+Train_MAE: -1.0000
+Val_MAE: 66.4051
+Train_MAE: -1.0000
+Val_MAE: 40.7820
+Train_MAE: -1.0000
+Val_MAE: 88.0920
+Train_MAE: -1.0000
+Val_MAE: 56.0948
+Train_MAE: -1.0000
+Val_MAE: 38.7460
+Train_MAE: -1.0000
+Val_MAE: 49.1765
+Train_MAE: -1.0000
+Val_MAE: 62.4763
+Train_MAE: -1.0000
+Val_MAE: 56.6766
+Train_MAE: -1.0000
+Val_MAE: 42.1489
+Train_MAE: -1.0000
+Val_MAE: 47.4818
+Train_MAE: -1.0000
+Val_MAE: 45.6135
+Train_MAE: -1.0000
+Val_MAE: 51.7937
+Train_MAE: -1.0000
+Val_MAE: 49.3339
+Train_MAE: -1.0000
+Val_MAE: 44.4757
+Train_MAE: -1.0000
+Val_MAE: 45.5482
+Train_MAE: -1.0000
+Val_MAE: 57.9876
+Train_MAE: -1.0000
+Val_MAE: 48.8038
+Train_MAE: -1.0000
+Val_MAE: 45.9809
+Train_MAE: 21.1465
+Val_MAE: 44.4304
+Train_MAE: -1.0000
+Val_MAE: 46.7840
+Train_MAE: -1.0000
+Val_MAE: 48.1770
+Train_MAE: -1.0000
+Val_MAE: 48.3186
+Train_MAE: -1.0000
+Val_MAE: 47.6845
+Train_MAE: -1.0000
+Val_MAE: 47.2850
+Train_MAE: -1.0000
+Val_MAE: 47.0288
+Train_MAE: -1.0000
+Val_MAE: 47.0786
+Train_MAE: -1.0000
+Val_MAE: 46.8637
+Train_MAE: -1.0000
+Val_MAE: 47.1652
+Train_MAE: -1.0000
+Test MAE: 5959.640291224584
+train= {'loss': [0.36458113193511965, 0.07211562395095825], 'mae': [49.91931832923811, 21.146473289059557], 'neg_mae': [-49.91931832923811, -21.146473289059557]}
+validation= {'loss': [0.34412646293640137, 0.37879496812820435, 0.46585574746131897, 0.5089921355247498, 0.2819479703903198, 0.31846940517425537, 0.48584941029548645, 0.3780369460582733, 0.35771653056144714, 0.2669592797756195, 0.71092289686203, 47.1300048828125, 0.27810293436050415, 28.144392013549805, 0.6843883991241455, 1.0623420476913452, 0.6706944704055786, 0.4742186963558197, 0.4307679533958435, 0.5167466402053833, 1.6749629974365234, 0.6504490375518799, 1.0410057306289673, 0.2859760820865631, 2.076138734817505, 0.8064639568328857, 0.31225600838661194, 0.5169610381126404, 0.9454343318939209, 0.7744240760803223, 0.32025593519210815, 0.6042641997337341, 0.527198851108551, 0.6865024566650391, 0.6518043279647827, 0.5405662655830383, 0.6139783263206482, 0.9745158553123474, 0.7567896246910095, 0.6060541272163391, 0.5746678113937378, 0.6438298225402832, 0.704498291015625, 0.6863474249839783, 0.6619579195976257, 0.6512202620506287, 0.6589999198913574, 0.6624614596366882, 0.6602465510368347, 0.6687224507331848], 'mae': [44.72431337038599, 46.69226173785956, 54.318178983940754, 55.49685288059711, 38.70387156711941, 40.766880935312116, 56.32315472854796, 52.537853183998685, 48.02198808036026, 38.22921978559012, 68.62669892799042, 783.9630740629603, 40.33695079925677, 607.381774723783, 55.68621508163182, 72.77956852931676, 62.47893726795595, 45.06570441235381, 43.06028860235449, 52.96646312387768, 89.69551717779343, 54.622054451230554, 66.40508380405898, 40.78196005101389, 88.09202202924335, 56.094757352028076, 38.74603877051255, 49.17648932254803, 62.47634500775551, 56.67657537057062, 42.14894067936605, 47.481849067666474, 45.61349299924652, 51.79366822581915, 49.33391927856721, 44.47573487002447, 45.548232676799834, 57.98762987600421, 48.80376081144622, 45.98089259349066, 44.43041844866899, 46.784039438192195, 48.17703549484243, 48.31859215464749, 47.68450949476924, 47.28497825087876, 47.02877080438357, 47.07863915213877, 46.863691274165475, 47.16517732389651], 'neg_mae': [-44.72431337038599, -46.69226173785956, -54.318178983940754, -55.49685288059711, -38.70387156711941, -40.766880935312116, -56.32315472854796, -52.537853183998685, -48.02198808036026, -38.22921978559012, -68.62669892799042, -783.9630740629603, -40.33695079925677, -607.381774723783, -55.68621508163182, -72.77956852931676, -62.47893726795595, -45.06570441235381, -43.06028860235449, -52.96646312387768, -89.69551717779343, -54.622054451230554, -66.40508380405898, -40.78196005101389, -88.09202202924335, -56.094757352028076, -38.74603877051255, -49.17648932254803, -62.47634500775551, -56.67657537057062, -42.14894067936605, -47.481849067666474, -45.61349299924652, -51.79366822581915, -49.33391927856721, -44.47573487002447, -45.548232676799834, -57.98762987600421, -48.80376081144622, -45.98089259349066, -44.43041844866899, -46.784039438192195, -48.17703549484243, -48.31859215464749, -47.68450949476924, -47.28497825087876, -47.02877080438357, -47.07863915213877, -46.863691274165475, -47.16517732389651]}
+Toal time: 5003.33735537529
+
+
+
+TIME for training 5003.337637901306
+{'dataset': 'dft_3d', 'target': 'exfoliation_energy', 'epochs': 50, 'batch_size': 64, 'weight_decay': 1e-05, 'learning_rate': 0.001, 'criterion': 'mse', 'optimizer': 'adamw', 'scheduler': 'onecycle', 'save_dataloader': False, 'pin_memory': False, 'write_predictions': True, 'num_workers': 10, 'classification_threshold': None, 'atom_features': 'cgcnn', 'model': {'name': 'matformer', 'use_angle': False}, 'matrix_input': False, 'pyg_input': True, 'use_lattice': True, 'use_angle': False, 'neighbor_strategy': 'k-nearest', 'output_dir': 'out_shear_modulus_gv'}
+config:
+{'atom_features': 'cgcnn',
+ 'batch_size': 64,
+ 'classification_threshold': None,
+ 'criterion': 'mse',
+ 'cutoff': 8.0,
+ 'dataset': 'dft_3d',
+ 'distributed': False,
+ 'epochs': 50,
+ 'filename': 'sample',
+ 'id_tag': 'jid',
+ 'keep_data_order': False,
+ 'learning_rate': 0.001,
+ 'log_tensorboard': False,
+ 'matrix_input': False,
+ 'max_neighbors': 12,
+ 'model': {'angle_lattice': False,
+           'atom_input_features': 92,
+           'classification': False,
+           'conv_layers': 5,
+           'edge_features': 128,
+           'edge_layer_head': 4,
+           'edge_layers': 0,
+           'fc_features': 128,
+           'fc_layers': 1,
+           'link': 'identity',
+           'name': 'matformer',
+           'nn_based': False,
+           'node_features': 128,
+           'node_layer_head': 4,
+           'output_features': 1,
+           'triplet_input_features': 40,
+           'use_angle': False,
+           'zero_inflated': False},
+ 'n_early_stopping': None,
+ 'n_test': None,
+ 'n_train': None,
+ 'n_val': None,
+ 'neighbor_strategy': 'k-nearest',
+ 'num_workers': 10,
+ 'optimizer': 'adamw',
+ 'output_dir': 'out_shear_modulus_gv',
+ 'pin_memory': False,
+ 'progress': True,
+ 'pyg_input': True,
+ 'random_seed': 123,
+ 'save_dataloader': False,
+ 'scheduler': 'onecycle',
+ 'standard_scalar_and_pca': False,
+ 'store_outputs': True,
+ 'target': 'exfoliation_energy',
+ 'target_multiplication_factor': None,
+ 'test_ratio': 0.1,
+ 'train_ratio': 0.8,
+ 'use_angle': False,
+ 'use_canonize': True,
+ 'use_lattice': True,
+ 'val_ratio': 0.1,
+ 'version': '5a3009ec0359b75304ab9e413dd0577ffd022628',
+ 'warmup_steps': 2000,
+ 'weight_decay': 1e-05,
+ 'write_checkpoint': True,
+ 'write_predictions': True}
+Obtaining 3D dataset 55k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Loading the zipfile...
+Loading completed.
+MAX val: 948.93
+MIN val: 0.03
+MAD: 62.629814227293544
+Baseline MAE: 61.033631528964854
+data range 948.93 0.03
+./saved_data/train_datatest_graph_angle.pkl
+graphs not saved
+mean 112.662163 std 115.449341
+normalize using training mean 112.662154 and std 115.360502
+building line graphs
+data range 388.51 18.3
+./saved_data/val_datatest_graph_angle.pkl
+graphs not saved
+mean 102.074806 std 63.820377
+normalize using training mean 112.662154 and std 115.360502
+building line graphs
+data range 903.94 0.95
+./saved_data/test_datatest_graph_angle.pkl
+graphs not saved
+mean 107.253204 std 119.360497
+normalize using training mean 112.662154 and std 115.360502
+building line graphs
+n_train: 650
+n_val: 81
+n_test: 81
+config:
+{'angle_lattice': False,
+ 'atom_input_features': 92,
+ 'classification': False,
+ 'conv_layers': 5,
+ 'edge_features': 128,
+ 'edge_layer_head': 4,
+ 'edge_layers': 0,
+ 'fc_features': 128,
+ 'fc_layers': 1,
+ 'link': 'identity',
+ 'name': 'matformer',
+ 'nn_based': False,
+ 'node_features': 128,
+ 'node_layer_head': 4,
+ 'output_features': 1,
+ 'triplet_input_features': 40,
+ 'use_angle': False,
+ 'zero_inflated': False}
+Val_MAE: 44.7243
+Train_MAE: -1.0000
+Val_MAE: 46.6923
+Train_MAE: -1.0000
+Val_MAE: 54.3182
+Train_MAE: -1.0000
+Val_MAE: 55.4969
+Train_MAE: -1.0000
+Val_MAE: 38.7039
+Train_MAE: -1.0000
+Val_MAE: 40.7669
+Train_MAE: -1.0000
+Val_MAE: 56.3232
+Train_MAE: -1.0000
+Val_MAE: 52.5379
+Train_MAE: -1.0000
+Val_MAE: 48.0220
+Train_MAE: -1.0000
+Val_MAE: 38.2292
+Train_MAE: -1.0000
+Val_MAE: 68.6267
+Train_MAE: -1.0000
+Val_MAE: 783.9631
+Train_MAE: -1.0000
+Val_MAE: 40.3370
+Train_MAE: -1.0000
+Val_MAE: 607.3818
+Train_MAE: -1.0000
+Val_MAE: 55.6862
+Train_MAE: -1.0000
+Val_MAE: 72.7796
+Train_MAE: -1.0000
+Val_MAE: 62.4789
+Train_MAE: -1.0000
+Val_MAE: 45.0657
+Train_MAE: -1.0000
+Val_MAE: 43.0603
+Train_MAE: -1.0000
+Val_MAE: 52.9665
+Train_MAE: 49.9193
+Val_MAE: 89.6955
+Train_MAE: -1.0000
+Val_MAE: 54.6221
+Train_MAE: -1.0000
+Val_MAE: 66.4051
+Train_MAE: -1.0000
+Val_MAE: 40.7820
+Train_MAE: -1.0000
