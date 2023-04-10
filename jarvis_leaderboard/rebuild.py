@@ -778,6 +778,7 @@ homepage = [
     "MLFF-test-energy-alignn_ff_db-AI-mae",
     "ImageClass-test-bravais_class-stem_2d_image-AI-acc",
     "TextClass-test-categories-arXiv-AI-acc",
+    "SinglePropertyPrediction-test-bulk_modulus_JVASP_816_Al-dft_3d-FF-mae",
     "SinglePropertyPrediction-test-bulk_modulus_JVASP_816_Al-dft_3d-ES-mae",
     "SinglePropertyPrediction-test-bulk_modulus-dft_3d-ES-mae",
     "SinglePropertyPrediction-test-bulk_modulus_JVASP_1002_Si-dft_3d-ES-mae",
