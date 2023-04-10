@@ -6,7 +6,7 @@
 -->
 # JARVIS Leaderboard
 
-This project provides benchmark-performances of various methods for materials science applications using the datasets available in [JARVIS-Tools databases](https://jarvis-tools.readthedocs.io/en/master/databases.html). Some of the methods are: [Artificial Intelligence (AI)](./AI), [Electronic Structure (ES)](./ES), [Qunatum Computation (QC)](./QC) and [Experiments (EXP)](./EXP). There are a variety of properties included in the benchmark.
+This project provides benchmark-performances of various methods for materials science applications using the datasets available in [JARVIS-Tools databases](https://jarvis-tools.readthedocs.io/en/master/databases.html). Some of the methods are: [Artificial Intelligence (AI)](./AI), [Electronic Structure (ES)](./ES), [Force-field (FF)](./FF), [Qunatum Computation (QC)](./QC) and [Experiments (EXP)](./EXP). There are a variety of properties included in the benchmark.
 In addition to prediction results, we attempt to capture the underlyig software, hardware and instrumental frameworks to enhance reproducibility. This project is a part of the [NIST-JARVIS](https://jarvis.nist.gov) infrastructure.
 
 <!--number_of_benchmarks--> - Number of benchmarks: 711
@@ -39,6 +39,8 @@ In addition to prediction results, we attempt to capture the underlyig software,
         + [Electronic Structure (ES)](./ES)
              + [SinglePropertyPrediction](./ES/SinglePropertyPrediction)
              + [Spectra](./ES/Spectra) 
+        + [Force-field (FF)](./FF)
+             + [SinglePropertyPrediction](./FF/SinglePropertyPrediction)
         + [Qunatum Computation (QC)](./QC)
              + [EigenSolver](./QC/EigenSolver)
         + [Experiments (EXP)](./EXP)
