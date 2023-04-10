@@ -1,0 +1,12 @@
+{"author_email": "knc6@nist.gov",
+ "database_version": "12-12-2022",
+ "date_submitted": "01-14-2023",
+ "harware_used": "dobby",
+ "language": "python",
+ "model_name": "JARVIS-FF",
+ "os": "linux",
+ "project_url": "https://jarvis.nist.gov/jarvisff/",
+ "doi":"https://www.nature.com/articles/sdata2016125",
+ "software_used": "jarvis-tools,numpy,scipy,torch,alignn",
+ "team_name": "JARVIS-FF",
+ "time_taken_seconds": 2739.455}
