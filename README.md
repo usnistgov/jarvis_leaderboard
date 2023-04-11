@@ -12,59 +12,6 @@ Website: https://pages.nist.gov/jarvis_leaderboard/
 # Directory tree structure preview
 ```
 ├── jarvis_leaderboard
-├── docs
-│   ├── AI
-│   │   ├── ImageClass
-│   │   │   ├── bravais_class.md
-│   │   ├── MLFF
-│   │   │   ├── energy.md
-│   │   ├── SinglePropertyClass
-│   │   │   ├── magmom_oszicar.md
-│   │   │   ├── mbj_bandgap.md
-│   │   │   ├── ...
-│   │   ├── SinglePropertyPrediction
-│   │   │   ├── formation_energy_peratom.md
-│   │   │   ├── Band_gap_HSE.md
-│   │   │   ├── HOMO.md
-│   │   │   ├── formula_energy.md
-│   │   │   └── ...
-│   │   ├── Spectra
-│   │   │   └── ph_dos.md
-│   │   ├── TextClass
-│   │   │   ├── categories.md
-│   │   └── index.md
-│   ├── ES
-│   │   ├── SinglePropertyPrediction
-│   │   │   ├── Tc_supercon_JVASP_1151_MgB2.md
-│   │   │   ├── bandgap_JVASP_1002_Si.md
-│   │   │   ├── epsx_JVASP_182_SiC.md
-│   │   │   ├── slme_JVASP_7757_CdTe.md
-│   │   │   └── ...
-│   │   ├── Spectra
-│   │   │   ├── dielectric_function_JVASP_1174_GaAs.md
-│   │   │   └── ...
-│   ├── EXP
-│   │   ├── Spectra
-│   │   │   ├── XRD_JVASP_19821_MgB2.md
-│   ├── FF
-│   │   ├── SinglePropertyPrediction
-│   │   │   ├── bulk_modulus_JVASP_1002_Si.md
-│   ├── QC
-│   │   ├── EigenSolver
-│   │   │   ├── electron_bands_JVASP_816_Al_WTBH.md
-│   ├── benchmarks
-│   │   ├── alignn_model
-│   │   │   ├── SinglePropertyPrediction-test-surface_area_m2g-hmof-AI-mae.csv.zip
-│   │   │   ├── SinglePropertyPrediction-test-void_fraction-hmof-AI-mae.csv.zip
-│   │   │   ├── Spectra-test-ph_dos-dft_3d-AI-multimae.csv.zip
-│   │   │   ├── run.sh
-│   │   │   ├── metadata.json
-│   │   │   ├── run.py
-│   │   ├── densenet_model
-│   │   │   ├── ImageClass-test-bravais_class-stem_2d_image-AI-acc.csv.zip
-│   │   │   ├── ...
-│   │   ├── vasp_optb88vdw
-│   │   │   └── ...
 │   ├── dataset
 │   │   ├── AI
 │   │   │   ├── ImageClass
@@ -74,36 +21,102 @@ Website: https://pages.nist.gov/jarvis_leaderboard/
 │   │   │   │   └── prepare.py
 │   │   │   ├── SinglePropertyClass
 │   │   │   │   ├── dft_3d_magmom_oszicar.json.zip
-│   │   │   │   ├── dft_3d_mbj_bandgap.json.zip
 │   │   │   │   └── ...
 │   │   │   ├── SinglePropertyPrediction
-│   │   │   │   ├── dft_3d_avg_elec_mass.json.zip
-│   │   │   │   ├── dft_3d_avg_hole_mass.json.zip
-│   │   │   │   └── ...
-│   │   │   ├── Spectra
-│   │   │   │   └── dft_3d_ph_dos.json.zip
+│   │   │   │   ├── dft_3d_exfoliation_energy.json.zip
+│   │   │   │   ├── dft_3d_formation_energy_peratom.json.zip
+│   │   │   │   ├── ...
 │   │   │   └── TextClass
 │   │   │       ├── arXiv_categories.json.zip
 │   │   │       └── pubchem_categories.json.zip
 │   │   ├── ES
 │   │   │   ├── SinglePropertyPrediction
-│   │   │   │   ├── dft_3d_Tc_supercon.json.zip
-│   │   │   │   ├── dft_3d_Tc_supercon_JVASP_1014_Ta.json.zip
+│   │   │   │   ├── dft_3d_Tc_supercon_JVASP_1151_MgB2.json.zip
+│   │   │   │   ├── ...
+│   │   │   │   └── prepare.py
 │   │   │   └── Spectra
 │   │   │       ├── dft_3d_dielectric_function.json.zip
-│   │   │       └── dft_3d_dielectric_function_JVASP_890_Ge.json.zip
+│   │   │       ├── ...
 │   │   ├── EXP
 │   │   │   └── Spectra
 │   │   │       └── dft_3d_XRD_JVASP_19821_MgB2.json.zip
 │   │   ├── FF
 │   │   │   └── SinglePropertyPrediction
-│   │   │       ├── dft_3d_bulk_modulus_JVASP_1002_Si.json.zip
-│   │   │       ├── dft_3d_bulk_modulus_JVASP_816_Al.json.zip
 │   │   │       └── dft_3d_bulk_modulus_JVASP_867_Cu.json.zip
 │   │   └── QC
 │   │       └── EigenSolver
 │   │           └── dft_3d_electron_bands_JVASP_816_Al_WTBH.json.zip
+│   ├── benchmarks
+│   │   ├── alignn_model
+│   │   │   ├── AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae.csv.zip
+│   │   │   ├── AI-SinglePropertyPrediction-formation_energy_peratom-dft_3d-test-mae.csv.zip
+│   │   │   ├── AI-Spectra-ph_dos-dft_3d-test-multimae.csv.zip
+│   │   │   ├── ...
+│   │   │   ├── metadata.json
+│   │   │   ├── run.py
+│   │   │   ├── run.sh
+│   │   ├── densenet_model
+│   │   │   ├── AI-ImageClass-bravais_class-stem_2d_image-test-acc.csv.zip
+│   │   │   ├── metadata.json
+│   │   │   └── run.sh
+│   │   ├── qe_pbesol_gbrv
+│   │   │   ├── ES-SinglePropertyPrediction-Tc_supercon_JVASP_1151_MgB2-dft_3d-test-mae.csv.zip
+│   │   │   └── metadata.json
+│   │   │   └── run.sh
+│   │   ├── qiskit_vqd_SU2
+│   │   │   ├── QC-EigenSolver-electron_bands_JVASP_816_Al_WTBH-dft_3d-test-multimae.csv.zip
+│   │   │   └── metadata.json
+│   │   ├── qmcpack_dmc_pbe
+│   │   │   ├── ES-SinglePropertyPrediction-bandgap_JVASP_1002_Si-dft_3d-test-mae.csv.zip
+│   │   │   ├── ...
+│   │   │   ├── metadata.json
+│   │   │   ├── run.py
+│   │   │   └── run.sh
+│   │   │   └── run.sh
+│   │   ├── ...
+│   │   │   ├── ...
+│   │   │   ├── ...
+├── docs
+│   ├── AI
+│   │   ├── ImageClass
+│   │   │   ├── bravais_class.md
+│   │   │   └── index.md
+│   │   ├── MLFF
+│   │   │   ├── energy.md
+│   │   │   └── index.md
+│   │   ├── SinglePropertyClass
+│   │   │   ├── index.md
+│   │   │   └── ...
+│   │   ├── SinglePropertyPrediction
+│   │   │   ├── Band_gap_HSE.md
+│   │   │   ├── exfoliation_energy.md
+│   │   │   ├── formation_energy_peratom.md
+│   │   │   ├── optb88vdw_bandgap.md
+│   │   │   └── ...
+│   │   ├── Spectra
+│   │   │   ├── index.md
+│   │   │   └── ph_dos.md
+│   │   ├── TextClass
+│   │   │   ├── categories.md
+│   │   │   └── index.md
+│   │   └── index.md
+│   ├── ES
+│   │   ├── SinglePropertyPrediction
+│   │   │   ├── Tc_supercon_JVASP_1151_MgB2.md
+│   │   │   ├── Tc_supercon_JVASP_11981_Nb3Al.md
+│   │   │   └── ...
+│   ├── populate_data.py
+│   ├── rebuild.py
+│   └── scripts
+│       ├── convert.py
+│       ├── format_data.py
+│       └── transform.py
+├── mkdocs.yml
+├── requirements.txt
 └── setup.py
+
+125 directories, 1367 files
+
 ```
 
 
