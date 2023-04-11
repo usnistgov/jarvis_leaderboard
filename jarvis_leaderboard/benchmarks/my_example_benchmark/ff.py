@@ -8,7 +8,7 @@ dff = df[df['ref']=='mp-134']
 #len(dff)
 
 
-llll=1
+lll=1
 count=0
 for i,ii in dff[['func','elastic_tensor_data','jid']].iterrows():
     try:
