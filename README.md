@@ -8,6 +8,117 @@ This project benchmarks the performances of various methods for materials scienc
 
 Website: https://pages.nist.gov/jarvis_leaderboard/
 
+
+# Directory tree structure preview
+```
+├── jarvis_leaderboard
+│   ├── dataset
+│   │   ├── AI
+│   │   │   ├── ImageClass
+│   │   │   │   └── stem_2d_image_bravais_class.json.zip
+│   │   │   ├── MLFF
+│   │   │   │   ├── alignn_ff_db_energy.json.zip
+│   │   │   │   └── prepare.py
+│   │   │   ├── SinglePropertyClass
+│   │   │   │   ├── dft_3d_magmom_oszicar.json.zip
+│   │   │   │   └── ...
+│   │   │   ├── SinglePropertyPrediction
+│   │   │   │   ├── dft_3d_exfoliation_energy.json.zip
+│   │   │   │   ├── dft_3d_formation_energy_peratom.json.zip
+│   │   │   │   ├── ...
+│   │   │   └── TextClass
+│   │   │       ├── arXiv_categories.json.zip
+│   │   │       └── pubchem_categories.json.zip
+│   │   ├── ES
+│   │   │   ├── SinglePropertyPrediction
+│   │   │   │   ├── dft_3d_Tc_supercon_JVASP_1151_MgB2.json.zip
+│   │   │   │   ├── ...
+│   │   │   │   └── prepare.py
+│   │   │   └── Spectra
+│   │   │       ├── dft_3d_dielectric_function.json.zip
+│   │   │       ├── ...
+│   │   ├── EXP
+│   │   │   └── Spectra
+│   │   │       └── dft_3d_XRD_JVASP_19821_MgB2.json.zip
+│   │   ├── FF
+│   │   │   └── SinglePropertyPrediction
+│   │   │       └── dft_3d_bulk_modulus_JVASP_867_Cu.json.zip
+│   │   └── QC
+│   │       └── EigenSolver
+│   │           └── dft_3d_electron_bands_JVASP_816_Al_WTBH.json.zip
+│   ├── benchmarks
+│   │   ├── alignn_model
+│   │   │   ├── AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae.csv.zip
+│   │   │   ├── AI-SinglePropertyPrediction-formation_energy_peratom-dft_3d-test-mae.csv.zip
+│   │   │   ├── AI-Spectra-ph_dos-dft_3d-test-multimae.csv.zip
+│   │   │   ├── ...
+│   │   │   ├── metadata.json
+│   │   │   ├── run.py
+│   │   │   ├── run.sh
+│   │   ├── densenet_model
+│   │   │   ├── AI-ImageClass-bravais_class-stem_2d_image-test-acc.csv.zip
+│   │   │   ├── metadata.json
+│   │   │   └── run.sh
+│   │   ├── qe_pbesol_gbrv
+│   │   │   ├── ES-SinglePropertyPrediction-Tc_supercon_JVASP_1151_MgB2-dft_3d-test-mae.csv.zip
+│   │   │   └── metadata.json
+│   │   │   └── run.sh
+│   │   ├── qiskit_vqd_SU2
+│   │   │   ├── QC-EigenSolver-electron_bands_JVASP_816_Al_WTBH-dft_3d-test-multimae.csv.zip
+│   │   │   └── metadata.json
+│   │   ├── qmcpack_dmc_pbe
+│   │   │   ├── ES-SinglePropertyPrediction-bandgap_JVASP_1002_Si-dft_3d-test-mae.csv.zip
+│   │   │   ├── ...
+│   │   │   ├── metadata.json
+│   │   │   ├── run.py
+│   │   │   └── run.sh
+│   │   │   └── run.sh
+│   │   ├── ...
+│   │   │   ├── ...
+│   │   │   ├── ...
+├── docs
+│   ├── AI
+│   │   ├── ImageClass
+│   │   │   ├── bravais_class.md
+│   │   │   └── index.md
+│   │   ├── MLFF
+│   │   │   ├── energy.md
+│   │   │   └── index.md
+│   │   ├── SinglePropertyClass
+│   │   │   ├── index.md
+│   │   │   └── ...
+│   │   ├── SinglePropertyPrediction
+│   │   │   ├── Band_gap_HSE.md
+│   │   │   ├── exfoliation_energy.md
+│   │   │   ├── formation_energy_peratom.md
+│   │   │   ├── optb88vdw_bandgap.md
+│   │   │   └── ...
+│   │   ├── Spectra
+│   │   │   ├── index.md
+│   │   │   └── ph_dos.md
+│   │   ├── TextClass
+│   │   │   ├── categories.md
+│   │   │   └── index.md
+│   │   └── index.md
+│   ├── ES
+│   │   ├── SinglePropertyPrediction
+│   │   │   ├── Tc_supercon_JVASP_1151_MgB2.md
+│   │   │   ├── Tc_supercon_JVASP_11981_Nb3Al.md
+│   │   │   └── ...
+│   ├── populate_data.py
+│   ├── rebuild.py
+│   └── scripts
+│       ├── convert.py
+│       ├── format_data.py
+│       └── transform.py
+├── mkdocs.yml
+├── requirements.txt
+└── setup.py
+
+
+```
+
+
 # Citation
 
 ```
