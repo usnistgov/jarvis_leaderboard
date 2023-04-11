@@ -115,7 +115,6 @@ Website: https://pages.nist.gov/jarvis_leaderboard/
 ├── requirements.txt
 └── setup.py
 
-125 directories, 1367 files
 
 ```
 
