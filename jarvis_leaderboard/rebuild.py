@@ -247,12 +247,11 @@ for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
     # print(i)
     fname = i.split("/")[-1].split(".csv.zip")[0]
     temp = fname.split("-")
-    # print ('temp',temp)
-    submod = temp[0]
-    data_split = temp[1]
+    submod = temp[1]
+    data_split = temp[4]
     prop = temp[2]
     dataset = temp[3]
-    method = temp[-2]
+    method = temp[0]
     metric = temp[-1]
     # print ('metric',metric)
     # print ('dataset',dataset)
@@ -291,14 +290,25 @@ for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
     temp = fname.split(
         "-"
     )  # ['SinglePropertyPrediction', 'test', 'bandgap', 'dft_3d_JVASP_1002_Si', 'ES', 'mae']
-    submod = temp[0]
-    data_split = temp[1]
-    prop = temp[2]
-    dataset = temp[3]
+    #submod = temp[0]
+    #data_split = temp[1]
+    #prop = temp[2]
+    #dataset = temp[3]
     # method = temp[4]
     # metric = temp[5]
-    method = temp[-2]
+    #method = temp[-2]
+    #metric = temp[-1]
+
+
+    submod = temp[1]
+    data_split = temp[4]
+    prop = temp[2]
+    dataset = temp[3]
+    method = temp[0]
     metric = temp[-1]
+
+
+
     team = i.split("/")[-2]
     md_filename = "../docs/" + method + "/" + submod + "/" + prop + ".md"
     md_path = os.path.join(root_dir, md_filename)
