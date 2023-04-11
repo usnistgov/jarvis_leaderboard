@@ -11,11 +11,10 @@ import numpy as np
 
 # from mkdocs import utils
 
-print("Running modify.py script")
 # base_url = utils.get_relative_url('.','.')
 # print ('base_url',base_url)
 root_dir = os.path.dirname(os.path.abspath(__file__))
-
+current_dir = os.getcwd()
 clean = True
 errors = []
 
@@ -53,6 +52,7 @@ def make_summary_table():
     for i in tasks:
         line += "<td>" + i + "</td>"
     # line+='<td>Total</td>'
+
     def get_num_benches(method="AI", task="SinglePropertyPrediction"):
         num = 0
 
@@ -242,619 +242,625 @@ def get_metric_value(
     return results
 
 
-for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
-    # if 'Text' in i:
-    # print(i)
-    fname = i.split("/")[-1].split(".csv.zip")[0]
-    temp = fname.split("-")
-    submod = temp[1]
-    data_split = temp[4]
-    prop = temp[2]
-    dataset = temp[3]
-    method = temp[0]
-    metric = temp[-1]
-    # print ('metric',metric)
-    # print ('dataset',dataset)
-    team = i.split("/")[-2]
-    # md_filename = os.path.join("../docs",method,submod,prop) #"../docs/" + method + "/" +submod+"/"+ prop + ".md"
-    md_filename = "../docs/" + method + "/" + submod + "/" + prop + ".md"
-    # print ('md_filename',md_filename)
-    md_path = os.path.join(root_dir, md_filename)
-    # print(
-    #    fname,
-    #    data_split,
-    #    prop,
-    #    dataset,
-    #    method,
-    #    metric,
-    #    team,
-    #    md_filename,
-    #    md_path,
-    # )
-    with open(md_path, "r") as file:
-        filedata = file.read().splitlines()
-    content = []
-    for j in filedata:
-        if "<!--table_content-->" in j:
-            content.append("<!--table_content-->")
-        else:
-            content.append(j)
-    with open(md_path, "w") as file:
-        file.write("\n".join(content))
-# jarvis_leaderboard/dataset/AI/dft_3d_exfoliation_energy.json
-dat = []
-md_files = []
-for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
-    fname = i.split("/")[-1].split(".csv.zip")[0]
-    bench_name = i.split("/")[-2]
-    temp = fname.split(
-        "-"
-    )  # ['SinglePropertyPrediction', 'test', 'bandgap', 'dft_3d_JVASP_1002_Si', 'ES', 'mae']
-    #submod = temp[0]
-    #data_split = temp[1]
-    #prop = temp[2]
-    #dataset = temp[3]
-    # method = temp[4]
-    # metric = temp[5]
-    #method = temp[-2]
-    #metric = temp[-1]
+def rebuild_pages():
+    print("Rebuilding web:")
+    os.chdir(root_dir + "/..")
+    for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
+        # if 'Text' in i:
+        # print(i)
+        fname = i.split("/")[-1].split(".csv.zip")[0]
+        temp = fname.split("-")
+        submod = temp[1]
+        data_split = temp[4]
+        prop = temp[2]
+        dataset = temp[3]
+        method = temp[0]
+        metric = temp[-1]
+        # print ('metric',metric)
+        # print ('dataset',dataset)
+        team = i.split("/")[-2]
+        # md_filename = os.path.join("../docs",method,submod,prop) #"../docs/" + method + "/" +submod+"/"+ prop + ".md"
+        md_filename = "../docs/" + method + "/" + submod + "/" + prop + ".md"
+        # print ('md_filename',md_filename)
+        md_path = os.path.join(root_dir, md_filename)
+        # print(
+        #    fname,
+        #    data_split,
+        #    prop,
+        #    dataset,
+        #    method,
+        #    metric,
+        #    team,
+        #    md_filename,
+        #    md_path,
+        # )
+        with open(md_path, "r") as file:
+            filedata = file.read().splitlines()
+        content = []
+        for j in filedata:
+            if "<!--table_content-->" in j:
+                content.append("<!--table_content-->")
+            else:
+                content.append(j)
+        with open(md_path, "w") as file:
+            file.write("\n".join(content))
+    # jarvis_leaderboard/dataset/AI/dft_3d_exfoliation_energy.json
+    dat = []
+    md_files = []
+    for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
+        fname = i.split("/")[-1].split(".csv.zip")[0]
+        bench_name = i.split("/")[-2]
+        temp = fname.split(
+            "-"
+        )  # ['SinglePropertyPrediction', 'test', 'bandgap', 'dft_3d_JVASP_1002_Si', 'ES', 'mae']
+        # submod = temp[0]
+        # data_split = temp[1]
+        # prop = temp[2]
+        # dataset = temp[3]
+        # method = temp[4]
+        # metric = temp[5]
+        # method = temp[-2]
+        # metric = temp[-1]
 
+        submod = temp[1]
+        data_split = temp[4]
+        prop = temp[2]
+        dataset = temp[3]
+        method = temp[0]
+        metric = temp[-1]
 
-    submod = temp[1]
-    data_split = temp[4]
-    prop = temp[2]
-    dataset = temp[3]
-    method = temp[0]
-    metric = temp[-1]
-
-
-
-    team = i.split("/")[-2]
-    md_filename = "../docs/" + method + "/" + submod + "/" + prop + ".md"
-    md_path = os.path.join(root_dir, md_filename)
-    md_files.append(md_path)
-    notes = ""
-    notes = (
-        '<a href="'
-        + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/"
-        + i
-        + '" target="_blank">CSV</a>'
-    )
-    json_name = dataset + "_" + prop + ".json.zip"
-    json_path = method + "/" + submod + "/" + json_name
-    json_url = (
-        '<a href="'
-        + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/dataset/"
-        + json_path
-        + '" target="_blank">JSON</a>'
-    )
-    metadata = (
-        '<a href="'
-        + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/"
-        + "jarvis_leaderboard/benchmarks/"
-        + bench_name
-        + "/metadata.json "
-        + '" target="_blank">Info</a>'
-    )
-    runsh = (
-        '<a href="'
-        + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/"
-        + "jarvis_leaderboard/benchmarks/"
-        + bench_name
-        + "/run.sh "
-        + '" target="_blank">run.sh</a>'
-    )
-    notes = notes + ", " + json_url + ", " + runsh + ", " + metadata
-    if "JVASP" in prop:
-        jid = "JVASP-" + prop.split("_")[3]
-        jid_url = (
+        team = i.split("/")[-2]
+        md_filename = "../docs/" + method + "/" + submod + "/" + prop + ".md"
+        md_path = os.path.join(root_dir, md_filename)
+        md_files.append(md_path)
+        notes = ""
+        notes = (
             '<a href="'
-            + "https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/"
-            + jid
-            + ".xml "
-            + '" target="_blank">'
-            + jid
-            + "</a>"
+            + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/"
+            + i
+            + '" target="_blank">CSV</a>'
         )
-        notes += ", " + jid_url
+        json_name = dataset + "_" + prop + ".json.zip"
+        json_path = method + "/" + submod + "/" + json_name
+        json_url = (
+            '<a href="'
+            + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/dataset/"
+            + json_path
+            + '" target="_blank">JSON</a>'
+        )
+        metadata = (
+            '<a href="'
+            + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/"
+            + "jarvis_leaderboard/benchmarks/"
+            + bench_name
+            + "/metadata.json "
+            + '" target="_blank">Info</a>'
+        )
+        runsh = (
+            '<a href="'
+            + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/"
+            + "jarvis_leaderboard/benchmarks/"
+            + bench_name
+            + "/run.sh "
+            + '" target="_blank">run.sh</a>'
+        )
+        notes = notes + ", " + json_url + ", " + runsh + ", " + metadata
+        if "JVASP" in prop:
+            jid = "JVASP-" + prop.split("_")[3]
+            jid_url = (
+                '<a href="'
+                + "https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/"
+                + jid
+                + ".xml "
+                + '" target="_blank">'
+                + jid
+                + "</a>"
+            )
+            notes += ", " + jid_url
 
-    # print ('bench_name', bench_name)
-    # print(
-    #    fname,
-    #    data_split,
-    #    prop,
-    #    dataset,
-    #    method,
-    #    metric,
-    #    team,
-    #    md_filename,
-    #    md_path,
-    # )
-    with open(md_path, "r") as file:
-        filedata = file.read().splitlines()
-    # print('names',i)
-    # print()
-    res = get_metric_value(
-        submod=submod,
-        csv_path=i,
-        dataset=dataset,
-        prop=prop,
-        data_split=data_split,
-        method=method,
-        metric=metric,
-        bench_name=bench_name,
-    )
-    # res = 5
-    # if clean:
+        # print ('bench_name', bench_name)
+        # print(
+        #    fname,
+        #    data_split,
+        #    prop,
+        #    dataset,
+        #    method,
+        #    metric,
+        #    team,
+        #    md_filename,
+        #    md_path,
+        # )
+        with open(md_path, "r") as file:
+            filedata = file.read().splitlines()
+        print("names", i)
+        # print()
+        res = get_metric_value(
+            submod=submod,
+            csv_path=i,
+            dataset=dataset,
+            prop=prop,
+            data_split=data_split,
+            method=method,
+            metric=metric,
+            bench_name=bench_name,
+        )
+        # res = 5
+        # if clean:
 
-    team = (
-        '<a href="'
-        + res["github_url"]
-        + '" target="_blank">'
-        + team
-        + "</a>"
-        #'<a href="' + res["project_url"] + '" target="_blank">' + team + "</a>"
-    )
-    # team='['+team+']'+'('+res['project_url']+')'
-    info = {}
-    temp = (
-        "<!--table_content-->"
-        + "<tr>"
-        + "<td>"
-        + team
-        + "</td>"
-        + "<td>"
-        + dataset
-        + "</td>"
-        # + "<td>"
-        # + method
-        # + "</td>"
-        + "<td>"
-        + str(res["res"])
-        + "</td>"
-        # + "<td>"
-        # + str(res['model_name'])
-        # + "</td>"
-        + "<td>"
-        + str(res["team_name"])
-        + "</td>"
-        + "<td>"
-        + str(res["dataset_size"])
-        + "</td>"
-        + "<td>"
-        + str(res["date_submitted"])
-        + "</td>"
-        + "<td>"
-        + str(notes)
-        + "</td>"
-        + "</tr>"
-    )
-    info["team"] = team
-    info["result"] = res
-    dat.append(info)
-    content = []
-    for j in filedata:
-        if "<!--table_content-->" in j:
-            temp = temp + j
-            content.append(temp)
-        else:
-            content.append(j)
-    # filedata = filedata.replace('<!--table_content-->', temp)
+        team = (
+            '<a href="'
+            + res["github_url"]
+            + '" target="_blank">'
+            + team
+            + "</a>"
+            # '<a href="' + res["project_url"] + '" target="_blank">' + team + "</a>"
+        )
+        # team='['+team+']'+'('+res['project_url']+')'
+        info = {}
+        temp = (
+            "<!--table_content-->"
+            + "<tr>"
+            + "<td>"
+            + team
+            + "</td>"
+            + "<td>"
+            + dataset
+            + "</td>"
+            # + "<td>"
+            # + method
+            # + "</td>"
+            + "<td>"
+            + str(res["res"])
+            + "</td>"
+            # + "<td>"
+            # + str(res['model_name'])
+            # + "</td>"
+            + "<td>"
+            + str(res["team_name"])
+            + "</td>"
+            + "<td>"
+            + str(res["dataset_size"])
+            + "</td>"
+            + "<td>"
+            + str(res["date_submitted"])
+            + "</td>"
+            + "<td>"
+            + str(notes)
+            + "</td>"
+            + "</tr>"
+        )
+        info["team"] = team
+        info["result"] = res
+        dat.append(info)
+        content = []
+        for j in filedata:
+            if "<!--table_content-->" in j:
+                temp = temp + j
+                content.append(temp)
+            else:
+                content.append(j)
+        # filedata = filedata.replace('<!--table_content-->', temp)
 
-    with open(md_path, "w") as file:
-        file.write("\n".join(content))
-# print("dat", dat)
-print("mdfiles", len(set(md_files)))
-
-
-def update_individual_index_md(
-    md_path="docs/ES/index.md", key="ES", extra_key="-", homepage=[]
-):
-    n_methods = 0
-    for i in glob.glob("jarvis_leaderboard/benchmarks/*/metadata.json"):
-        n_methods += 1
-    if not homepage:
-        homepage = []
-        for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
-
-            if key in i and extra_key in i:
-                p = i.split("/")[-1].split(".csv.zip")[0]
-                homepage.append(p)
-    # print ('index pages',homepage)
+        with open(md_path, "w") as file:
+            file.write("\n".join(content))
     # print("dat", dat)
-    # print("errors", errors, len(errors))
-    selected = defaultdict()
-    for name in homepage:
-        # print(md_path,name)
-        for i in dat:
-            name2 = (
-                i["result"]["submod"]
-                + "-"
-                + i["result"]["data_split"]
-                + "-"
-                + i["result"]["prop"]
-                + "-"
-                + i["result"]["dataset"]
-                + "-"
-                + i["result"]["method"]
-                + "-"
-                + i["result"]["metric"]
-            )
-            if name == name2:
-                temp = float(i["result"]["res"])
-                # if md_path!='docs/index.md':
-                # selected[name] = i["result"]
-                i["result"]["team"] = i["team"]
-                if name not in selected:
-                    selected[name] = i["result"]
-                elif (
-                    temp > selected[name]["res"]
-                    and i["result"]["metric"] == "acc"
-                ):
-                    selected[name] = i["result"]
-                elif (
-                    temp < selected[name]["res"]
-                    and i["result"]["metric"] == "mae"
-                ):
-                    selected[name] = i["result"]
-                elif (
-                    temp < selected[name]["res"]
-                    and i["result"]["metric"] == "multimae"
-                ):
-                    selected[name] = i["result"]
-    temp = (
-        '<!--table_content--><table style="width:100%" id="j_table">'
-        + "<thead><tr>"
-        + "<th>Method</th>"
-        # +'<th><a href="./method' + '" target="_blank">' + 'Method' + "</a></th>"
-        + "<th>Task</th>"
-        + "<th>Property</th>"
-        + "<th>Model name</th>"
-        + "<th>Metric</th>"
-        + "<th>Score</th>"
-        + "<th>Team</th>"
-        + "<th>Dataset</th>"
-        + "<th>Size</th>"
-        + "</tr></thead>"
-    )
-    for i, j in selected.items():
+    print("mdfiles", len(set(md_files)))
+
+    def update_individual_index_md(
+        md_path="docs/ES/index.md", key="ES", extra_key="-", homepage=[]
+    ):
+        n_methods = 0
+        for i in glob.glob("jarvis_leaderboard/benchmarks/*/metadata.json"):
+            n_methods += 1
+        if not homepage:
+            homepage = []
+            for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
+
+                if key in i and extra_key in i:
+                    p = i.split("/")[-1].split(".csv.zip")[0]
+                    homepage.append(p)
+        # print ('index pages',homepage)
+        # print("dat", dat)
+        # print("errors", errors, len(errors))
+        selected = defaultdict()
+        for name in homepage:
+            # print(md_path,name)
+            for i in dat:
+                name2 = (
+                    i["result"]["submod"]
+                    + "-"
+                    + i["result"]["data_split"]
+                    + "-"
+                    + i["result"]["prop"]
+                    + "-"
+                    + i["result"]["dataset"]
+                    + "-"
+                    + i["result"]["method"]
+                    + "-"
+                    + i["result"]["metric"]
+                )
+                if name == name2:
+                    temp = float(i["result"]["res"])
+                    # if md_path!='docs/index.md':
+                    # selected[name] = i["result"]
+                    i["result"]["team"] = i["team"]
+                    if name not in selected:
+                        selected[name] = i["result"]
+                    elif (
+                        temp > selected[name]["res"]
+                        and i["result"]["metric"] == "acc"
+                    ):
+                        selected[name] = i["result"]
+                    elif (
+                        temp < selected[name]["res"]
+                        and i["result"]["metric"] == "mae"
+                    ):
+                        selected[name] = i["result"]
+                    elif (
+                        temp < selected[name]["res"]
+                        and i["result"]["metric"] == "multimae"
+                    ):
+                        selected[name] = i["result"]
+        temp = (
+            '<!--table_content--><table style="width:100%" id="j_table">'
+            + "<thead><tr>"
+            + "<th>Method</th>"
+            # +'<th><a href="./method' + '" target="_blank">' + 'Method' + "</a></th>"
+            + "<th>Task</th>"
+            + "<th>Property</th>"
+            + "<th>Model name</th>"
+            + "<th>Metric</th>"
+            + "<th>Score</th>"
+            + "<th>Team</th>"
+            + "<th>Dataset</th>"
+            + "<th>Size</th>"
+            + "</tr></thead>"
+        )
+        for i, j in selected.items():
+            if md_path == "docs/index.md":
+                temp = (
+                    temp
+                    + "<tr>"
+                    + "<td>"
+                    + '<a href="./'
+                    + j["method"]
+                    + '" target="_blank">'
+                    + j["method"]
+                    + "</a>"
+                    # + j["method"]
+                    + "</td>"
+                    + "<td>"
+                    + '<a href="./'
+                    + j["method"]
+                    + "/"
+                    + j["submod"]
+                    + '" target="_blank">'
+                    + j["submod"]
+                    + "</a>"
+                    # + j["submod"]
+                    + "</td>"
+                    + "<td>"
+                    + '<a href="./'
+                    + j["method"]
+                    + "/"
+                    + j["submod"]
+                    + "/"
+                    + j["prop"]
+                    + '" target="_blank">'
+                    + j["prop"]
+                    + "</a>"
+                    # + j["prop"]
+                    + "</td>"
+                    + "<td>"
+                    + j["team"]
+                    + "</td>"
+                    + "<td>"
+                    + str(j["metric"].upper())
+                    + "</td>"
+                    + "<td>"
+                    + str(j["res"])
+                    + "</td>"
+                    + "<td>"
+                    + str(j["team_name"])
+                    + "</td>"
+                    + "<td>"
+                    + str(j["dataset"])
+                    + "</td>"
+                    + "<td>"
+                    + str(j["dataset_size"])
+                    + "</td>"
+                    # + "<td>"
+                    # + str(j["date_submitted"])
+                    # + "</td>"
+                    + "</tr>"
+                )
+            elif len(md_path.split("/")) == 3:
+                base = "."
+                temp = (
+                    temp
+                    + "<tr>"
+                    + "<td>"
+                    + '<a href= "'
+                    + base
+                    + "/"
+                    # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
+                    + j["method"]
+                    + '" target="_blank">'
+                    + j["method"]
+                    + "</a>"
+                    # + j["method"]
+                    + "</td>"
+                    + "<td>"
+                    + '<a href= "'
+                    + base
+                    + "/"
+                    # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
+                    # + j["method"]
+                    # + "/"
+                    + j["submod"]
+                    + '" target="_blank">'
+                    + j["submod"]
+                    + "</a>"
+                    # + j["submod"]
+                    + "</td>"
+                    + "<td>"
+                    + '<a href= "'
+                    + base
+                    + "/"
+                    # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
+                    # + j["method"]
+                    # + "/"
+                    + j["submod"]
+                    + "/"
+                    # + "/"
+                    + j["prop"]
+                    + '" target="_blank">'
+                    + j["prop"]
+                    + "</a>"
+                    # + j["prop"]
+                    + "</td>"
+                    + "<td>"
+                    + j["team"]
+                    + "</td>"
+                    + "<td>"
+                    + str(j["metric"].upper())
+                    + "</td>"
+                    + "<td>"
+                    + str(j["res"])
+                    + "</td>"
+                    + "<td>"
+                    + str(j["team_name"])
+                    + "</td>"
+                    + "<td>"
+                    + str(j["dataset"])
+                    + "</td>"
+                    + "<td>"
+                    + str(j["dataset_size"])
+                    + "</td>"
+                    # + "<td>"
+                    # + str(j["date_submitted"])
+                    # + "</td>"
+                    + "</tr>"
+                )
+            elif len(md_path.split("/")) == 4:
+                base = "."
+                temp = (
+                    temp
+                    + "<tr>"
+                    + "<td>"
+                    # + '<a href= ".'+base+'/'
+                    + '<a href= "'
+                    + base
+                    + "/"
+                    # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
+                    + j["method"]
+                    + '" target="_blank">'
+                    + j["method"]
+                    + "</a>"
+                    # + j["method"]
+                    + "</td>"
+                    + "<td>"
+                    + '<a href= "'
+                    + base
+                    + "/"
+                    # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
+                    + j["method"]
+                    + "/"
+                    + j["submod"]
+                    + '" target="_blank">'
+                    + j["submod"]
+                    + "</a>"
+                    # + j["submod"]
+                    + "</td>"
+                    + "<td>"
+                    + '<a href= "'
+                    + base
+                    + "/"
+                    # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
+                    # + j["method"]
+                    # + "/"
+                    # + j["submod"]
+                    # + "/"
+                    + j["prop"]
+                    + '" target="_blank">'
+                    + j["prop"]
+                    + "</a>"
+                    # + j["prop"]
+                    + "</td>"
+                    + "<td>"
+                    + j["team"]
+                    + "</td>"
+                    + "<td>"
+                    + str(j["metric"].upper())
+                    + "</td>"
+                    + "<td>"
+                    + str(j["res"])
+                    + "</td>"
+                    + "<td>"
+                    + str(j["team_name"])
+                    + "</td>"
+                    + "<td>"
+                    + str(j["dataset"])
+                    + "</td>"
+                    + "<td>"
+                    + str(j["dataset_size"])
+                    + "</td>"
+                    # + "<td>"
+                    # + str(j["date_submitted"])
+                    # + "</td>"
+                    + "</tr>"
+                )
+
+        # md_path = "docs/index.md"
+        # print (md_path,temp)
+
+        with open(md_path, "r") as file:
+            filedata = file.read().splitlines()
+        content = []
+        for j in filedata:
+            if "<!--table_content-->" in j:
+                content.append("<!--table_content-->")
+            elif "<!--number_of_benchmarks-->" in j:
+                content.append("<!--number_of_benchmarks-->")
+            elif "<!--number_of_tasks-->" in j:
+                content.append("<!--number_of_tasks-->")
+            elif "<!--number_of_methods-->" in j:
+                content.append("<!--number_of_methods-->")
+            else:
+                content.append(j)
+        with open(md_path, "w") as file:
+            file.write("\n".join(content))
+
+        with open(md_path, "r") as file:
+            filedata = file.read().splitlines()
+        content = []
+        n_benchs = len(homepage)
         if md_path == "docs/index.md":
-            temp = (
-                temp
-                + "<tr>"
-                + "<td>"
-                + '<a href="./'
-                + j["method"]
-                + '" target="_blank">'
-                + j["method"]
-                + "</a>"
-                # + j["method"]
-                + "</td>"
-                + "<td>"
-                + '<a href="./'
-                + j["method"]
-                + "/"
-                + j["submod"]
-                + '" target="_blank">'
-                + j["submod"]
-                + "</a>"
-                # + j["submod"]
-                + "</td>"
-                + "<td>"
-                + '<a href="./'
-                + j["method"]
-                + "/"
-                + j["submod"]
-                + "/"
-                + j["prop"]
-                + '" target="_blank">'
-                + j["prop"]
-                + "</a>"
-                # + j["prop"]
-                + "</td>"
-                + "<td>"
-                + j["team"]
-                + "</td>"
-                + "<td>"
-                + str(j["metric"].upper())
-                + "</td>"
-                + "<td>"
-                + str(j["res"])
-                + "</td>"
-                + "<td>"
-                + str(j["team_name"])
-                + "</td>"
-                + "<td>"
-                + str(j["dataset"])
-                + "</td>"
-                + "<td>"
-                + str(j["dataset_size"])
-                + "</td>"
-                # + "<td>"
-                # + str(j["date_submitted"])
-                # + "</td>"
-                + "</tr>"
-            )
-        elif len(md_path.split("/")) == 3:
-            base = "."
-            temp = (
-                temp
-                + "<tr>"
-                + "<td>"
-                + '<a href= "'
-                + base
-                + "/"
-                # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
-                + j["method"]
-                + '" target="_blank">'
-                + j["method"]
-                + "</a>"
-                # + j["method"]
-                + "</td>"
-                + "<td>"
-                + '<a href= "'
-                + base
-                + "/"
-                # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
-                ##+ j["method"]
-                ##+ "/"
-                + j["submod"]
-                + '" target="_blank">'
-                + j["submod"]
-                + "</a>"
-                # + j["submod"]
-                + "</td>"
-                + "<td>"
-                + '<a href= "'
-                + base
-                + "/"
-                # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
-                ##+ j["method"]
-                ##+ "/"
-                + j["submod"]
-                + "/"
-                # + "/"
-                + j["prop"]
-                + '" target="_blank">'
-                + j["prop"]
-                + "</a>"
-                # + j["prop"]
-                + "</td>"
-                + "<td>"
-                + j["team"]
-                + "</td>"
-                + "<td>"
-                + str(j["metric"].upper())
-                + "</td>"
-                + "<td>"
-                + str(j["res"])
-                + "</td>"
-                + "<td>"
-                + str(j["team_name"])
-                + "</td>"
-                + "<td>"
-                + str(j["dataset"])
-                + "</td>"
-                + "<td>"
-                + str(j["dataset_size"])
-                + "</td>"
-                # + "<td>"
-                # + str(j["date_submitted"])
-                # + "</td>"
-                + "</tr>"
-            )
-        elif len(md_path.split("/")) == 4:
-            base = "."
-            temp = (
-                temp
-                + "<tr>"
-                + "<td>"
-                # + '<a href= ".'+base+'/'
-                + '<a href= "'
-                + base
-                + "/"
-                # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
-                + j["method"]
-                + '" target="_blank">'
-                + j["method"]
-                + "</a>"
-                # + j["method"]
-                + "</td>"
-                + "<td>"
-                + '<a href= "'
-                + base
-                + "/"
-                # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
-                + j["method"]
-                + "/"
-                + j["submod"]
-                + '" target="_blank">'
-                + j["submod"]
-                + "</a>"
-                # + j["submod"]
-                + "</td>"
-                + "<td>"
-                + '<a href= "'
-                + base
-                + "/"
-                # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
-                ##+ j["method"]
-                ##+ "/"
-                ##+ j["submod"]
-                ##+ "/"
-                + j["prop"]
-                + '" target="_blank">'
-                + j["prop"]
-                + "</a>"
-                # + j["prop"]
-                + "</td>"
-                + "<td>"
-                + j["team"]
-                + "</td>"
-                + "<td>"
-                + str(j["metric"].upper())
-                + "</td>"
-                + "<td>"
-                + str(j["res"])
-                + "</td>"
-                + "<td>"
-                + str(j["team_name"])
-                + "</td>"
-                + "<td>"
-                + str(j["dataset"])
-                + "</td>"
-                + "<td>"
-                + str(j["dataset_size"])
-                + "</td>"
-                # + "<td>"
-                # + str(j["date_submitted"])
-                # + "</td>"
-                + "</tr>"
-            )
+            n_benchs = len(dat)
 
-    # md_path = "docs/index.md"
-    # print (md_path,temp)
+        for j in filedata:
+            if "<!--table_content-->" in j:
+                temp = temp + j + "</table>"
+                content.append(temp)
+            elif "<!--number_of_tasks-->" in j:
+                temp2 = (
+                    "<!--number_of_tasks--> - Number of tasks: "
+                    + str(len(set(md_files)))
+                    # + str(len(dat))
+                    # + "\n"
+                )
+                content.append(temp2)
+            elif "<!--number_of_methods-->" in j:
+                temp2 = (
+                    # "<!--number_of_methods--> - Number of methods: "
+                    "<!--number_of_methods--> - Number of methods: "
+                    + "["
+                    + str(n_methods)
+                    + "]"
+                    + "(https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks)"
+                    # "<!--number_of_methods--> - Number of methods: "+'<a href = "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks" target="_blank"> '+str(n_methods)+'</a>'
+                    # + str(n_methods)
+                    # + str(len(dat))
+                    # + "\n"
+                )
+                content.append(temp2)
+            elif "<!--number_of_benchmarks-->" in j:
+                temp2 = (
+                    "<!--number_of_benchmarks--> - Number of benchmarks: "
+                    + str(n_benchs)
+                    # + str(len(dat))
+                    # + "\n"
+                )
+                content.append(temp2)
+            else:
+                content.append(j)
+        # filedata = filedata.replace('<!--table_content-->', temp)
 
-    with open(md_path, "r") as file:
-        filedata = file.read().splitlines()
-    content = []
-    for j in filedata:
-        if "<!--table_content-->" in j:
-            content.append("<!--table_content-->")
-        elif "<!--number_of_benchmarks-->" in j:
-            content.append("<!--number_of_benchmarks-->")
-        elif "<!--number_of_tasks-->" in j:
-            content.append("<!--number_of_tasks-->")
-        elif "<!--number_of_methods-->" in j:
-            content.append("<!--number_of_methods-->")
-        else:
-            content.append(j)
-    with open(md_path, "w") as file:
-        file.write("\n".join(content))
+        with open(md_path, "w") as file:
+            file.write("\n".join(content))
 
-    with open(md_path, "r") as file:
-        filedata = file.read().splitlines()
-    content = []
-    n_benchs = len(homepage)
-    if md_path == "docs/index.md":
-        n_benchs = len(dat)
-
-    for j in filedata:
-        if "<!--table_content-->" in j:
-            temp = temp + j + "</table>"
-            content.append(temp)
-        elif "<!--number_of_tasks-->" in j:
-            temp2 = (
-                "<!--number_of_tasks--> - Number of tasks: "
-                + str(len(set(md_files)))
-                # + str(len(dat))
-                # + "\n"
-            )
-            content.append(temp2)
-        elif "<!--number_of_methods-->" in j:
-            temp2 = (
-                #"<!--number_of_methods--> - Number of methods: "
-                 "<!--number_of_methods--> - Number of methods: "+'['+str(n_methods)+']'+"(https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks)" 
-                 #"<!--number_of_methods--> - Number of methods: "+'<a href = "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks" target="_blank"> '+str(n_methods)+'</a>'
-                #+ str(n_methods)
-                # + str(len(dat))
-                # + "\n"
-            )
-            content.append(temp2)
-        elif "<!--number_of_benchmarks-->" in j:
-            temp2 = (
-                "<!--number_of_benchmarks--> - Number of benchmarks: "
-                + str(n_benchs)
-                # + str(len(dat))
-                # + "\n"
-            )
-            content.append(temp2)
-        else:
-            content.append(j)
-    # filedata = filedata.replace('<!--table_content-->', temp)
-
-    with open(md_path, "w") as file:
-        file.write("\n".join(content))
-
-
-homepage = [
-    "SinglePropertyPrediction-test-formation_energy_peratom-dft_3d-AI-mae",
-    "SinglePropertyPrediction-test-optb88vdw_bandgap-dft_3d-AI-mae",
-    "SinglePropertyPrediction-test-optb88vdw_total_energy-dft_3d-AI-mae",
-    "SinglePropertyPrediction-test-bulk_modulus_kv-dft_3d-AI-mae",
-    "SinglePropertyClass-test-optb88vdw_bandgap-dft_3d-AI-acc",
-    "SinglePropertyPrediction-test-LUMO-qm9_std_jctc-AI-mae",
-    "SinglePropertyPrediction-test-max_co2_adsp-hmof-AI-mae",
-    "MLFF-test-energy-alignn_ff_db-AI-mae",
-    "ImageClass-test-bravais_class-stem_2d_image-AI-acc",
-    "TextClass-test-categories-arXiv-AI-acc",
-    "SinglePropertyPrediction-test-bulk_modulus_JVASP_816_Al-dft_3d-FF-mae",
-    "SinglePropertyPrediction-test-bulk_modulus_JVASP_816_Al-dft_3d-ES-mae",
-    "SinglePropertyPrediction-test-bulk_modulus-dft_3d-ES-mae",
-    "SinglePropertyPrediction-test-bulk_modulus_JVASP_1002_Si-dft_3d-ES-mae",
-    "SinglePropertyPrediction-test-bandgap-dft_3d-ES-mae",
-    "SinglePropertyPrediction-test-bandgap_JVASP_1002_Si-dft_3d-ES-mae",
-    "SinglePropertyPrediction-test-epsx-dft_3d-ES-mae",
-    "SinglePropertyPrediction-test-Tc_supercon_JVASP_1151_MgB2-dft_3d-ES-mae",
-    "SinglePropertyPrediction-test-Tc_supercon-dft_3d-ES-mae",
-    "SinglePropertyPrediction-test-slme-dft_3d-ES-mae",
-    "Spectra-test-dielectric_function-dft_3d-ES-multimae",
-    "EigenSolver-test-electron_bands_JVASP_816_Al_WTBH-dft_3d-QC-multimae",
-    "Spectra-test-XRD_JVASP_19821_MgB2-dft_3d-EXP-multimae",
-]
-x = []
-for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
-    x.append(i.split(".csv.zip")[0])
-    # x.append(i.split('/')[-1].split('.csv.zip')[0])
-print(x, len(x))
-update_individual_index_md(md_path="docs/index.md", homepage=homepage)
-# update_individual_index_md(md_path="docs/index.md",homepage=sorted(x))
-update_individual_index_md(md_path="docs/ES/index.md", key="ES")
-update_individual_index_md(md_path="docs/FF/index.md", key="FF")
-update_individual_index_md(
-    md_path="docs/ES/SinglePropertyPrediction/index.md",
-    key="ES",
-    extra_key="SinglePropertyPrediction",
-)
-update_individual_index_md(
-    md_path="docs/FF/SinglePropertyPrediction/index.md",
-    key="FF",
-    extra_key="SinglePropertyPrediction",
-)
-update_individual_index_md(
-    md_path="docs/ES/Spectra/index.md", key="ES", extra_key="Spectra"
-)
-update_individual_index_md(md_path="docs/AI/index.md", key="AI")
-update_individual_index_md(
-    md_path="docs/AI/SinglePropertyPrediction/index.md",
-    key="AI",
-    extra_key="SinglePropertyPrediction",
-)
-update_individual_index_md(
-    md_path="docs/AI/SinglePropertyClass/index.md",
-    key="AI",
-    extra_key="SinglePropertyClass",
-)
-update_individual_index_md(
-    md_path="docs/AI/MLFF/index.md", key="AI", extra_key="MLFF"
-)
-update_individual_index_md(
-    md_path="docs/AI/ImageClass/index.md", key="AI", extra_key="ImageClass"
-)
-update_individual_index_md(
-    md_path="docs/AI/TextClass/index.md", key="AI", extra_key="TextClass"
-)
-update_individual_index_md(md_path="docs/QC/index.md", key="QC")
-update_individual_index_md(
-    md_path="docs/QC/EigenSolver/index.md", key="QC", extra_key="EigenSolver"
-)
-update_individual_index_md(md_path="docs/EXP/index.md", key="EXP")
-update_individual_index_md(
-    md_path="docs/EXP/Spectra/index.md", key="EXP", extra_key="Spectra"
-)
-update_individual_index_md(
-    md_path="docs/AI/Spectra/index.md", key="AI", extra_key="Spectra"
-)
-make_summary_table()
-print("errors", errors)
-# print("dat", dat)
+    homepage = [
+        "SinglePropertyPrediction-test-formation_energy_peratom-dft_3d-AI-mae",
+        "SinglePropertyPrediction-test-optb88vdw_bandgap-dft_3d-AI-mae",
+        "SinglePropertyPrediction-test-optb88vdw_total_energy-dft_3d-AI-mae",
+        "SinglePropertyPrediction-test-bulk_modulus_kv-dft_3d-AI-mae",
+        "SinglePropertyClass-test-optb88vdw_bandgap-dft_3d-AI-acc",
+        "SinglePropertyPrediction-test-LUMO-qm9_std_jctc-AI-mae",
+        "SinglePropertyPrediction-test-max_co2_adsp-hmof-AI-mae",
+        "MLFF-test-energy-alignn_ff_db-AI-mae",
+        "ImageClass-test-bravais_class-stem_2d_image-AI-acc",
+        "TextClass-test-categories-arXiv-AI-acc",
+        "SinglePropertyPrediction-test-bulk_modulus_JVASP_816_Al-dft_3d-FF-mae",
+        "SinglePropertyPrediction-test-bulk_modulus_JVASP_816_Al-dft_3d-ES-mae",
+        "SinglePropertyPrediction-test-bulk_modulus-dft_3d-ES-mae",
+        "SinglePropertyPrediction-test-bulk_modulus_JVASP_1002_Si-dft_3d-ES-mae",
+        "SinglePropertyPrediction-test-bandgap-dft_3d-ES-mae",
+        "SinglePropertyPrediction-test-bandgap_JVASP_1002_Si-dft_3d-ES-mae",
+        "SinglePropertyPrediction-test-epsx-dft_3d-ES-mae",
+        "SinglePropertyPrediction-test-Tc_supercon_JVASP_1151_MgB2-dft_3d-ES-mae",
+        "SinglePropertyPrediction-test-Tc_supercon-dft_3d-ES-mae",
+        "SinglePropertyPrediction-test-slme-dft_3d-ES-mae",
+        "Spectra-test-dielectric_function-dft_3d-ES-multimae",
+        "EigenSolver-test-electron_bands_JVASP_816_Al_WTBH-dft_3d-QC-multimae",
+        "Spectra-test-XRD_JVASP_19821_MgB2-dft_3d-EXP-multimae",
+    ]
+    x = []
+    for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
+        x.append(i.split(".csv.zip")[0])
+        # x.append(i.split('/')[-1].split('.csv.zip')[0])
+    print(x, len(x))
+    update_individual_index_md(md_path="docs/index.md", homepage=homepage)
+    # update_individual_index_md(md_path="docs/index.md",homepage=sorted(x))
+    update_individual_index_md(md_path="docs/ES/index.md", key="ES")
+    update_individual_index_md(md_path="docs/FF/index.md", key="FF")
+    update_individual_index_md(
+        md_path="docs/ES/SinglePropertyPrediction/index.md",
+        key="ES",
+        extra_key="SinglePropertyPrediction",
+    )
+    update_individual_index_md(
+        md_path="docs/FF/SinglePropertyPrediction/index.md",
+        key="FF",
+        extra_key="SinglePropertyPrediction",
+    )
+    update_individual_index_md(
+        md_path="docs/ES/Spectra/index.md", key="ES", extra_key="Spectra"
+    )
+    update_individual_index_md(md_path="docs/AI/index.md", key="AI")
+    update_individual_index_md(
+        md_path="docs/AI/SinglePropertyPrediction/index.md",
+        key="AI",
+        extra_key="SinglePropertyPrediction",
+    )
+    update_individual_index_md(
+        md_path="docs/AI/SinglePropertyClass/index.md",
+        key="AI",
+        extra_key="SinglePropertyClass",
+    )
+    update_individual_index_md(
+        md_path="docs/AI/MLFF/index.md", key="AI", extra_key="MLFF"
+    )
+    update_individual_index_md(
+        md_path="docs/AI/ImageClass/index.md", key="AI", extra_key="ImageClass"
+    )
+    update_individual_index_md(
+        md_path="docs/AI/TextClass/index.md", key="AI", extra_key="TextClass"
+    )
+    update_individual_index_md(md_path="docs/QC/index.md", key="QC")
+    update_individual_index_md(
+        md_path="docs/QC/EigenSolver/index.md",
+        key="QC",
+        extra_key="EigenSolver",
+    )
+    update_individual_index_md(md_path="docs/EXP/index.md", key="EXP")
+    update_individual_index_md(
+        md_path="docs/EXP/Spectra/index.md", key="EXP", extra_key="Spectra"
+    )
+    update_individual_index_md(
+        md_path="docs/AI/Spectra/index.md", key="AI", extra_key="Spectra"
+    )
+    make_summary_table()
+    print("errors", errors)
+    os.chdir(current_dir)
+    return errors
+    # print("dat", dat)

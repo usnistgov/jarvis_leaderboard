@@ -1,0 +1,29 @@
+
+name: Rebuild
+
+on: [push, pull_request]
+
+
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip setuptools
+        pip install pytest coverage==6.5.0 codecov 
+        python setup.py develop
+        #python -m pip install -r requirements.txt
+    - name: Build site
+      run: |
+        coverage run -m pytest
+        coverage report -m -i
+        codecov
+        codecov --token="eba3e27a-b0c9-421a-a7f6-4ff5111fc4f0"

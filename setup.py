@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="jarvis_leaderboard",  # Replace with your own username
-    version="2023.01.17",
+    version="2023.04.10",
     author="Kamal Choudhary",
     author_email="kamal.choudhary@nist.gov",
     description="jarvis_leaderboard",
@@ -19,9 +19,14 @@ setuptools.setup(
         "mkdocs-material>=9.0.5",
         "pydantic>=1.8.1",
         "markdown==3.2.1",
-        "flake8>=3.9.1",
-        "pycodestyle>=2.7.0",
-        "pydocstyle>=6.0.0",
+        # "flake8>=3.9.1",
+        # "pycodestyle>=2.7.0",
+        # "pydocstyle>=6.0.0",
+    ],
+    scripts=[
+        "jarvis_leaderboard/jarvis_upload.py",
+        "jarvis_leaderboard/rebuild.py",
+        "jarvis_leaderboard/jarvis_serve.py",
     ],
     long_description=long_description,
     long_description_content_type="text/markdown",
