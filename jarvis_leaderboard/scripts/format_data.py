@@ -15,11 +15,11 @@ def preapre_json_file(
 ):
     """Prepare json file given id,dataset and prop info."""
     print("Usind ids_train_val_test.json", train_val_test)
-    #if dataset=='qm9':
+    # if dataset=='qm9':
     #   dataset='qm9_std_jctc'
     d = data(dataset)
-    df = pd.DataFrame(d,dtype='str')
-   
+    df = pd.DataFrame(d, dtype="str")
+
     def get_val(id_tag=id_tag, prop=prop, jv_id="JVASP-14441"):
         """Get data from dataframe."""
         # print (df[df[id_tag]=='JVASP-14441'])
@@ -30,18 +30,18 @@ def preapre_json_file(
     train_ids = split_file["id_train"]
     val_ids = split_file["id_val"]
     test_ids = split_file["id_test"]
-    print ('type',type(train_ids[0]))
+    print("type", type(train_ids[0]))
     train_data = defaultdict()
-    for i,j in df[df[id_tag].isin(train_ids)][[id_tag,prop]].iterrows():
-         #if dataset=='hmof':
-         #  train_data['hMOF-'+str(j[id_tag])]=j[prop]
-         #  #train_data['hMOF-'+str(i)]=j[prop]
-         #else:
-           train_data[str(j[id_tag])]=j[prop]
-    #print ('i',i)
-    #print('j',j)
-    #print('train')
-    #for i in train_ids:
+    for i, j in df[df[id_tag].isin(train_ids)][[id_tag, prop]].iterrows():
+        # if dataset=='hmof':
+        #  train_data['hMOF-'+str(j[id_tag])]=j[prop]
+        #  #train_data['hMOF-'+str(i)]=j[prop]
+        # else:
+        train_data[str(j[id_tag])] = j[prop]
+    # print ('i',i)
+    # print('j',j)
+    # print('train')
+    # for i in train_ids:
     #    val = get_val(jv_id=i)
     #    if val == "na":
     #        print(i, val)
@@ -51,18 +51,16 @@ def preapre_json_file(
     #    train_data[i] = val
 
     val_data = defaultdict()
-    for i,j in df[df[id_tag].isin(val_ids)][[id_tag,prop]].iterrows():
-         #val_data[i]=j[prop]
-         #if dataset=='hmof':
-         #  val_data['hMOF-'+str(j[id_tag])]=j[prop]
-         #  #val_data['hMOF-'+str(i)]=j[prop]
-         #else:
-           val_data[str(j[id_tag])]=j[prop]
+    for i, j in df[df[id_tag].isin(val_ids)][[id_tag, prop]].iterrows():
+        # val_data[i]=j[prop]
+        # if dataset=='hmof':
+        #  val_data['hMOF-'+str(j[id_tag])]=j[prop]
+        #  #val_data['hMOF-'+str(i)]=j[prop]
+        # else:
+        val_data[str(j[id_tag])] = j[prop]
 
-
-
-    #print('val')
-    #for i in val_ids:
+    # print('val')
+    # for i in val_ids:
     #    val = get_val(jv_id=i)
     #    if val == "na":
     #        print(i, val)
@@ -71,18 +69,18 @@ def preapre_json_file(
     #        sys.exit()
     #    val_data[i] = val
     test_data = defaultdict()
-    for i,j in df[df[id_tag].isin(test_ids)][[id_tag,prop]].iterrows():
-         #test_data[i]=j[prop]
-         #if dataset=='hmof':
-         #  test_data['hMOF-'+str(j[id_tag])]=j[prop]
-         #  #test_data['hMOF-'+str(i)]=j[prop]
-         #else:
-           test_data[str(j[id_tag])]=j[prop]
+    for i, j in df[df[id_tag].isin(test_ids)][[id_tag, prop]].iterrows():
+        # test_data[i]=j[prop]
+        # if dataset=='hmof':
+        #  test_data['hMOF-'+str(j[id_tag])]=j[prop]
+        #  #test_data['hMOF-'+str(i)]=j[prop]
+        # else:
+        test_data[str(j[id_tag])] = j[prop]
 
-    print('test',len(test_ids),len(test_data))
-   # for i in test_ids:  
-   #   print('dddd',test_data[i])
-    #for i in test_ids:
+    print("test", len(test_ids), len(test_data))
+    # for i in test_ids:
+    #   print('dddd',test_data[i])
+    # for i in test_ids:
     #    val = get_val(jv_id=i)
     #    if val == "na":
     #        print(i, val)
