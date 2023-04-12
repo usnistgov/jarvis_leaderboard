@@ -78,7 +78,7 @@ def upload():
     cmd = "git add ./" + add_dir + "/*"
     print(cmd)
     os.system(cmd)
-    cmd = "git commit"
+    cmd = "git commit -m 'Adding benchmark.'"
     print(cmd)
     os.system(cmd)
     cmd = "git push"
