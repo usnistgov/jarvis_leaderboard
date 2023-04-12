@@ -526,7 +526,8 @@ def rebuild_pages():
             + "</tr></thead>"
         )
         for i, j in selected.items():
-            if md_path == "docs/index.md":
+            if len(md_path.split("/")) == 2:
+                # if md_path == "docs/index.md":
                 temp = (
                     temp
                     + "<tr>"
@@ -788,29 +789,29 @@ def rebuild_pages():
             file.write("\n".join(content))
 
     homepage = [
-        "SinglePropertyPrediction-test-formation_energy_peratom-dft_3d-AI-mae",
-        "SinglePropertyPrediction-test-optb88vdw_bandgap-dft_3d-AI-mae",
-        "SinglePropertyPrediction-test-optb88vdw_total_energy-dft_3d-AI-mae",
-        "SinglePropertyPrediction-test-bulk_modulus_kv-dft_3d-AI-mae",
-        "SinglePropertyClass-test-optb88vdw_bandgap-dft_3d-AI-acc",
-        "SinglePropertyPrediction-test-LUMO-qm9_std_jctc-AI-mae",
-        "SinglePropertyPrediction-test-max_co2_adsp-hmof-AI-mae",
-        "MLFF-test-energy-alignn_ff_db-AI-mae",
-        "ImageClass-test-bravais_class-stem_2d_image-AI-acc",
-        "TextClass-test-categories-arXiv-AI-acc",
-        "SinglePropertyPrediction-test-bulk_modulus_JVASP_816_Al-dft_3d-FF-mae",
-        "SinglePropertyPrediction-test-bulk_modulus_JVASP_816_Al-dft_3d-ES-mae",
-        "SinglePropertyPrediction-test-bulk_modulus-dft_3d-ES-mae",
-        "SinglePropertyPrediction-test-bulk_modulus_JVASP_1002_Si-dft_3d-ES-mae",
-        "SinglePropertyPrediction-test-bandgap-dft_3d-ES-mae",
-        "SinglePropertyPrediction-test-bandgap_JVASP_1002_Si-dft_3d-ES-mae",
-        "SinglePropertyPrediction-test-epsx-dft_3d-ES-mae",
-        "SinglePropertyPrediction-test-Tc_supercon_JVASP_1151_MgB2-dft_3d-ES-mae",
-        "SinglePropertyPrediction-test-Tc_supercon-dft_3d-ES-mae",
-        "SinglePropertyPrediction-test-slme-dft_3d-ES-mae",
-        "Spectra-test-dielectric_function-dft_3d-ES-multimae",
-        "EigenSolver-test-electron_bands_JVASP_816_Al_WTBH-dft_3d-QC-multimae",
-        "Spectra-test-XRD_JVASP_19821_MgB2-dft_3d-EXP-multimae",
+        "AI-SinglePropertyPrediction-formation_energy_peratom-dft_3d-test-mae",
+        "AI-SinglePropertyPrediction-optb88vdw_bandgap-dft_3d-test-mae",
+        "AI-SinglePropertyPrediction-optb88vdw_total_energy-dft_3d-test-mae",
+        "AI-SinglePropertyPrediction-bulk_modulus_kv-dft_3d-test-mae",
+        "AI-SinglePropertyClass-optb88vdw_bandgap-dft_3d-test-acc",
+        "AI-SinglePropertyPrediction-LUMO-qm9_std_jctc-test-mae",
+        "AI-SinglePropertyPrediction-max_co2_adsp-hmof-test-mae",
+        "AI-MLFF-energy-alignn_ff_db-test-mae",
+        "AI-ImageClass-bravais_class-stem_2d_image-test-acc",
+        "AI-TextClass-categories-arXiv-test-acc",
+        "FF-SinglePropertyPrediction-bulk_modulus_JVASP_816_Al-dft_3d-test-mae",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_816_Al-dft_3d-test-mae",
+        "ES-SinglePropertyPrediction-bulk_modulus-dft_3d-test-mae",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_1002_Si-dft_3d-test-mae",
+        "ES-SinglePropertyPrediction-bandgap-dft_3d-test-mae",
+        "ES-SinglePropertyPrediction-bandgap_JVASP_1002_Si-dft_3d-test-mae",
+        "ES-SinglePropertyPrediction-epsx-dft_3d-test-mae",
+        "ES-SinglePropertyPrediction-Tc_supercon_JVASP_1151_MgB2-dft_3d-test-mae",
+        "ES-SinglePropertyPrediction-Tc_supercon-dft_3d-test-mae",
+        "ES-SinglePropertyPrediction-slme-dft_3d-test-mae",
+        "ES-Spectra-dielectric_function-dft_3d-test-multimae",
+        "QC-EigenSolver-electron_bands_JVASP_816_Al_WTBH-dft_3d-test-multimae",
+        "EXP-Spectra-XRD_JVASP_19821_MgB2-dft_3d-test-multimae",
     ]
     x = []
     for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
