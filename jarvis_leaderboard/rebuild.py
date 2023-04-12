@@ -6,7 +6,6 @@ import glob
 import zipfile
 import json
 from collections import defaultdict
-import collections
 import numpy as np
 
 # from mkdocs import utils
@@ -69,7 +68,6 @@ def make_summary_table():
     for i in methods:
         line += "<tr>" + "<td>" + i + "</td>"
         for j in tasks:
-            # <td><a href="./AI/SinglePropertyPrediction" target="_blank"><!-AI_SinglePropertyPrediction->120</a></td>
             num = get_num_benches(method=i, task=j)
             if num == "0":
                 line += "<td>" + "-" + "</td>"
@@ -208,7 +206,6 @@ def get_metric_value(
                 * mean_absolute_error(df["actual"], df["prediction"]),
                 3,
             )
-            # res = round(mean_absolute_error(df["actual"]*scaling[dataset][prop], df["prediction"]*scaling[dataset]), 3)
             results["res"] = res
             # print(csv_path)
             # print('mae1',mean_absolute_error(csv_data['target'],csv_data['prediction']))
@@ -259,7 +256,6 @@ def rebuild_pages():
         # print ('metric',metric)
         # print ('dataset',dataset)
         team = i.split("/")[-2]
-        # md_filename = os.path.join("../docs",method,submod,prop) #"../docs/" + method + "/" +submod+"/"+ prop + ".md"
         md_filename = "../docs/" + method + "/" + submod + "/" + prop + ".md"
         # print ('md_filename',md_filename)
         md_path = os.path.join(root_dir, md_filename)
@@ -476,6 +472,19 @@ def rebuild_pages():
                     + i["result"]["dataset"]
                     + "-"
                     + i["result"]["method"]
+                    + "-"
+                    + i["result"]["metric"]
+                )
+                name2 = (
+                    i["result"]["method"]
+                    + "-"
+                    + i["result"]["submod"]
+                    + "-"
+                    + i["result"]["prop"]
+                    + "-"
+                    + i["result"]["dataset"]
+                    + "-"
+                    + i["result"]["data_split"]
                     + "-"
                     + i["result"]["metric"]
                 )
@@ -758,7 +767,6 @@ def rebuild_pages():
                     + str(n_methods)
                     + "]"
                     + "(https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks)"
-                    # "<!--number_of_methods--> - Number of methods: "+'<a href = "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks" target="_blank"> '+str(n_methods)+'</a>'
                     # + str(n_methods)
                     # + str(len(dat))
                     # + "\n"
@@ -864,3 +872,7 @@ def rebuild_pages():
     os.chdir(current_dir)
     return errors
     # print("dat", dat)
+
+
+if __name__ == "__main__":
+    rebuild_pages()

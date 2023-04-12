@@ -24,9 +24,10 @@ setuptools.setup(
         # "pydocstyle>=6.0.0",
     ],
     scripts=[
+        "jarvis_leaderboard/jarvis_populate_data.py",
         "jarvis_leaderboard/jarvis_upload.py",
-        "jarvis_leaderboard/rebuild.py",
         "jarvis_leaderboard/jarvis_serve.py",
+        "jarvis_leaderboard/rebuild.py",
     ],
     long_description=long_description,
     long_description_content_type="text/markdown",
