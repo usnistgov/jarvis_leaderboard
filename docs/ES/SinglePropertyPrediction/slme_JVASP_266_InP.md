@@ -14,5 +14,5 @@
     <th>Notes</th>
   </tr>
  </thead>
-<!--table_content--><tr><td><a href="https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.9b02166" target="_blank">vasp_tbmbj</a></td><td>dft_3d</td><td>9.14</td><td>JARVIS</td><td>1</td><td>01-14-2023</td><td></td></tr><!--table_content-->
+<!--table_content--><tr><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_tbmbj" target="_blank">vasp_tbmbj</a></td><td>dft_3d</td><td>9.14</td><td>JARVIS</td><td>1</td><td>01-14-2023</td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_tbmbj/ES-SinglePropertyPrediction-slme_JVASP_266_InP-dft_3d-test-mae.csv.zip" target="_blank">CSV</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/dataset/ES/SinglePropertyPrediction/dft_3d_slme_JVASP_266_InP.json.zip" target="_blank">JSON</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_tbmbj/run.sh " target="_blank">run.sh</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_tbmbj/metadata.json " target="_blank">Info</a>, <a href="https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/JVASP-InP.xml " target="_blank">JVASP-InP</a></td></tr><!--table_content-->
 </table>

@@ -14,5 +14,5 @@
     <th>Notes</th>
   </tr>
  </thead>
-<!--table_content--><tr><td><a href="https://www.nature.com/articles/s41524-021-00650-1" target="_blank">alignn_model</a></td><td>dft_3d</td><td>0.79</td><td>JARVIS</td><td>23210</td><td>01-14-2023</td><td></td></tr><!--table_content-->
+<!--table_content--><tr><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/alignn_model" target="_blank">alignn_model</a></td><td>dft_3d</td><td>0.79</td><td>JARVIS</td><td>23210</td><td>01-14-2023</td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/alignn_model/AI-SinglePropertyClass-n_powerfact-dft_3d-test-acc.csv.zip" target="_blank">CSV</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/dataset/AI/SinglePropertyClass/dft_3d_n_powerfact.json.zip" target="_blank">JSON</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/alignn_model/run.sh " target="_blank">run.sh</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/alignn_model/metadata.json " target="_blank">Info</a></td></tr><!--table_content-->
 </table>
