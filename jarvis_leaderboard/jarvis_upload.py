@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#!/home/knc6/.conda/envs/mer/bin/python
 import argparse
 import os
 import sys
@@ -40,10 +40,12 @@ def upload():
     username = args.github_username
     your_benchmark_directory = args.your_benchmark_directory
     cwd = os.getcwd()
-    print("username", username)
+    print ('For help: jarvis_upload.py -h\n')
+    print("GitHub username", username)
     forked_url = "https://github.com/" + username + "/" + upstream_repo_name
     print("forked_url", forked_url)
     response = requests.get(forked_url)
+    print("response", response)
     if response.status_code > 400:
         cmd = (
             "curl -u "
@@ -54,36 +56,37 @@ def upload():
             + upstream_repo_name
             + "/forks -d ''"
         )
-        print(cmd)
+        print("Forking repo", cmd)
         os.system(cmd)
+    # sys.exit()
     if not os.path.exists(upstream_repo_name):
         cmd = "git clone " + forked_url + ".git"
-        print(cmd)
+        print("Cloning repo", cmd)
         os.system(cmd)
     if os.path.exists(your_benchmark_directory):
         print("Note: adding to existing directory.")
     cmd = (
-        "rsync -r "
+        "cp -r "
         + your_benchmark_directory
         + " jarvis_leaderboard/jarvis_leaderboard/benchmarks/"
     )
-    print(cmd)
+    print("Cpying files", cmd)
     os.system(cmd)
     # cmd='cd '+upstream_repo_name
     os.chdir(upstream_repo_name)
     add_dir = "jarvis_leaderboard/benchmarks/" + your_benchmark_directory
     cmd = "ls ./" + add_dir
-    print(cmd)
+    print("just ls", cmd)
     os.system(cmd)
 
     cmd = "git add ./" + add_dir + "/*"
-    print(cmd)
+    print("Add dir", cmd)
     os.system(cmd)
     cmd = "git commit -m 'Adding benchmark.'"
-    print(cmd)
+    print("Git commit", cmd)
     os.system(cmd)
     cmd = "git push"
-    print(cmd)
+    print("Push", cmd)
     os.system(cmd)
 
     cmd = "python jarvis_leaderboard/rebuild.py"
