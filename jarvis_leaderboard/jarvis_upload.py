@@ -1,3 +1,4 @@
+#! /usr/bin/env python
 import argparse
 import os
 import sys
@@ -64,7 +65,7 @@ def upload():
     cmd = (
         "rsync -r "
         + your_benchmark_directory
-        + " jarvis_leaderboard/jarvis_leaderboard/benchmarks"
+        + " jarvis_leaderboard/jarvis_leaderboard/benchmarks/"
     )
     print(cmd)
     os.system(cmd)
