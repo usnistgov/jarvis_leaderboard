@@ -1,3 +1,4 @@
+#! /usr/bin/env python
 import os
 from jarvis.db.jsonutils import loadjson
 from sklearn.metrics import mean_absolute_error, accuracy_score
