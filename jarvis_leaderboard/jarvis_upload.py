@@ -3,6 +3,7 @@ import argparse
 import os
 import sys
 import requests
+import time
 
 parser = argparse.ArgumentParser(description="Add data to JARVIS-Leaderboard.")
 
@@ -40,10 +41,10 @@ def upload():
     username = args.github_username
     your_benchmark_directory = args.your_benchmark_directory
     cwd = os.getcwd()
-    print ('For help: jarvis_upload.py -h\n')
-    print("GitHub username", username)
+    print("For help: jarvis_upload.py -h")
+    print("Using GitHub username", username)
     forked_url = "https://github.com/" + username + "/" + upstream_repo_name
-    print("forked_url", forked_url)
+    print("Forked_url", forked_url)
     response = requests.get(forked_url)
     print("response", response)
     if response.status_code > 400:
@@ -58,7 +59,10 @@ def upload():
         )
         print("Forking repo", cmd)
         os.system(cmd)
-    # sys.exit()
+    # Takes a few seconds to fork repo
+    time.sleep(5)
+    # print ('If you are encoutering issues due to existing forked repo,')
+    # print ('delete it and run the script again.')
     if not os.path.exists(upstream_repo_name):
         cmd = "git clone " + forked_url + ".git"
         print("Cloning repo", cmd)
@@ -76,11 +80,11 @@ def upload():
     os.chdir(upstream_repo_name)
     add_dir = "jarvis_leaderboard/benchmarks/" + your_benchmark_directory
     cmd = "ls ./" + add_dir
-    print("just ls", cmd)
+    print("List files", cmd)
     os.system(cmd)
 
     cmd = "git add ./" + add_dir + "/*"
-    print("Add dir", cmd)
+    print("Git add dir", cmd)
     os.system(cmd)
     cmd = "git commit -m 'Adding benchmark.'"
     print("Git commit", cmd)

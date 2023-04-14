@@ -144,7 +144,7 @@ def get_metric_value(
     results["team_name"] = meta_data["team_name"]
     results["date_submitted"] = meta_data["date_submitted"]
     results["project_url"] = meta_data["project_url"]
-    results['num_entries']=len(csv_data)
+    results["num_entries"] = len(csv_data)
     results["github_url"] = (
         "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/"
         + bench_name
@@ -243,8 +243,9 @@ def get_metric_value(
 
 def rebuild_pages():
     print("Rebuilding web:")
+    unique_fname = []
     os.chdir(root_dir + "/..")
-    num_data=0
+    num_data = 0
     for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
         # if 'Text' in i:
         # print(i)
@@ -371,7 +372,7 @@ def rebuild_pages():
         # )
         with open(md_path, "r") as file:
             filedata = file.read().splitlines()
-        #print("names", i)
+        # print("names", i)
         # print()
         res = get_metric_value(
             submod=submod,
@@ -383,10 +384,12 @@ def rebuild_pages():
             metric=metric,
             bench_name=bench_name,
         )
-        
-        num_data+=res['dataset_size']
-        #num_data+=res['num_entries']
-        print ('num_data',i, num_data, res['dataset_size'],res['num_entries'])
+        if fname not in unique_fname:
+            unique_fname.append(fname)
+            num_data += res["dataset_size"]
+        # num_data+=res['dataset_size']
+        # num_data+=res['num_entries']
+        print("num_data", i, num_data, res["dataset_size"], res["num_entries"])
         # res = 5
         # if clean:
 
@@ -794,7 +797,7 @@ def rebuild_pages():
                 temp2 = (
                     "<!--number_of_datapoints--> - Number of datapoints: "
                     + str(num_data)
-                    #+ str(num_data)
+                    # + str(num_data)
                     # + str(len(dat))
                     # + "\n"
                 )
