@@ -890,6 +890,7 @@ def rebuild_pages():
         md_path="docs/AI/Spectra/index.md", key="AI", extra_key="Spectra"
     )
     make_summary_table()
+    print("unique csv names", len(unique_fname))
     print("errors", errors)
     os.chdir(current_dir)
     return errors

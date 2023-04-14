@@ -9,17 +9,17 @@
 This project provides benchmark-performances of various methods for materials science applications using the datasets available in [JARVIS-Tools databases](https://jarvis-tools.readthedocs.io/en/master/databases.html). Some of the methods are: [Artificial Intelligence (AI)](./AI), [Electronic Structure (ES)](./ES), [Force-field (FF)](./FF), [Qunatum Computation (QC)](./QC) and [Experiments (EXP)](./EXP). There are a variety of properties included in the benchmark.
 In addition to prediction results, we attempt to capture the underlyig software, hardware and instrumental frameworks to enhance reproducibility. This project is a part of the [NIST-JARVIS](https://jarvis.nist.gov) infrastructure.
 
-<!--number_of_benchmarks--> - Number of benchmarks: 714
+<!--number_of_methods--> - Number of methods: [83](https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks)
 
 <!--number_of_tasks--> - Number of tasks: 207
 
+<!--number_of_benchmarks--> - Number of benchmarks: 714
 
-<!--number_of_methods--> - Number of methods: [83](https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks)
+<!--number_of_datapoints--> - Number of datapoints: 6624287
 
 <!-- [Learn how to add benchmarks below](#add) -->
 <!-- <p style="text-align:center;"><img align="middle" src="https://www.ctcms.nist.gov/~knc6/images/logo/jarvis-mission.png"  width="40%" height="20%"></p>-->
 
-<!--number_of_datapoints--> - Number of datapoints: 6624287
 
 
 
@@ -47,6 +47,9 @@ In addition to prediction results, we attempt to capture the underlyig software,
              + [Spectra](./EXP/Spectra)
 
     === "Adding model benchmarks to existing dataset"
+        For a short version, checkout this [google colab-notebook](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/Upload_benchmark_to_jarvis_leaderboard.ipynb)
+
+        For a long version, see below:
 
         1.  [`Fork`](https://github.com/usnistgov/jarvis_leaderboard/fork) the [jarvis_leaderboard](https://github.com/usnistgov/jarvis_leaderboard) repository
         2.  `git clone https://github.com/USERNAME/jarvis_leaderboard`, use your own GitHub USERNAME, e.g. knc6, instead of `usnistgov`
