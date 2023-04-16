@@ -476,19 +476,19 @@ def rebuild_pages():
         for name in homepage:
             # print(md_path,name)
             for i in dat:
-                name2 = (
-                    i["result"]["submod"]
-                    + "-"
-                    + i["result"]["data_split"]
-                    + "-"
-                    + i["result"]["prop"]
-                    + "-"
-                    + i["result"]["dataset"]
-                    + "-"
-                    + i["result"]["method"]
-                    + "-"
-                    + i["result"]["metric"]
-                )
+                #name2 = (
+                #    i["result"]["submod"]
+                #    + "-"
+                #    + i["result"]["data_split"]
+                #    + "-"
+                #    + i["result"]["prop"]
+                #    + "-"
+                #    + i["result"]["dataset"]
+                #    + "-"
+                #    + i["result"]["method"]
+                #    + "-"
+                #    + i["result"]["metric"]
+                #)
                 name2 = (
                     i["result"]["method"]
                     + "-"
@@ -555,6 +555,7 @@ def rebuild_pages():
                     + "</td>"
                     + "<td>"
                     + '<a href="./'
+                    #+ j["dataset"]+'_'
                     + j["method"]
                     + "/"
                     + j["submod"]
@@ -569,8 +570,10 @@ def rebuild_pages():
                     + "/"
                     + j["submod"]
                     + "/"
+                    + j["dataset"]+'_'
                     + j["prop"]
                     + '" target="_blank">'
+                    + j["dataset"]+'_'
                     + j["prop"]
                     + "</a>"
                     # + j["prop"]
@@ -637,8 +640,10 @@ def rebuild_pages():
                     + j["submod"]
                     + "/"
                     # + "/"
+                    + j["dataset"]+'_'
                     + j["prop"]
                     + '" target="_blank">'
+                    + j["dataset"]+'_'
                     + j["prop"]
                     + "</a>"
                     # + j["prop"]
@@ -705,8 +710,10 @@ def rebuild_pages():
                     # + "/"
                     # + j["submod"]
                     # + "/"
+                    + j["dataset"]+'_'
                     + j["prop"]
                     + '" target="_blank">'
+                    + j["dataset"]+'_'
                     + j["prop"]
                     + "</a>"
                     # + j["prop"]
@@ -814,6 +821,8 @@ def rebuild_pages():
             file.write("\n".join(content))
 
     homepage = [
+        "AI-SinglePropertyPrediction-formula_energy-ssub-test-mae",
+        "AI-SinglePropertyPrediction-formation_energy_peratom-dft_3d-test-mae",
         "AI-SinglePropertyPrediction-formation_energy_peratom-dft_3d-test-mae",
         "AI-SinglePropertyPrediction-optb88vdw_bandgap-dft_3d-test-mae",
         "AI-SinglePropertyPrediction-optb88vdw_total_energy-dft_3d-test-mae",
