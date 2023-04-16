@@ -1,0 +1,4200 @@
+<!--https://github.com/notenverwaltung/Notenverwaltungssoftware/blob/54aa0515f3b1b2c5db8471306eecfed18e154e7e/docs/overrides/main.html -->
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="This project benchmarks performances of various methods for materials science applications using the datasets available in JARVIS-Tools databases.">
+      
+      
+        <meta name="author" content="Kamal Choudhary">
+      
+      
+        <link rel="canonical" href="https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bandgap_JVASP_1174_GaAs/">
+      
+      
+        <link rel="prev" href="../dft_3d_bandgap_JVASP_116_MgO/">
+      
+      
+        <link rel="next" href="../dft_3d_bandgap_JVASP_1180_InN/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
+    
+    
+      
+        <title>Model for bandgap_JVASP_1174_GaAs - JARVIS-Leaderboard</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="light-blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#model-for-bandgap_jvasp_1174_gaas" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+<script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript" defer="defer"></script>
+<script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+
+<script async type="text/javascript" id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NIST&subagency=github&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c">
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Q89M6QHG7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1Q89M6QHG7');
+</script>
+
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="JARVIS-Leaderboard" class="md-header__button md-logo" aria-label="JARVIS-Leaderboard" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            JARVIS-Leaderboard
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Model for bandgap_JVASP_1174_GaAs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/usnistgov/jarvis_leaderboard" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jarvis_leaderboard
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../AI/" class="md-tabs__link">
+        AI
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        ES
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../EXP/" class="md-tabs__link">
+        EXP
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../FF/" class="md-tabs__link">
+        FF
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../QC/" class="md-tabs__link">
+        QC
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="JARVIS-Leaderboard" class="md-nav__button md-logo" aria-label="JARVIS-Leaderboard" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    JARVIS-Leaderboard
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/usnistgov/jarvis_leaderboard" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jarvis_leaderboard
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          AI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          AI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          ImageClass
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          ImageClass
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/ImageClass/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/ImageClass/stem_2d_image_bravais_class/" class="md-nav__link">
+        Model for STEM 2D Image class
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          MLFF
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          MLFF
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/MLFF/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/MLFF/alignn_ff_db_energy/" class="md-nav__link">
+        Model for ALIGNN-FF energy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          SinglePropertyClass
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          SinglePropertyClass
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyClass/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyClass/dft_3d_magmom_oszicar/" class="md-nav__link">
+        Model for magmom_oszicar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyClass/dft_3d_mbj_bandgap/" class="md-nav__link">
+        Model for mbj_bandgap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyClass/dft_3d_n_powerfact/" class="md-nav__link">
+        Model for n-powerfact
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyClass/dft_3d_optb88vdw_bandgap/" class="md-nav__link">
+        Model for optb88vdw_bandgap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyClass/dft_3d_p_Seebeck/" class="md-nav__link">
+        Model for p-Seebeck
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyClass/dft_3d_slme/" class="md-nav__link">
+        Model for slme
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyClass/dft_3d_spillage/" class="md-nav__link">
+        Model for spillage
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+          SinglePropertyPrediction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          SinglePropertyPrediction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_avg_elec_mass/" class="md-nav__link">
+        Model for avg_elec_mass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_avg_hole_mass/" class="md-nav__link">
+        Model for avg_hole_mass
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_bandgap/" class="md-nav__link">
+        Model for bandgap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_bulk_modulus_kv/" class="md-nav__link">
+        Model for bulk_modulus_kv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_dfpt_piezo_max_dielectric/" class="md-nav__link">
+        Model for dfpt_piezo_max_dielectric
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_dfpt_piezo_max_dij/" class="md-nav__link">
+        Model for dfpt_piezo_max_dij
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_ehull/" class="md-nav__link">
+        Model for ehull
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_encut/" class="md-nav__link">
+        Model for encut
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_epsx/" class="md-nav__link">
+        Model for epsx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_epsy/" class="md-nav__link">
+        Model for epsy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_epsz/" class="md-nav__link">
+        Model for epsz
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_exfoliation_energy/" class="md-nav__link">
+        Model for exfoliation_energy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_formation_energy_peratom/" class="md-nav__link">
+        Model for formation_energy_peratom
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_kpoint_length_unit/" class="md-nav__link">
+        Model for kpoint_length_unit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_magmom_oszicar/" class="md-nav__link">
+        Model for magmom_oszicar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_max_efg/" class="md-nav__link">
+        Model for max_efg
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_mbj_bandgap/" class="md-nav__link">
+        Model for mbj_bandgap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_mepsx/" class="md-nav__link">
+        Model for mepsx
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_mepsy/" class="md-nav__link">
+        Model for mepsy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_mepsz/" class="md-nav__link">
+        Model for mepsz
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_n_Seebeck/" class="md-nav__link">
+        Model for n-Seebeck
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_n_powerfact/" class="md-nav__link">
+        Model for n-powerfact
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_optb88vdw_bandgap/" class="md-nav__link">
+        Model for optb88vdw_bandgap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_optb88vdw_total_energy/" class="md-nav__link">
+        Model for optb88vdw_total_energy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_ph_heat_capacity/" class="md-nav__link">
+        Model for heat capacity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_shear_modulus_gv/" class="md-nav__link">
+        Model for shear_modulus_gv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_slme/" class="md-nav__link">
+        Model for slme
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/dft_3d_spillage/" class="md-nav__link">
+        Model for spillage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/hmof_lcd/" class="md-nav__link">
+        Model for lcd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/hmof_max_co2_adsp/" class="md-nav__link">
+        Model for max_co2_adsp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/hmof_min_co2_adsp/" class="md-nav__link">
+        Model for min_co2_adsp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/hmof_pld/" class="md-nav__link">
+        Model for pld
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/hmof_surface_area_m2cm3/" class="md-nav__link">
+        Model for surface_area_m2cm3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/hmof_surface_area_m2g/" class="md-nav__link">
+        Model for surface_area_m2g
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/hmof_void_fraction/" class="md-nav__link">
+        Model for void_fraction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/megnet_e_form/" class="md-nav__link">
+        Model for e_form
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/megnet_gappbe/" class="md-nav__link">
+        Model for gappbe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/qe_tb_energy_per_atom/" class="md-nav__link">
+        Model for energy_per_atom
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/qe_tb_f_enp/" class="md-nav__link">
+        Model for f_enp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/qe_tb_indir_gap/" class="md-nav__link">
+        Model for indir_gap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/qm9_std_jctc_Cv/" class="md-nav__link">
+        Model for Cv
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/qm9_std_jctc_G/" class="md-nav__link">
+        Model for G
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/qm9_std_jctc_H/" class="md-nav__link">
+        Model for H
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/qm9_std_jctc_HOMO/" class="md-nav__link">
+        Model for HOMO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/qm9_std_jctc_LUMO/" class="md-nav__link">
+        Model for LUMO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/qm9_std_jctc_R2/" class="md-nav__link">
+        Model for R2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/qm9_std_jctc_U/" class="md-nav__link">
+        Model for U
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/qm9_std_jctc_U0/" class="md-nav__link">
+        Model for U0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/qm9_std_jctc_ZPVE/" class="md-nav__link">
+        Model for ZPVE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/qm9_std_jctc_alpha/" class="md-nav__link">
+        Model for alpha
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/qm9_std_jctc_gap/" class="md-nav__link">
+        Model for gap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/qm9_std_jctc_mu/" class="md-nav__link">
+        Model for mu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/qmof_bandgap/" class="md-nav__link">
+        Model for bandgap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/snumat_Band_gap_HSE/" class="md-nav__link">
+        Model for Band_gap_HSE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/SinglePropertyPrediction/ssub_formula_energy/" class="md-nav__link">
+        Model for formula_energy in ssub database
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          Spectra
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Spectra
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/Spectra/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/Spectra/edos_pdos_ph_dos/" class="md-nav__link">
+        Model for PhononDos
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+          TextClass
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          TextClass
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/TextClass/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/TextClass/arXiv_categories/" class="md-nav__link">
+        Model for arXiv text class
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../AI/TextClass/pubchem_categories/" class="md-nav__link">
+        Model for arXiv text class
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          ES
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          ES
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          SinglePropertyPrediction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          SinglePropertyPrediction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_Tc_supercon/" class="md-nav__link">
+        Model for Tc_supercon
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_Tc_supercon_JVASP_1014_Ta/" class="md-nav__link">
+        dft 3d Tc supercon JVASP 1014 Ta
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_Tc_supercon_JVASP_1151_MgB2/" class="md-nav__link">
+        Model for Tc_supercon_JVASP_1151_MgB2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_Tc_supercon_JVASP_11981_Nb3Al/" class="md-nav__link">
+        Model for Tc_supercon_JVASP_11981_Nb3Al
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_Tc_supercon_JVASP_14492_NbO/" class="md-nav__link">
+        Model for Tc_supercon_JVASP_14492_NbO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_Tc_supercon_JVASP_14837_V/" class="md-nav__link">
+        Model for Tc_supercon_JVASP_14837_V
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_Tc_supercon_JVASP_14960_V3Si/" class="md-nav__link">
+        Model for Tc_supercon_JVASP_14960_V3Si
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_Tc_supercon_JVASP_15938_Nb3Si/" class="md-nav__link">
+        Model for Tc_supercon_JVASP_15938_Nb3Si
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_Tc_supercon_JVASP_19679_ZrN/" class="md-nav__link">
+        Model for Tc_supercon_JVASP_19679_ZrN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_Tc_supercon_JVASP_19889_NbC/" class="md-nav__link">
+        Model for Tc_supercon_JVASP_19889_NbC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_Tc_supercon_JVASP_20620_YB6/" class="md-nav__link">
+        Model for Tc_supercon_JVASP_20620_YB6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_Tc_supercon_JVASP_36335_NbN/" class="md-nav__link">
+        Model for Tc_supercon_JVASP_36335_NbN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_Tc_supercon_JVASP_816_Al/" class="md-nav__link">
+        Model for Tc_supercon_JVASP_816_Al
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_Tc_supercon_JVASP_934_Nb/" class="md-nav__link">
+        Model for Tc_supercon_JVASP_934_Nb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_Tc_supercon_JVASP_961_Pb/" class="md-nav__link">
+        Model for Tc_supercon_JVASP_961_Pb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap/" class="md-nav__link">
+        Model for bandgap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1002_Si/" class="md-nav__link">
+        Model for bandgap_JVASP_1002_Si
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_104_TiO2/" class="md-nav__link">
+        Model for bandgap_JVASP_104_TiO2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1130_LiF/" class="md-nav__link">
+        Model for bandgap_JVASP_1130_LiF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_113_ZrO2/" class="md-nav__link">
+        Model for bandgap_JVASP_113_ZrO2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1145_KCl/" class="md-nav__link">
+        Model for bandgap_JVASP_1145_KCl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_116_MgO/" class="md-nav__link">
+        Model for bandgap_JVASP_116_MgO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Model for bandgap_JVASP_1174_GaAs
+      </a>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1180_InN/" class="md-nav__link">
+        Model for bandgap_JVASP_1180_InN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1183_InP/" class="md-nav__link">
+        Model for bandgap_JVASP_1183_InP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1189_InSb/" class="md-nav__link">
+        Model for bandgap_JVASP_1189_InSb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1192_CdSe/" class="md-nav__link">
+        Model for bandgap_JVASP_1192_CdSe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1198_ZnTe/" class="md-nav__link">
+        Model for bandgap_JVASP_1198_ZnTe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1201_CuCl/" class="md-nav__link">
+        Model for bandgap_JVASP_1201_CuCl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1216_Cu2O/" class="md-nav__link">
+        Model for bandgap_JVASP_1216_Cu2O
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1267_BaTe/" class="md-nav__link">
+        Model for bandgap_JVASP_1267_BaTe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1294_BaSe/" class="md-nav__link">
+        Model for bandgap_JVASP_1294_BaSe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1300_MgS/" class="md-nav__link">
+        Model for bandgap_JVASP_1300_MgS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1312_BP/" class="md-nav__link">
+        Model for bandgap_JVASP_1312_BP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1315_BaS/" class="md-nav__link">
+        Model for bandgap_JVASP_1315_BaS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1327_AlP/" class="md-nav__link">
+        Model for bandgap_JVASP_1327_AlP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1393_GaP/" class="md-nav__link">
+        Model for bandgap_JVASP_1393_GaP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1405_CaO/" class="md-nav__link">
+        Model for bandgap_JVASP_1405_CaO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1408_AlSb/" class="md-nav__link">
+        Model for bandgap_JVASP_1408_AlSb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1453_AlCuO2/" class="md-nav__link">
+        Model for bandgap_JVASP_1453_AlCuO2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1702_ZnS/" class="md-nav__link">
+        Model for bandgap_JVASP_1702_ZnS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_17_BN/" class="md-nav__link">
+        Model for bandgap_JVASP_17_BN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_1954_AgCl/" class="md-nav__link">
+        Model for bandgap_JVASP_1954_AgCl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_23_CdTe/" class="md-nav__link">
+        Model for bandgap_JVASP_23_CdTe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_299_SnSe/" class="md-nav__link">
+        Model for bandgap_JVASP_299_SnSe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_30_GaN/" class="md-nav__link">
+        Model for bandgap_JVASP_30_GaN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_32_Al2O3/" class="md-nav__link">
+        Model for bandgap_JVASP_32_Al2O3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_39_AlN/" class="md-nav__link">
+        Model for bandgap_JVASP_39_AlN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_54_MoS2/" class="md-nav__link">
+        Model for bandgap_JVASP_54_MoS2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_57_MoSe2/" class="md-nav__link">
+        Model for bandgap_JVASP_57_MoSe2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_5_TiO2/" class="md-nav__link">
+        Model for bandgap_JVASP_5_TiO2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_72_WS2/" class="md-nav__link">
+        Model for bandgap_JVASP_72_WS2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_75_WSe2/" class="md-nav__link">
+        Model for bandgap_JVASP_75_WSe2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_7630_BAs/" class="md-nav__link">
+        Model for bandgap_JVASP_7630_BAs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_7678_MgSe/" class="md-nav__link">
+        Model for bandgap_JVASP_7678_MgSe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_7762_MgTe/" class="md-nav__link">
+        Model for bandgap_JVASP_7762_MgTe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_7844_AlN/" class="md-nav__link">
+        Model for bandgap_JVASP_7844_AlN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_7860_SnTe/" class="md-nav__link">
+        Model for bandgap_JVASP_7860_SnTe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_8003_CdS/" class="md-nav__link">
+        Model for bandgap_JVASP_8003_CdS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_8082_SrTiO3/" class="md-nav__link">
+        Model for bandgap_JVASP_8082_SrTiO3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_8158_SiC/" class="md-nav__link">
+        Model for bandgap_JVASP_8158_SiC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_8169_GaN/" class="md-nav__link">
+        Model for bandgap_JVASP_8169_GaN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_8566_AgI/" class="md-nav__link">
+        Model for bandgap_JVASP_8566_AgI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_8583_AgBr/" class="md-nav__link">
+        Model for bandgap_JVASP_8583_AgBr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_890_Ge/" class="md-nav__link">
+        Model for bandgap_JVASP_890_Ge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_9147_HfO2/" class="md-nav__link">
+        Model for bandgap_JVASP_9147_HfO2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_91_C/" class="md-nav__link">
+        Model for bandgap_JVASP_91_C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_95_CdS/" class="md-nav__link">
+        Model for bandgap_JVASP_95_CdS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_96_ZnSe/" class="md-nav__link">
+        Model for bandgap_JVASP_96_ZnSe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bandgap_JVASP_97_InAs/" class="md-nav__link">
+        Model for bandgap_JVASP_97_InAs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus/" class="md-nav__link">
+        Model for bulk modulus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_1002_Si/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_1002_Si
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_1130_LiF/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_1130_LiF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_116_MgO/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_116_MgO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_1174_GaAs/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_1174_GaAs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_14604_Ba/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_14604_Ba
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_14606_Ag/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_14606_Ag
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_14813_Rb/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_14813_Rb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_182_SiC/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_182_SiC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_20326_NaF/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_20326_NaF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_21208_Sr/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_21208_Sr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_23862_NaCl/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_23862_NaCl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_23864_LiCl/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_23864_LiCl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_25065_Li/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_25065_Li
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_25114_K/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_25114_K
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_25180_Ca/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_25180_Ca
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_816_Al/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_816_Al
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_867_Cu/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_867_Cu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_890_Ge/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_890_Ge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_91_C/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_91_C
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_963_Pd/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_963_Pd
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_bulk_modulus_JVASP_984_Rh/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_984_Rh
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_epsx/" class="md-nav__link">
+        Model for epsilon_x
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_epsx_JVASP_1312_BP/" class="md-nav__link">
+        Model for epsx_JVASP_1312_BP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_epsx_JVASP_1327_AlP/" class="md-nav__link">
+        Model for epsx_JVASP_1327_AlP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_epsx_JVASP_1393_GaP/" class="md-nav__link">
+        Model for epsx_JVASP_1393_GaP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_epsx_JVASP_1408_AlSb/" class="md-nav__link">
+        Model for epsx_JVASP_1408_AlSb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_epsx_JVASP_1702_ZnS/" class="md-nav__link">
+        Model for epsx_JVASP_1702_ZnS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_epsx_JVASP_17_BN/" class="md-nav__link">
+        Model for epsx_JVASP_17_BN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_epsx_JVASP_182_SiC/" class="md-nav__link">
+        Model for epsx_JVASP_182_SiC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_epsx_JVASP_2355_ZnGeP2/" class="md-nav__link">
+        Model for epsx_JVASP_2355_ZnGeP2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_epsx_JVASP_2376_ZnSiP2/" class="md-nav__link">
+        Model for epsx_JVASP_2376_ZnSiP2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_epsx_JVASP_23_CdTe/" class="md-nav__link">
+        Model for epsx_JVASP_23_CdTe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_epsx_JVASP_54_MoS2/" class="md-nav__link">
+        Model for epsx_JVASP_54_MoS2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_epsx_JVASP_57_MoSe2/" class="md-nav__link">
+        Model for epsx_JVASP_57_MoSe2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_epsx_JVASP_60_Te2Mo/" class="md-nav__link">
+        Model for epsx_JVASP_60_Te2Mo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_epsx_JVASP_72_WS2/" class="md-nav__link">
+        Model for epsx_JVASP_72_WS2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_epsx_JVASP_75_WSe2/" class="md-nav__link">
+        Model for epsx_JVASP_75_WSe2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_epsx_JVASP_8041_HgTe/" class="md-nav__link">
+        Model for epsx_JVASP_8041_HgTe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_max_piezoelec/" class="md-nav__link">
+        Model for Max Piezoelectric coeff
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_max_piezoelec_JVASP_110_BaTiO3/" class="md-nav__link">
+        Model for max_piezoelec_JVASP_110_BaTiO3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_max_piezoelec_JVASP_1180_InN/" class="md-nav__link">
+        Model for max_piezoelec_JVASP_1180_InN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_max_piezoelec_JVASP_1195_ZnO/" class="md-nav__link">
+        Model for max_piezoelec_JVASP_1195_ZnO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_max_piezoelec_JVASP_1240_LiNbO3/" class="md-nav__link">
+        Model for max_piezoelec_JVASP_1240_LiNbO3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_max_piezoelec_JVASP_1327_AlP/" class="md-nav__link">
+        Model for max_piezoelec_JVASP_1327_AlP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_max_piezoelec_JVASP_1372_AlAs/" class="md-nav__link">
+        Model for max_piezoelec_JVASP_1372_AlAs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_max_piezoelec_JVASP_1408_AlSb/" class="md-nav__link">
+        Model for max_piezoelec_JVASP_1408_AlSb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_max_piezoelec_JVASP_20778_BeO/" class="md-nav__link">
+        Model for max_piezoelec_JVASP_20778_BeO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_max_piezoelec_JVASP_30_GaN/" class="md-nav__link">
+        Model for max_piezoelec_JVASP_30_GaN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_max_piezoelec_JVASP_3450_TiPbO3/" class="md-nav__link">
+        Model for max_piezoelec_JVASP_3450_TiPbO3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_max_piezoelec_JVASP_35711_GaSb/" class="md-nav__link">
+        Model for max_piezoelec_JVASP_35711_GaSb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_max_piezoelec_JVASP_39_AlN/" class="md-nav__link">
+        Model for max_piezoelec_JVASP_39_AlN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_max_piezoelec_JVASP_41_SiO2/" class="md-nav__link">
+        Model for max_piezoelec_JVASP_41_SiO2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_max_piezoelec_JVASP_57695_BN/" class="md-nav__link">
+        Model for max_piezoelec_JVASP_57695_BN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_max_piezoelec_JVASP_7648_ZnS/" class="md-nav__link">
+        Model for max_piezoelec_JVASP_7648_ZnS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_max_piezoelec_JVASP_8047_ZnSe/" class="md-nav__link">
+        Model for max_piezoelec_JVASP_8047_ZnSe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_slme/" class="md-nav__link">
+        Model for SLME
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_slme_JVASP_1174_GaAs/" class="md-nav__link">
+        Model for slme_JVASP_1174_GaAs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_slme_JVASP_266_InP/" class="md-nav__link">
+        Model for slme_JVASP_266_InP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_slme_JVASP_7112_H6PbCI3N/" class="md-nav__link">
+        Model for slme_JVASP_7112_H6PbCI3N
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_slme_JVASP_7757_CdTe/" class="md-nav__link">
+        Model for slme_JVASP_7757_CdTe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dft_3d_slme_JVASP_8554_InCuSe2/" class="md-nav__link">
+        Model for slme_JVASP_8554_InCuSe2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          Spectra
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Spectra
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spectra/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spectra/dft_3d_dielectric_function/" class="md-nav__link">
+        Model for dielectric_function
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spectra/dft_3d_dielectric_function_JVASP_1002_Si/" class="md-nav__link">
+        Model for dielectric_function_JVASP_1002_Si
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spectra/dft_3d_dielectric_function_JVASP_1174_GaAs/" class="md-nav__link">
+        Model for dielectric_function_JVASP_1174_GaAs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spectra/dft_3d_dielectric_function_JVASP_266_InP/" class="md-nav__link">
+        Model for dielectric_function_JVASP_266_InP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Spectra/dft_3d_dielectric_function_JVASP_890_Ge/" class="md-nav__link">
+        Model for dielectric_function_JVASP_890_Ge
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          EXP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          EXP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../EXP/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          Spectra
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Spectra
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../EXP/Spectra/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../EXP/Spectra/dft_3d_XRD_JVASP_19821_MgB2/" class="md-nav__link">
+        XRD for MgB2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          FF
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          FF
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FF/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          SinglePropertyPrediction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          SinglePropertyPrediction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FF/SinglePropertyPrediction/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FF/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_1002_Si/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_1002_Si
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FF/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_816_Al/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_816_Al
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../FF/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_867_Cu/" class="md-nav__link">
+        Model for bulk_modulus_JVASP_867_Cu
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          QC
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          QC
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../QC/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+          EigenSolver
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          EigenSolver
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../QC/EigenSolver/" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../QC/EigenSolver/dft_3d_electron_bands_JVASP_816_Al_WTBH/" class="md-nav__link">
+        Model for Hamiltonian
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="model-for-bandgap_jvasp_1174_gaas">Model for bandgap_JVASP_1174_GaAs</h1>
+<h2>Model benchmarks</h2>
+
+<table style="width:100%" id="j_table">
+ <thead>
+  <tr>
+<th>Model name</th>
+    <th>Dataset</th>
+   <!-- <th>Method</th>-->
+    <th>MAE</th>
+    <th>Team name</th>
+    <th>Dataset size</th>
+    <th>Date submitted</th>
+    <th>Notes</th>
+  </tr>
+ </thead>
+<!--table_content--><tr><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_hse06" target="_blank">vasp_hse06</a></td><td>dft_3d</td><td>1.33</td><td>JARVIS</td><td>1</td><td>01-14-2023</td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_hse06/ES-SinglePropertyPrediction-bandgap_JVASP_1174_GaAs-dft_3d-test-mae.csv.zip" target="_blank">CSV</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/dataset/ES/SinglePropertyPrediction/dft_3d_bandgap_JVASP_1174_GaAs.json.zip" target="_blank">JSON</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_hse06/run.sh " target="_blank">run.sh</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_hse06/metadata.json " target="_blank">Info</a>, <a href="https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/JVASP-1174.xml " target="_blank">JVASP-1174</a></td></tr><!--table_content--><tr><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_pbe_aflow" target="_blank">vasp_pbe_aflow</a></td><td>dft_3d</td><td>1.33</td><td>AFLOW</td><td>1</td><td>01-14-2023</td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_pbe_aflow/ES-SinglePropertyPrediction-bandgap_JVASP_1174_GaAs-dft_3d-test-mae.csv.zip" target="_blank">CSV</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/dataset/ES/SinglePropertyPrediction/dft_3d_bandgap_JVASP_1174_GaAs.json.zip" target="_blank">JSON</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_pbe_aflow/run.sh " target="_blank">run.sh</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_pbe_aflow/metadata.json " target="_blank">Info</a>, <a href="https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/JVASP-1174.xml " target="_blank">JVASP-1174</a></td></tr><!--table_content--><tr><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_optb88vdw" target="_blank">vasp_optb88vdw</a></td><td>dft_3d</td><td>1.435</td><td>JARVIS</td><td>1</td><td>01-14-2023</td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_optb88vdw/ES-SinglePropertyPrediction-bandgap_JVASP_1174_GaAs-dft_3d-test-mae.csv.zip" target="_blank">CSV</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/dataset/ES/SinglePropertyPrediction/dft_3d_bandgap_JVASP_1174_GaAs.json.zip" target="_blank">JSON</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_optb88vdw/run.sh " target="_blank">run.sh</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_optb88vdw/metadata.json " target="_blank">Info</a>, <a href="https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/JVASP-1174.xml " target="_blank">JVASP-1174</a></td></tr><!--table_content--><tr><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_tbmbj" target="_blank">vasp_tbmbj</a></td><td>dft_3d</td><td>0.199</td><td>JARVIS</td><td>1</td><td>01-14-2023</td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_tbmbj/ES-SinglePropertyPrediction-bandgap_JVASP_1174_GaAs-dft_3d-test-mae.csv.zip" target="_blank">CSV</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/dataset/ES/SinglePropertyPrediction/dft_3d_bandgap_JVASP_1174_GaAs.json.zip" target="_blank">JSON</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_tbmbj/run.sh " target="_blank">run.sh</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_tbmbj/metadata.json " target="_blank">Info</a>, <a href="https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/JVASP-1174.xml " target="_blank">JVASP-1174</a></td></tr><!--table_content--><tr><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_pbe_mp" target="_blank">vasp_pbe_mp</a></td><td>dft_3d</td><td>1.33</td><td>MP</td><td>1</td><td>01-14-2023</td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_pbe_mp/ES-SinglePropertyPrediction-bandgap_JVASP_1174_GaAs-dft_3d-test-mae.csv.zip" target="_blank">CSV</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/dataset/ES/SinglePropertyPrediction/dft_3d_bandgap_JVASP_1174_GaAs.json.zip" target="_blank">JSON</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_pbe_mp/run.sh " target="_blank">run.sh</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_pbe_mp/metadata.json " target="_blank">Info</a>, <a href="https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/JVASP-1174.xml " target="_blank">JVASP-1174</a></td></tr><!--table_content--><tr><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_pbe_oqmd" target="_blank">vasp_pbe_oqmd</a></td><td>dft_3d</td><td>1.33</td><td>OQMD</td><td>1</td><td>01-14-2023</td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_pbe_oqmd/ES-SinglePropertyPrediction-bandgap_JVASP_1174_GaAs-dft_3d-test-mae.csv.zip" target="_blank">CSV</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/dataset/ES/SinglePropertyPrediction/dft_3d_bandgap_JVASP_1174_GaAs.json.zip" target="_blank">JSON</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_pbe_oqmd/run.sh " target="_blank">run.sh</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_pbe_oqmd/metadata.json " target="_blank">Info</a>, <a href="https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/JVASP-1174.xml " target="_blank">JVASP-1174</a></td></tr><!--table_content-->
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      NIST Copyright, Kamal Choudhary
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/usnistgov/jarvis_leaderboard" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+        <script src="../../../javascripts/tablesort.min.js"></script>
+      
+        <script src="../../../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>
