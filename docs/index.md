@@ -11,7 +11,7 @@ In addition to prediction results, we attempt to capture the underlyig software,
 
 <!--number_of_methods--> - Number of methods: [83](https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks)
 
-<!--number_of_tasks--> - Number of tasks: 207
+<!--number_of_tasks--> - Number of tasks: 208
 
 <!--number_of_benchmarks--> - Number of benchmarks: 714
 
