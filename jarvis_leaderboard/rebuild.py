@@ -846,6 +846,7 @@ def rebuild_pages():
         "ES-Spectra-dielectric_function-dft_3d-test-multimae",
         "QC-EigenSolver-electron_bands_JVASP_816_Al_WTBH-dft_3d-test-multimae",
         "EXP-Spectra-XRD_JVASP_19821_MgB2-dft_3d-test-multimae",
+        "EXP-Spectra-co2_RM_8852-nist_isodb-test-multimae",
     ]
     x = []
     for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
