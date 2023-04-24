@@ -248,7 +248,7 @@ def rebuild_pages():
     num_data = 0
     for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
         # if 'Text' in i:
-        #print(i)
+        # print(i)
         fname = i.split("/")[-1].split(".csv.zip")[0]
         temp = fname.split("-")
         submod = temp[1]
@@ -261,7 +261,17 @@ def rebuild_pages():
         # print ('dataset',dataset)
         team = i.split("/")[-2]
         md_filename = "../docs/" + method + "/" + submod + "/" + prop + ".md"
-        md_filename = "../docs/" + method + "/" + submod + "/" + dataset+"_"+prop + ".md"
+        md_filename = (
+            "../docs/"
+            + method
+            + "/"
+            + submod
+            + "/"
+            + dataset
+            + "_"
+            + prop
+            + ".md"
+        )
         # print ('md_filename',md_filename)
         md_path = os.path.join(root_dir, md_filename)
         # print(
@@ -313,7 +323,17 @@ def rebuild_pages():
 
         team = i.split("/")[-2]
         md_filename = "../docs/" + method + "/" + submod + "/" + prop + ".md"
-        md_filename = "../docs/" + method + "/" + submod + "/" + dataset+"_"+prop + ".md"
+        md_filename = (
+            "../docs/"
+            + method
+            + "/"
+            + submod
+            + "/"
+            + dataset
+            + "_"
+            + prop
+            + ".md"
+        )
         md_path = os.path.join(root_dir, md_filename)
         md_files.append(md_path)
         notes = ""
@@ -349,8 +369,8 @@ def rebuild_pages():
         )
         notes = notes + ", " + json_url + ", " + runsh + ", " + metadata
         if "JVASP" in prop:
-            jid = "JVASP-" + prop.split("JVASP_")[1].split('_')[0]
-            print ('propjid',prop,jid)
+            jid = "JVASP-" + prop.split("JVASP_")[1].split("_")[0]
+            print("propjid", prop, jid)
             jid_url = (
                 '<a href="'
                 + "https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/"
@@ -476,7 +496,7 @@ def rebuild_pages():
         for name in homepage:
             # print(md_path,name)
             for i in dat:
-                #name2 = (
+                # name2 = (
                 #    i["result"]["submod"]
                 #    + "-"
                 #    + i["result"]["data_split"]
@@ -488,7 +508,7 @@ def rebuild_pages():
                 #    + i["result"]["method"]
                 #    + "-"
                 #    + i["result"]["metric"]
-                #)
+                # )
                 name2 = (
                     i["result"]["method"]
                     + "-"
@@ -555,7 +575,7 @@ def rebuild_pages():
                     + "</td>"
                     + "<td>"
                     + '<a href="./'
-                    #+ j["dataset"]+'_'
+                    # + j["dataset"]+'_'
                     + j["method"]
                     + "/"
                     + j["submod"]
@@ -570,10 +590,12 @@ def rebuild_pages():
                     + "/"
                     + j["submod"]
                     + "/"
-                    + j["dataset"]+'_'
+                    + j["dataset"]
+                    + "_"
                     + j["prop"]
                     + '" target="_blank">'
-                    + j["dataset"]+'_'
+                    + j["dataset"]
+                    + "_"
                     + j["prop"]
                     + "</a>"
                     # + j["prop"]
@@ -640,10 +662,12 @@ def rebuild_pages():
                     + j["submod"]
                     + "/"
                     # + "/"
-                    + j["dataset"]+'_'
+                    + j["dataset"]
+                    + "_"
                     + j["prop"]
                     + '" target="_blank">'
-                    + j["dataset"]+'_'
+                    + j["dataset"]
+                    + "_"
                     + j["prop"]
                     + "</a>"
                     # + j["prop"]
@@ -710,10 +734,12 @@ def rebuild_pages():
                     # + "/"
                     # + j["submod"]
                     # + "/"
-                    + j["dataset"]+'_'
+                    + j["dataset"]
+                    + "_"
                     + j["prop"]
                     + '" target="_blank">'
-                    + j["dataset"]+'_'
+                    + j["dataset"]
+                    + "_"
                     + j["prop"]
                     + "</a>"
                     # + j["prop"]
