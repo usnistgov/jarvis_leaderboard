@@ -11,7 +11,11 @@ from jarvis.core.atoms import Atoms
 from jarvis.db.jsonutils import loadjson
 import argparse
 from jarvis.db.figshare import data
+import jarvis_leaderboard
 
+root_dir = str(
+    jarvis_leaderboard.__path__[0]
+)  # os.path.dirname(os.path.abspath(__file__))
 parser = argparse.ArgumentParser(description="JARVIS-Leaderboard")
 parser.add_argument(
     "--benchmark_file",
@@ -53,7 +57,8 @@ if __name__ == "__main__":
     print("id_tag", id_tag)
     temp = dataset + "_" + prop + ".json.zip"
     temp2 = dataset + "_" + prop + ".json"
-    fname = os.path.join("jarvis_leaderboard", "dataset", method, task, temp)
+    fname = os.path.join(root_dir, "dataset", method, task, temp)
+    # fname = os.path.join("jarvis_leaderboard", "dataset", method, task, temp)
     print("dataset file to be used", fname)
     if dataset in ["dft_3d", "dft_2d", "qe_tb"]:
         dat = data(dataset)
