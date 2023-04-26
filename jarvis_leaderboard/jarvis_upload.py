@@ -86,7 +86,14 @@ def upload():
     cmd = "git add ./" + add_dir + "/*"
     print("Git add dir", cmd)
     os.system(cmd)
-    cmd = "git commit -m 'Adding benchmark.'"
+    cmd = (
+        "git commit -m '"
+        + "Adding benchmark by "
+        + str(username)
+        + "_"
+        + str(your_benchmark_directory)
+        + ".'"
+    )
     print("Git commit", cmd)
     os.system(cmd)
     cmd = "git push"
@@ -102,7 +109,8 @@ def upload():
         + username
         + " -d "
         + "'"
-        + '{"title":"Adding new benchmark","base":"develop", "head":"'
+        + '{"title":"Adding new benchmark by '+str(username)+'_'+str(your_benchmark_directory)+'","base":"develop", "head":"'
+        #+ '{"title":"Adding new benchmark","base":"develop", "head":"'
         + username
         + ':main"}'
         + "'"
