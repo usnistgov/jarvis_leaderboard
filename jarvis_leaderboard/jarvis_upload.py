@@ -22,7 +22,7 @@ parser.add_argument(
 
 parser.add_argument(
     "--github_username",
-    default="knc6",
+    default="not_available",
     help="Your GitHub username",
 )
 
@@ -35,10 +35,16 @@ parser.add_argument(
 
 
 def upload():
+    print ('Make sure GitHub credentials are added\nChecking:\n')
+    cmd = 'git config --list'
+    os.system(cmd)
+
     args = parser.parse_args(sys.argv[1:])
     upstream_repo_name = args.upstream_repo_name
     upstream_repo_username = args.upstream_repo_username
     username = args.github_username
+    if username=="not_available":
+       raise ValueError('Pass github username')
     your_benchmark_directory = args.your_benchmark_directory
     cwd = os.getcwd()
     print("For help: jarvis_upload.py -h")
@@ -93,6 +99,7 @@ def upload():
     print("Git status", cmd)
     os.system(cmd)
 
+
     cmd = (
         "git commit -m '"
         + "Adding benchmark by "
@@ -104,11 +111,27 @@ def upload():
     print("Git commit", cmd)
     os.system(cmd)
 
-    cmd = "git remote add origin git@github.com:"+username+"/"+"jarvis_leaderboard.git"
-    print("Git add origin", cmd)
-    os.system(cmd)
 
-    cmd = "git push"
+
+    #cmd = "git remote add origin https://{passwd}@github.com/{username}/jarvis_leaderboard.git"
+    #print("Git add origin", cmd)
+    #os.system(cmd)
+
+
+
+    #cmd = "git remote -v"
+    #print("Git -v", cmd)
+    #os.system(cmd)
+
+
+    #cmd="git push https://{passwd}@github.com/{username}/jarvis_leaderboard.git"
+    #print("Git push", cmd)
+    #os.system(cmd)
+    #cmd = "git remote add origin git@github.com:"+username+"/"+"jarvis_leaderboard.git"
+    #print("Git add origin", cmd)
+    #os.system(cmd)
+
+    cmd = "git push origin main"
     print("Push", cmd)
     os.system(cmd)
 
