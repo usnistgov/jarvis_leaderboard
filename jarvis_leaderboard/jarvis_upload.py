@@ -103,6 +103,11 @@ def upload():
     )
     print("Git commit", cmd)
     os.system(cmd)
+
+    cmd = "git remote add origin git@github.com:"+username+"/"+"jarvis_leaderboard.git"
+    print("Git add origin", cmd)
+    os.system(cmd)
+
     cmd = "git push"
     print("Push", cmd)
     os.system(cmd)
