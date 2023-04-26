@@ -180,14 +180,15 @@ def upload():
     cmd = 'git push https://'+passwd+'@github.com/'+username+'/jarvis_leaderboard.git'
     print("Push", cmd)
     os.system(cmd)
-
-    errors=rebuild_pages()
-    if len(errors)!=0:
+ 
+    #TODO: add the follwoing insted of python jarvis_leaderboard/rebuild.py
+    #errors=rebuild_pages()
+    #if len(errors)!=0:
        raise ValueError('Found errors in your benchmark, check again',errors)
 
-    #cmd = "python jarvis_leaderboard/rebuild.py"
-    #print(cmd)
-    #os.system(cmd)
+    cmd = "python jarvis_leaderboard/rebuild.py"
+    print(cmd)
+    os.system(cmd)
 
     cmd = (
         "curl -u "
