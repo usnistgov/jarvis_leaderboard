@@ -82,10 +82,17 @@ def upload():
     cmd = "ls ./" + add_dir
     print("List files", cmd)
     os.system(cmd)
-
-    cmd = "git add ./" + add_dir + "/*"
+    print("pwd", os.getcwd())
+    cmd = "git add " + add_dir  # + "/*"
+    # cmd = "git add ./" + add_dir + "/*"
     print("Git add dir", cmd)
     os.system(cmd)
+    # time.sleep(5)
+    cmd = "git status "
+    # cmd = "git add ./" + add_dir + "/*"
+    print("Git status", cmd)
+    os.system(cmd)
+
     cmd = (
         "git commit -m '"
         + "Adding benchmark by "
@@ -109,8 +116,12 @@ def upload():
         + username
         + " -d "
         + "'"
-        + '{"title":"Adding new benchmark by '+str(username)+'_'+str(your_benchmark_directory)+'","base":"develop", "head":"'
-        #+ '{"title":"Adding new benchmark","base":"develop", "head":"'
+        + '{"title":"Adding new benchmark by '
+        + str(username)
+        + "_"
+        + str(your_benchmark_directory)
+        + '","base":"develop", "head":"'
+        # + '{"title":"Adding new benchmark","base":"develop", "head":"'
         + username
         + ':main"}'
         + "'"
