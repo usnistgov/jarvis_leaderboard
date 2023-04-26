@@ -4,6 +4,7 @@ import os
 import sys
 import requests
 import time
+from jarvis_leaderboard.rebuild import rebuild_pages
 
 parser = argparse.ArgumentParser(description="Add data to JARVIS-Leaderboard.")
 
@@ -36,23 +37,52 @@ parser.add_argument(
 
 def upload():
     print ('Make sure GitHub credentials are added\nChecking:\n')
-    cmd = 'git config --list'
+    cmd = 'git config --list > ghout'
     os.system(cmd)
 
     args = parser.parse_args(sys.argv[1:])
+    username = args.github_username
+    f = open('ghout','r')
+    lines = f.read().splitlines()
+    f.close()
+    username=''
+    passwd=''
+    for i in lines:
+     if 'user.name' in i:
+        username = (i.split('=')[1])
+     if 'user.password' in i:
+        passwd = (i.split('=')[1])
+        print ('passwd/token',passwd)
+    cmd = 'rm ghout'
+    os.system(cmd)
+    if username=="not_available":
+       raise ValueError('Provide GitHub username.')
+    if username=='':
+       raise ValueError('Provide GitHub username.')
+    if passwd=='':
+       raise ValueError('Provide GitHub password/token.')
+
+
     upstream_repo_name = args.upstream_repo_name
     upstream_repo_username = args.upstream_repo_username
-    username = args.github_username
-    if username=="not_available":
-       raise ValueError('Pass github username')
     your_benchmark_directory = args.your_benchmark_directory
     cwd = os.getcwd()
-    print("For help: jarvis_upload.py -h")
-    print("Using GitHub username", username)
+    print ('Uploading benchmark...')
+
+    print("For help: jarvis_upload.py -h\n")
+
+    print("Using GitHub username", username,"\n")
+    print("Using GitHub password", passwd,"\n")
+
+
     forked_url = "https://github.com/" + username + "/" + upstream_repo_name
     print("Forked_url", forked_url)
+
+    #check if forked url exists
     response = requests.get(forked_url)
     print("response", response)
+    print ('passwd',passwd)
+    # TODO: Use subprocess to enter password
     if response.status_code > 400:
         cmd = (
             "curl -u "
@@ -61,18 +91,26 @@ def upload():
             + upstream_repo_username
             + "/"
             + upstream_repo_name
-            + "/forks -d ''"
+            + "/forks"
+            ##+ '--header "Authorization: Bearer '+passwd+'" '
+            #+ "--header 'authorization: Bearer "+passwd+"' "
+            + " -d ''"
+            #+"<<"+passwd
         )
         print("Forking repo", cmd)
         os.system(cmd)
+
     # Takes a few seconds to fork repo
     time.sleep(5)
-    # print ('If you are encoutering issues due to existing forked repo,')
-    # print ('delete it and run the script again.')
+    print ('Note:If you are encoutering issues due to existing forked repo,')
+    print ('and clashes, delete it and run the script again.')
+
     if not os.path.exists(upstream_repo_name):
         cmd = "git clone " + forked_url + ".git"
         print("Cloning repo", cmd)
         os.system(cmd)
+
+
     if os.path.exists(your_benchmark_directory):
         print("Note: adding to existing directory.")
     cmd = (
@@ -80,19 +118,25 @@ def upload():
         + your_benchmark_directory
         + " jarvis_leaderboard/jarvis_leaderboard/benchmarks/"
     )
-    print("Cpying files", cmd)
-    os.system(cmd)
+    print("oCpying files", cmd)
+    os.system(cmd
+
+)
     # cmd='cd '+upstream_repo_name
     os.chdir(upstream_repo_name)
     add_dir = "jarvis_leaderboard/benchmarks/" + your_benchmark_directory
     cmd = "ls ./" + add_dir
     print("List files", cmd)
     os.system(cmd)
+
+
     print("pwd", os.getcwd())
     cmd = "git add " + add_dir  # + "/*"
     # cmd = "git add ./" + add_dir + "/*"
     print("Git add dir", cmd)
     os.system(cmd)
+
+
     # time.sleep(5)
     cmd = "git status "
     # cmd = "git add ./" + add_dir + "/*"
@@ -131,13 +175,19 @@ def upload():
     #print("Git add origin", cmd)
     #os.system(cmd)
 
-    cmd = "git push origin main"
+    #cmd = "git push origin main"
+    #cmd = 'git push https://{'+passwd+'}@github.com/{'+username+'}/jarvis_leaderboard.git'
+    cmd = 'git push https://'+passwd+'@github.com/'+username+'/jarvis_leaderboard.git'
     print("Push", cmd)
     os.system(cmd)
 
-    cmd = "python jarvis_leaderboard/rebuild.py"
-    print(cmd)
-    os.system(cmd)
+    errors=rebuild_pages()
+    if len(errors)!=0:
+       raise ValueError('Found errors in your benchmark, check again',errors)
+
+    #cmd = "python jarvis_leaderboard/rebuild.py"
+    #print(cmd)
+    #os.system(cmd)
 
     cmd = (
         "curl -u "
