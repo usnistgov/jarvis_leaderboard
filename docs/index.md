@@ -47,7 +47,7 @@ In addition to prediction results, we attempt to capture the underlyig software,
              + [Spectra](./EXP/Spectra)
 
     === "Adding model benchmarks to existing dataset"
-        For a short version, checkout this [google colab-notebook](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/Upload_benchmark_to_jarvis_leaderboard.ipynb)
+        For a short version, checkout this [google colab-notebook](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/alignn_jarvis_leaderboard.ipynb)
 
         For a long version, see below:
 
@@ -67,7 +67,7 @@ In addition to prediction results, we attempt to capture the underlyig software,
 
           `cd  vasp_pbe_teamX`
 
-          `cp ../vasp_optb88vdw/SinglePropertyPrediction-test-bandgap_JVASP_1002_Si-dft_3d-ES-mae.csv.zip .`
+          `cp ../vasp_optb88vdw/ES-SinglePropertyPrediction-bandgap_JVASP_1002_Si-dft_3d-test-mae.csv.zip .`
 
           `vi ES-SinglePropertyPrediction-bandgap_JVASP_1002_Si-dft_3d-test-mae.csv.zip`
           
@@ -76,6 +76,7 @@ In addition to prediction results, we attempt to capture the underlyig software,
           After pressing eneter twice, you'll see the file content as `id,predictions`
 
           Just modify the predicting value to your model/measurement value
+
           Save the file (":wq!" and ":q!")
 
           Add `metadata.json` and `run.sh` files to capture metadata and enhance reproducibility
@@ -91,6 +92,7 @@ In addition to prediction results, we attempt to capture the underlyig software,
           Hoping there's no error, try: `mkdocs serve`
 
           Ensure `vasp_pbe_teamX` row exists at:
+
           `http://127.0.0.1:8000/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/bandgap_JVASP_1002_Si/`
 
           Now add changes, `git add jarvis_leaderboard/benchmarks/vasp_pbe_teamX`
@@ -112,10 +114,13 @@ In addition to prediction results, we attempt to capture the underlyig software,
           Populate the dataset for a benchmark, e.g.:
 
           `python jarvis_leaderboard/populate_data.py --benchmark_file AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae --output_path=Out`
+
           Train you model(s), e.g.:
 
           `pip install alignn`
+
           `wget https://raw.githubusercontent.com/usnistgov/alignn/main/alignn/examples/sample_data/config_example.json`
+
           `train_folder.py --root_dir "Out" --config "config_example.json" --output_dir="temp"`
 
           Create a folder in the `jarvis_leaderboard/benchmarks` folder under respective submodule, e.g.:
