@@ -4212,7 +4212,7 @@ In addition to prediction results, we attempt to capture the underlyig software,
 <p><code>mkdir vasp_pbe_teamX</code> , you can give any reaosnable name to the benchmark folder in place of <code>vasp_pbe_teamX</code></p>
 <p><code>cd  vasp_pbe_teamX</code></p>
 <p><code>cp ../vasp_optb88vdw/SinglePropertyPrediction-test-bandgap_JVASP_1002_Si-dft_3d-ES-mae.csv.zip .</code></p>
-<p><code>vi SinglePropertyPrediction-test-bandgap_JVASP_1002_Si-dft_3d-ES-mae.csv.zip</code></p>
+<p><code>vi ES-SinglePropertyPrediction-bandgap_JVASP_1002_Si-dft_3d-test-mae.csv.zip</code></p>
 <p>Note: do not change filenames, e.g., replace dft with qmc etc., which will cause errors</p>
 <p>After pressing eneter twice, you'll see the file content as <code>id,predictions</code></p>
 <p>Just modify the predicting value to your model/measurement value
@@ -4236,7 +4236,7 @@ In addition to prediction results, we attempt to capture the underlyig software,
 <li>Another example for AI mode as follows:</li>
 </ol>
 <p>Populate the dataset for a benchmark, e.g.:</p>
-<p><code>python jarvis_leaderboard/populate_data.py --benchmark_file SinglePropertyPrediction-test-exfoliation_energy-dft_3d-AI-mae --output_path=Out</code>
+<p><code>python jarvis_leaderboard/populate_data.py --benchmark_file AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae --output_path=Out</code>
   Train you model(s), e.g.:</p>
 <p><code>pip install alignn</code>
   <code>wget https://raw.githubusercontent.com/usnistgov/alignn/main/alignn/examples/sample_data/config_example.json</code>
@@ -4245,9 +4245,9 @@ In addition to prediction results, we attempt to capture the underlyig software,
 <p><code>mkdir benchmarks/my_awesome_model</code></p>
 <p>Add comma-separated zip file (<code>.csv.zip</code>) file(s) corresponding to benchmark(s), e.g.:</p>
 <p><code>cp temp/prediction_results_test_set.csv .</code></p>
-<p><code>mv prediction_results_test_set.csv SinglePropertyPrediction-test-exfoliation_energy-dft_2d-AI-mae.csv</code></p>
-<p><code>zip SinglePropertyPrediction-test-exfoliation_energy-dft_2d-AI-mae.csv SinglePropertyPrediction-test-exfoliation_energy-dft_2d-AI-mae.csv.zip</code></p>
-<p><code>mv SinglePropertyPrediction-test-exfoliation_energy-dft_2d-AI-mae.csv.zip jarvis_leaderboard/benchmarks/my_awesome_model</code></p>
+<p><code>mv prediction_results_test_set.csv AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae.csv</code></p>
+<p><code>zip AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae.csv AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae.csv.zip</code></p>
+<p><code>mv AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae.csv.zip jarvis_leaderboard/benchmarks/my_awesome_model</code></p>
 <p>Add metadata info in the <code>metadata.json</code> file, e.g.:</p>
 <p><code>cp jarvis_leaderboard/benchmarks/alignn_models/metadata.json jarvis_leaderboard/benchmarks/my_awesome_model</code> </p>
 <p>Also, add a <code>run.py</code>, <code>run.sh</code> and <code>Dockerfile</code> scripts to reproduce the model predictions.</p>
