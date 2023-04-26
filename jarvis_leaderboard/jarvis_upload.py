@@ -109,7 +109,8 @@ def upload():
         + username
         + " -d "
         + "'"
-        + '{"title":"Adding new benchmark","base":"develop", "head":"'
+        + '{"title":"Adding new benchmark by '+str(username)+'_'+str(your_benchmark_directory)+'","base":"develop", "head":"'
+        #+ '{"title":"Adding new benchmark","base":"develop", "head":"'
         + username
         + ':main"}'
         + "'"
