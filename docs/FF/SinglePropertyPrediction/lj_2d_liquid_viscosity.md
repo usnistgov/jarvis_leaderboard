@@ -1,4 +1,4 @@
-# Model for 2D LJ liquid vescoisty
+# Model for 2D LJ liquid viscosity
 
 [Source](https://github.com/lammps/lammps/tree/develop/examples/VISCOSITY)
 
