@@ -370,7 +370,7 @@ def rebuild_pages():
         notes = notes + ", " + json_url + ", " + runsh + ", " + metadata
         if "JVASP" in prop:
             jid = "JVASP-" + prop.split("JVASP_")[1].split("_")[0]
-            print("propjid", prop, jid)
+            #print("propjid", prop, jid)
             jid_url = (
                 '<a href="'
                 + "https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/"
@@ -878,7 +878,8 @@ def rebuild_pages():
     for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
         x.append(i.split(".csv.zip")[0])
         # x.append(i.split('/')[-1].split('.csv.zip')[0])
-    print(x, len(x))
+    print('Files', len(x))
+    #print(x, len(x))
     update_individual_index_md(md_path="docs/index.md", homepage=homepage)
     # update_individual_index_md(md_path="docs/index.md",homepage=sorted(x))
     update_individual_index_md(md_path="docs/ES/index.md", key="ES")
