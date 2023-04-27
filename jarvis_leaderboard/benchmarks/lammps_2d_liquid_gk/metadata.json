@@ -8,5 +8,5 @@
  "project_url": "https://github.com/lammps/lammps/blob/develop/examples/VISCOSITY/in.einstein.2d",
  "doi":"https://www.nature.com/articles/sdata2016125",
  "software_used": "lammps",
- "team_name": "NIST-Polymer",
+ "team_name": "LAMMPS",
  "time_taken_seconds": 2739.455}
