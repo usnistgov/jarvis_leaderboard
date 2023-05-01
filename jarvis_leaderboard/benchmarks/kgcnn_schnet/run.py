@@ -11,7 +11,7 @@ from jarvis.db.jsonutils import loadjson, dumpjson
 from kgcnn.training.hyper import HyperParameter
 from kgcnn.model.utils import get_model_class
 import glob
-
+import time
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 ragged = True
@@ -82,9 +82,13 @@ for i in glob.glob("../*/AI-SinglePropertyPrediction*test-mae.csv.zip"):
             tasks.append(task)
 print("tasks", tasks, len(tasks))
 # For a quick test running on one task only
-tasks = ["AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae"]
+#tasks = ["AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae"]
 for task in tasks:
-    task = "AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae"
+ t1=time.time()
+ zip_name=task+'.csv.zip'
+ if not os.path.exists(zip_name):
+ #if os.path.exists(zip_name):
+    #task = "AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae"
     cmd = (
         "jarvis_populate_data.py --benchmark_file "
         + task
@@ -184,8 +188,8 @@ for task in tasks:
         x_train,
         y_train,
         shuffle=False,
-        batch_size=10,
-        epochs=20,
+        batch_size=16,
+        epochs=100,
         verbose=2,
     )
     val_pred = model.predict(x_val)
@@ -212,7 +216,11 @@ for task in tasks:
 
     cmd = "rm -r Out"
     os.system(cmd)
-    cmd = "rm " + csv_name
+    cmd = "rm -r exfoliation_en_train"
     os.system(cmd)
+    cmd = "rm " + csv_name
+    #os.system(cmd)
     cmd = "rm -r " + train_dir
     os.system(cmd)
+ t2=time.time()
+ print('Time',t2-t1)
