@@ -16,6 +16,9 @@ import time
 
 tqdm.pandas()
 
+# wget https://figshare.com/ndownloader/files/40389173 -O X_dft_3d.csv.zip
+# unzip X_dft_3d.csv.zip
+
 # https://github.com/mathsphy/paper-ml-robustness-material-property/blob/main/myfunc.py
 def StructureFeaturizer(
     df_in, col_id="structure", ignore_errors=True, chunksize=30
