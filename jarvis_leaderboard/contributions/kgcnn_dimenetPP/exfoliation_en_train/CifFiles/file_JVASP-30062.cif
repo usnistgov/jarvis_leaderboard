@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_Nb2SiTe4
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.71443322
+_cell_length_b   8.46298218
+_cell_length_c   7.69010582
+_cell_angle_alpha   107.91700547
+_cell_angle_beta   118.88257780
+_cell_angle_gamma   102.67831932
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Nb2SiTe4
+_chemical_formula_sum   'Nb2 Si1 Te4'
+_cell_volume   180.68454500
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nb  Nb0  1  0.80212813  0.36603415  0.18638969  1
+  Nb  Nb1  1  0.91217392  0.33306441  0.81305117  1
+  Si  Si2  1  0.35713863  0.84951484  -0.00030675  1
+  Te  Te3  1  0.21706979  0.06047911  0.75426162  1
+  Te  Te4  1  0.49725500  0.63863566  0.24519232  1
+  Te  Te5  1  0.40998770  0.55515095  0.69976945  1
+  Te  Te6  1  0.30424684  0.14392088  0.29964251  1

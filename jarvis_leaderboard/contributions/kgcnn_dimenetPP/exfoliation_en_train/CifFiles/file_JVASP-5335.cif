@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Nb(SeCl)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.39004994
+_cell_length_b   6.59607945
+_cell_length_c   7.30307502
+_cell_angle_alpha   66.86756108
+_cell_angle_beta   68.42652160
+_cell_angle_gamma   61.00742120
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Nb(SeCl)2
+_chemical_formula_sum   'Nb2 Se4 Cl4'
+_cell_volume   241.50843804
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nb  Nb0  1  0.87143976  0.25867646  0.00010784  1
+  Nb  Nb1  1  0.12856024  0.74132354  -0.00010784  1
+  Se  Se2  1  0.91354876  0.89489796  0.33594856  1
+  Se  Se3  1  0.08645124  0.10510204  0.66405144  1
+  Se  Se4  1  0.73079802  0.04655689  0.85307328  1
+  Se  Se5  1  0.26920198  0.95344311  0.14692672  1
+  Cl  Cl6  1  0.83936603  0.51365596  0.21827197  1
+  Cl  Cl7  1  0.16063397  0.48634404  0.78172803  1
+  Cl  Cl8  1  0.42276186  0.35301925  0.21944823  1
+  Cl  Cl9  1  0.57723814  0.64698075  0.78055177  1

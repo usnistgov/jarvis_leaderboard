@@ -1,0 +1,50 @@
+# generated using pymatgen
+data_SmH2ClO2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   12.62319110
+_cell_length_b   3.75740806
+_cell_length_c   6.27476182
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   SmH2ClO2
+_chemical_formula_sum   'Sm4 H8 Cl4 O8'
+_cell_volume   297.61496437
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Sm  Sm0  1  0.06084675  0.75000000  0.24822626  1
+  Sm  Sm1  1  0.43915325  0.25000000  0.74822626  1
+  Sm  Sm2  1  0.56084675  0.75000000  0.25177374  1
+  Sm  Sm3  1  0.93915325  0.25000000  0.75177374  1
+  H  H4  1  0.84514089  0.75000000  0.05703550  1
+  H  H5  1  0.65485911  0.25000000  0.55703550  1
+  H  H6  1  0.61666910  0.75000000  0.79984540  1
+  H  H7  1  0.88333090  0.25000000  0.29984540  1
+  H  H8  1  0.34514089  0.75000000  0.44296450  1
+  H  H9  1  0.15485911  0.25000000  0.94296450  1
+  H  H10  1  0.11666910  0.75000000  0.70015460  1
+  H  H11  1  0.38333090  0.25000000  0.20015460  1
+  Cl  Cl12  1  0.22050726  0.25000000  0.40835057  1
+  Cl  Cl13  1  0.27949274  0.75000000  0.90835057  1
+  Cl  Cl14  1  0.72050726  0.25000000  0.09164943  1
+  Cl  Cl15  1  0.77949274  0.75000000  0.59164943  1
+  O  O16  1  0.91744495  0.75000000  -0.00033142  1
+  O  O17  1  0.04614233  0.75000000  0.63359528  1
+  O  O18  1  0.08255505  0.25000000  0.00033142  1
+  O  O19  1  0.41744495  0.75000000  0.50033142  1
+  O  O20  1  0.45385767  0.25000000  0.13359528  1
+  O  O21  1  0.54614233  0.75000000  0.86640472  1
+  O  O22  1  0.58255505  0.25000000  0.49966858  1
+  O  O23  1  0.95385767  0.25000000  0.36640472  1

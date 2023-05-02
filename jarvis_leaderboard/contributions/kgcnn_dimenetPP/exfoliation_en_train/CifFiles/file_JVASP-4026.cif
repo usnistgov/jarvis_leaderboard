@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_BiTeCl
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.29378183
+_cell_length_b   4.29378183
+_cell_length_c   12.62731805
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   120.00000815
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BiTeCl
+_chemical_formula_sum   'Bi2 Te2 Cl2'
+_cell_volume   201.61445336
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Bi  Bi0  1  0.33333300  0.66666700  0.13731150  1
+  Bi  Bi1  1  0.66666700  0.33333300  0.63731150  1
+  Te  Te2  1  0.66666700  0.33333300  0.27722830  1
+  Te  Te3  1  0.33333300  0.66666700  0.77722830  1
+  Cl  Cl4  1  0.00000000  0.00000000  0.00355920  1
+  Cl  Cl5  1  0.00000000  0.00000000  0.50355920  1

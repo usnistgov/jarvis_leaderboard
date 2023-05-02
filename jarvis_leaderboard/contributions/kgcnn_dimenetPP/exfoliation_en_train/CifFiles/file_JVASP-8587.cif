@@ -1,0 +1,34 @@
+# generated using pymatgen
+data_TbCl3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.82590687
+_cell_length_b   6.18784544
+_cell_length_c   8.49986802
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   108.00783203
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TbCl3
+_chemical_formula_sum   'Tb2 Cl6'
+_cell_volume   191.36965120
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Tb  Tb0  1  0.75723477  0.51447053  0.25000000  1
+  Tb  Tb1  1  0.24276523  0.48552947  0.75000000  1
+  Cl  Cl2  1  0.14703717  0.29407535  0.06607051  1
+  Cl  Cl3  1  0.85296283  0.70592465  0.93392949  1
+  Cl  Cl4  1  0.58372105  0.16744210  0.75000000  1
+  Cl  Cl5  1  0.41627895  0.83255790  0.25000000  1
+  Cl  Cl6  1  0.14703717  0.29407535  0.43392949  1
+  Cl  Cl7  1  0.85296283  0.70592465  0.56607051  1

@@ -1,0 +1,1 @@
+{"benchmark_file": "AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae", "dataset": "dft_3d", "output_path": "Out", "prop": "exfoliation_energy", "methods": "AI", "id_tag": "jid", "n_train": 650, "n_val": 81, "n_test": 81}

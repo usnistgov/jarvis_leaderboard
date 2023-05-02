@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_HfBrN
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   10.03244200
+_cell_length_b   10.03244182
+_cell_length_c   10.03244162
+_cell_angle_alpha   20.76637916
+_cell_angle_beta   20.76638071
+_cell_angle_gamma   20.76637870
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HfBrN
+_chemical_formula_sum   'Hf2 Br2 N2'
+_cell_volume   111.13552414
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hf  Hf0  1  0.78932313  0.78932313  0.78932313  1
+  Hf  Hf1  1  0.21067687  0.21067687  0.21067687  1
+  Br  Br2  1  0.38874280  0.38874280  0.38874280  1
+  Br  Br3  1  0.61125720  0.61125720  0.61125720  1
+  N  N4  1  0.86268150  0.86268150  0.86268150  1
+  N  N5  1  0.13731850  0.13731850  0.13731850  1

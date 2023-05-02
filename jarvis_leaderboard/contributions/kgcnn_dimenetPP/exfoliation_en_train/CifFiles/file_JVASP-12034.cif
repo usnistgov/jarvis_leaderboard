@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_NbCoTe2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.36299387
+_cell_length_b   7.83917042
+_cell_length_c   8.26770557
+_cell_angle_alpha   116.58047781
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   NbCoTe2
+_chemical_formula_sum   'Nb4 Co4 Te8'
+_cell_volume   368.81036741
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Nb  Nb0  1  0.51616510  0.80543662  0.51370049  1
+  Nb  Nb1  1  0.48383490  0.19456338  0.48629951  1
+  Nb  Nb2  1  0.01616510  0.69456338  0.48629951  1
+  Nb  Nb3  1  0.98383490  0.30543662  0.51370049  1
+  Co  Co4  1  0.14560093  0.05874835  0.61172711  1
+  Co  Co5  1  0.64560093  0.44125165  0.38827289  1
+  Co  Co6  1  0.35439907  0.55874835  0.61172711  1
+  Co  Co7  1  0.85439907  0.94125165  0.38827289  1
+  Te  Te8  1  0.74454045  0.63612754  0.72750082  1
+  Te  Te9  1  0.25101662  0.40836169  0.81734573  1
+  Te  Te10  1  0.75101662  0.09163831  0.18265427  1
+  Te  Te11  1  0.24454045  0.86387246  0.27249918  1
+  Te  Te12  1  0.24898338  0.90836169  0.81734573  1
+  Te  Te13  1  0.74898338  0.59163831  0.18265427  1
+  Te  Te14  1  0.75545955  0.13612754  0.72750082  1
+  Te  Te15  1  0.25545955  0.36387246  0.27249918  1

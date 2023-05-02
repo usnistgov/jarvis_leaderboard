@@ -1,0 +1,29 @@
+# generated using pymatgen
+data_FeCl2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.19960590
+_cell_length_b   6.19960596
+_cell_length_c   6.19960599
+_cell_angle_alpha   32.79599704
+_cell_angle_beta   32.79599614
+_cell_angle_gamma   32.79599368
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   FeCl2
+_chemical_formula_sum   'Fe1 Cl2'
+_cell_volume   62.19188924
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Fe  Fe0  1  0.00000000  0.00000000  0.00000000  1
+  Cl  Cl1  1  0.74658926  0.74658926  0.74658926  1
+  Cl  Cl2  1  0.25341074  0.25341074  0.25341074  1

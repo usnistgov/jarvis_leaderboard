@@ -1,0 +1,32 @@
+# generated using pymatgen
+data_CeSiI
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.15809209
+_cell_length_b   4.15809225
+_cell_length_c   11.59794480
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   119.99999879
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CeSiI
+_chemical_formula_sum   'Ce2 Si2 I2'
+_cell_volume   173.66004061
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ce  Ce0  1  0.00000000  0.00000000  0.83326402  1
+  Ce  Ce1  1  0.00000000  0.00000000  0.16673598  1
+  Si  Si2  1  0.33333300  0.66666700  0.99566164  1
+  Si  Si3  1  0.66666700  0.33333300  0.00433836  1
+  I  I4  1  0.33333300  0.66666700  0.35250896  1
+  I  I5  1  0.66666700  0.33333300  0.64749104  1
