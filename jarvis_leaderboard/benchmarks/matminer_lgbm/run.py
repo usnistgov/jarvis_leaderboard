@@ -1,7 +1,4 @@
-"""Module to compare JARVIS-CFID results."""
-# from jarvis.ai.pkgs.utils import get_ml_data
-# from jarvis.ai.pkgs.utils import regr_scores
-from jarvis.db.figshare import data as jdata
+"""Module to run matminer results."""
 import random
 import os
 import pandas as pd
@@ -17,19 +14,18 @@ import zipfile
 import json
 import time
 
-#https://github.com/mathsphy/paper-ml-robustness-material-property/blob/main/myfunc.py
+tqdm.pandas()
+
+# https://github.com/mathsphy/paper-ml-robustness-material-property/blob/main/myfunc.py
 def StructureFeaturizer(
-        df_in,
-        col_id='structure',
-        ignore_errors=True,
-        chunksize=30
-        ):
+    df_in, col_id="structure", ignore_errors=True, chunksize=30
+):
     """
     Featurize a dataframe using Matminter Structure featurizer
 
     Parameters
     ----------
-    df : Pandas.DataFrame 
+    df : Pandas.DataFrame
         DataFrame with a column named "structure"
 
     Returns
@@ -39,54 +35,60 @@ def StructureFeaturizer(
     """
     # For featurization
     from matminer.featurizers.base import MultipleFeaturizer
-    from matminer.featurizers.composition import (ElementProperty, 
-                                                  Stoichiometry, 
-                                                  ValenceOrbital, 
-                                                  IonProperty)
-    from matminer.featurizers.structure import (SiteStatsFingerprint, 
-                                                StructuralHeterogeneity,
-                                                ChemicalOrdering, 
-                                                StructureComposition, 
-                                                MaximumPackingEfficiency)
-    
-    
+    from matminer.featurizers.composition import (
+        ElementProperty,
+        Stoichiometry,
+        ValenceOrbital,
+        IonProperty,
+    )
+    from matminer.featurizers.structure import (
+        SiteStatsFingerprint,
+        StructuralHeterogeneity,
+        ChemicalOrdering,
+        StructureComposition,
+        MaximumPackingEfficiency,
+    )
+
     if isinstance(df_in, pd.Series):
         df = df_in.to_frame()
     else:
         df = df_in
-    #df[col_id] = df[col_id].apply(to_unitcell)
-    
+    # df[col_id] = df[col_id].apply(to_unitcell)
+
     # 128 structural feature
     struc_feat = [
-        SiteStatsFingerprint.from_preset("CoordinationNumber_ward-prb-2017"), 
-        SiteStatsFingerprint.from_preset("LocalPropertyDifference_ward-prb-2017"),
+        SiteStatsFingerprint.from_preset("CoordinationNumber_ward-prb-2017"),
+        SiteStatsFingerprint.from_preset(
+            "LocalPropertyDifference_ward-prb-2017"
+        ),
         StructuralHeterogeneity(),
         MaximumPackingEfficiency(),
-        ChemicalOrdering()
-        ]       
+        ChemicalOrdering(),
+    ]
     # 145 compositional features
     compo_feat = [
         StructureComposition(Stoichiometry()),
         StructureComposition(ElementProperty.from_preset("magpie")),
-        StructureComposition(ValenceOrbital(props=['frac'])),
-        StructureComposition(IonProperty(fast=True))
-        ]
-    featurizer = MultipleFeaturizer(struc_feat+compo_feat)    
+        StructureComposition(ValenceOrbital(props=["frac"])),
+        StructureComposition(IonProperty(fast=True)),
+    ]
+    featurizer = MultipleFeaturizer(struc_feat + compo_feat)
     # Set the chunksize used for Pool.map parallelisation
     featurizer.set_chunksize(chunksize=chunksize)
     featurizer.fit(df[col_id])
-    X = featurizer.featurize_dataframe(df=df,col_id=col_id,ignore_errors=ignore_errors)  
-    # check failed entries    
-    print('Featurization completed.')
-    failed = np.any(pd.isnull(X.iloc[:,df.shape[1]:]), axis=1)
+    X = featurizer.featurize_dataframe(
+        df=df, col_id=col_id, ignore_errors=ignore_errors
+    )
+    # check failed entries
+    print("Featurization completed.")
+    failed = np.any(pd.isnull(X.iloc[:, df.shape[1] :]), axis=1)
     if np.sum(failed) > 0:
-        print(f'Number failed: {np.sum(failed)}/{len(failed)}')
-    return X,failed
-
-
+        print(f"Number failed: {np.sum(failed)}/{len(failed)}")
+    return X, failed
 
 
 props = [
+    "exfoliation_energy",
     "formation_energy_peratom",
     "optb88vdw_bandgap",
     "bulk_modulus_kv",
@@ -118,12 +120,11 @@ props = [
     "nkappa",
     "pkappa",
     "ehull",
-    "exfoliation_energy",
     "dfpt_piezo_max_dielectric",
     "dfpt_piezo_max_eij",
     "dfpt_piezo_max_dij",
 ]
-#props = ["exfoliation_energy"]
+# props = ["exfoliation_energy"]
 
 
 def load_dataset(
@@ -140,9 +141,21 @@ def load_dataset(
     split_seed=123,
 ):
     id_prop_dat = os.path.join(root_dir, "id_prop.csv")
-    #from jarvis.db.figshare import data
-    #df = pd.DataFrame(data(name))
-    df=pd.read_csv('X_dft_3d.csv')
+    # from jarvis.db.figshare import data
+    # df = pd.DataFrame(data(name))
+    if not os.path.exists("X_dft_3d.csv"):
+        from jarvis.db.figshare import data
+
+        d = data("dft_3d")
+        df = pd.DataFrame(d)
+        df["structure"] = df["atoms"].progress_apply(
+            lambda x: (
+                (Atoms.from_dict(x)).get_primitive_atoms
+            ).pymatgen_converter()
+        )
+        X, failed = StructureFeaturizer(df)
+        X.to_csv("X_dft_3d.csv")
+    df = pd.read_csv("X_dft_3d.csv")
     with open(id_prop_dat, "r") as f:
         reader = csv.reader(f)
         data = [row for row in reader]
@@ -218,7 +231,98 @@ lgbm = lgb.LGBMRegressor(
     max_depth=16,
     min_data_in_leaf=14,
 )
-important_features = ['mean CN_VoronoiNN', 'mean ordering parameter shell 1', 'mean neighbor distance variation', 'avg_dev CN_VoronoiNN', 'mean local difference in NValence', 'MagpieData mean NpUnfilled', 'MagpieData mean NsUnfilled', 'minimum local difference in Number', 'MagpieData mode GSmagmom', 'minimum local difference in Column', 'MagpieData mode NfUnfilled', 'MagpieData mode GSbandgap', 'MagpieData maximum MeltingT', 'avg_dev local difference in NdValence', 'minimum local difference in NpUnfilled', 'MagpieData maximum CovalentRadius', 'MagpieData mode NValence', 'MagpieData range NdUnfilled', 'range local difference in NfValence', 'avg_dev local difference in CovalentRadius', 'minimum local difference in NdValence', 'MagpieData mean NUnfilled', 'MagpieData minimum AtomicWeight', 'MagpieData mode NdUnfilled', 'minimum local difference in NdUnfilled', 'MagpieData mean MeltingT', 'avg_dev local difference in NValence', 'minimum local difference in MeltingT', 'range local difference in NUnfilled', 'MagpieData minimum NValence', 'MagpieData minimum NsUnfilled', 'minimum local difference in NpValence', 'mean ordering parameter shell 3', 'MagpieData minimum GSvolume_pa', 'minimum local difference in GSvolume_pa', 'MagpieData maximum Column', 'frac d valence electrons', 'MagpieData mode NpUnfilled', 'avg_dev local difference in GSbandgap', 'MagpieData minimum NdValence', 'minimum local difference in CovalentRadius', 'MagpieData avg_dev Row', 'MagpieData minimum Electronegativity', '0-norm', 'MagpieData maximum SpaceGroupNumber', 'MagpieData range Electronegativity', 'compound possible', 'range local difference in Column', 'MagpieData mode NsValence', 'MagpieData mode NfValence', 'minimum local difference in NsUnfilled', 'MagpieData mode NUnfilled', 'minimum neighbor distance variation', 'MagpieData mean MendeleevNumber', 'MagpieData avg_dev GSvolume_pa', 'minimum local difference in GSmagmom', 'minimum local difference in GSbandgap', 'frac s valence electrons', 'MagpieData minimum NfValence', 'MagpieData maximum Row', 'MagpieData minimum GSmagmom', 'MagpieData range NpUnfilled', 'range local difference in Row', 'avg_dev local difference in NsValence', 'MagpieData minimum GSbandgap', 'mean local difference in SpaceGroupNumber', 'MagpieData minimum NdUnfilled', 'MagpieData minimum NUnfilled', 'minimum local difference in NfUnfilled', 'minimum local difference in NfValence', 'MagpieData minimum NpUnfilled', 'MagpieData mode NsUnfilled', 'avg_dev local difference in MendeleevNumber', 'max relative bond length', 'avg_dev local difference in AtomicWeight', '10-norm', 'avg_dev neighbor distance variation', 'minimum local difference in NUnfilled', 'MagpieData minimum NfUnfilled', 'MagpieData mode Column', 'MagpieData avg_dev MendeleevNumber', 'MagpieData mode SpaceGroupNumber', 'range local difference in NfUnfilled', 'MagpieData mode GSvolume_pa', 'min relative bond length', 'MagpieData maximum NdValence', 'maximum CN_VoronoiNN', 'avg_dev local difference in NpValence', 'MagpieData avg_dev GSmagmom', 'avg_dev local difference in NpUnfilled']
+important_features = [
+    "mean CN_VoronoiNN",
+    "mean ordering parameter shell 1",
+    "mean neighbor distance variation",
+    "avg_dev CN_VoronoiNN",
+    "mean local difference in NValence",
+    "MagpieData mean NpUnfilled",
+    "MagpieData mean NsUnfilled",
+    "minimum local difference in Number",
+    "MagpieData mode GSmagmom",
+    "minimum local difference in Column",
+    "MagpieData mode NfUnfilled",
+    "MagpieData mode GSbandgap",
+    "MagpieData maximum MeltingT",
+    "avg_dev local difference in NdValence",
+    "minimum local difference in NpUnfilled",
+    "MagpieData maximum CovalentRadius",
+    "MagpieData mode NValence",
+    "MagpieData range NdUnfilled",
+    "range local difference in NfValence",
+    "avg_dev local difference in CovalentRadius",
+    "minimum local difference in NdValence",
+    "MagpieData mean NUnfilled",
+    "MagpieData minimum AtomicWeight",
+    "MagpieData mode NdUnfilled",
+    "minimum local difference in NdUnfilled",
+    "MagpieData mean MeltingT",
+    "avg_dev local difference in NValence",
+    "minimum local difference in MeltingT",
+    "range local difference in NUnfilled",
+    "MagpieData minimum NValence",
+    "MagpieData minimum NsUnfilled",
+    "minimum local difference in NpValence",
+    "mean ordering parameter shell 3",
+    "MagpieData minimum GSvolume_pa",
+    "minimum local difference in GSvolume_pa",
+    "MagpieData maximum Column",
+    "frac d valence electrons",
+    "MagpieData mode NpUnfilled",
+    "avg_dev local difference in GSbandgap",
+    "MagpieData minimum NdValence",
+    "minimum local difference in CovalentRadius",
+    "MagpieData avg_dev Row",
+    "MagpieData minimum Electronegativity",
+    "0-norm",
+    "MagpieData maximum SpaceGroupNumber",
+    "MagpieData range Electronegativity",
+    "compound possible",
+    "range local difference in Column",
+    "MagpieData mode NsValence",
+    "MagpieData mode NfValence",
+    "minimum local difference in NsUnfilled",
+    "MagpieData mode NUnfilled",
+    "minimum neighbor distance variation",
+    "MagpieData mean MendeleevNumber",
+    "MagpieData avg_dev GSvolume_pa",
+    "minimum local difference in GSmagmom",
+    "minimum local difference in GSbandgap",
+    "frac s valence electrons",
+    "MagpieData minimum NfValence",
+    "MagpieData maximum Row",
+    "MagpieData minimum GSmagmom",
+    "MagpieData range NpUnfilled",
+    "range local difference in Row",
+    "avg_dev local difference in NsValence",
+    "MagpieData minimum GSbandgap",
+    "mean local difference in SpaceGroupNumber",
+    "MagpieData minimum NdUnfilled",
+    "MagpieData minimum NUnfilled",
+    "minimum local difference in NfUnfilled",
+    "minimum local difference in NfValence",
+    "MagpieData minimum NpUnfilled",
+    "MagpieData mode NsUnfilled",
+    "avg_dev local difference in MendeleevNumber",
+    "max relative bond length",
+    "avg_dev local difference in AtomicWeight",
+    "10-norm",
+    "avg_dev neighbor distance variation",
+    "minimum local difference in NUnfilled",
+    "MagpieData minimum NfUnfilled",
+    "MagpieData mode Column",
+    "MagpieData avg_dev MendeleevNumber",
+    "MagpieData mode SpaceGroupNumber",
+    "range local difference in NfUnfilled",
+    "MagpieData mode GSvolume_pa",
+    "min relative bond length",
+    "MagpieData maximum NdValence",
+    "maximum CN_VoronoiNN",
+    "avg_dev local difference in NpValence",
+    "MagpieData avg_dev GSmagmom",
+    "avg_dev local difference in NpUnfilled",
+]
 
 
 lgbm = lgb.LGBMRegressor(
@@ -229,32 +333,35 @@ lgbm = lgb.LGBMRegressor(
 )
 
 prop = ["exfoliation_energy"]
-#lgbm = lgb.LGBMRegressor()
+# lgbm = lgb.LGBMRegressor()
 
 for prop in props:
-    fname = "SinglePropertyPrediction-test-" + prop + "-dft_3d-AI-mae.csv"
-  #if not os.path.exists(fname):
-    json_zip = '../../dataset/AI/SinglePropertyPrediction/dft_3d_'+prop+'.json.zip'
-    temp2 = 'dft_3d' + "_" + prop + ".json"
+    fname = "AI-SinglePropertyPrediction-" + prop + "-dft_3d-test-mae.csv"
+    json_zip = (
+        "../../dataset/AI/SinglePropertyPrediction/dft_3d_"
+        + prop
+        + ".json.zip"
+    )
+    temp2 = "dft_3d" + "_" + prop + ".json"
     zp = zipfile.ZipFile(json_zip)
     train_val_test = json.loads(zp.read(temp2))
-    output_path = 'DataDir-'+prop
+    output_path = "DataDir-" + prop
     train = train_val_test["train"]
     val = {}
     if "val" in train_val_test:
         val = train_val_test["val"]
     test = train_val_test["test"]
     cwd = os.getcwd()
-    
+
     if not os.path.exists(output_path):
         os.makedirs(output_path)
     # os.chdir(output_path)
     id_prop = os.path.join(output_path, "id_prop.csv")
     info = {}
-    dat = data('dft_3d')
-    id_tag='jid'
+    dat = data("dft_3d")
+    id_tag = "jid"
     for i in dat:
-       info[i[id_tag]] = Atoms.from_dict(i["atoms"])
+        info[i[id_tag]] = Atoms.from_dict(i["atoms"])
     f = open(id_prop, "w")
     for i, j in train.items():
         line = str(i) + "," + str(j) + "\n"
@@ -300,10 +407,10 @@ for prop in props:
     line = "id,prediction\n"
     f.write(line)
     for j, k in zip(id_test, pred):
-        line =  str(j) + "," + str(k) + "\n"
+        line = str(j) + "," + str(k) + "\n"
         f.write(line)
     f.close()
     t2 = time.time()
     print("Time", t2 - t1)
-    cmd = 'zip '+fname+'.zip '+fname
+    cmd = "zip " + fname + ".zip " + fname
     os.system(cmd)
