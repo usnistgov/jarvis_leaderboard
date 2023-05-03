@@ -62,8 +62,8 @@ def make_summary_table():
             lines = f.read().splitlines()
             f.close()
             for i in lines:
-                if "Number of benchmarks:" in i:
-                    num = int(i.split("Number of benchmarks:")[1])
+                if "Number of contributions:" in i:
+                    num = int(i.split("Number of contributions:")[1])
         return str(num)
 
     for i in methods:
@@ -146,7 +146,8 @@ def get_metric_value(
     results["project_url"] = meta_data["project_url"]
     results["num_entries"] = len(csv_data)
     results["github_url"] = (
-        "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/"
+        "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/"
+        #"https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/"
         + bench_name
     )  # meta_path.split('metadata.json')[0]
 
@@ -157,7 +158,8 @@ def get_metric_value(
     temp = dataset + "_" + prop + ".json"
     # print ('json temp',temp)
     temp2 = temp + ".zip"
-    fname = os.path.join("dataset", method, submod, temp2)
+    fname = os.path.join("benchmarks", method, submod, temp2)
+    #fname = os.path.join("dataset", method, submod, temp2)
     fname2 = os.path.join(root_dir, fname)
 
     z = zipfile.ZipFile(fname2)
@@ -246,9 +248,10 @@ def rebuild_pages():
     unique_fname = []
     os.chdir(root_dir + "/..")
     num_data = 0
-    for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
+    for i in glob.glob("jarvis_leaderboard/contributions/*/*.csv.zip"):
+    #for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
         # if 'Text' in i:
-        # print(i)
+        print(i)
         fname = i.split("/")[-1].split(".csv.zip")[0]
         temp = fname.split("-")
         submod = temp[1]
@@ -298,7 +301,8 @@ def rebuild_pages():
     # jarvis_leaderboard/dataset/AI/dft_3d_exfoliation_energy.json
     dat = []
     md_files = []
-    for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
+    for i in glob.glob("jarvis_leaderboard/contributions/*/*.csv.zip"):
+    #for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
         print(i)
         fname = i.split("/")[-1].split(".csv.zip")[0]
         bench_name = i.split("/")[-2]
@@ -347,14 +351,16 @@ def rebuild_pages():
         json_path = method + "/" + submod + "/" + json_name
         json_url = (
             '<a href="'
-            + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/dataset/"
+            + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/"
+            #+ "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/dataset/"
             + json_path
             + '" target="_blank">JSON</a>'
         )
         metadata = (
             '<a href="'
             + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/"
-            + "jarvis_leaderboard/benchmarks/"
+            + "jarvis_leaderboard/contributions/"
+            #+ "jarvis_leaderboard/benchmarks/"
             + bench_name
             + "/metadata.json "
             + '" target="_blank">Info</a>'
@@ -362,7 +368,8 @@ def rebuild_pages():
         runsh = (
             '<a href="'
             + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/"
-            + "jarvis_leaderboard/benchmarks/"
+            + "jarvis_leaderboard/contributions/"
+            #+ "jarvis_leaderboard/benchmarks/"
             + bench_name
             + "/run.sh "
             + '" target="_blank">run.sh</a>'
@@ -480,11 +487,13 @@ def rebuild_pages():
         md_path="docs/ES/index.md", key="ES", extra_key="-", homepage=[]
     ):
         n_methods = 0
-        for i in glob.glob("jarvis_leaderboard/benchmarks/*/metadata.json"):
+        for i in glob.glob("jarvis_leaderboard/contributions/*/metadata.json"):
+        #for i in glob.glob("jarvis_leaderboard/benchmarks/*/metadata.json"):
             n_methods += 1
         if not homepage:
             homepage = []
-            for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
+            for i in glob.glob("jarvis_leaderboard/contributions/*/*.csv.zip"):
+            #for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
 
                 if key in i and extra_key in i:
                     p = i.split("/")[-1].split(".csv.zip")[0]
@@ -777,10 +786,10 @@ def rebuild_pages():
         for j in filedata:
             if "<!--table_content-->" in j:
                 content.append("<!--table_content-->")
+            elif "<!--number_of_contributions-->" in j:
+                content.append("<!--number_of_contributions-->")
             elif "<!--number_of_benchmarks-->" in j:
                 content.append("<!--number_of_benchmarks-->")
-            elif "<!--number_of_tasks-->" in j:
-                content.append("<!--number_of_tasks-->")
             elif "<!--number_of_methods-->" in j:
                 content.append("<!--number_of_methods-->")
             elif "<!--number_of_datapoints-->" in j:
@@ -801,9 +810,9 @@ def rebuild_pages():
             if "<!--table_content-->" in j:
                 temp = temp + j + "</table>"
                 content.append(temp)
-            elif "<!--number_of_tasks-->" in j:
+            elif "<!--number_of_benchmarks-->" in j:
                 temp2 = (
-                    "<!--number_of_tasks--> - Number of tasks: "
+                    "<!--number_of_benchmarks--> - Number of benchmarks: "
                     + str(len(set(md_files)))
                     # + str(len(dat))
                     # + "\n"
@@ -816,15 +825,15 @@ def rebuild_pages():
                     + "["
                     + str(n_methods)
                     + "]"
-                    + "(https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks)"
+                    + "(https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions)"
                     # + str(n_methods)
                     # + str(len(dat))
                     # + "\n"
                 )
                 content.append(temp2)
-            elif "<!--number_of_benchmarks-->" in j:
+            elif "<!--number_of_contributions-->" in j:
                 temp2 = (
-                    "<!--number_of_benchmarks--> - Number of benchmarks: "
+                    "<!--number_of_contributions--> - Number of contributions: "
                     + str(n_benchs)
                     # + str(len(dat))
                     # + "\n"
@@ -875,7 +884,8 @@ def rebuild_pages():
         "EXP-Spectra-co2_RM_8852-nist_isodb-test-multimae",
     ]
     x = []
-    for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
+    for i in glob.glob("jarvis_leaderboard/contributions/*/*.csv.zip"):
+    #for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
         x.append(i.split(".csv.zip")[0])
         # x.append(i.split('/')[-1].split('.csv.zip')[0])
     print('Files', len(x))
