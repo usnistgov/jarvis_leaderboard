@@ -9,11 +9,11 @@
 This project provides benchmark-performances of various methods for materials science applications using the datasets available in [JARVIS-Tools databases](https://jarvis-tools.readthedocs.io/en/master/databases.html). Some of the categories are: [Artificial Intelligence (AI)](./AI), [Electronic Structure (ES)](./ES), [Force-field (FF)](./FF), [Quantum Computation (QC)](./QC) and [Experiments (EXP)](./EXP). There are a variety of properties included in the benchmark.
 In addition to prediction results, we attempt to capture the underlyig software, hardware and instrumental frameworks to enhance reproducibility. This project is a part of the [NIST-JARVIS](https://jarvis.nist.gov) infrastructure.
 
-<!--number_of_methods--> - Number of methods: [99](https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions)
+<!--number_of_methods--> - Number of methods: [100](https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions)
 
 <!--number_of_benchmarks--> - Number of benchmarks: 223
 
-<!--number_of_contributions--> - Number of contributions: 792
+<!--number_of_contributions--> - Number of contributions: 796
 
 <!--number_of_datapoints--> - Number of datapoints: 6934532
 
@@ -330,7 +330,7 @@ python setup.py develop
 
 
 
-<!--summary_table--><table style="width:100%" id="j_table"><thead><td>Methods</td><td>SinglePropertyPrediction</td><td>SinglePropertyClass</td><td>MLFF</td><td>TextClass</td><td>ImageClass</td><td>Spectra</td><td>EigenSolver</td><tr><td>AI</td><td><a href="./AI/SinglePropertyPrediction" target="_blank">139</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">7</a></td><td><a href="./AI/MLFF" target="_blank">55</a></td><td><a href="./AI/TextClass" target="_blank">18</a></td><td><a href="./AI/ImageClass" target="_blank">2</a></td><td><a href="./AI/Spectra" target="_blank">1</a></td><td>-</td><tr><tr><td>ES</td><td><a href="./ES/SinglePropertyPrediction" target="_blank">501</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./ES/Spectra" target="_blank">10</a></td><td>-</td><tr><tr><td>FF</td><td><a href="./FF/SinglePropertyPrediction" target="_blank">47</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><tr><tr><td>QC</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./QC/EigenSolver" target="_blank">6</a></td><tr><tr><td>EXP</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./EXP/Spectra" target="_blank">6</a></td><td>-</td><tr></table>
+<!--summary_table--><table style="width:100%" id="j_table"><thead><td>Methods</td><td>SinglePropertyPrediction</td><td>SinglePropertyClass</td><td>MLFF</td><td>TextClass</td><td>ImageClass</td><td>Spectra</td><td>EigenSolver</td><tr><td>AI</td><td><a href="./AI/SinglePropertyPrediction" target="_blank">143</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">7</a></td><td><a href="./AI/MLFF" target="_blank">55</a></td><td><a href="./AI/TextClass" target="_blank">18</a></td><td><a href="./AI/ImageClass" target="_blank">2</a></td><td><a href="./AI/Spectra" target="_blank">1</a></td><td>-</td><tr><tr><td>ES</td><td><a href="./ES/SinglePropertyPrediction" target="_blank">501</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./ES/Spectra" target="_blank">10</a></td><td>-</td><tr><tr><td>FF</td><td><a href="./FF/SinglePropertyPrediction" target="_blank">47</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><tr><tr><td>QC</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./QC/EigenSolver" target="_blank">6</a></td><tr><tr><td>EXP</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./EXP/Spectra" target="_blank">6</a></td><td>-</td><tr></table>
 
 
 
@@ -357,7 +357,8 @@ python setup.py develop
 
 # A tree diagram for directory and file structure
 
-![Tree](https://github.com/usnistgov/jarvis_leaderboard/blob/develop/jarvis_leaderboard/Tree.jpg)
+![Tree](https://raw.githubusercontent.com/usnistgov/jarvis_leaderboard/develop/jarvis_leaderboard/Tree.jpg)
+
 
 
 # License
