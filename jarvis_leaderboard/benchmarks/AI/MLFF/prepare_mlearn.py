@@ -8,10 +8,15 @@ import json
 from collections import defaultdict
 import os
 import numpy as np
+from ase.stress import voigt_6_to_full_3x3_stress
+
 # Ref: https://github.com/materialsvirtuallab/mlearn
 
 mlearn_dat=[]
 els = ["Ni", "Cu", "Mo", "Ge", "Si", "Li"]
+train_count=0
+val_count=0
+test_count=0
 for ii in els:
     print(ii)
     name=ii+'_train.json'
@@ -25,7 +30,7 @@ for ii in els:
     train_structures = [d["structure"] for d in data]
     train_energies = [d["outputs"]["energy"] for d in data]
     train_forces = [d["outputs"]["forces"] for d in data]
-    train_stresses = [d["outputs"]["virial_stress"] for d in data]
+    train_stresses = np.array(voigt_6_to_full_3x3_stress(np.array([d["outputs"]["virial_stress"] for d in data]))).tolist()
     print ('train_structures',train_energies)
     name=ii+'_test.json'
     if not os.path.exists(name):
@@ -37,10 +42,10 @@ for ii in els:
     test_structures = [d["structure"] for d in data]
     test_energies = [d["outputs"]["energy"] for d in data]
     test_forces = [d["outputs"]["forces"] for d in data]
-    test_stresses = [d["outputs"]["virial_stress"] for d in data]
+    #test_stresses = [d["outputs"]["virial_stress"] for d in data]
+    test_stresses = np.array(voigt_6_to_full_3x3_stress(np.array([d["outputs"]["virial_stress"] for d in data]))).tolist()
 
     # For ALIGNN-FF
-
     mem = []
     count = 0
     train_e=defaultdict()
@@ -70,9 +75,10 @@ for ii in els:
         #train[jid]=json.dumps(info)
         train_e[jid]=j
         train_f[jid]=';'.join(map(str,k.flatten()))
-        train_s[jid]=';'.join(map(str,k.flatten()))
+        train_s[jid]=';'.join(map(str,l.flatten()))
+        train_count+=1
     for i, j, k, l in zip(
-        test_structures, test_energies, test_forces, train_stresses
+        test_structures, test_energies, test_forces, test_stresses
     ):
         k=np.array(k)
         l=np.array(l)
@@ -89,16 +95,19 @@ for ii in els:
         #val[jid]=json.dumps(info)
         mem.append(info)
         mlearn_dat.append(info)
+        info["jid"]=info["jid"]+"a"
+        mlearn_dat.append(info) #For val set
         test_e[jid]=j
         test_f[jid]=';'.join(map(str,k.flatten()))
-        test_s[jid]=';'.join(map(str,k.flatten()))
+        test_s[jid]=';'.join(map(str,l.flatten()))
+        test_count+=1
     print(len(mem), len(train_structures), len(test_structures))
     dat={}
     dat['train']=train_e
     dat['test']=test_e
     fname='mlearn_'+ii+'_energy.json'
     dumpjson(data=dat, filename=fname)
-    cmd='zip '+fname+'.zip '+fname 
+    cmd='zip '+fname+'.zip '+fname
     os.system(cmd)
     cmd='rm '+fname
     os.system(cmd)
@@ -108,7 +117,7 @@ for ii in els:
     dat['test']=test_f
     fname='mlearn_'+ii+'_forces.json'
     dumpjson(data=dat, filename=fname)
-    cmd='zip '+fname+'.zip '+fname 
+    cmd='zip '+fname+'.zip '+fname
     os.system(cmd)
     cmd='rm '+fname
     os.system(cmd)
@@ -119,13 +128,16 @@ for ii in els:
     dat['test']=test_s
     fname='mlearn_'+ii+'_stresses.json'
     dumpjson(data=dat, filename=fname)
-    cmd='zip '+fname+'.zip '+fname 
+    cmd='zip '+fname+'.zip '+fname
     os.system(cmd)
     cmd='rm '+fname
     os.system(cmd)
 #For Figshare
+print('train',train_count)
+print('test',test_count)
 dumpjson(data=mlearn_dat, filename='mlearn.json')
 cmd='zip mlearn.json.zip mlearn.json'
 os.system(cmd)
 cmd='rm mlearn.json'
 os.system(cmd)
+
