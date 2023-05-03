@@ -341,6 +341,16 @@ python setup.py develop
 5. [MatMiner_on_JARVIS_DFT.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/MatMiner_on_JARVIS_DFT.ipynb)
 
 
+# Terminologies used in this project
+
+Categories: are of following types AI,ES,FF,EXP,QC.
+
+Benchmarks: are ground truth used to calculate metrics for each specific task (e.g a json.zip file). 
+
+Methods: are a set of precise specifications for evaluation against a benchmark. For example, within ES category, DFT with VASP-GGA-PAW-PBE are specifications, hence a nethod. Similarly, within AI category, descriptor/feature based models with MatMiner-chemical features and LightGBM software are specifications,hence a method.
+
+Contributions: are individual data in form of csv.zip files for each benchmark and specific method. Each contribution has six components: method (e.g. AI), category (e.g. SinglePropertyPrediction), property (e.g. formstion energy), dataset (e.g. dft_3d), data-split (e.g. test), metric (e.g. mae).
+
 # License
    This template is served under the NIST license.  
    Read the [LICENSE] file for more info.
