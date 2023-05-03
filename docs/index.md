@@ -357,9 +357,7 @@ python setup.py develop
 
 # A tree diagram for directory and file structure
 
-![Tree](../jarvis_leaderboard/Tree.png)
-
-![Tree](https://github.com/usnistgov/jarvis_leaderboard/blob/develop/jarvis_leaderboard/Tree.png)
+![Tree](https://github.com/usnistgov/jarvis_leaderboard/blob/develop/jarvis_leaderboard/Tree.jpg)
 
 
 # License
