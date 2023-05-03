@@ -60,7 +60,8 @@ def get_dataset(
 
     temp = dataset + "_" + prop + ".json.zip"
     temp2 = dataset + "_" + prop + ".json"
-    fname = os.path.join(root_dir, "dataset", method, task, temp)
+    fname = os.path.join(root_dir, "benchmarks", method, task, temp)
+    # fname = os.path.join(root_dir, "dataset", method, task, temp)
     # fname = os.path.join("jarvis_leaderboard", "dataset", method, task, temp)
     print("dataset file to be used", fname)
     if dataset in ["dft_3d", "dft_2d", "qe_tb"]:

@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="jarvis_leaderboard",  # Replace with your own username
-    version="2023.05.02",
+    version="2023.05.03",
     author="Kamal Choudhary",
     author_email="kamal.choudhary@nist.gov",
     description="jarvis_leaderboard",
@@ -29,7 +29,7 @@ setuptools.setup(
         "jarvis_leaderboard/jarvis_serve.py",
         "jarvis_leaderboard/rebuild.py",
     ],
-    package_data={"jarvis_leaderboard": ["dataset/*/*/*.json.zip"]},
+    package_data={"jarvis_leaderboard": ["benchmarks/*/*/*.json.zip"]},
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/knc6/jarvis_leaderboard",

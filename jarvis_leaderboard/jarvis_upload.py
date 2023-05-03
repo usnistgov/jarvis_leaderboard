@@ -29,9 +29,9 @@ parser.add_argument(
 
 
 parser.add_argument(
-    "--your_benchmark_directory",
-    default="my_example_benchmark",
-    help="Your benchmark to be added.",
+    "--your_contribution_directory",
+    default="my_example_contribution",
+    help="Your contribution to be added.",
 )
 
 
@@ -64,9 +64,9 @@ def upload():
 
     upstream_repo_name = args.upstream_repo_name
     upstream_repo_username = args.upstream_repo_username
-    your_benchmark_directory = args.your_benchmark_directory
+    your_contribution_directory = args.your_contribution_directory
     cwd = os.getcwd()
-    print("Uploading benchmark...")
+    print("Uploading contribution...")
 
     print("For help: jarvis_upload.py -h\n")
 
@@ -108,18 +108,18 @@ def upload():
         print("Cloning repo", cmd)
         os.system(cmd)
 
-    if os.path.exists(your_benchmark_directory):
+    if os.path.exists(your_contribution_directory):
         print("Note: adding to existing directory.")
     cmd = (
         "cp -r "
-        + your_benchmark_directory
-        + " jarvis_leaderboard/jarvis_leaderboard/benchmarks/"
+        + your_contribution_directory
+        + " jarvis_leaderboard/jarvis_leaderboard/contributions/"
     )
-    print("oCpying files", cmd)
+    print("Copying files", cmd)
     os.system(cmd)
     # cmd='cd '+upstream_repo_name
     os.chdir(upstream_repo_name)
-    add_dir = "jarvis_leaderboard/benchmarks/" + your_benchmark_directory
+    add_dir = "jarvis_leaderboard/contributions/" + your_contribution_directory
     cmd = "ls ./" + add_dir
     print("List files", cmd)
     os.system(cmd)
@@ -138,10 +138,10 @@ def upload():
 
     cmd = (
         "git commit -m '"
-        + "Adding benchmark by "
+        + "Adding contribution by "
         + str(username)
         + "_"
-        + str(your_benchmark_directory)
+        + str(your_contribution_directory)
         + ".'"
     )
     print("Git commit", cmd)
@@ -188,10 +188,10 @@ def upload():
         + username
         + " -d "
         + "'"
-        + '{"title":"Adding new benchmark by '
+        + '{"title":"Adding new contribution by '
         + str(username)
         + "_"
-        + str(your_benchmark_directory)
+        + str(your_contribution_directory)
         + '","base":"develop", "head":"'
         # + '{"title":"Adding new benchmark","base":"develop", "head":"'
         + username
