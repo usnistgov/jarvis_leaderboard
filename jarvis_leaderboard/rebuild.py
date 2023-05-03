@@ -275,7 +275,7 @@ def rebuild_pages():
             + prop
             + ".md"
         )
-        print ('md_filename',md_filename)
+        # print ('md_filename',md_filename)
         md_path = os.path.join(root_dir, md_filename)
         # print(
         #    fname,

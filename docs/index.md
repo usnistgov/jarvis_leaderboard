@@ -13,7 +13,7 @@ In addition to prediction results, we attempt to capture the underlyig software,
 
 <!--number_of_benchmarks--> - Number of benchmarks: 223
 
-<!--number_of_contributions--> - Number of contributions: 790
+<!--number_of_contributions--> - Number of contributions: 792
 
 <!--number_of_datapoints--> - Number of datapoints: 6934532
 
@@ -46,7 +46,7 @@ In addition to prediction results, we attempt to capture the underlyig software,
         + [Experiments (EXP)](./EXP)
              + [Spectra](./EXP/Spectra)
 
-    === "Adding model benchmarks to existing dataset"
+    === "Adding contributions to existing benchmarks"
         For a short version, checkout this [google colab-notebook](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/alignn_jarvis_leaderboard.ipynb)
 
         For a long version, see below:
@@ -55,6 +55,7 @@ In addition to prediction results, we attempt to capture the underlyig software,
         2.  `git clone https://github.com/USERNAME/jarvis_leaderboard`, use your own GitHub USERNAME, e.g. knc6, instead of `usnistgov`
 
              Note if you do not use forked version, you won't be able to make a pull request
+
         3.  `cd jarvis_leaderboard`
         4.  `conda create --name leaderboard python=3.8`
         5.  `source activate leaderboard`
@@ -73,13 +74,13 @@ In addition to prediction results, we attempt to capture the underlyig software,
           
           Note: do not change filenames, e.g., replace dft with qmc etc., which will cause errors
 
-          After pressing eneter twice, you'll see the file content as `id,predictions`
+          After pressing eneter twice, you'll see the file content as `id,prediction`
 
           Just modify the predicting value to your model/measurement value
 
           Save the file (":wq!" and ":q!")
 
-          Add `metadata.json` and `run.sh` files to capture metadata and enhance reproducibility
+          Add `metadata.json` and `run.sh` files to capture metadata and enhance reproducibility. The metadata file must have at least your project_url and model_name info. The project_url couls be a publication/GitHub page etc.
        
           Note: An admin will run your `run.sh` to check if he/she can reproduce your benchmark
 
@@ -107,13 +108,15 @@ In addition to prediction results, we attempt to capture the underlyig software,
  
           Note: only admins are allowed to make pull requests to `main` branch
 
-          Once the admin approve the PR, you'll see your results on the official leaderboard
+          Once an admin approve the PR, you'll see your results on the official leaderboard
 
         8. Another example for AI mode as follows:
 
           Populate the dataset for a benchmark, e.g.:
 
           `python jarvis_leaderboard/populate_data.py --benchmark_file AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae --output_path=Out`
+
+          Currently, this script works for atomistic tasks only, addition of other tasks will be available soon.
 
           Train you model(s), e.g.:
 
@@ -168,7 +171,7 @@ In addition to prediction results, we attempt to capture the underlyig software,
 
     === "Adding a new dataset and benchmarks"
 
-        1.  Create a `json.zip` file in the `jarvis_leaderboard/benchmarks` folder under respective submodule, e.g.:
+        1.  Create a `json.zip` file in the `jarvis_leaderboard/benchmarks` folder under respective sub-category, e.g.:
 
             e.g. `jarvis_leaderboard/benchmarks/AI/SinglePropertyPrediction/dft_3d_exfoliation_energy.json.zip`.      
          
@@ -176,7 +179,7 @@ In addition to prediction results, we attempt to capture the underlyig software,
    
             Note `train` and 'val` can be empty dictionaries if the benchmarks are other than AI method
 
-        3.  Add a .md file, e.g.: `jarvis_leaderboard/docs/AI/SinglePropertyPrediction/exfoliation_energy.md`.
+        3.  Add a .md file, e.g.: `jarvis_leaderboard/docs/AI/SinglePropertyPrediction/exfoliation_energy.md`. This is where contributions performers will be kept and website info will be generated.
    
         4. An example for creating such a file is provided in:
            `jarvis_leaderboard/benchmarks/AI/SinglePropertyPrediction/transform_from_figshare.py`
@@ -184,6 +187,7 @@ In addition to prediction results, we attempt to capture the underlyig software,
         5. Then follow the instructions for "Adding model benchmarks to existing dataset"
 
         Notes:
+            A new benchmark must be linked with a peer-reviewed article and must have a DOI to ensure a minimum quality assurance for the data.
             We recommend adding your large dataset in Figshare or similar repository and then integrate it in [JARVIS-Tools](https://jarvis-tools.readthedocs.io/en/master/databases.html)
             We also recommend to use JARVIS-Tools for generating dataset/models/benchmarks which can help us maintain the benchmark for long term.       
             Methods used for generating the data and referece are given below:
@@ -326,7 +330,7 @@ python setup.py develop
 
 
 
-<!--summary_table--><table style="width:100%" id="j_table"><thead><td>Methods</td><td>SinglePropertyPrediction</td><td>SinglePropertyClass</td><td>MLFF</td><td>TextClass</td><td>ImageClass</td><td>Spectra</td><td>EigenSolver</td><tr><td>AI</td><td><a href="./AI/SinglePropertyPrediction" target="_blank">138</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">7</a></td><td><a href="./AI/MLFF" target="_blank">54</a></td><td><a href="./AI/TextClass" target="_blank">18</a></td><td><a href="./AI/ImageClass" target="_blank">2</a></td><td><a href="./AI/Spectra" target="_blank">1</a></td><td>-</td><tr><tr><td>ES</td><td><a href="./ES/SinglePropertyPrediction" target="_blank">501</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./ES/Spectra" target="_blank">10</a></td><td>-</td><tr><tr><td>FF</td><td><a href="./FF/SinglePropertyPrediction" target="_blank">47</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><tr><tr><td>QC</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./QC/EigenSolver" target="_blank">6</a></td><tr><tr><td>EXP</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./EXP/Spectra" target="_blank">6</a></td><td>-</td><tr></table>
+<!--summary_table--><table style="width:100%" id="j_table"><thead><td>Methods</td><td>SinglePropertyPrediction</td><td>SinglePropertyClass</td><td>MLFF</td><td>TextClass</td><td>ImageClass</td><td>Spectra</td><td>EigenSolver</td><tr><td>AI</td><td><a href="./AI/SinglePropertyPrediction" target="_blank">139</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">7</a></td><td><a href="./AI/MLFF" target="_blank">55</a></td><td><a href="./AI/TextClass" target="_blank">18</a></td><td><a href="./AI/ImageClass" target="_blank">2</a></td><td><a href="./AI/Spectra" target="_blank">1</a></td><td>-</td><tr><tr><td>ES</td><td><a href="./ES/SinglePropertyPrediction" target="_blank">501</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./ES/Spectra" target="_blank">10</a></td><td>-</td><tr><tr><td>FF</td><td><a href="./FF/SinglePropertyPrediction" target="_blank">47</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><tr><tr><td>QC</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./QC/EigenSolver" target="_blank">6</a></td><tr><tr><td>EXP</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./EXP/Spectra" target="_blank">6</a></td><td>-</td><tr></table>
 
 
 
@@ -343,13 +347,20 @@ python setup.py develop
 
 # Terminologies used in this project
 
-Categories: are of following types AI,ES,FF,EXP,QC.
+ - Categories: are of following types [Artificial Intelligence (AI)](./AI), [Electronic Structure (ES)](./ES), [Force-field (FF)](./FF), [Quantum Computation (QC)](./QC) and [Experiments (EXP)](./EXP). Each of these categories are divided into sub-categories. These sub-categories include single-property-prediction, single-property-classification, machine-learning force-fields, text-classification, text-token classification, text-generation, image classification, image-segmentation, image-generation, spectra-prediction, and eigensolver. These categories and sub-categories are highly flexible and new entries can be easily added.
 
-Benchmarks: are ground truth used to calculate metrics for each specific task (e.g a json.zip file). 
+ - Benchmarks: are ground truth data used to calculate metrics for each specific task (e.g a json.zip file). 
 
-Methods: are a set of precise specifications for evaluation against a benchmark. For example, within ES category, DFT with VASP-GGA-PAW-PBE are specifications, hence a nethod. Similarly, within AI category, descriptor/feature based models with MatMiner-chemical features and LightGBM software are specifications,hence a method.
+ - Methods: are a set of precise specifications for evaluation against a benchmark. For example, within ES category, DFT with VASP-GGA-PAW-PBE are specifications, hence a method. Similarly, within AI category, descriptor/feature based models with MatMiner-chemical features and LightGBM software are specifications, hence a method.
 
-Contributions: are individual data in form of csv.zip files for each benchmark and specific method. Each contribution has six components: method (e.g. AI), category (e.g. SinglePropertyPrediction), property (e.g. formstion energy), dataset (e.g. dft_3d), data-split (e.g. test), metric (e.g. mae).
+ - Contributions: are individual data in form of csv.zip files for each benchmark and specific method. Each contribution has six components: method (e.g. AI), category (e.g. SinglePropertyPrediction), property (e.g. formation energy), dataset (e.g. dft_3d), data-split (e.g. test), metric (e.g. mae).
+
+# A tree diagram for directory and file structure
+
+![Tree](../jarvis_leaderboard/Tree.png)
+
+![Tree](https://github.com/usnistgov/jarvis_leaderboard/blob/develop/jarvis_leaderboard/Tree.png)
+
 
 # License
    This template is served under the NIST license.  
