@@ -20,7 +20,7 @@
         <link rel="next" href="AI/">
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.9">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
     
     
       
@@ -577,6 +577,20 @@
     <li class="md-nav__item">
       <a href="AI/MLFF/mlearn_Cu_energy/" class="md-nav__link">
         Model for Cu FF energy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="AI/MLFF/mlearn_Cu_energy_energy/" class="md-nav__link">
+        Model for ALIGNN-FF energy
       </a>
     </li>
   
@@ -2713,7 +2727,7 @@
   
     <li class="md-nav__item">
       <a href="ES/SinglePropertyPrediction/dft_3d_bandgap_JVASP_57_MoSe2/" class="md-nav__link">
-        Model for bandgap_JVASP_57_MoSe2
+        dft 3d bandgap JVASP 57 MoSe2
       </a>
     </li>
   
@@ -4413,22 +4427,22 @@
 -->
 
 <h1 id="jarvis-leaderboard">JARVIS Leaderboard</h1>
-<p>This project provides benchmark-performances of various methods for materials science applications using the datasets available in <a href="https://jarvis-tools.readthedocs.io/en/master/databases.html">JARVIS-Tools databases</a>. Some of the methods are: <a href="./AI">Artificial Intelligence (AI)</a>, <a href="./ES">Electronic Structure (ES)</a>, <a href="./FF">Force-field (FF)</a>, <a href="./QC">Quantum Computation (QC)</a> and <a href="./EXP">Experiments (EXP)</a>. There are a variety of properties included in the benchmark.
+<p>This project provides benchmark-performances of various methods for materials science applications using the datasets available in <a href="https://jarvis-tools.readthedocs.io/en/master/databases.html">JARVIS-Tools databases</a>. Some of the categories are: <a href="./AI">Artificial Intelligence (AI)</a>, <a href="./ES">Electronic Structure (ES)</a>, <a href="./FF">Force-field (FF)</a>, <a href="./QC">Quantum Computation (QC)</a> and <a href="./EXP">Experiments (EXP)</a>. There are a variety of properties included in the benchmark.
 In addition to prediction results, we attempt to capture the underlyig software, hardware and instrumental frameworks to enhance reproducibility. This project is a part of the <a href="https://jarvis.nist.gov">NIST-JARVIS</a> infrastructure.</p>
 <!--number_of_methods-->
 
 <ul>
-<li>Number of methods: <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks">98</a></li>
-</ul>
-<!--number_of_tasks-->
-
-<ul>
-<li>Number of tasks: 223</li>
+<li>Number of methods: <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions">100</a></li>
 </ul>
 <!--number_of_benchmarks-->
 
 <ul>
-<li>Number of benchmarks: 778</li>
+<li>Number of benchmarks: 223</li>
+</ul>
+<!--number_of_contributions-->
+
+<ul>
+<li>Number of contributions: 796</li>
 </ul>
 <!--number_of_datapoints-->
 
@@ -4440,7 +4454,7 @@ In addition to prediction results, we attempt to capture the underlyig software,
 <!-- <p style="text-align:center;"><img align="middle" src="https://www.ctcms.nist.gov/~knc6/images/logo/jarvis-mission.png"  width="40%" height="20%"></p>-->
 
 <details class="question"><summary>How to use this website?</summary><p>Check the tabs below:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Learn about the state-of-the-art (SOTA) methods</label><label for="__tabbed_1_2">Adding model benchmarks to existing dataset</label><label for="__tabbed_1_3">Adding a new dataset and benchmarks</label><label for="__tabbed_1_4">Acronyms</label><label for="__tabbed_1_5">Help</label><label for="__tabbed_1_6">Citation</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Learn about the state-of-the-art (SOTA) methods</label><label for="__tabbed_1_2">Adding contributions to existing benchmarks</label><label for="__tabbed_1_3">Adding a new dataset and benchmarks</label><label for="__tabbed_1_4">Acronyms</label><label for="__tabbed_1_5">Help</label><label for="__tabbed_1_6">Citation</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>This project provides SOTA methods in </p>
@@ -4486,18 +4500,18 @@ In addition to prediction results, we attempt to capture the underlyig software,
 <li><code>conda create --name leaderboard python=3.8</code></li>
 <li><code>source activate leaderboard</code></li>
 <li>Install the package: <code>python setup.py develop</code></li>
-<li>Let's add abenchmark for Silicon bandgap using DFT PBE (an Electronic structure method) </li>
+<li>Let's add a contribution for Silicon bandgap using DFT PBE (an Electronic structure approach) </li>
 </ol>
-<p><code>cd jarvis_leaderboard/benchmarks/</code></p>
+<p><code>cd jarvis_leaderboard/contributions/</code></p>
 <p><code>mkdir vasp_pbe_teamX</code> , you can give any reaosnable name to the benchmark folder in place of <code>vasp_pbe_teamX</code></p>
 <p><code>cd  vasp_pbe_teamX</code></p>
 <p><code>cp ../vasp_optb88vdw/ES-SinglePropertyPrediction-bandgap_JVASP_1002_Si-dft_3d-test-mae.csv.zip .</code></p>
 <p><code>vi ES-SinglePropertyPrediction-bandgap_JVASP_1002_Si-dft_3d-test-mae.csv.zip</code></p>
 <p>Note: do not change filenames, e.g., replace dft with qmc etc., which will cause errors</p>
-<p>After pressing eneter twice, you'll see the file content as <code>id,predictions</code></p>
+<p>After pressing eneter twice, you'll see the file content as <code>id,prediction</code></p>
 <p>Just modify the predicting value to your model/measurement value</p>
 <p>Save the file (":wq!" and ":q!")</p>
-<p>Add <code>metadata.json</code> and <code>run.sh</code> files to capture metadata and enhance reproducibility</p>
+<p>Add <code>metadata.json</code> and <code>run.sh</code> files to capture metadata and enhance reproducibility. The metadata file must have at least your project_url and model_name info. The project_url couls be a publication/GitHub page etc.</p>
 <p>Note: An admin will run your <code>run.sh</code> to check if he/she can reproduce your benchmark</p>
 <p>Now, <code>cd ../../../</code></p>
 <p><code>python jarvis_leaderboard/rebuild.py</code></p>
@@ -4505,37 +4519,38 @@ In addition to prediction results, we attempt to capture the underlyig software,
 <p>Hoping there's no error, try: <code>mkdocs serve</code></p>
 <p>Ensure <code>vasp_pbe_teamX</code> row exists at:</p>
 <p><code>http://127.0.0.1:8000/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/bandgap_JVASP_1002_Si/</code></p>
-<p>Now add changes, <code>git add jarvis_leaderboard/benchmarks/vasp_pbe_teamX</code></p>
+<p>Now add changes, <code>git add jarvis_leaderboard/contributions/vasp_pbe_teamX</code></p>
 <p>Commit your changes, <code>git commmit -m 'Adding my PBE Si result.'</code></p>
 <p><code>git push</code></p>
 <p>Now go to your forked github repo and make a pull reuqest (PR) to <code>usnistgov/jarvis_leaderboard</code> in <code>develop</code> branch</p>
 <p>If you are not familiar with pull requests checkout this <a href="https://makeapullrequest.com/">link</a></p>
 <p>Note: only admins are allowed to make pull requests to <code>main</code> branch</p>
-<p>Once the admin approve the PR, you'll see your results on the official leaderboard</p>
+<p>Once an admin approve the PR, you'll see your results on the official leaderboard</p>
 <ol>
 <li>Another example for AI mode as follows:</li>
 </ol>
 <p>Populate the dataset for a benchmark, e.g.:</p>
 <p><code>python jarvis_leaderboard/populate_data.py --benchmark_file AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae --output_path=Out</code></p>
+<p>Currently, this script works for atomistic tasks only, addition of other tasks will be available soon.</p>
 <p>Train you model(s), e.g.:</p>
 <p><code>pip install alignn</code></p>
 <p><code>wget https://raw.githubusercontent.com/usnistgov/alignn/main/alignn/examples/sample_data/config_example.json</code></p>
 <p><code>train_folder.py --root_dir "Out" --config "config_example.json" --output_dir="temp"</code></p>
-<p>Create a folder in the <code>jarvis_leaderboard/benchmarks</code> folder under respective submodule, e.g.:</p>
-<p><code>mkdir benchmarks/my_awesome_model</code></p>
+<p>Create a folder in the <code>jarvis_leaderboard/contributions</code> folder under respective submodule, e.g.:</p>
+<p><code>mkdir contributions/my_awesome_model</code></p>
 <p>Add comma-separated zip file (<code>.csv.zip</code>) file(s) corresponding to benchmark(s), e.g.:</p>
 <p><code>cp temp/prediction_results_test_set.csv .</code></p>
 <p><code>mv prediction_results_test_set.csv AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae.csv</code></p>
 <p><code>zip AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae.csv AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae.csv.zip</code></p>
-<p><code>mv AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae.csv.zip jarvis_leaderboard/benchmarks/my_awesome_model</code></p>
+<p><code>mv AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae.csv.zip jarvis_leaderboard/contributions/my_awesome_model</code></p>
 <p>Add metadata info in the <code>metadata.json</code> file, e.g.:</p>
-<p><code>cp jarvis_leaderboard/benchmarks/alignn_models/metadata.json jarvis_leaderboard/benchmarks/my_awesome_model</code> </p>
+<p><code>cp jarvis_leaderboard/contributions/alignn_models/metadata.json jarvis_leaderboard/contributions/my_awesome_model</code> </p>
 <p>Also, add a <code>run.py</code>, <code>run.sh</code> and <code>Dockerfile</code> scripts to reproduce the model predictions.</p>
 <p>Run <code>python jarvis_leaderboard/rebuild.py</code> to check there are no errors</p>
 <p>Run <code>mkdocs serve</code> to check if the new benchmark exists, e.g. at page
   <code>http://127.0.0.1:8000/usnistgov/jarvis_leaderboard/AI/SinglePropertyPrediction/exfoliation_energy/</code></p>
 <p>Add. commit and push your changes, e.g.:</p>
-<p><code>git add jarvis_leaderboard/benchmarks/my_awesome_model</code></p>
+<p><code>git add jarvis_leaderboard/contributions/my_awesome_model</code></p>
 <p><code>git commit -m 'Adding my awesome_model to jarvis_leaderboard</code></p>
 <p><code>git push origin main</code> </p>
 <p>Make a pull request from your fork to the source repo at usnistgov/jarvis_leaderboard <code>develop</code> branch</p>
@@ -4553,25 +4568,26 @@ In addition to prediction results, we attempt to capture the underlyig software,
 <div class="tabbed-block">
 <ol>
 <li>
-<p>Create a <code>json.zip</code> file in the <code>jarvis_leaderboard/dataset</code> folder under respective submodule, e.g.:</p>
-<p>e.g. <code>jarvis_leaderboard/dataset/AI/SinglePropertyPrediction/dft_3d_exfoliation_energy.json.zip</code>.      </p>
+<p>Create a <code>json.zip</code> file in the <code>jarvis_leaderboard/benchmarks</code> folder under respective sub-category, e.g.:</p>
+<p>e.g. <code>jarvis_leaderboard/benchmarks/AI/SinglePropertyPrediction/dft_3d_exfoliation_energy.json.zip</code>.      </p>
 </li>
 <li>
 <p>In the <code>.json</code> file should have <code>train</code>, <code>val</code>, <code>test</code> keys with array of ids and their values.</p>
 <p>Note <code>train</code> and 'val` can be empty dictionaries if the benchmarks are other than AI method</p>
 </li>
 <li>
-<p>Add a .md file, e.g.: <code>jarvis_leaderboard/docs/AI/SinglePropertyPrediction/exfoliation_energy.md</code>.</p>
+<p>Add a .md file, e.g.: <code>jarvis_leaderboard/docs/AI/SinglePropertyPrediction/exfoliation_energy.md</code>. This is where contributions performers will be kept and website info will be generated.</p>
 </li>
 <li>
 <p>An example for creating such a file is provided in:
-   <code>jarvis_leaderboard/dataset/AI/SinglePropertyPrediction/transform_from_figshare.py</code></p>
+   <code>jarvis_leaderboard/benchmarks/AI/SinglePropertyPrediction/transform_from_figshare.py</code></p>
 </li>
 <li>
 <p>Then follow the instructions for "Adding model benchmarks to existing dataset"</p>
 </li>
 </ol>
 <p>Notes:
+    A new benchmark must be linked with a peer-reviewed article and must have a DOI to ensure a minimum quality assurance for the data.
     We recommend adding your large dataset in Figshare or similar repository and then integrate it in <a href="https://jarvis-tools.readthedocs.io/en/master/databases.html">JARVIS-Tools</a>
     We also recommend to use JARVIS-Tools for generating dataset/models/benchmarks which can help us maintain the benchmark for long term.     <br />
     Methods used for generating the data and referece are given below:
@@ -4628,7 +4644,7 @@ You can also email Kamal Choudhary if needed (kamal.choudhary@nist.gov). However
 <h1 id="example-benchmarks">Example benchmarks</h1>
 <!--table_content-->
 
-<table style="width:100%" id="j_table"><thead><tr><th>Method</th><th>Task</th><th>Property</th><th>Model name</th><th>Metric</th><th>Score</th><th>Team</th><th>Dataset</th><th>Size</th></tr></thead><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/ssub_formula_energy" target="_blank">ssub_formula_energy</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/matminer_lgbm" target="_blank">matminer_lgbm</a></td><td>MAE</td><td>0.144</td><td>Matminer</td><td>ssub</td><td>1726</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/dft_3d_formation_energy_peratom" target="_blank">dft_3d_formation_energy_peratom</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/alignn_model" target="_blank">alignn_model</a></td><td>MAE</td><td>0.033</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/dft_3d_optb88vdw_bandgap" target="_blank">dft_3d_optb88vdw_bandgap</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/alignn_model" target="_blank">alignn_model</a></td><td>MAE</td><td>0.142</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/dft_3d_optb88vdw_total_energy" target="_blank">dft_3d_optb88vdw_total_energy</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/alignn_model" target="_blank">alignn_model</a></td><td>MAE</td><td>0.037</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/dft_3d_bulk_modulus_kv" target="_blank">dft_3d_bulk_modulus_kv</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/alignn_model" target="_blank">alignn_model</a></td><td>MAE</td><td>10.399</td><td>JARVIS</td><td>dft_3d</td><td>19680</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">SinglePropertyClass</a></td><td><a href="./AI/SinglePropertyClass/dft_3d_optb88vdw_bandgap" target="_blank">dft_3d_optb88vdw_bandgap</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/alignn_model" target="_blank">alignn_model</a></td><td>ACC</td><td>0.933</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/qm9_std_jctc_LUMO" target="_blank">qm9_std_jctc_LUMO</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/alignn_model" target="_blank">alignn_model</a></td><td>MAE</td><td>0.018</td><td>JARVIS</td><td>qm9_std_jctc</td><td>130829</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/hmof_max_co2_adsp" target="_blank">hmof_max_co2_adsp</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/alignn_model" target="_blank">alignn_model</a></td><td>MAE</td><td>0.477</td><td>JARVIS</td><td>hmof</td><td>137651</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/MLFF" target="_blank">MLFF</a></td><td><a href="./AI/MLFF/alignn_ff_db_energy" target="_blank">alignn_ff_db_energy</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/alignnff_wt0.1" target="_blank">alignnff_wt0.1</a></td><td>MAE</td><td>0.034</td><td>JARVIS</td><td>alignn_ff_db</td><td>307111</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/ImageClass" target="_blank">ImageClass</a></td><td><a href="./AI/ImageClass/stem_2d_image_bravais_class" target="_blank">stem_2d_image_bravais_class</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/densenet_model" target="_blank">densenet_model</a></td><td>ACC</td><td>0.83</td><td>JARVIS</td><td>stem_2d_image</td><td>9150</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/TextClass" target="_blank">TextClass</a></td><td><a href="./AI/TextClass/arXiv_categories" target="_blank">arXiv_categories</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/svc_model_text_abstract" target="_blank">svc_model_text_abstract</a></td><td>ACC</td><td>0.908</td><td>ChemNLP</td><td>arXiv</td><td>100994</td></tr><tr><td><a href="./FF" target="_blank">FF</a></td><td><a href="./FF/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./FF/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_816_Al" target="_blank">dft_3d_bulk_modulus_JVASP_816_Al</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/NiAlH_jea.eam.alloy" target="_blank">NiAlH_jea.eam.alloy</a></td><td>MAE</td><td>0.027</td><td>JARVIS-FF</td><td>dft_3d</td><td>1</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_816_Al" target="_blank">dft_3d_bulk_modulus_JVASP_816_Al</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_optcx13" target="_blank">vasp_optcx13</a></td><td>MAE</td><td>0.2</td><td>JARVIS</td><td>dft_3d</td><td>1</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/dft_3d_bulk_modulus" target="_blank">dft_3d_bulk_modulus</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_opt86b" target="_blank">vasp_opt86b</a></td><td>MAE</td><td>4.662</td><td>JARVIS</td><td>dft_3d</td><td>21</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_1002_Si" target="_blank">dft_3d_bulk_modulus_JVASP_1002_Si</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/qmcpack_dmc_pbe" target="_blank">qmcpack_dmc_pbe</a></td><td>MAE</td><td>1.05</td><td>JARVIS</td><td>dft_3d</td><td>1</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/dft_3d_bandgap" target="_blank">dft_3d_bandgap</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_tbmbj" target="_blank">vasp_tbmbj</a></td><td>MAE</td><td>0.498</td><td>JARVIS</td><td>dft_3d</td><td>54</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/dft_3d_bandgap_JVASP_1002_Si" target="_blank">dft_3d_bandgap_JVASP_1002_Si</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_tbmbj" target="_blank">vasp_tbmbj</a></td><td>MAE</td><td>0.107</td><td>JARVIS</td><td>dft_3d</td><td>1</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/dft_3d_epsx" target="_blank">dft_3d_epsx</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_optb88vdw_linopt" target="_blank">vasp_optb88vdw_linopt</a></td><td>MAE</td><td>1.464</td><td>JARVIS</td><td>dft_3d</td><td>16</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/dft_3d_Tc_supercon_JVASP_1151_MgB2" target="_blank">dft_3d_Tc_supercon_JVASP_1151_MgB2</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/qe_pbesol_gbrv" target="_blank">qe_pbesol_gbrv</a></td><td>MAE</td><td>6.315</td><td>JARVIS</td><td>dft_3d</td><td>1</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/dft_3d_Tc_supercon" target="_blank">dft_3d_Tc_supercon</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/qe_pbesol_gbrv" target="_blank">qe_pbesol_gbrv</a></td><td>MAE</td><td>3.378</td><td>JARVIS</td><td>dft_3d</td><td>14</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/dft_3d_slme" target="_blank">dft_3d_slme</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_tbmbj" target="_blank">vasp_tbmbj</a></td><td>MAE</td><td>5.093</td><td>JARVIS</td><td>dft_3d</td><td>5</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/Spectra" target="_blank">Spectra</a></td><td><a href="./ES/Spectra/dft_3d_dielectric_function" target="_blank">dft_3d_dielectric_function</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/vasp_tbmbj" target="_blank">vasp_tbmbj</a></td><td>MULTIMAE</td><td>11.52</td><td>JARVIS</td><td>dft_3d</td><td>4</td></tr><tr><td><a href="./QC" target="_blank">QC</a></td><td><a href="./QC/EigenSolver" target="_blank">EigenSolver</a></td><td><a href="./QC/EigenSolver/dft_3d_electron_bands_JVASP_816_Al_WTBH" target="_blank">dft_3d_electron_bands_JVASP_816_Al_WTBH</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/qiskit_vqd_SU2_c6" target="_blank">qiskit_vqd_SU2_c6</a></td><td>MULTIMAE</td><td>0.003</td><td>JARVIS</td><td>dft_3d</td><td>1</td></tr><tr><td><a href="./EXP" target="_blank">EXP</a></td><td><a href="./EXP/Spectra" target="_blank">Spectra</a></td><td><a href="./EXP/Spectra/dft_3d_XRD_JVASP_19821_MgB2" target="_blank">dft_3d_XRD_JVASP_19821_MgB2</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/bruker_d8" target="_blank">bruker_d8</a></td><td>MULTIMAE</td><td>0.02</td><td>JARVIS</td><td>dft_3d</td><td>1</td></tr><tr><td><a href="./EXP" target="_blank">EXP</a></td><td><a href="./EXP/Spectra" target="_blank">Spectra</a></td><td><a href="./EXP/Spectra/nist_isodb_co2_RM_8852" target="_blank">nist_isodb_co2_RM_8852</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/10.1007s10450-018-9958-x.Lab01" target="_blank">10.1007s10450-018-9958-x.Lab01</a></td><td>MULTIMAE</td><td>0.021</td><td>JARVIS</td><td>nist_isodb</td><td>1</td></tr><!--table_content--></table>
+<table style="width:100%" id="j_table"><thead><tr><th>Method</th><th>Task</th><th>Property</th><th>Model name</th><th>Metric</th><th>Score</th><th>Team</th><th>Dataset</th><th>Size</th></tr></thead><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/ssub_formula_energy" target="_blank">ssub_formula_energy</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/matminer_lgbm" target="_blank">matminer_lgbm</a></td><td>MAE</td><td>0.144</td><td>Matminer</td><td>ssub</td><td>1726</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/dft_3d_formation_energy_peratom" target="_blank">dft_3d_formation_energy_peratom</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model" target="_blank">alignn_model</a></td><td>MAE</td><td>0.033</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/dft_3d_optb88vdw_bandgap" target="_blank">dft_3d_optb88vdw_bandgap</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model" target="_blank">alignn_model</a></td><td>MAE</td><td>0.142</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/dft_3d_optb88vdw_total_energy" target="_blank">dft_3d_optb88vdw_total_energy</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model" target="_blank">alignn_model</a></td><td>MAE</td><td>0.037</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/dft_3d_bulk_modulus_kv" target="_blank">dft_3d_bulk_modulus_kv</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model" target="_blank">alignn_model</a></td><td>MAE</td><td>10.399</td><td>JARVIS</td><td>dft_3d</td><td>19680</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">SinglePropertyClass</a></td><td><a href="./AI/SinglePropertyClass/dft_3d_optb88vdw_bandgap" target="_blank">dft_3d_optb88vdw_bandgap</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model" target="_blank">alignn_model</a></td><td>ACC</td><td>0.933</td><td>JARVIS</td><td>dft_3d</td><td>55713</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/qm9_std_jctc_LUMO" target="_blank">qm9_std_jctc_LUMO</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model" target="_blank">alignn_model</a></td><td>MAE</td><td>0.018</td><td>JARVIS</td><td>qm9_std_jctc</td><td>130829</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./AI/SinglePropertyPrediction/hmof_max_co2_adsp" target="_blank">hmof_max_co2_adsp</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model" target="_blank">alignn_model</a></td><td>MAE</td><td>0.477</td><td>JARVIS</td><td>hmof</td><td>137651</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/MLFF" target="_blank">MLFF</a></td><td><a href="./AI/MLFF/alignn_ff_db_energy" target="_blank">alignn_ff_db_energy</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignnff_wt0.1" target="_blank">alignnff_wt0.1</a></td><td>MAE</td><td>0.034</td><td>JARVIS</td><td>alignn_ff_db</td><td>307111</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/ImageClass" target="_blank">ImageClass</a></td><td><a href="./AI/ImageClass/stem_2d_image_bravais_class" target="_blank">stem_2d_image_bravais_class</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/densenet_model" target="_blank">densenet_model</a></td><td>ACC</td><td>0.83</td><td>JARVIS</td><td>stem_2d_image</td><td>9150</td></tr><tr><td><a href="./AI" target="_blank">AI</a></td><td><a href="./AI/TextClass" target="_blank">TextClass</a></td><td><a href="./AI/TextClass/arXiv_categories" target="_blank">arXiv_categories</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/svc_model_text_abstract" target="_blank">svc_model_text_abstract</a></td><td>ACC</td><td>0.908</td><td>ChemNLP</td><td>arXiv</td><td>100994</td></tr><tr><td><a href="./FF" target="_blank">FF</a></td><td><a href="./FF/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./FF/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_816_Al" target="_blank">dft_3d_bulk_modulus_JVASP_816_Al</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/NiAlH_jea.eam.alloy" target="_blank">NiAlH_jea.eam.alloy</a></td><td>MAE</td><td>0.027</td><td>JARVIS-FF</td><td>dft_3d</td><td>1</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_816_Al" target="_blank">dft_3d_bulk_modulus_JVASP_816_Al</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/vasp_optcx13" target="_blank">vasp_optcx13</a></td><td>MAE</td><td>0.2</td><td>JARVIS</td><td>dft_3d</td><td>1</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/dft_3d_bulk_modulus" target="_blank">dft_3d_bulk_modulus</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/vasp_opt86b" target="_blank">vasp_opt86b</a></td><td>MAE</td><td>4.662</td><td>JARVIS</td><td>dft_3d</td><td>21</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_1002_Si" target="_blank">dft_3d_bulk_modulus_JVASP_1002_Si</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/qmcpack_dmc_pbe" target="_blank">qmcpack_dmc_pbe</a></td><td>MAE</td><td>1.05</td><td>JARVIS</td><td>dft_3d</td><td>1</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/dft_3d_bandgap" target="_blank">dft_3d_bandgap</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/vasp_tbmbj" target="_blank">vasp_tbmbj</a></td><td>MAE</td><td>0.498</td><td>JARVIS</td><td>dft_3d</td><td>54</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/dft_3d_bandgap_JVASP_1002_Si" target="_blank">dft_3d_bandgap_JVASP_1002_Si</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/vasp_tbmbj" target="_blank">vasp_tbmbj</a></td><td>MAE</td><td>0.107</td><td>JARVIS</td><td>dft_3d</td><td>1</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/dft_3d_epsx" target="_blank">dft_3d_epsx</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/vasp_optb88vdw_linopt" target="_blank">vasp_optb88vdw_linopt</a></td><td>MAE</td><td>1.464</td><td>JARVIS</td><td>dft_3d</td><td>16</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/dft_3d_Tc_supercon_JVASP_1151_MgB2" target="_blank">dft_3d_Tc_supercon_JVASP_1151_MgB2</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/qe_pbesol_gbrv" target="_blank">qe_pbesol_gbrv</a></td><td>MAE</td><td>6.315</td><td>JARVIS</td><td>dft_3d</td><td>1</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/dft_3d_Tc_supercon" target="_blank">dft_3d_Tc_supercon</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/qe_pbesol_gbrv" target="_blank">qe_pbesol_gbrv</a></td><td>MAE</td><td>3.378</td><td>JARVIS</td><td>dft_3d</td><td>14</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/SinglePropertyPrediction" target="_blank">SinglePropertyPrediction</a></td><td><a href="./ES/SinglePropertyPrediction/dft_3d_slme" target="_blank">dft_3d_slme</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/vasp_tbmbj" target="_blank">vasp_tbmbj</a></td><td>MAE</td><td>5.093</td><td>JARVIS</td><td>dft_3d</td><td>5</td></tr><tr><td><a href="./ES" target="_blank">ES</a></td><td><a href="./ES/Spectra" target="_blank">Spectra</a></td><td><a href="./ES/Spectra/dft_3d_dielectric_function" target="_blank">dft_3d_dielectric_function</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/vasp_tbmbj" target="_blank">vasp_tbmbj</a></td><td>MULTIMAE</td><td>11.52</td><td>JARVIS</td><td>dft_3d</td><td>4</td></tr><tr><td><a href="./QC" target="_blank">QC</a></td><td><a href="./QC/EigenSolver" target="_blank">EigenSolver</a></td><td><a href="./QC/EigenSolver/dft_3d_electron_bands_JVASP_816_Al_WTBH" target="_blank">dft_3d_electron_bands_JVASP_816_Al_WTBH</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/qiskit_vqd_SU2_c6" target="_blank">qiskit_vqd_SU2_c6</a></td><td>MULTIMAE</td><td>0.003</td><td>JARVIS</td><td>dft_3d</td><td>1</td></tr><tr><td><a href="./EXP" target="_blank">EXP</a></td><td><a href="./EXP/Spectra" target="_blank">Spectra</a></td><td><a href="./EXP/Spectra/dft_3d_XRD_JVASP_19821_MgB2" target="_blank">dft_3d_XRD_JVASP_19821_MgB2</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/bruker_d8" target="_blank">bruker_d8</a></td><td>MULTIMAE</td><td>0.02</td><td>JARVIS</td><td>dft_3d</td><td>1</td></tr><tr><td><a href="./EXP" target="_blank">EXP</a></td><td><a href="./EXP/Spectra" target="_blank">Spectra</a></td><td><a href="./EXP/Spectra/nist_isodb_co2_RM_8852" target="_blank">nist_isodb_co2_RM_8852</a></td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/10.1007s10450-018-9958-x.Lab01" target="_blank">10.1007s10450-018-9958-x.Lab01</a></td><td>MULTIMAE</td><td>0.021</td><td>JARVIS</td><td>nist_isodb</td><td>1</td></tr><!--table_content--></table>
 
 <!--
 <a name="add"></a>
@@ -4710,7 +4726,7 @@ python setup.py develop
 <h1 id="summary-table">Summary table</h1>
 <!--summary_table-->
 
-<table style="width:100%" id="j_table"><thead><td>Methods</td><td>SinglePropertyPrediction</td><td>SinglePropertyClass</td><td>MLFF</td><td>TextClass</td><td>ImageClass</td><td>Spectra</td><td>EigenSolver</td><tr><td>AI</td><td><a href="./AI/SinglePropertyPrediction" target="_blank">138</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">7</a></td><td><a href="./AI/MLFF" target="_blank">42</a></td><td><a href="./AI/TextClass" target="_blank">18</a></td><td><a href="./AI/ImageClass" target="_blank">2</a></td><td><a href="./AI/Spectra" target="_blank">1</a></td><td>-</td><tr><tr><td>ES</td><td><a href="./ES/SinglePropertyPrediction" target="_blank">501</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./ES/Spectra" target="_blank">10</a></td><td>-</td><tr><tr><td>FF</td><td><a href="./FF/SinglePropertyPrediction" target="_blank">47</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><tr><tr><td>QC</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./QC/EigenSolver" target="_blank">6</a></td><tr><tr><td>EXP</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./EXP/Spectra" target="_blank">6</a></td><td>-</td><tr></table>
+<table style="width:100%" id="j_table"><thead><td>Methods</td><td>SinglePropertyPrediction</td><td>SinglePropertyClass</td><td>MLFF</td><td>TextClass</td><td>ImageClass</td><td>Spectra</td><td>EigenSolver</td><tr><td>AI</td><td><a href="./AI/SinglePropertyPrediction" target="_blank">143</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">7</a></td><td><a href="./AI/MLFF" target="_blank">55</a></td><td><a href="./AI/TextClass" target="_blank">18</a></td><td><a href="./AI/ImageClass" target="_blank">2</a></td><td><a href="./AI/Spectra" target="_blank">1</a></td><td>-</td><tr><tr><td>ES</td><td><a href="./ES/SinglePropertyPrediction" target="_blank">501</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./ES/Spectra" target="_blank">10</a></td><td>-</td><tr><tr><td>FF</td><td><a href="./FF/SinglePropertyPrediction" target="_blank">47</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><tr><tr><td>QC</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./QC/EigenSolver" target="_blank">6</a></td><tr><tr><td>EXP</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./EXP/Spectra" target="_blank">6</a></td><td>-</td><tr></table>
 
 <h1 id="quick-start-using-googlecolab-notebook-examples">Quick start using GoogleColab notebook examples</h1>
 <ol>
@@ -4720,6 +4736,23 @@ python setup.py develop
 <li><a href="https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/kgcnn_jarvis_leaderboard.ipynb">kgcnn_jarvis_leaderboard.ipynb</a></li>
 <li><a href="https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/MatMiner_on_JARVIS_DFT.ipynb">MatMiner_on_JARVIS_DFT.ipynb</a></li>
 </ol>
+<h1 id="terminologies-used-in-this-project">Terminologies used in this project</h1>
+<ul>
+<li>
+<p>Categories: are of following types <a href="./AI">Artificial Intelligence (AI)</a>, <a href="./ES">Electronic Structure (ES)</a>, <a href="./FF">Force-field (FF)</a>, <a href="./QC">Quantum Computation (QC)</a> and <a href="./EXP">Experiments (EXP)</a>. Each of these categories are divided into sub-categories. These sub-categories include single-property-prediction, single-property-classification, machine-learning force-fields, text-classification, text-token classification, text-generation, image classification, image-segmentation, image-generation, spectra-prediction, and eigensolver. These categories and sub-categories are highly flexible and new entries can be easily added.</p>
+</li>
+<li>
+<p>Benchmarks: are ground truth data used to calculate metrics for each specific task (e.g a json.zip file). </p>
+</li>
+<li>
+<p>Methods: are a set of precise specifications for evaluation against a benchmark. For example, within ES category, DFT with VASP-GGA-PAW-PBE are specifications, hence a method. Similarly, within AI category, descriptor/feature based models with MatMiner-chemical features and LightGBM software are specifications, hence a method.</p>
+</li>
+<li>
+<p>Contributions: are individual data in form of csv.zip files for each benchmark and specific method. Each contribution has six components: method (e.g. AI), category (e.g. SinglePropertyPrediction), property (e.g. formation energy), dataset (e.g. dft_3d), data-split (e.g. test), metric (e.g. mae).</p>
+</li>
+</ul>
+<h1 id="a-tree-diagram-for-directory-and-file-structure">A tree diagram for directory and file structure</h1>
+<p><img alt="Tree" src="https://github.com/usnistgov/jarvis_leaderboard/blob/develop/jarvis_leaderboard/Tree.jpg" /></p>
 <h1 id="license">License</h1>
 <p>This template is served under the NIST license.<br />
    Read the <a href="https://github.com/usnistgov/jarvis/blob/master/LICENSE.rst">LICENSE</a> file for more info.</p>
