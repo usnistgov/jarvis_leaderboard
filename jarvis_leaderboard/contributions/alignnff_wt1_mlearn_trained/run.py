@@ -5,26 +5,34 @@ import pandas as pd
 import numpy as np
 from jarvis.core.atoms import Atoms
 import os
-from chgnet.model import CHGNet
-
+from alignn.ff.ff import AlignnAtomwiseCalculator,default_path,ForceField
+import torch
+torch.cuda.is_available = lambda : False
+model_path = "../../../../../MLEARN/stress_temp3" #default_path()
+calc = AlignnAtomwiseCalculator(path=model_path)
+#export CUDA_VISIBLE_DEVICES=""
 #wget https://figshare.com/ndownloader/files/40357663 -O mlearn.json.zip
+ 
 
-
-chgnet = CHGNet.load() 
-def get_m3gnet_forces(atoms):
-    atoms=atoms.pymatgen_converter()
-    prediction = chgnet.predict_structure(atoms)
-    energy = prediction['e']
-    forces = prediction['f']
-    stress = prediction['s']
-    return energy,forces,stress
-
-
+def get_alignn_forces(atoms,rescale_factor=2.5):
+    energy = 0.0
+    forces = np.zeros((atoms.num_atoms,3))
+    stress = np.zeros((3,3))
+    #try:
+    ase_atoms=atoms.ase_converter()
+    ase_atoms.calc = calc #M3GNetCalculator(potential=potential)
+    forces = 0.1*np.array(ase_atoms.get_forces())
+    energy = ase_atoms.get_potential_energy()
+    stress = ase_atoms.get_stress()
+    #except:
+    #  print ('Failed for',atoms)
+    #  pass
+    return energy,forces #,stress
 
 df = pd.DataFrame(json.loads(zipfile.ZipFile('mlearn.json.zip').read('mlearn.json')))
 print (df)
-for i in glob.glob('../../dataset/AI/MLFF/*energy*.zip'):
- if 'mlearn' in i:
+for i in glob.glob('../../benchmarks/AI/MLFF/*energy*.zip'):
+ if 'mlearn' in i:# and 'Si' in i:
     fname_e='AI-MLFF-energy-'+i.split('/')[-1].split('_energy.json.zip')[0]+'-test-mae.csv'
     fname_f='AI-MLFF-forces-'+i.split('/')[-1].split('_energy.json.zip')[0]+'-test-multimae.csv'
     #fname_s='AI-MLFF-stresses-'+i.split('/')[-1].split('_energy.json.zip')[0]+'-test-multimae.csv'
@@ -44,7 +52,8 @@ for i in glob.glob('../../dataset/AI/MLFF/*energy*.zip'):
         entry = df[df['jid']==key]
         atoms=Atoms.from_dict(entry.atoms.values[0])
         #print(key,val,df[df['jid']==key],atoms)
-        energy,forces,stress=get_m3gnet_forces(atoms)
+        energy,forces=get_alignn_forces(atoms)
+        #energy,forces,stress=get_alignn_forces(atoms)
         print (key,val,energy)
         line=key+','+str(energy)+'\n'
         f_e.write(line)

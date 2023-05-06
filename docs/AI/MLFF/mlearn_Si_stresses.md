@@ -1,4 +1,4 @@
-# Model for Cu FF stresses
+# Model for Si FF stresses
 
 <h2>Model benchmarks</h2>
 
