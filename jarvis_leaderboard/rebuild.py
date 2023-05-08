@@ -867,6 +867,7 @@ def rebuild_pages():
         "AI-SinglePropertyPrediction-LUMO-qm9_std_jctc-test-mae",
         "AI-SinglePropertyPrediction-max_co2_adsp-hmof-test-mae",
         "AI-MLFF-energy-alignn_ff_db-test-mae",
+        "AI-MLFF-forces-mlearn_Si-test-multimae",
         "AI-ImageClass-bravais_class-stem_2d_image-test-acc",
         "AI-TextClass-categories-arXiv-test-acc",
         "FF-SinglePropertyPrediction-bulk_modulus_JVASP_816_Al-dft_3d-test-mae",
