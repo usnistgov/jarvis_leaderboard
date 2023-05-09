@@ -8,7 +8,7 @@ import os
 from alignn.ff.ff import AlignnAtomwiseCalculator,default_path,ForceField
 import torch
 #torch.cuda.is_available = lambda : False
-model_path = "/wrk/knc6/Software/alignn_calc/alignn/alignn/examples/sample_data_ff/mlearn_data/all/temp320_200/" #default_path()
+model_path = "/wrk/knc6/Software/alignn_calc/alignn/alignn/examples/sample_data_ff/mlearn_data/all/temp320_200keep/" #default_path()
 calc = AlignnAtomwiseCalculator(path=model_path)
 #export CUDA_VISIBLE_DEVICES=""
 #wget https://figshare.com/ndownloader/files/40357663 -O mlearn.json.zip
