@@ -1,14 +1,14 @@
 #!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
-#source: https://wiki.fysik.dtu.dk/gpaw/tutorialsexercises/electronic/band_gap/band_gap.html
+import pandas as pd
+from gpaw import GPAW, PW, FermiDirac
+from jarvis.db.figshare import get_jid_data
+from jarvis.core.atoms import Atoms
+from jarvis.core.kpoints import Kpoints3D
+import time
 from ase.build import bulk
 from gpaw import GPAW, PW, FermiDirac
+#source: https://wiki.fysik.dtu.dk/gpaw/tutorialsexercises/electronic/band_gap/band_gap.html
 
-# Ground state calculation
 
 def get_band_gap(atoms=None, cutoff=500,kpts=[7,7,7]):
     calc = GPAW(mode=PW(cutoff),
@@ -33,42 +33,21 @@ def get_band_gap(atoms=None, cutoff=500,kpts=[7,7,7]):
     return QP_gap,KS_gap,dxc
 
 
-# In[2]:
-
 
 # atoms = bulk('Si', 'diamond', 5.431)
 # QP_gap,KS_gap,dxc = get_band_gap(atoms=atoms)
 
 
-# In[3]:
-
-
-import pandas as pd
 df=pd.read_csv('https://github.com/usnistgov/jarvis_leaderboard/raw/main/jarvis_leaderboard/contributions/vasp_tbmbj/ES-SinglePropertyPrediction-bandgap-dft_3d-test-mae.csv.zip')
 
-
-# In[4]:
-
-
-df
-
-
-# In[ ]:
-
-
-import pandas as pd
-from gpaw import GPAW, PW, FermiDirac
-from jarvis.db.figshare import get_jid_data
-from jarvis.core.atoms import Atoms
-from jarvis.core.kpoints import Kpoints3D
-import time
 
 for i,ii in df.iterrows():
     try:
         jid = ii['id']
         print('jid',jid)
         dat=get_jid_data(dataset='dft_3d',jid=jid)
-        atoms=Atoms.from_dict(dat['atoms']).ase_converter()
+        atoms=Atoms.from_dict(dat['atoms'])
+        ase_atoms=atoms.ase_converter()
         kp = Kpoints3D().automatic_length_mesh(
 
             lattice_mat=dat['atoms']['lattice_mat'],
@@ -76,7 +55,7 @@ for i,ii in df.iterrows():
         )
         kpts = kp._kpoints[0]
         t1=time.time()
-        QP_gap,KS_gap,dxc = get_band_gap(atoms=atoms,kpts=kpts)
+        QP_gap,KS_gap,dxc = get_band_gap(atoms=ase_atoms,kpts=kpts)
         t2=time.time()
         name=jid.replace('-','_')+'_'+atoms.composition.reduced_formula
         fname='ES-SinglePropertyPrediction-bandgap_'+name+'-dft_3d-test-mae.csv'
@@ -85,7 +64,6 @@ for i,ii in df.iterrows():
         f.write(line)
         print('jid,QP_gap,KS_gap,dxc',jid,QP_gap,KS_gap,dxc,t2-t1)
         line=jid+','+str(QP_gap)+'\n'
-        f.write(line)
         f.write(line)
         f.close()
     except:
