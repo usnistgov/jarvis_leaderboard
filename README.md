@@ -9,6 +9,15 @@ This project provides benchmark-performances of various methods for materials sc
 
 Website: https://pages.nist.gov/jarvis_leaderboard/
 
+# Quick start using GoogleColab notebook examples
+
+1. [Analyzing_data_in_the_JARVIS_Leaderboard.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/Analyzing_data_in_the_JARVIS_Leaderboard.ipynb)
+2. [Upload_benchmark_to_jarvis_leaderboard.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/Upload_benchmark_to_jarvis_leaderboard.ipynb)
+3. [alignn_jarvis_leaderboard.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/alignn_jarvis_leaderboard.ipynb)
+4. [kgcnn_jarvis_leaderboard.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/kgcnn_jarvis_leaderboard.ipynb)
+5. [MatMiner_on_JARVIS_DFT.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/MatMiner_on_JARVIS_DFT.ipynb)
+6. [AtomVision_Image_Classification.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/AtomVisionImageClassification.ipynb)
+
 
 # Directory tree structure preview
 ```
