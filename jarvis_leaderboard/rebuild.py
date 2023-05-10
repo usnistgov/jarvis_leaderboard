@@ -36,6 +36,11 @@ scaling = {
 }
 
 
+def mean_absolute_deviation(data, axis=None):
+    """Get Mean absolute deviation."""
+    return np.mean(np.absolute(data - np.mean(data, axis)), axis)
+
+
 def make_summary_table():
     methods = ["AI", "ES", "FF", "QC", "EXP"]
     tasks = [
@@ -118,6 +123,188 @@ def make_summary_table():
 
 
 def get_metric_value(
+    csv_path="../contributions/alignn_model/AI-SinglePropertyPrediction-formation_energy_peratom-dft_3d-test-mae.csv.zip",
+):
+
+    fname = csv_path.split("/")[-1].split(".csv.zip")[0]
+    contribution = csv_path.split("/")[-2]
+    temp = fname.split("-")
+    category = temp[0]
+    subcat = temp[1]
+    prop = temp[2]
+    dataset = temp[3]
+    data_split = temp[4]
+    metric = temp[-1]
+
+    results = {}
+    results["category"] = category
+    results["subcat"] = subcat
+    results["dataset"] = dataset
+    results["prop"] = prop
+    results["data_split"] = data_split
+    results["csv_path"] = csv_path
+    results["metric"] = metric
+    csv_data = pd.read_csv(csv_path, sep=",")
+    meta_path = csv_path.split("/")
+    meta_path[-1] = "metadata.json"
+    meta_path = "/".join(meta_path)
+    meta_data = loadjson(meta_path)
+    results["model_name"] = meta_data["model_name"]
+    results["team_name"] = meta_data["team_name"]
+    results["date_submitted"] = meta_data["date_submitted"]
+    results["project_url"] = meta_data["project_url"]
+    results["num_entries"] = len(csv_data)
+    results["github_url"] = (
+        "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/"
+        + contribution
+    )  # meta_path.split('metadata.json')[0]
+
+    # print("meta_path", meta_data)
+    # meta_data=loadjson()
+    # print("csv_data", csv_path)
+    # dataset with actual values
+    random_guessing_performance = "na"
+    temp = dataset + "_" + prop + ".json"
+    # print ('json temp',temp)
+    temp2 = temp + ".zip"
+    fname = os.path.join("benchmarks", category, subcat, temp2)
+    fname2 = os.path.join(root_dir, fname)
+
+    z = zipfile.ZipFile(fname2)
+    json_data = json.loads(z.read(temp))
+
+    # json_data = loadjson(os.path.join(root_dir, fname))
+    actual_data_json = json_data[data_split]
+    if "val" in json_data:  # sometimes just train-test
+        data_size = (
+            len(json_data["train"])
+            + len(json_data["val"])
+            + len(json_data["test"])
+        )
+    else:
+        data_size = len(json_data["train"]) + len(json_data["test"])
+    # print ('actual_data_json',actual_data_json)
+    results["dataset_size"] = data_size
+    ids = []
+    targets = []
+    for i, j in actual_data_json.items():
+        ids.append(i)
+        targets.append(j)
+    mem = {"id": ids, "actual": targets}
+    actual_df = pd.DataFrame(mem)
+    # print ('actual_df',actual_df)
+    # print('csv_data',csv_data)
+    # actual_df.to_csv('actual_df.csv')
+    # csv_data.to_csv('csv_data.csv')
+    csv_data["id"] = csv_data["id"].astype(str)
+    actual_df["id"] = actual_df["id"].astype(str)
+    if len(csv_data) != len(actual_df):
+        print("Error", csv_path, len(csv_data), len(actual_df))
+        errors.append(csv_path)
+
+    df = pd.merge(csv_data, actual_df, on="id")
+    # print('csv',csv_path)
+    # print ('df',df)
+    # print('csv_data',csv_data)
+    # print('actual_df',actual_df)
+    results["res"] = "na"
+    results["df"] = df
+
+    if metric == "mae":
+        res = round(mean_absolute_error(df["actual"], df["prediction"]), 3)
+        results["res"] = res
+        if "qm9_std_jctc" in csv_path:
+            # print('scaling[dataset][prop],',scaling[dataset][prop])
+            res = round(
+                scaling[dataset][prop]
+                * mean_absolute_error(df["actual"], df["prediction"]),
+                3,
+            )
+            results["res"] = res
+            # print(csv_path)
+            # print('mae1',mean_absolute_error(csv_data['target'],csv_data['prediction']))
+            # print('res',res)
+            # print(csv_data)
+            # print(actual_df)
+            # print()
+    if metric == "acc":
+        # print("ACC",csv_path)
+        # print(df, len(df))
+        res = round(accuracy_score(df["actual"], df["prediction"]), 3)
+        # print("res", res)
+        results["res"] = res
+    if metric == "multimae":
+        # print("csv multimae", csv_path)
+        # print ('df',df)
+        maes = []
+
+        for k, v in df.iterrows():
+            real = np.array(v["actual"].split(";"), dtype="float")
+            # real = np.array(v["target"].split(";"), dtype="float")
+            pred = np.array(v["prediction"].split(";"), dtype="float")
+            m = mean_absolute_error(real, pred)
+            maes.append(m)
+            # print('mm',m)
+        results["res"] = round(np.array(maes).sum() / len(maes), 3)
+        # print ('df',df)
+        # print('csv_data',csv_data)
+        # print('actual_df',actual_df)
+        # print('res',results['res'])
+
+    if metric == "mae" and "JVASP_" not in csv_path:
+        if len(json_data["train"]) == 0:
+            tdata = []
+            for m in list(json_data["test"].values()):
+                tdata.append(m)
+        else:
+            tdata = []
+            for m in list(json_data["train"].values()):
+                tdata.append(m)
+
+        tdata = np.array(tdata, dtype="float")
+        random_guessing_performance = mean_absolute_deviation(tdata)
+        results["random_guessing_performance"] = random_guessing_performance
+    if metric == "acc" and "JVASP_" not in csv_path:
+        if len(json_data["train"]) == 0:
+            tdata = []
+            for m in list(json_data["test"].values()):
+                tdata.append(m)
+        else:
+            tdata = []
+            for m in list(json_data["train"].values()):
+                tdata.append(m)
+
+        random_guessing_performance = 1 / len(set(tdata))
+
+        results["random_guessing_performance"] = random_guessing_performance
+    if (
+        metric == "multimae"
+        and "JVASP_" not in csv_path
+        and len(list(json_data["test"].values())) != 1
+    ):
+        # m=list(json_data["train"].values())[0].split(';')
+        # print ('json_data["train"].values()',np.mean(np.array(m,dtype='float')))
+        if len(json_data["train"]) == 0:
+            tdata = []
+            for m in list(json_data["test"].values()):
+                for n in np.array(m.split(";"), dtype="float"):
+                    tdata.append(n)
+        else:
+            tdata = []
+            for m in list(json_data["train"].values()):
+                for n in np.array(m.split(";"), dtype="float"):
+                    tdata.append(n)
+        tdata = np.array(tdata, dtype="float")
+        avg = np.mean(tdata)
+        random_guessing_performance = mean_absolute_error(
+            tdata, np.repeat(avg, len(tdata))
+        )
+        results["random_guessing_performance"] = random_guessing_performance
+
+    return results
+
+
+def get_metric_value_old(
     submod="",
     csv_path="",
     dataset="",
@@ -147,7 +334,7 @@ def get_metric_value(
     results["num_entries"] = len(csv_data)
     results["github_url"] = (
         "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/"
-        #"https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/"
+        # "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/"
         + bench_name
     )  # meta_path.split('metadata.json')[0]
 
@@ -159,7 +346,7 @@ def get_metric_value(
     # print ('json temp',temp)
     temp2 = temp + ".zip"
     fname = os.path.join("benchmarks", method, submod, temp2)
-    #fname = os.path.join("dataset", method, submod, temp2)
+    # fname = os.path.join("dataset", method, submod, temp2)
     fname2 = os.path.join(root_dir, fname)
 
     z = zipfile.ZipFile(fname2)
@@ -234,8 +421,8 @@ def get_metric_value(
             m = mean_absolute_error(real, pred)
             maes.append(m)
             # print('mm',m)
-        results["res"] = round(np.array(maes).sum()/len(maes), 3)
-        #results["res"] = round(np.array(maes).sum(), 3)
+        results["res"] = round(np.array(maes).sum() / len(maes), 3)
+        # results["res"] = round(np.array(maes).sum(), 3)
         # print ('df',df)
         # print('csv_data',csv_data)
         # print('actual_df',actual_df)
@@ -250,7 +437,7 @@ def rebuild_pages():
     os.chdir(root_dir + "/..")
     num_data = 0
     for i in glob.glob("jarvis_leaderboard/contributions/*/*.csv.zip"):
-    #for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
+        # for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
         # if 'Text' in i:
         print(i)
         fname = i.split("/")[-1].split(".csv.zip")[0]
@@ -303,7 +490,7 @@ def rebuild_pages():
     dat = []
     md_files = []
     for i in glob.glob("jarvis_leaderboard/contributions/*/*.csv.zip"):
-    #for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
+        # for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
         print(i)
         fname = i.split("/")[-1].split(".csv.zip")[0]
         bench_name = i.split("/")[-2]
@@ -319,20 +506,25 @@ def rebuild_pages():
         # method = temp[-2]
         # metric = temp[-1]
 
-        submod = temp[1]
+        category = temp[0]
+        # method = temp[0]
+        subcat = temp[1]
+        # submod = temp[1]
         data_split = temp[4]
         prop = temp[2]
         dataset = temp[3]
-        method = temp[0]
         metric = temp[-1]
 
         team = i.split("/")[-2]
-        md_filename = "../docs/" + method + "/" + submod + "/" + prop + ".md"
+        md_filename = "../docs/" + category + "/" + subcat + "/" + prop + ".md"
+        # md_filename = "../docs/" + method + "/" + submod + "/" + prop + ".md"
         md_filename = (
             "../docs/"
-            + method
+            + category
+            # + method
             + "/"
-            + submod
+            + subcat
+            # + submod
             + "/"
             + dataset
             + "_"
@@ -349,11 +541,12 @@ def rebuild_pages():
             + '" target="_blank">CSV</a>'
         )
         json_name = dataset + "_" + prop + ".json.zip"
-        json_path = method + "/" + submod + "/" + json_name
+        json_path = category + "/" + subcat + "/" + json_name
+        # json_path = method + "/" + submod + "/" + json_name
         json_url = (
             '<a href="'
             + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/"
-            #+ "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/dataset/"
+            # + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/dataset/"
             + json_path
             + '" target="_blank">JSON</a>'
         )
@@ -361,7 +554,7 @@ def rebuild_pages():
             '<a href="'
             + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/"
             + "jarvis_leaderboard/contributions/"
-            #+ "jarvis_leaderboard/benchmarks/"
+            # + "jarvis_leaderboard/benchmarks/"
             + bench_name
             + "/metadata.json "
             + '" target="_blank">Info</a>'
@@ -370,7 +563,7 @@ def rebuild_pages():
             '<a href="'
             + "https://github.com/usnistgov/jarvis_leaderboard/tree/main/"
             + "jarvis_leaderboard/contributions/"
-            #+ "jarvis_leaderboard/benchmarks/"
+            # + "jarvis_leaderboard/benchmarks/"
             + bench_name
             + "/run.sh "
             + '" target="_blank">run.sh</a>'
@@ -378,7 +571,7 @@ def rebuild_pages():
         notes = notes + ", " + json_url + ", " + runsh + ", " + metadata
         if "JVASP" in prop:
             jid = "JVASP-" + prop.split("JVASP_")[1].split("_")[0]
-            #print("propjid", prop, jid)
+            # print("propjid", prop, jid)
             jid_url = (
                 '<a href="'
                 + "https://www.ctcms.nist.gov/~knc6/static/JARVIS-DFT/"
@@ -407,15 +600,16 @@ def rebuild_pages():
         # print("names", i)
         # print()
         res = get_metric_value(
-            submod=submod,
+            # submod=submod,
             csv_path=i,
-            dataset=dataset,
-            prop=prop,
-            data_split=data_split,
-            method=method,
-            metric=metric,
-            bench_name=bench_name,
+            # dataset=dataset,
+            # prop=prop,
+            # data_split=data_split,
+            # method=method,
+            # metric=metric,
+            # bench_name=bench_name,
         )
+        # print ('res',res)
         if fname not in unique_fname:
             unique_fname.append(fname)
             num_data += res["dataset_size"]
@@ -489,12 +683,12 @@ def rebuild_pages():
     ):
         n_methods = 0
         for i in glob.glob("jarvis_leaderboard/contributions/*/metadata.json"):
-        #for i in glob.glob("jarvis_leaderboard/benchmarks/*/metadata.json"):
+            # for i in glob.glob("jarvis_leaderboard/benchmarks/*/metadata.json"):
             n_methods += 1
         if not homepage:
             homepage = []
             for i in glob.glob("jarvis_leaderboard/contributions/*/*.csv.zip"):
-            #for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
+                # for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
 
                 if key in i and extra_key in i:
                     p = i.split("/")[-1].split(".csv.zip")[0]
@@ -520,9 +714,11 @@ def rebuild_pages():
                 #    + i["result"]["metric"]
                 # )
                 name2 = (
-                    i["result"]["method"]
+                    i["result"]["category"]
+                    # i["result"]["method"]
                     + "-"
-                    + i["result"]["submod"]
+                    + i["result"]["subcat"]
+                    # + i["result"]["submod"]
                     + "-"
                     + i["result"]["prop"]
                     + "-"
@@ -577,28 +773,35 @@ def rebuild_pages():
                     + "<tr>"
                     + "<td>"
                     + '<a href="./'
-                    + j["method"]
+                    + j["category"]
+                    # + j["method"]
                     + '" target="_blank">'
-                    + j["method"]
+                    + j["category"]
+                    # + j["method"]
                     + "</a>"
                     # + j["method"]
                     + "</td>"
                     + "<td>"
                     + '<a href="./'
                     # + j["dataset"]+'_'
-                    + j["method"]
+                    + j["category"]
+                    # + j["method"]
                     + "/"
-                    + j["submod"]
+                    + j["subcat"]
+                    # + j["submod"]
                     + '" target="_blank">'
-                    + j["submod"]
+                    + j["subcat"]
+                    # + j["submod"]
                     + "</a>"
                     # + j["submod"]
                     + "</td>"
                     + "<td>"
                     + '<a href="./'
-                    + j["method"]
+                    # + j["method"]
+                    + j["category"]
                     + "/"
-                    + j["submod"]
+                    # + j["submod"]
+                    + j["subcat"]
                     + "/"
                     + j["dataset"]
                     + "_"
@@ -643,9 +846,11 @@ def rebuild_pages():
                     + base
                     + "/"
                     # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
-                    + j["method"]
+                    + j["category"]
+                    # + j["method"]
                     + '" target="_blank">'
-                    + j["method"]
+                    + j["category"]
+                    # + j["method"]
                     + "</a>"
                     # + j["method"]
                     + "</td>"
@@ -656,9 +861,11 @@ def rebuild_pages():
                     # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
                     # + j["method"]
                     # + "/"
-                    + j["submod"]
+                    + j["subcat"]
+                    # + j["submod"]
                     + '" target="_blank">'
-                    + j["submod"]
+                    + j["subcat"]
+                    # + j["submod"]
                     + "</a>"
                     # + j["submod"]
                     + "</td>"
@@ -669,7 +876,8 @@ def rebuild_pages():
                     # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
                     # + j["method"]
                     # + "/"
-                    + j["submod"]
+                    + j["subcat"]
+                    # + j["submod"]
                     + "/"
                     # + "/"
                     + j["dataset"]
@@ -716,9 +924,11 @@ def rebuild_pages():
                     + base
                     + "/"
                     # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
-                    + j["method"]
+                    + j["category"]
+                    # + j["method"]
                     + '" target="_blank">'
-                    + j["method"]
+                    + j["category"]
+                    # + j["method"]
                     + "</a>"
                     # + j["method"]
                     + "</td>"
@@ -727,11 +937,14 @@ def rebuild_pages():
                     + base
                     + "/"
                     # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
-                    + j["method"]
+                    # + j["method"]
+                    + j["category"]
                     + "/"
-                    + j["submod"]
+                    + j["subcat"]
+                    # + j["submod"]
                     + '" target="_blank">'
-                    + j["submod"]
+                    # + j["submod"]
+                    + j["subcat"]
                     + "</a>"
                     # + j["submod"]
                     + "</td>"
@@ -887,11 +1100,11 @@ def rebuild_pages():
     ]
     x = []
     for i in glob.glob("jarvis_leaderboard/contributions/*/*.csv.zip"):
-    #for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
+        # for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
         x.append(i.split(".csv.zip")[0])
         # x.append(i.split('/')[-1].split('.csv.zip')[0])
-    print('Files', len(x))
-    #print(x, len(x))
+    print("Files", len(x))
+    # print(x, len(x))
     update_individual_index_md(md_path="docs/index.md", homepage=homepage)
     # update_individual_index_md(md_path="docs/index.md",homepage=sorted(x))
     update_individual_index_md(md_path="docs/ES/index.md", key="ES")
