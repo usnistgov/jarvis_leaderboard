@@ -4771,6 +4771,9 @@ python setup.py develop
 <p>Categories: are of following types <a href="./AI">Artificial Intelligence (AI)</a>, <a href="./ES">Electronic Structure (ES)</a>, <a href="./FF">Force-field (FF)</a>, <a href="./QC">Quantum Computation (QC)</a> and <a href="./EXP">Experiments (EXP)</a>. Each of these categories are divided into sub-categories. These sub-categories include single-property-prediction, single-property-classification, machine-learning force-fields, text-classification, text-token classification, text-generation, image classification, image-segmentation, image-generation, spectra-prediction, and eigensolver. These categories and sub-categories are highly flexible and new entries can be easily added.</p>
 </li>
 <li>
+<p>Sub-categories: include  1) SinglePropertyPrediction (where the output of a model/experiment is one single number for an entry), 2) SinglePropertyClass (where the output is class-ids, e.g., 0,1,.. instead of floating values), 3) ImageClass (for multi-class image classification), 4) textClass (for multi-label text classification), 5) MLFF (machine learning force-field), 6) Spectra (for multi-value data) and 7) EigenSolver (for Hamiltonian simulation).</p>
+</li>
+<li>
 <p>Benchmarks: are ground truth data used to calculate metrics for each specific task (e.g a json.zip file). </p>
 </li>
 <li>
