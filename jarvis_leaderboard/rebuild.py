@@ -304,6 +304,36 @@ def get_metric_value(
     return results
 
 
+def get_results(
+    bench_name="ES-SinglePropertyPrediction-bandgap_JVASP_1002_Si-dft_3d-test-mae.csv.zip",
+    include_random=False,
+):
+    search = root_dir + "/contributions/*/" + bench_name
+    vals = []
+    names = []
+    # for i in glob.glob("../contributions/*/AI-MLFF-forces-mlearn_Si-test-multimae.csv.zip"):
+    for i in glob.glob(search):
+        # print(i)
+        res = get_metric_value(csv_path=i)
+        # print (res['res'],res['random_guessing_performance'])
+        if include_random:
+            rand = res["random_guessing_performance"]
+        model_name = res["model_name"]
+        val = res["res"]
+        vals.append(val)
+        names.append(i.split("/")[-2])
+    if include_random:
+        vals.append(rand)
+    vals = np.array(vals)
+    order = np.argsort(vals)
+    vals = vals[order]
+    if include_random:
+        names.append("Random")
+    names = np.array(names)
+    names = names[order]
+    return names, vals
+
+
 def get_metric_value_old(
     submod="",
     csv_path="",
