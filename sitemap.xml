@@ -486,6 +486,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_2d_Tc_supercon_JVASP_646_NbS2/</loc>
+         <lastmod>2023-05-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_2d_Tc_supercon_JVASP_655_NbSe2/</loc>
+         <lastmod>2023-05-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_Tc_supercon/</loc>
          <lastmod>2023-05-11</lastmod>
          <changefreq>daily</changefreq>
