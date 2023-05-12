@@ -1,0 +1,52 @@
+#POSCAR
+From JARVIS database (OptB88vdW)
+
+#KPOINTS
+Converged from JARVIS database
+
+#POTCAR
+PAW_PBE GW pseudopotentials
+
+#INCAR DFT
+ISMEAR =  0
+SIGMA  =  0.05
+EDIFF  = 1E-8
+
+#INCAR DIAG
+# Frequency dependent dielectric tensor without
+# local field effects
+ALGO = Exact
+NBANDS  = 64
+LOPTICS = .TRUE. ; CSHIFT = 0.1
+NEDOS = 2000
+# you might try
+#LPEAD = .TRUE.
+
+ISMEAR =  0
+SIGMA  =  0.05
+EDIFF  = 1E-8
+
+#INCAR GW
+# Frequency dependent dielectric tensor including
+# local field effects within the RPA (default) or
+# including changes in the DFT xc-potential (LRPA=.FALSE.).
+# N.B.: beware one first has to have done a
+# calculation with ALGO=Exact, LOPTICS=.TRUE.
+# and a reasonable number of virtual states (see above)
+ALGO = GW0 ; LSPECTRAL = .TRUE. ; NOMEGA = 50
+
+# be sure to take the same number of bands as for
+# the LOPTICS=.TRUE. calculation, otherwise the
+# WAVEDER file is not read correctly
+NBANDS = 64
+
+# Add this to update the quasiparticle energies
+# in the Green's function (GW0)
+#NELM = 4
+
+ISMEAR =  0
+SIGMA  =  0.05
+EDIFF  = 1E-8
+
+Sample workflow script attached
+adapted from https://www.vasp.at/wiki/index.php/Bandgap_of_Si_in_GW
