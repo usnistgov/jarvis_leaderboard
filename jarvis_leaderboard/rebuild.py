@@ -783,11 +783,14 @@ def rebuild_pages():
         temp = (
             '<!--table_content--><table style="width:100%" id="j_table">'
             + "<thead><tr>"
+            + "<th>Category</th>"
+            # + "<th>Method</th>"
+            + "<th>Sub-category</th>"
+            # + "<th>Task</th>"
+            + "<th>Benchmark</th>"
+            # + "<th>Property</th>"
             + "<th>Method</th>"
-            # +'<th><a href="./method' + '" target="_blank">' + 'Method' + "</a></th>"
-            + "<th>Task</th>"
-            + "<th>Property</th>"
-            + "<th>Model name</th>"
+            # + "<th>Model name</th>"
             + "<th>Metric</th>"
             + "<th>Score</th>"
             + "<th>Team</th>"
