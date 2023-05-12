@@ -783,11 +783,14 @@ def rebuild_pages():
         temp = (
             '<!--table_content--><table style="width:100%" id="j_table">'
             + "<thead><tr>"
+            + "<th>Category</th>"
+            # + "<th>Method</th>"
+            + "<th>Sub-category</th>"
+            # + "<th>Task</th>"
+            + "<th>Benchmark</th>"
+            # + "<th>Property</th>"
             + "<th>Method</th>"
-            # +'<th><a href="./method' + '" target="_blank">' + 'Method' + "</a></th>"
-            + "<th>Task</th>"
-            + "<th>Property</th>"
-            + "<th>Model name</th>"
+            # + "<th>Model name</th>"
             + "<th>Metric</th>"
             + "<th>Score</th>"
             + "<th>Team</th>"
@@ -1129,13 +1132,19 @@ def rebuild_pages():
         "EXP-Spectra-co2_RM_8852-nist_isodb-test-multimae",
     ]
     x = []
+    y=[]
     for i in glob.glob("jarvis_leaderboard/contributions/*/*.csv.zip"):
         # for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
         x.append(i.split(".csv.zip")[0])
+        tmp = i.split('/')[-1].split(".csv.zip")[0]
+        if tmp not in y:
+            y.append(tmp)
         # x.append(i.split('/')[-1].split('.csv.zip')[0])
+    y = sorted(y)
     print("Files", len(x))
     # print(x, len(x))
-    update_individual_index_md(md_path="docs/index.md", homepage=homepage)
+    update_individual_index_md(md_path="docs/index.md", homepage=y)
+    #update_individual_index_md(md_path="docs/index.md", homepage=homepage)
     # update_individual_index_md(md_path="docs/index.md",homepage=sorted(x))
     update_individual_index_md(md_path="docs/ES/index.md", key="ES")
     update_individual_index_md(md_path="docs/FF/index.md", key="FF")
