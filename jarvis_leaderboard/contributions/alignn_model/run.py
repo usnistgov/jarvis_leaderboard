@@ -19,7 +19,7 @@ print("tasks", tasks, len(tasks))
 # For a quick test running on one task only
 tasks = ["AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae"]
 for task in tasks:
-    task = "AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae"
+    # task = "AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae"
     cmd = (
         "jarvis_populate_data.py --benchmark_file "
         + task

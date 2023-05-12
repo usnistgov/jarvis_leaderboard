@@ -312,7 +312,7 @@ theme:
   - navigation.tabs         # Render top sections as tabs at the top.
   - navigation.tabs.sticky # Tabs won't disappear when scrolling down. Requires "navigation.tabs".
   - navigation.top         # Adds a "Back to top" that is shown when scrolling up.
-  #- navigation.tracking    # Updates the url with highlighted section anchor.
+  # - navigation.tracking    # Updates the url with highlighted section anchor.
   
   # Search
   #
@@ -508,8 +508,8 @@ markdown_extensions:
 #  - markdown.extensions.admonition:
 #  - markdown.extensions.codehilite:
 #      guess_lang: false
-#  - markdown.extensions.toc:
-#      permalink: true
+  - toc:
+      permalink: true
   #- pymdownx.arithmex:
   #- pymdownx.b64:
   #- pymdownx.betterem:
