@@ -8,6 +8,7 @@ import zipfile
 import json
 from collections import defaultdict
 import numpy as np
+import matplotlib.pyplot as plt
 
 # from mkdocs import utils
 
@@ -124,6 +125,7 @@ def make_summary_table():
 
 def get_metric_value(
     csv_path="../contributions/alignn_model/AI-SinglePropertyPrediction-formation_energy_peratom-dft_3d-test-mae.csv.zip",
+    plot_filename=None,
 ):
 
     fname = csv_path.split("/")[-1].split(".csv.zip")[0]
@@ -221,6 +223,10 @@ def get_metric_value(
                 3,
             )
             results["res"] = res
+            if plot_filename is not None:
+                plt.plot(df["actual"], df["prediction"], ".")
+                plt.savefig(plot_filename)
+                plt.close()
             # print(csv_path)
             # print('mae1',mean_absolute_error(csv_data['target'],csv_data['prediction']))
             # print('res',res)
@@ -237,15 +243,22 @@ def get_metric_value(
         # print("csv multimae", csv_path)
         # print ('df',df)
         maes = []
-
+        reals = []
+        preds = []
         for k, v in df.iterrows():
             real = np.array(v["actual"].split(";"), dtype="float")
             # real = np.array(v["target"].split(";"), dtype="float")
             pred = np.array(v["prediction"].split(";"), dtype="float")
             m = mean_absolute_error(real, pred)
             maes.append(m)
+            reals.append(real)
+            preds.append(pred)
             # print('mm',m)
         results["res"] = round(np.array(maes).sum() / len(maes), 3)
+        if plot_filename is not None:
+            plt.plot(np.concatenate(reals), np.concatenate(preds), ".")
+            plt.savefig(plot_filename)
+            plt.close()
         # print ('df',df)
         # print('csv_data',csv_data)
         # print('actual_df',actual_df)
@@ -1132,11 +1145,11 @@ def rebuild_pages():
         "EXP-Spectra-co2_RM_8852-nist_isodb-test-multimae",
     ]
     x = []
-    y=[]
+    y = []
     for i in glob.glob("jarvis_leaderboard/contributions/*/*.csv.zip"):
         # for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
         x.append(i.split(".csv.zip")[0])
-        tmp = i.split('/')[-1].split(".csv.zip")[0]
+        tmp = i.split("/")[-1].split(".csv.zip")[0]
         if tmp not in y:
             y.append(tmp)
         # x.append(i.split('/')[-1].split('.csv.zip')[0])
@@ -1144,7 +1157,7 @@ def rebuild_pages():
     print("Files", len(x))
     # print(x, len(x))
     update_individual_index_md(md_path="docs/index.md", homepage=y)
-    #update_individual_index_md(md_path="docs/index.md", homepage=homepage)
+    # update_individual_index_md(md_path="docs/index.md", homepage=homepage)
     # update_individual_index_md(md_path="docs/index.md",homepage=sorted(x))
     update_individual_index_md(md_path="docs/ES/index.md", key="ES")
     update_individual_index_md(md_path="docs/FF/index.md", key="FF")
