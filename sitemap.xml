@@ -476,6 +476,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/AI/TokenClass/</loc>
+         <lastmod>2023-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/AI/TokenClass/mat_scholar_ner_labels/</loc>
+         <lastmod>2023-05-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/</loc>
          <lastmod>2023-05-13</lastmod>
          <changefreq>daily</changefreq>
