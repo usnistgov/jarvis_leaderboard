@@ -71,7 +71,7 @@ pydantic==1.10.7
 pyerfa==2.0.0.3
 Pygments==2.15.1
 pymatgen==2023.3.23
-pymdown-extensions==9.11
+pymdown-extensions==10.0
 pyparsing==3.0.9
 pyshtools==4.10
 python-dateutil==2.8.2
