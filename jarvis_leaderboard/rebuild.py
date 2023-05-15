@@ -49,12 +49,14 @@ def make_summary_table():
         "SinglePropertyClass",
         "MLFF",
         "TextClass",
+        "TokenClass",
+        "TextSummary",
         "ImageClass",
         "Spectra",
         "EigenSolver",
     ]
     line = '<table style="width:100%" id="j_table">'
-    line += "<thead><td>Methods</td>"
+    line += "<thead><td>Category/Sub-cat.</td>"
     for i in tasks:
         line += "<td>" + i + "</td>"
     # line+='<td>Total</td>'
@@ -323,7 +325,7 @@ def get_metric_value(
        #scores = rouge_score.compute(predictions=csv_data['prediction'],references=csv_data['target'])
        rouge=scores['rouge1']
        #rouge=(calc_rouge_scores(df['target'],df['prediction']))['rouge1']
-       results['res']=rouge
+       results['res']=round(rouge,3)
     return results
 
 
@@ -1203,6 +1205,12 @@ def rebuild_pages():
     )
     update_individual_index_md(
         md_path="docs/AI/TextClass/index.md", key="AI", extra_key="TextClass"
+    )
+    update_individual_index_md(
+        md_path="docs/AI/TokenClass/index.md", key="AI", extra_key="TokenClass"
+    )
+    update_individual_index_md(
+        md_path="docs/AI/TextSummary/index.md", key="AI", extra_key="TextSummary"
     )
     update_individual_index_md(md_path="docs/QC/index.md", key="QC")
     update_individual_index_md(
