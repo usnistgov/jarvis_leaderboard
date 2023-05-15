@@ -1,0 +1,2053 @@
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+SCF CALC 0001 energy  -45.70295035
+SCF CALC 0002 energy  -41.91811891  en_diff:   3.784831E+00  dq_diff:   3.878386E+00
+                               reduce mixing:  0.2500   olderr:   2.34130064  newerr:  2.38392250
+SCF CALC 0003 energy  -41.84472224  en_diff:   7.339668E-02  dq_diff:   3.637250E-02
+SCF CALC 0004 energy  -43.85063789  en_diff:   2.005916E+00  dq_diff:   1.177195E+00
+SCF CALC 0005 energy  -44.13172870  en_diff:   2.810908E-01  dq_diff:   2.118205E-01
+SCF CALC 0006 energy  -44.33735186  en_diff:   2.056232E-01  dq_diff:   1.677344E-01
+SCF CALC 0007 energy  -44.48188009  en_diff:   1.445282E-01  dq_diff:   1.258776E-01
+SCF CALC 0008 energy  -44.58525486  en_diff:   1.033748E-01  dq_diff:   9.483506E-02
+SCF CALC 0009 energy  -44.65992807  en_diff:   7.467321E-02  dq_diff:   7.135764E-02
+SCF CALC 0010 energy  -44.71431946  en_diff:   5.439139E-02  dq_diff:   5.365194E-02
+SCF CALC 0011 energy  -44.75420221  en_diff:   3.988275E-02  dq_diff:   4.031556E-02
+SCF CALC 0012 energy  -44.78358660  en_diff:   2.938438E-02  dq_diff:   3.029907E-02
+SCF CALC 0013 energy  -44.80483586  en_diff:   2.124927E-02  dq_diff:   2.472354E-02
+SCF CALC 0014 energy  -44.84493221  en_diff:   4.009634E-02  dq_diff:   4.068238E-02
+SCF CALC 0015 energy  -44.86035214  en_diff:   1.541993E-02  dq_diff:   1.625470E-02
+SCF CALC 0016 energy  -44.86648205  en_diff:   6.129914E-03  dq_diff:   6.479794E-03
+SCF CALC 0017 energy  -44.86791818  en_diff:   1.436125E-03  dq_diff:   1.571459E-03
+SCF CALC 0018 energy  -44.86874590  en_diff:   8.277217E-04  dq_diff:   1.123537E-03
+SCF CALC 0019 energy  -44.86904156  en_diff:   2.956641E-04  dq_diff:   3.999267E-04
+
+YES convergence in 19 iters, energy -44.8690415628827 eV   dq = [-0.463, -0.463, 0.231, 0.231, 0.231, 0.231]
+END SCF ------------------
+
+  6.547704 seconds (918.26 k allocations: 3.824 GiB, 9.48% gc time)
+scf_energy success, done
+
+using kgrid [12, 12, 2]
+{'directgap': 1.704314352080011,
+ 'energy': -44.8690415628827,
+ 'force': 'na',
+ 'indirectgap': 0.8704738711616569,
+ 'stress': 'na'}
+{'directgap': 1.704314352080011, 'indirectgap': 0.8704738711616569, 'energy': -44.8690415628827, 'force': 'na', 'stress': 'na'}
+Time taken 9.344988107681274
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-57 Mo2Se4
+1.0
+1.6643774273971446 -2.8827850492252995 0.0
+1.6643774273971443 2.882785049225293 0.0
+0.0 0.0 13.169873902374515
+Mo Se
+2 4
+Cartesian
+1.66438 -0.9609319218599816 9.877402499999999
+1.66438 0.9609319218599814 3.2924675
+1.66438 0.9609319218599814 11.550508940891342
+1.66438 -0.9609319218599816 4.965573940891351
+1.66438 0.9609319218599814 8.204296059108657
+1.66438 -0.9609319218599816 1.6193610591086482
+
+Mo2Se4
+1.0
+1.6643774273971446 -2.8827850492252995 0.0
+1.6643774273971443 2.882785049225293 0.0
+0.0 0.0 13.169873902374515
+Mo Se
+2 4
+Cartesian
+1.6643799999999997 -0.9609319218599813 9.877402499999999
+1.6643799999999997 0.9609319218599811 3.2924675
+1.6643799999999997 0.9609319218599811 11.550508940891342
+1.6643799999999997 -0.9609319218599813 4.965573940891351
+1.6643799999999997 0.9609319218599811 8.204296059108657
+1.6643799999999997 -0.9609319218599813 1.6193610591086485
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["Mo", "Mo", "Se", "Se", "Se", "Se"]
+add_to_database Set([:Se, :Mo])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.2bdy.Mo.Se.xml.gz
+version 2
+make coefs
+added to cache (:Se, :Mo) twobody
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.3bdy.Mo.Se.xml.gz
+version 2
+make coefs
+added to cache (:Se, :Mo) threebody
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+onsite
+make
+-----
+
+  0.847734 seconds (6.07 M allocations: 283.888 MiB, 10.35% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+SCF CALC 0001 energy  -41.79193710
+SCF CALC 0002 energy  -38.76304323  en_diff:   3.028894E+00  dq_diff:   2.990419E+00
+                               reduce mixing:  0.2500   olderr:   2.42532153  newerr:  2.45783953
+SCF CALC 0003 energy  -38.71448117  en_diff:   4.856206E-02  dq_diff:   2.300312E-02
+SCF CALC 0004 energy  -40.73183296  en_diff:   2.017352E+00  dq_diff:   1.217261E+00
+SCF CALC 0005 energy  -40.88905781  en_diff:   1.572249E-01  dq_diff:   1.356692E-01
+SCF CALC 0006 energy  -41.00826357  en_diff:   1.192058E-01  dq_diff:   1.112711E-01
+SCF CALC 0007 energy  -41.09101523  en_diff:   8.275165E-02  dq_diff:   8.249870E-02
+SCF CALC 0008 energy  -41.15025871  en_diff:   5.924349E-02  dq_diff:   6.220588E-02
+SCF CALC 0009 energy  -41.19304452  en_diff:   4.278581E-02  dq_diff:   4.679353E-02
+SCF CALC 0010 energy  -41.22420771  en_diff:   3.116319E-02  dq_diff:   3.517900E-02
+SCF CALC 0011 energy  -41.24705762  en_diff:   2.284990E-02  dq_diff:   2.643220E-02
+SCF CALC 0012 energy  -41.26390056  en_diff:   1.684294E-02  dq_diff:   1.985156E-02
+SCF CALC 0013 energy  -41.27636685  en_diff:   1.246629E-02  dq_diff:   1.490427E-02
+SCF CALC 0014 energy  -41.28562325  en_diff:   9.256397E-03  dq_diff:   1.118828E-02
+SCF CALC 0015 energy  -41.29255907  en_diff:   6.935815E-03  dq_diff:   8.564860E-03
+                               reduce mixing:  0.1250   olderr:   0.03314299  newerr:  0.03859262
+SCF CALC 0016 energy  -41.30357254  en_diff:   1.101347E-02  dq_diff:   1.468116E-02
+SCF CALC 0017 energy  -41.30845770  en_diff:   4.885163E-03  dq_diff:   5.297601E-03
+SCF CALC 0018 energy  -41.30856693  en_diff:   1.092221E-04  dq_diff:   7.144185E-04
+SCF CALC 0019 energy  -41.30999820  en_diff:   1.431272E-03  dq_diff:   1.710996E-03
+SCF CALC 0020 energy  -41.30960664  en_diff:   3.915626E-04  dq_diff:   1.575144E-03
+SCF CALC 0021 energy  -41.31080012  en_diff:   1.193486E-03  dq_diff:   1.466943E-03
+SCF CALC 0022 energy  -41.31078605  en_diff:   1.406994E-05  dq_diff:   5.126314E-04
+
+YES convergence in 22 iters, energy -41.31078605212218 eV   dq = [-0.305, -0.305, 0.153, 0.152, 0.152, 0.153]
+END SCF ------------------
+
+  6.526006 seconds (926.89 k allocations: 3.031 GiB, 13.94% gc time)
+scf_energy success, done
+
+using kgrid [10, 10, 2]
+{'directgap': 0.08857616730211536,
+ 'energy': -41.31078605212218,
+ 'force': 'na',
+ 'indirectgap': 0.0885727121039907,
+ 'stress': 'na'}
+{'directgap': 0.08857616730211536, 'indirectgap': 0.0885727121039907, 'energy': -41.31078605212218, 'force': 'na', 'stress': 'na'}
+Time taken 8.943307876586914
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-72 W2S4
+1.0
+1.5971451627104631 -2.766337335187198 0.0
+1.597145162710465 2.7663373351871976 0.0
+0.0 0.0 12.536067523391075
+W S
+2 4
+Cartesian
+1.59715 -0.9221151775599822 9.4020525
+1.59715 0.9221151775599823 3.1340175
+1.59715 -0.9221151775599822 1.5591230989142297
+1.59715 0.9221151775599823 7.827158098914242
+1.59715 -0.9221151775599822 4.708911901085763
+1.59715 0.9221151775599823 10.976946901085759
+
+W2S4
+1.0
+1.5971451627104631 -2.766337335187198 0.0
+1.597145162710465 2.7663373351871976 0.0
+0.0 0.0 12.536067523391075
+W S
+2 4
+Cartesian
+1.5971499999999998 -0.922115177559982 9.4020525
+1.5971499999999998 0.9221151775599824 3.1340175
+1.5971499999999998 -0.922115177559982 1.5591230989142297
+1.5971499999999998 0.9221151775599824 7.827158098914242
+1.5971499999999998 -0.922115177559982 4.708911901085763
+1.5971499999999998 0.9221151775599824 10.976946901085759
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["W", "W", "S", "S", "S", "S"]
+add_to_database Set([:W])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/els/coef.el.2bdy.W.xml.gz
+version 2
+make coefs
+added to cache (:W, :W)
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/els/coef.el.3bdy.W.xml.gz
+version 2
+make coefs
+added to cache (:W, :W, :W)
+add_to_database Set([:W, :S])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.2bdy.W.S.xml.gz
+version 2
+make coefs
+added to cache (:W, :S) twobody
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.3bdy.W.S.xml.gz
+version 2
+make coefs
+added to cache (:W, :S) threebody
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+onsite
+make
+-----
+
+  0.785238 seconds (5.95 M allocations: 284.048 MiB, 10.36% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+SCF CALC 0001 energy  -47.01285587
+SCF CALC 0002 energy  -39.46130162  en_diff:   7.551554E+00  dq_diff:   3.206905E+00
+                               reduce mixing:  0.2500   olderr:   3.89334326  newerr:  3.90022114
+SCF CALC 0003 energy  -39.44316500  en_diff:   1.813662E-02  dq_diff:   3.679032E-03
+SCF CALC 0004 energy  -45.92385996  en_diff:   6.480695E+00  dq_diff:   1.951363E+00
+SCF CALC 0005 energy  -46.01549318  en_diff:   9.163321E-02  dq_diff:   5.287183E-02
+SCF CALC 0006 energy  -46.09284375  en_diff:   7.735058E-02  dq_diff:   4.663849E-02
+SCF CALC 0007 energy  -46.14473663  en_diff:   5.189288E-02  dq_diff:   3.244367E-02
+SCF CALC 0008 energy  -46.18348821  en_diff:   3.875158E-02  dq_diff:   2.489150E-02
+SCF CALC 0009 energy  -46.21183770  en_diff:   2.834949E-02  dq_diff:   1.859535E-02
+SCF CALC 0010 energy  -46.23282265  en_diff:   2.098495E-02  dq_diff:   1.398610E-02
+SCF CALC 0011 energy  -46.24838048  en_diff:   1.555784E-02  dq_diff:   1.049574E-02
+SCF CALC 0012 energy  -46.25996167  en_diff:   1.158118E-02  dq_diff:   7.889313E-03
+SCF CALC 0013 energy  -46.26981344  en_diff:   9.851773E-03  dq_diff:   7.771946E-03
+SCF CALC 0014 energy  -46.29319863  en_diff:   2.338519E-02  dq_diff:   1.596424E-02
+SCF CALC 0015 energy  -46.29624574  en_diff:   3.047103E-03  dq_diff:   2.775721E-03
+SCF CALC 0016 energy  -46.29474996  en_diff:   1.495779E-03  dq_diff:   1.049527E-03
+SCF CALC 0017 energy  -46.29533371  en_diff:   5.837495E-04  dq_diff:   4.084524E-04
+
+YES convergence in 17 iters, energy -46.29533370692757 eV   dq = [-0.257, -0.257, 0.128, 0.128, 0.128, 0.128]
+END SCF ------------------
+
+  6.918463 seconds (822.08 k allocations: 3.288 GiB, 12.30% gc time)
+scf_energy success, done
+
+using kgrid [12, 12, 2]
+{'directgap': 2.1620047112842973,
+ 'energy': -46.29533370692757,
+ 'force': 'na',
+ 'indirectgap': 1.4473557696752082,
+ 'stress': 'na'}
+{'directgap': 2.1620047112842973, 'indirectgap': 1.4473557696752082, 'energy': -46.29533370692757, 'force': 'na', 'stress': 'na'}
+Time taken 10.093431234359741
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-75 W2Se4
+1.0
+1.664339101614746 -2.8827187437906243 0.0
+1.664339101614746 2.8827187437906243 0.0
+0.0 0.0 13.231734783642617
+W Se
+2 4
+Cartesian
+1.66434 -0.9609085884799815 3.3079325
+1.66434 0.9609085884799815 9.923797500000001
+1.66434 0.9609085884799815 1.6258482950264688
+1.66434 -0.9609085884799815 8.2417132950263
+1.66434 0.9609085884799815 4.990016704973476
+1.66434 -0.9609085884799815 11.605881704973703
+
+W2Se4
+1.0
+1.664339101614746 -2.8827187437906243 0.0
+1.664339101614746 2.8827187437906243 0.0
+0.0 0.0 13.231734783642617
+W Se
+2 4
+Cartesian
+1.66434 -0.9609085884799815 3.3079325
+1.66434 0.9609085884799815 9.923797500000001
+1.66434 0.9609085884799815 1.6258482950264688
+1.66434 -0.9609085884799815 8.2417132950263
+1.66434 0.9609085884799815 4.990016704973475
+1.66434 -0.9609085884799815 11.605881704973703
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["W", "W", "Se", "Se", "Se", "Se"]
+add_to_database Set([:W, :Se])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.2bdy.W.Se.xml.gz
+version 2
+make coefs
+added to cache (:W, :Se) twobody
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.3bdy.W.Se.xml.gz
+version 2
+make coefs
+added to cache (:W, :Se) threebody
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+onsite
+make
+-----
+
+  0.758038 seconds (5.94 M allocations: 277.201 MiB, 9.71% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+SCF CALC 0001 energy  -42.47811664
+SCF CALC 0002 energy  -36.04799277  en_diff:   6.430124E+00  dq_diff:   2.612592E+00
+SCF CALC 0003 energy  -36.06746463  en_diff:   1.947186E-02  dq_diff:   3.754256E-03
+SCF CALC 0004 energy  -41.08584541  en_diff:   5.018381E+00  dq_diff:   3.961316E+00
+SCF CALC 0005 energy  -42.35196633  en_diff:   1.266121E+00  dq_diff:   9.575073E-01
+SCF CALC 0006 energy  -42.43199903  en_diff:   8.003270E-02  dq_diff:   6.294423E-01
+SCF CALC 0007 energy  -42.27503045  en_diff:   1.569686E-01  dq_diff:   2.541175E-01
+SCF CALC 0008 energy  -42.16483655  en_diff:   1.101939E-01  dq_diff:   1.163376E-01
+SCF CALC 0009 energy  -42.10265512  en_diff:   6.218142E-02  dq_diff:   5.632082E-02
+SCF CALC 0010 energy  -42.06979654  en_diff:   3.285858E-02  dq_diff:   2.781694E-02
+SCF CALC 0011 energy  -42.05292365  en_diff:   1.687290E-02  dq_diff:   1.383442E-02
+SCF CALC 0012 energy  -42.04437600  en_diff:   8.547647E-03  dq_diff:   6.900018E-03
+SCF CALC 0013 energy  -42.04007432  en_diff:   4.301683E-03  dq_diff:   3.445880E-03
+SCF CALC 0014 energy  -42.03791410  en_diff:   2.160212E-03  dq_diff:   1.723583E-03
+                               reduce mixing:  0.2500   olderr:   0.00338550  newerr:  0.00577827
+SCF CALC 0015 energy  -42.03640808  en_diff:   1.506022E-03  dq_diff:   1.634133E-03
+SCF CALC 0016 energy  -42.03487836  en_diff:   1.529718E-03  dq_diff:   1.233556E-03
+SCF CALC 0017 energy  -42.03634481  en_diff:   1.466446E-03  dq_diff:   1.202999E-03
+SCF CALC 0018 energy  -42.03606973  en_diff:   2.750816E-04  dq_diff:   2.188204E-04
+
+YES convergence in 18 iters, energy -42.03606972810514 eV   dq = [-0.179, -0.179, 0.09, 0.09, 0.09, 0.09]
+END SCF ------------------
+
+  5.058367 seconds (759.14 k allocations: 2.462 GiB, 11.37% gc time)
+scf_energy success, done
+
+using kgrid [10, 10, 2]
+{'directgap': 1.044390466650188,
+ 'energy': -42.03606972810514,
+ 'force': 'na',
+ 'indirectgap': 1.044390466650188,
+ 'stress': 'na'}
+{'directgap': 1.044390466650188, 'indirectgap': 1.044390466650188, 'energy': -42.03606972810514, 'force': 'na', 'stress': 'na'}
+Time taken 7.39873480796814
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-7630 BAs
+1.0
+2.9495009777169092 1.159946e-10 1.7028947710581857
+0.9831669926816637 2.7808158887042613 1.7028947710581857
+3.280824e-10 2.319892e-10 3.4057905409798606
+B As
+1 1
+Cartesian
+0.9831675 0.695205 1.7028925
+0.0 0.0 0.0
+
+BAs
+1.0
+2.9495009777169092 1.159946e-10 1.7028947710581857
+0.9831669926816637 2.7808158887042613 1.7028947710581857
+3.280824e-10 2.319892e-10 3.4057905409798606
+B As
+1 1
+Cartesian
+0.9831674999999999 0.6952049999999999 1.7028925
+0.0 0.0 0.0
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["B", "As"]
+add_to_database Set([:As, :B])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.2bdy.B.As.xml.gz
+version 2
+make coefs
+added to cache (:As, :B) twobody
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.3bdy.B.As.xml.gz
+version 2
+make coefs
+added to cache (:As, :B) threebody
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+onsite
+make
+-----
+
+  0.322280 seconds (2.16 M allocations: 153.716 MiB, 7.28% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [0.0, -0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0]
+SCF CALC 0001 energy  -11.87378420
+SCF CALC 0002 energy  -11.82040247  en_diff:   5.338172E-02  dq_diff:   1.023520E+00
+SCF CALC 0003 energy  -11.82035661  en_diff:   4.586461E-05  dq_diff:   4.396804E-04
+SCF CALC 0004 energy  -11.82681415  en_diff:   6.457542E-03  dq_diff:   6.388354E-02
+SCF CALC 0005 energy  -11.82893814  en_diff:   2.123987E-03  dq_diff:   2.196204E-02
+SCF CALC 0006 energy  -11.83003101  en_diff:   1.092872E-03  dq_diff:   1.150300E-02
+SCF CALC 0007 energy  -11.83056852  en_diff:   5.375140E-04  dq_diff:   5.710276E-03
+SCF CALC 0008 energy  -11.83083632  en_diff:   2.678003E-04  dq_diff:   2.858224E-03
+SCF CALC 0009 energy  -11.83096989  en_diff:   1.335657E-04  dq_diff:   1.428872E-03
+SCF CALC 0010 energy  -11.83103660  en_diff:   6.670645E-05  dq_diff:   7.144527E-04
+SCF CALC 0011 energy  -11.83106993  en_diff:   3.333358E-05  dq_diff:   3.572247E-04
+SCF CALC 0012 energy  -11.83108659  en_diff:   1.666192E-05  dq_diff:   1.786124E-04
+
+YES convergence in 12 iters, energy -11.83108659173893 eV   dq = [0.458, -0.458]
+END SCF ------------------
+
+  0.905912 seconds (813.19 k allocations: 396.197 MiB, 8.89% gc time)
+scf_energy success, done
+
+using kgrid [10, 10, 10]
+{'directgap': 1.6869405990061122,
+ 'energy': -11.83108659173893,
+ 'force': 'na',
+ 'indirectgap': 1.3170674311990782,
+ 'stress': 'na'}
+{'directgap': 1.6869405990061122, 'indirectgap': 1.3170674311990782, 'energy': -11.83108659173893, 'force': 'na', 'stress': 'na'}
+Time taken 1.8665118217468262
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-7678 MgSe
+1.0
+3.3545469303621895 2.1158318e-09 1.9367487897992308
+1.118181980777047 3.1626969674778733 1.9367487897992308
+0.0 0.0 3.8734975795984616
+Mg Se
+1 1
+Cartesian
+0.0 0.0 0.0
+2.236365 1.58135 3.8735
+
+MgSe
+1.0
+3.3545469303621895 2.1158318e-09 1.9367487897992308
+1.118181980777047 3.1626969674778733 1.9367487897992308
+0.0 0.0 3.8734975795984616
+Mg Se
+1 1
+Cartesian
+0.0 0.0 0.0
+2.2363650000000006 1.58135 3.8735
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["Mg", "Se"]
+add_to_database Set([:Mg, :Se])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.2bdy.Mg.Se.xml.gz
+version 2
+make coefs
+added to cache (:Mg, :Se) twobody
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.3bdy.Mg.Se.xml.gz
+version 2
+make coefs
+added to cache (:Mg, :Se) threebody
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+onsite
+make
+-----
+
+  0.245347 seconds (1.46 M allocations: 82.691 MiB, 18.50% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [0.0, -0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0]
+SCF CALC 0001 energy  -8.16520424
+SCF CALC 0002 energy  -7.79998098  en_diff:   3.652233E-01  dq_diff:   2.101740E+00
+SCF CALC 0003 energy  -7.81023785  en_diff:   1.025687E-02  dq_diff:   2.954742E-02
+SCF CALC 0004 energy  -7.84637177  en_diff:   3.613392E-02  dq_diff:   1.076953E-01
+SCF CALC 0005 energy  -7.85934694  en_diff:   1.297517E-02  dq_diff:   4.016812E-02
+SCF CALC 0006 energy  -7.86574636  en_diff:   6.399420E-03  dq_diff:   2.012840E-02
+SCF CALC 0007 energy  -7.86892195  en_diff:   3.175598E-03  dq_diff:   1.006908E-02
+SCF CALC 0008 energy  -7.87050374  en_diff:   1.581786E-03  dq_diff:   5.035831E-03
+SCF CALC 0009 energy  -7.87129313  en_diff:   7.893890E-04  dq_diff:   2.518237E-03
+SCF CALC 0010 energy  -7.87168745  en_diff:   3.943184E-04  dq_diff:   1.259199E-03
+SCF CALC 0011 energy  -7.87188451  en_diff:   1.970652E-04  dq_diff:   6.296197E-04
+SCF CALC 0012 energy  -7.87198302  en_diff:   9.850906E-05  dq_diff:   3.148149E-04
+SCF CALC 0013 energy  -7.87203227  en_diff:   4.924865E-05  dq_diff:   1.574087E-04
+
+YES convergence in 13 iters, energy -7.872032270588454 eV   dq = [-0.942, 0.942]
+END SCF ------------------
+
+  0.988057 seconds (881.51 k allocations: 429.031 MiB, 7.69% gc time)
+scf_energy success, done
+
+using kgrid [10, 10, 10]
+{'directgap': 2.462843176898631,
+ 'energy': -7.872032270588454,
+ 'force': 'na',
+ 'indirectgap': 2.0008249095652135,
+ 'stress': 'na'}
+{'directgap': 2.462843176898631, 'indirectgap': 2.0008249095652135, 'energy': -7.872032270588454, 'force': 'na', 'stress': 'na'}
+Time taken 1.7588238716125488
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-7762 MgTe
+1.0
+3.958618561357505 2.6174627e-09 2.2855094803175997
+1.319539192054703 3.732221155301623 2.2855094803175997
+0.0 0.0 4.571018960635199
+Mg Te
+1 1
+Cartesian
+0.0 0.0 0.0
+1.31954 0.933055 2.28551
+
+MgTe
+1.0
+3.958618561357505 2.6174627e-09 2.2855094803175997
+1.319539192054703 3.732221155301623 2.2855094803175997
+0.0 0.0 4.571018960635199
+Mg Te
+1 1
+Cartesian
+0.0 0.0 0.0
+1.3195400000000002 0.9330549999999999 2.28551
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["Mg", "Te"]
+add_to_database Set([:Mg, :Te])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.2bdy.Mg.Te.xml.gz
+version 2
+make coefs
+added to cache (:Mg, :Te) twobody
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.3bdy.Mg.Te.xml.gz
+version 2
+make coefs
+added to cache (:Mg, :Te) threebody
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+onsite
+make
+-----
+
+  0.178205 seconds (1.07 M allocations: 63.895 MiB, 19.39% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [0.0, -0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0]
+SCF CALC 0001 energy  -6.90907516
+SCF CALC 0002 energy  -6.62602943  en_diff:   2.830457E-01  dq_diff:   1.779983E+00
+SCF CALC 0003 energy  -6.63412314  en_diff:   8.093704E-03  dq_diff:   2.546945E-02
+SCF CALC 0004 energy  -6.67208864  en_diff:   3.796550E-02  dq_diff:   1.248819E-01
+SCF CALC 0005 energy  -6.68443981  en_diff:   1.235118E-02  dq_diff:   4.278535E-02
+SCF CALC 0006 energy  -6.69050637  en_diff:   6.066552E-03  dq_diff:   2.145087E-02
+SCF CALC 0007 energy  -6.69351018  en_diff:   3.003810E-03  dq_diff:   1.073272E-02
+SCF CALC 0008 energy  -6.69500472  en_diff:   1.494549E-03  dq_diff:   5.368256E-03
+SCF CALC 0009 energy  -6.69575016  en_diff:   7.454339E-04  dq_diff:   2.684601E-03
+SCF CALC 0010 energy  -6.69612242  en_diff:   3.722567E-04  dq_diff:   1.342419E-03
+SCF CALC 0011 energy  -6.69630843  en_diff:   1.860132E-04  dq_diff:   6.712391E-04
+SCF CALC 0012 energy  -6.69640141  en_diff:   9.297784E-05  dq_diff:   3.356270E-04
+SCF CALC 0013 energy  -6.69644789  en_diff:   4.648173E-05  dq_diff:   1.678153E-04
+
+YES convergence in 13 iters, energy -6.696447888228187 eV   dq = [-0.772, 0.772]
+END SCF ------------------
+
+  0.507684 seconds (423.60 k allocations: 219.957 MiB, 7.77% gc time)
+scf_energy success, done
+
+using kgrid [8, 8, 8]
+{'directgap': 1.9603421424477219,
+ 'energy': -6.696447888228187,
+ 'force': 'na',
+ 'indirectgap': 1.9603421424477219,
+ 'stress': 'na'}
+{'directgap': 1.9603421424477219, 'indirectgap': 1.9603421424477219, 'energy': -6.696447888228187, 'force': 'na', 'stress': 'na'}
+Time taken 1.0108275413513184
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-7844 AlN
+1.0
+2.6966971014488705 1.040645e-10 1.5569393383280248
+0.8988990339144031 2.5424705153968894 1.5569393383280248
+2.943387e-10 2.081289e-10 3.1138776756364304
+Al N
+1 1
+Cartesian
+0.0 0.0 0.0
+0.8989 0.6356175 1.55694
+
+AlN
+1.0
+2.6966971014488705 1.040645e-10 1.5569393383280248
+0.8988990339144031 2.5424705153968894 1.5569393383280248
+2.943387e-10 2.081289e-10 3.1138776756364304
+Al N
+1 1
+Cartesian
+0.0 0.0 0.0
+0.8989 0.6356175 1.55694
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["Al", "N"]
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+onsite
+make
+-----
+
+  0.517952 seconds (3.85 M allocations: 227.914 MiB, 8.42% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [0.0, -0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0]
+SCF CALC 0001 energy  -16.34580997
+SCF CALC 0002 energy  -14.64723541  en_diff:   1.698575E+00  dq_diff:   2.717213E+00
+SCF CALC 0003 energy  -14.66183616  en_diff:   1.460074E-02  dq_diff:   1.156368E-02
+SCF CALC 0004 energy  -15.08752587  en_diff:   4.256897E-01  dq_diff:   3.630240E-01
+SCF CALC 0005 energy  -15.18407218  en_diff:   9.654631E-02  dq_diff:   9.074038E-02
+SCF CALC 0006 energy  -15.23117912  en_diff:   4.710694E-02  dq_diff:   4.567025E-02
+SCF CALC 0007 energy  -15.25440066  en_diff:   2.322154E-02  dq_diff:   2.287531E-02
+SCF CALC 0008 energy  -15.26592838  en_diff:   1.152772E-02  dq_diff:   1.144796E-02
+SCF CALC 0009 energy  -15.27167145  en_diff:   5.743067E-03  dq_diff:   5.726566E-03
+SCF CALC 0010 energy  -15.27453778  en_diff:   2.866331E-03  dq_diff:   2.863930E-03
+SCF CALC 0011 energy  -15.27596964  en_diff:   1.431864E-03  dq_diff:   1.432127E-03
+SCF CALC 0012 energy  -15.27668525  en_diff:   7.156069E-04  dq_diff:   7.161041E-04
+SCF CALC 0013 energy  -15.27704297  en_diff:   3.577221E-04  dq_diff:   3.580622E-04
+SCF CALC 0014 energy  -15.27722181  en_diff:   1.788407E-04  dq_diff:   1.790336E-04
+
+YES convergence in 14 iters, energy -15.277221812900493 eV   dq = [-1.08, 1.08]
+END SCF ------------------
+
+  1.607972 seconds (1.69 M allocations: 796.754 MiB, 8.44% gc time)
+scf_energy success, done
+
+using kgrid [12, 12, 12]
+{'directgap': 4.497936949724383,
+ 'energy': -15.277221812900493,
+ 'force': 'na',
+ 'indirectgap': 3.852865065809337,
+ 'stress': 'na'}
+{'directgap': 4.497936949724383, 'indirectgap': 3.852865065809337, 'energy': -15.277221812900493, 'force': 'na', 'stress': 'na'}
+Time taken 2.8649609088897705
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-7860 SnTe
+1.0
+3.9264020123227383 1.268137e-10 2.2669095438064355
+1.3088003378433586 3.701846745085082 2.2669095438064355
+-4.899706e-10 -3.464615e-10 4.53381808931018
+Sn Te
+1 1
+Cartesian
+0.0 0.0 0.0
+2.6176 1.850925 4.53382
+
+SnTe
+1.0
+3.9264020123227383 1.268137e-10 2.2669095438064355
+1.3088003378433586 3.701846745085082 2.2669095438064355
+-4.899706e-10 -3.464615e-10 4.53381808931018
+Sn Te
+1 1
+Cartesian
+0.0 0.0 0.0
+2.6176 1.850925 4.53382
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["Sn", "Te"]
+add_to_database Set([:Sn, :Te])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.2bdy.Te.Sn.xml.gz
+version 2
+make coefs
+added to cache (:Sn, :Te) twobody
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.3bdy.Te.Sn.xml.gz
+version 2
+make coefs
+added to cache (:Sn, :Te) threebody
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+onsite
+make
+-----
+
+  0.171883 seconds (1.00 M allocations: 62.780 MiB, 16.39% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [0.0, -0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0]
+SCF CALC 0001 energy  -7.95844597
+SCF CALC 0002 energy  -7.85224913  en_diff:   1.061968E-01  dq_diff:   9.199212E-01
+SCF CALC 0003 energy  -7.85199024  en_diff:   2.588812E-04  dq_diff:   1.111365E-03
+SCF CALC 0004 energy  -7.88560642  en_diff:   3.361618E-02  dq_diff:   1.581424E-01
+SCF CALC 0005 energy  -7.89173455  en_diff:   6.128128E-03  dq_diff:   3.260553E-02
+SCF CALC 0006 energy  -7.89473290  en_diff:   2.998354E-03  dq_diff:   1.650692E-02
+SCF CALC 0007 energy  -7.89620759  en_diff:   1.474684E-03  dq_diff:   8.263074E-03
+SCF CALC 0008 energy  -7.89693884  en_diff:   7.312475E-04  dq_diff:   4.134178E-03
+SCF CALC 0009 energy  -7.89730293  en_diff:   3.640964E-04  dq_diff:   2.067738E-03
+SCF CALC 0010 energy  -7.89748460  en_diff:   1.816659E-04  dq_diff:   1.034030E-03
+SCF CALC 0011 energy  -7.89757534  en_diff:   9.073722E-05  dq_diff:   5.170551E-04
+SCF CALC 0012 energy  -7.89762068  en_diff:   4.534502E-05  dq_diff:   2.585376E-04
+SCF CALC 0013 energy  -7.89764335  en_diff:   2.266639E-05  dq_diff:   1.292713E-04
+
+YES convergence in 13 iters, energy -7.897643347251303 eV   dq = [-0.349, 0.349]
+END SCF ------------------
+
+  0.525935 seconds (424.18 k allocations: 233.170 MiB, 7.91% gc time)
+scf_energy success, done
+
+using kgrid [8, 8, 8]
+{'directgap': 0.34077238776517743,
+ 'energy': -7.897643347251303,
+ 'force': 'na',
+ 'indirectgap': 0.320998143675476,
+ 'stress': 'na'}
+{'directgap': 0.34077238776517743, 'indirectgap': 0.320998143675476, 'energy': -7.897643347251303, 'force': 'na', 'stress': 'na'}
+Time taken 0.9770643711090088
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-8003 CdS
+1.0
+3.616656945344388 -2.0744814e-09 2.088077849798458
+1.2055526445364497 3.409816748119369 2.088077849798458
+0.0 0.0 4.176155699596916
+Cd S
+1 1
+Cartesian
+0.0 0.0 0.0
+1.2055525 0.852455 2.08808
+
+CdS
+1.0
+3.616656945344388 -2.0744814e-09 2.088077849798458
+1.2055526445364497 3.409816748119369 2.088077849798458
+0.0 0.0 4.176155699596916
+Cd S
+1 1
+Cartesian
+0.0 0.0 0.0
+1.2055525 0.8524549999999999 2.08808
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["Cd", "S"]
+add_to_database Set([:Cd, :S])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.2bdy.Cd.S.xml.gz
+version 2
+make coefs
+added to cache (:Cd, :S) twobody
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.3bdy.Cd.S.xml.gz
+version 2
+make coefs
+added to cache (:Cd, :S) threebody
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+onsite
+make
+-----
+
+  0.238887 seconds (1.66 M allocations: 90.308 MiB, 13.26% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [0.0, -0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0]
+SCF CALC 0001 energy  -6.90078113
+SCF CALC 0002 energy  -6.04607995  en_diff:   8.547012E-01  dq_diff:   1.427709E+00
+SCF CALC 0003 energy  -6.07802891  en_diff:   3.194896E-02  dq_diff:   2.611400E-02
+SCF CALC 0004 energy  -6.48512759  en_diff:   4.070987E-01  dq_diff:   3.964256E-01
+SCF CALC 0005 energy  -6.52801998  en_diff:   4.289240E-02  dq_diff:   5.214496E-02
+SCF CALC 0006 energy  -6.54809474  en_diff:   2.007476E-02  dq_diff:   2.547905E-02
+SCF CALC 0007 energy  -6.55796049  en_diff:   9.865750E-03  dq_diff:   1.279833E-02
+SCF CALC 0008 energy  -6.56285176  en_diff:   4.891262E-03  dq_diff:   6.416205E-03
+SCF CALC 0009 energy  -6.56528696  en_diff:   2.435198E-03  dq_diff:   3.212419E-03
+SCF CALC 0010 energy  -6.56650194  en_diff:   1.214986E-03  dq_diff:   1.607293E-03
+SCF CALC 0011 energy  -6.56710878  en_diff:   6.068387E-04  dq_diff:   8.039183E-04
+SCF CALC 0012 energy  -6.56741204  en_diff:   3.032557E-04  dq_diff:   4.020271E-04
+SCF CALC 0013 energy  -6.56756362  en_diff:   1.515869E-04  dq_diff:   2.010306E-04
+SCF CALC 0014 energy  -6.56763941  en_diff:   7.578324E-05  dq_diff:   1.005195E-04
+
+YES convergence in 14 iters, energy -6.567639405390306 eV   dq = [-0.451, 0.451]
+END SCF ------------------
+
+  1.843198 seconds (985.21 k allocations: 1.248 GiB, 7.00% gc time)
+scf_energy success, done
+
+using kgrid [10, 10, 10]
+{'directgap': 0.813882317746525,
+ 'energy': -6.567639405390306,
+ 'force': 'na',
+ 'indirectgap': 0.813882317746525,
+ 'stress': 'na'}
+{'directgap': 0.813882317746525, 'indirectgap': 0.813882317746525, 'energy': -6.567639405390306, 'force': 'na', 'stress': 'na'}
+Time taken 3.3579373359680176
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-8082 SrTiO3
+1.0
+3.9316431855389147 0.0 0.0
+0.0 3.9316431855389147 0.0
+0.0 0.0 3.9316431855389147
+Sr Ti O
+1 1 3
+Cartesian
+0.0 0.0 0.0
+1.96582 1.96582 1.96582
+1.96582 0.0 1.96582
+1.96582 1.96582 0.0
+0.0 1.96582 1.96582
+
+SrTiO3
+1.0
+3.9316431855389147 0.0 0.0
+0.0 3.9316431855389147 0.0
+0.0 0.0 3.9316431855389147
+Sr Ti O
+1 1 3
+Cartesian
+0.0 0.0 0.0
+1.96582 1.96582 1.96582
+1.96582 0.0 1.96582
+1.96582 1.96582 0.0
+0.0 1.96582 1.96582
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["Sr", "Ti", "O", "O", "O"]
+add_to_database Set([:Sr])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/els/coef.el.2bdy.Sr.xml.gz
+version 2
+make coefs
+added to cache (:Sr, :Sr)
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/els/coef.el.3bdy.Sr.xml.gz
+version 2
+make coefs
+added to cache (:Sr, :Sr, :Sr)
+add_to_database Set([:Sr, :Ti])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.2bdy.Sr.Ti.xml.gz
+version 2
+make coefs
+added to cache (:Sr, :Ti) twobody
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.3bdy.Sr.Ti.xml.gz
+version 2
+make coefs
+added to cache (:Sr, :Ti) threebody
+add_to_database Set([:Sr, :O])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.2bdy.Sr.O.xml.gz
+version 2
+make coefs
+added to cache (:Sr, :O) twobody
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.3bdy.Sr.O.xml.gz
+version 2
+make coefs
+added to cache (:Sr, :O) threebody
+add_to_database Set([:Sr, :Ti, :O])
+warning, ternary not currently supported
+add_to_database Set([:Sr, :Ti, :O])
+warning, ternary not currently supported
+add_to_database Set([:Ti, :Sr, :O])
+warning, ternary not currently supported
+add_to_database Set([:Ti, :Sr, :O])
+warning, ternary not currently supported
+add_to_database Set([:Sr, :Ti, :O])
+warning, ternary not currently supported
+add_to_database Set([:Ti, :Sr, :O])
+warning, ternary not currently supported
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+WARNING, missing 3bdy (:Sr, :Ti, :O)
+onsite
+make
+-----
+
+  1.633757 seconds (12.22 M allocations: 496.635 MiB, 8.01% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [0.0, 0.0, -0.0, -0.0, -0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0, 0.0, 0.0, 0.0]
+SCF CALC 0001 energy  -41.87800975
+SCF CALC 0002 energy  -35.46272744  en_diff:   6.415282E+00  dq_diff:   6.575297E+00
+SCF CALC 0003 energy  -35.39771743  en_diff:   6.501001E-02  dq_diff:   3.346030E-02
+SCF CALC 0004 energy  -37.86645448  en_diff:   2.468737E+00  dq_diff:   1.330162E+00
+SCF CALC 0005 energy  -38.16391364  en_diff:   2.974592E-01  dq_diff:   1.918188E-01
+SCF CALC 0006 energy  -38.32024146  en_diff:   1.563278E-01  dq_diff:   1.033617E-01
+SCF CALC 0007 energy  -38.39663297  en_diff:   7.639151E-02  dq_diff:   5.146208E-02
+SCF CALC 0008 energy  -38.43470011  en_diff:   3.806714E-02  dq_diff:   2.585956E-02
+SCF CALC 0009 energy  -38.45367361  en_diff:   1.897350E-02  dq_diff:   1.294632E-02
+SCF CALC 0010 energy  -38.46314795  en_diff:   9.474340E-03  dq_diff:   6.478820E-03
+SCF CALC 0011 energy  -38.46788175  en_diff:   4.733804E-03  dq_diff:   3.240681E-03
+SCF CALC 0012 energy  -38.47024784  en_diff:   2.366086E-03  dq_diff:   1.620673E-03
+SCF CALC 0013 energy  -38.47143067  en_diff:   1.182836E-03  dq_diff:   8.104182E-04
+SCF CALC 0014 energy  -38.47202204  en_diff:   5.913666E-04  dq_diff:   4.052297E-04
+
+YES convergence in 14 iters, energy -38.47202204038552 eV   dq = [-0.923, -1.517, 0.813, 0.813, 0.813]
+END SCF ------------------
+
+  7.258177 seconds (756.29 k allocations: 3.326 GiB, 12.06% gc time)
+scf_energy error detected somewhere!!!!!!!!!!, done
+
+using kgrid [8, 8, 8]
+{'directgap': 3.468028126073411,
+ 'energy': -38.47202204038552,
+ 'force': 'na',
+ 'indirectgap': 2.672908949928342,
+ 'stress': 'na'}
+{'directgap': 3.468028126073411, 'indirectgap': 2.672908949928342, 'energy': -38.47202204038552, 'force': 'na', 'stress': 'na'}
+Time taken 12.758372783660889
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-8158 SiC
+1.0
+2.6869744850745265 -3.845503e-10 1.5513250526772773
+0.8956581613289514 2.533303526984513 1.5513250526772773
+-1.087673e-09 -7.691009e-10 3.1026511091223643
+Si C
+1 1
+Cartesian
+0.8956575 0.633325 1.5513275000000002
+0.0 0.0 0.0
+
+SiC
+1.0
+2.6869744850745265 -3.845503e-10 1.5513250526772773
+0.8956581613289514 2.533303526984513 1.5513250526772773
+-1.087673e-09 -7.691009e-10 3.1026511091223643
+Si C
+1 1
+Cartesian
+0.8956574999999999 0.633325 1.5513275000000002
+0.0 0.0 0.0
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["Si", "C"]
+add_to_database Set([:Si, :C])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.2bdy.Si.C.xml.gz
+version 2
+make coefs
+added to cache (:Si, :C) twobody
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.3bdy.Si.C.xml.gz
+version 2
+make coefs
+added to cache (:Si, :C) threebody
+add_to_database Set([:C])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/els/coef.el.2bdy.C.xml.gz
+version 2
+make coefs
+added to cache (:C, :C)
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/els/coef.el.3bdy.C.xml.gz
+version 2
+make coefs
+added to cache (:C, :C, :C)
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+onsite
+make
+-----
+
+  0.427906 seconds (2.41 M allocations: 166.293 MiB, 21.30% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [0.0, 0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0]
+SCF CALC 0001 energy  -15.89363532
+SCF CALC 0002 energy  -15.23882689  en_diff:   6.548084E-01  dq_diff:   2.756817E+00
+SCF CALC 0003 energy  -15.23983232  en_diff:   1.005432E-03  dq_diff:   2.112153E-03
+SCF CALC 0004 energy  -15.33719933  en_diff:   9.736701E-02  dq_diff:   2.129038E-01
+SCF CALC 0005 energy  -15.36727503  en_diff:   3.007570E-02  dq_diff:   6.949301E-02
+SCF CALC 0006 energy  -15.38213326  en_diff:   1.485823E-02  dq_diff:   3.506739E-02
+SCF CALC 0007 energy  -15.38948204  en_diff:   7.348778E-03  dq_diff:   1.753311E-02
+SCF CALC 0008 energy  -15.39313692  en_diff:   3.654879E-03  dq_diff:   8.767784E-03
+SCF CALC 0009 energy  -15.39495947  en_diff:   1.822551E-03  dq_diff:   4.384176E-03
+SCF CALC 0010 energy  -15.39586952  en_diff:   9.100536E-04  dq_diff:   2.192160E-03
+SCF CALC 0011 energy  -15.39632425  en_diff:   4.547213E-04  dq_diff:   1.096098E-03
+SCF CALC 0012 energy  -15.39655153  en_diff:   2.272843E-04  dq_diff:   5.480533E-04
+SCF CALC 0013 energy  -15.39666515  en_diff:   1.136230E-04  dq_diff:   2.740278E-04
+SCF CALC 0014 energy  -15.39672196  en_diff:   5.680674E-05  dq_diff:   1.370142E-04
+
+YES convergence in 14 iters, energy -15.396721960242422 eV   dq = [-1.201, 1.201]
+END SCF ------------------
+
+  1.737265 seconds (1.68 M allocations: 796.329 MiB, 15.63% gc time)
+scf_energy success, done
+
+using kgrid [12, 12, 12]
+{'directgap': 5.475787650172313,
+ 'energy': -15.396721960242422,
+ 'force': 'na',
+ 'indirectgap': 2.0292523271173493,
+ 'stress': 'na'}
+{'directgap': 5.475787650172313, 'indirectgap': 2.0292523271173493, 'energy': -15.396721960242422, 'force': 'na', 'stress': 'na'}
+Time taken 2.93279767036438
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-8169 GaN
+1.0
+2.7805059713099647 0.0 1.6053257450263214
+0.9268353237699882 2.621486121264764 1.6053257450263214
+-0.0 0.0 3.210651490052643
+Ga N
+1 1
+Cartesian
+0.0 0.0 0.0
+0.9268375 0.6553725 1.6053275
+
+GaN
+1.0
+2.7805059713099647 0.0 1.6053257450263214
+0.9268353237699882 2.621486121264764 1.6053257450263214
+-0.0 0.0 3.210651490052643
+Ga N
+1 1
+Cartesian
+0.0 0.0 0.0
+0.9268375 0.6553725 1.6053275
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["Ga", "N"]
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+onsite
+make
+-----
+
+  0.638339 seconds (4.87 M allocations: 249.917 MiB, 7.54% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [0.0, -0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0]
+SCF CALC 0001 energy  -13.95387516
+SCF CALC 0002 energy  -11.89791881  en_diff:   2.055956E+00  dq_diff:   2.750682E+00
+SCF CALC 0003 energy  -11.92847847  en_diff:   3.055966E-02  dq_diff:   2.022158E-02
+SCF CALC 0004 energy  -12.52413729  en_diff:   5.956588E-01  dq_diff:   4.309519E-01
+SCF CALC 0005 energy  -12.64720404  en_diff:   1.230668E-01  dq_diff:   9.996723E-02
+SCF CALC 0006 energy  -12.70663024  en_diff:   5.942620E-02  dq_diff:   4.999640E-02
+SCF CALC 0007 energy  -12.73587830  en_diff:   2.924806E-02  dq_diff:   2.505414E-02
+SCF CALC 0008 energy  -12.75038650  en_diff:   1.450820E-02  dq_diff:   1.254193E-02
+SCF CALC 0009 energy  -12.75761159  en_diff:   7.225093E-03  dq_diff:   6.274708E-03
+SCF CALC 0010 energy  -12.76121688  en_diff:   3.605289E-03  dq_diff:   3.138293E-03
+SCF CALC 0011 energy  -12.76301771  en_diff:   1.800829E-03  dq_diff:   1.569382E-03
+SCF CALC 0012 energy  -12.76391767  en_diff:   8.999609E-04  dq_diff:   7.847496E-04
+SCF CALC 0013 energy  -12.76436754  en_diff:   4.498669E-04  dq_diff:   3.923895E-04
+SCF CALC 0014 energy  -12.76459244  en_diff:   2.249051E-04  dq_diff:   1.961984E-04
+
+YES convergence in 14 iters, energy -12.764592443945745 eV   dq = [-1.05, 1.05]
+END SCF ------------------
+
+  3.420220 seconds (1.72 M allocations: 2.097 GiB, 13.07% gc time)
+scf_energy success, done
+
+using kgrid [12, 12, 12]
+{'directgap': 2.1320721899915527,
+ 'energy': -12.764592443945745,
+ 'force': 'na',
+ 'indirectgap': 2.1320721899915527,
+ 'stress': 'na'}
+{'directgap': 2.1320721899915527, 'indirectgap': 2.1320721899915527, 'energy': -12.764592443945745, 'force': 'na', 'stress': 'na'}
+Time taken 5.894397974014282
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-8566 AgI
+1.0
+3.7440331247468865 -0.0 2.161618412694548
+1.2480110415822956 3.5299080587129286 2.161618412694548
+0.0 -0.0 4.323236825389096
+Ag I
+1 1
+Cartesian
+0.0 0.0 0.0
+2.49602 1.764955 4.32324
+
+AgI
+1.0
+3.7440331247468865 -0.0 2.161618412694548
+1.2480110415822956 3.5299080587129286 2.161618412694548
+0.0 -0.0 4.323236825389096
+Ag I
+1 1
+Cartesian
+0.0 0.0 0.0
+2.49602 1.764955 4.32324
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["Ag", "I"]
+add_to_database Set([:I])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/els/coef.el.2bdy.I.xml.gz
+version 2
+make coefs
+added to cache (:I, :I)
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/els/coef.el.3bdy.I.xml.gz
+version 2
+make coefs
+added to cache (:I, :I, :I)
+add_to_database Set([:I, :Ag])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.2bdy.Ag.I.xml.gz
+version 2
+make coefs
+added to cache (:I, :Ag) twobody
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.3bdy.Ag.I.xml.gz
+version 2
+make coefs
+added to cache (:I, :Ag) threebody
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+onsite
+make
+-----
+
+  0.219127 seconds (1.70 M allocations: 93.366 MiB, 9.01% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [-0.0, 0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0]
+SCF CALC 0001 energy  -5.15274358
+SCF CALC 0002 energy  -5.07806506  en_diff:   7.467852E-02  dq_diff:   5.208556E-01
+SCF CALC 0003 energy  -5.09294632  en_diff:   1.488126E-02  dq_diff:   5.421424E-02
+SCF CALC 0004 energy  -5.10361448  en_diff:   1.066816E-02  dq_diff:   4.327244E-02
+SCF CALC 0005 energy  -5.10769428  en_diff:   4.079798E-03  dq_diff:   1.780568E-02
+SCF CALC 0006 energy  -5.10975129  en_diff:   2.057011E-03  dq_diff:   9.289426E-03
+SCF CALC 0007 energy  -5.11074979  en_diff:   9.985007E-04  dq_diff:   4.590788E-03
+SCF CALC 0008 energy  -5.11124678  en_diff:   4.969833E-04  dq_diff:   2.305679E-03
+SCF CALC 0009 energy  -5.11149393  en_diff:   2.471562E-04  dq_diff:   1.151875E-03
+SCF CALC 0010 energy  -5.11161729  en_diff:   1.233587E-04  dq_diff:   5.762288E-04
+SCF CALC 0011 energy  -5.11167890  en_diff:   6.160744E-05  dq_diff:   2.881077E-04
+SCF CALC 0012 energy  -5.11170969  en_diff:   3.078828E-05  dq_diff:   1.440641E-04
+
+YES convergence in 12 iters, energy -5.111709685928171 eV   dq = [-0.194, 0.194]
+END SCF ------------------
+
+  0.829515 seconds (423.76 k allocations: 565.429 MiB, 8.86% gc time)
+scf_energy success, done
+
+using kgrid [8, 8, 8]
+{'directgap': 1.780699498818499,
+ 'energy': -5.111709685928171,
+ 'force': 'na',
+ 'indirectgap': 0.4146326728260612,
+ 'stress': 'na'}
+{'directgap': 1.780699498818499, 'indirectgap': 0.4146326728260612, 'energy': -5.111709685928171, 'force': 'na', 'stress': 'na'}
+Time taken 1.6600885391235352
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-8583 AgBr
+1.0
+3.5432822312192767 -1.6719383e-09 2.045714847638889
+1.181094405100497 3.3406392064437584 2.0457148476388913
+6.4598736e-09 4.5678211e-09 4.091430672900121
+Ag Br
+1 1
+Cartesian
+0.0 0.0 0.0
+2.362185 1.67032 4.091425
+
+AgBr
+1.0
+3.5432822312192767 -1.6719383e-09 2.045714847638889
+1.181094405100497 3.3406392064437584 2.0457148476388913
+6.4598736e-09 4.5678211e-09 4.091430672900121
+Ag Br
+1 1
+Cartesian
+0.0 0.0 0.0
+2.3621850000000006 1.67032 4.091425
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["Ag", "Br"]
+add_to_database Set([:Ag, :Br])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.2bdy.Ag.Br.xml.gz
+version 2
+make coefs
+added to cache (:Ag, :Br) twobody
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.3bdy.Ag.Br.xml.gz
+version 2
+make coefs
+added to cache (:Ag, :Br) threebody
+add_to_database Set([:Br])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/els/coef.el.2bdy.Br.xml.gz
+version 2
+make coefs
+added to cache (:Br, :Br)
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/els/coef.el.3bdy.Br.xml.gz
+version 2
+make coefs
+added to cache (:Br, :Br, :Br)
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+onsite
+make
+-----
+
+  0.276471 seconds (2.27 M allocations: 110.347 MiB, 7.52% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [-0.0, 0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0]
+SCF CALC 0001 energy  -5.53867188
+SCF CALC 0002 energy  -5.35320975  en_diff:   1.854621E-01  dq_diff:   7.537447E-01
+SCF CALC 0003 energy  -5.37968416  en_diff:   2.647441E-02  dq_diff:   5.513399E-02
+SCF CALC 0004 energy  -5.41189230  en_diff:   3.220813E-02  dq_diff:   7.389993E-02
+SCF CALC 0005 energy  -5.42270090  en_diff:   1.080861E-02  dq_diff:   2.692287E-02
+SCF CALC 0006 energy  -5.42784996  en_diff:   5.149061E-03  dq_diff:   1.327622E-02
+SCF CALC 0007 energy  -5.43038756  en_diff:   2.537596E-03  dq_diff:   6.658625E-03
+SCF CALC 0008 energy  -5.43164637  en_diff:   1.258812E-03  dq_diff:   3.332626E-03
+SCF CALC 0009 energy  -5.43227329  en_diff:   6.269236E-04  dq_diff:   1.667193E-03
+SCF CALC 0010 energy  -5.43258613  en_diff:   3.128398E-04  dq_diff:   8.338149E-04
+SCF CALC 0011 energy  -5.43274240  en_diff:   1.562643E-04  dq_diff:   4.169621E-04
+SCF CALC 0012 energy  -5.43282049  en_diff:   7.809338E-05  dq_diff:   2.084947E-04
+SCF CALC 0013 energy  -5.43285953  en_diff:   3.903712E-05  dq_diff:   1.042508E-04
+
+YES convergence in 13 iters, energy -5.4328595292526645 eV   dq = [-0.286, 0.286]
+END SCF ------------------
+
+  1.535559 seconds (915.70 k allocations: 1.163 GiB, 7.68% gc time)
+scf_energy success, done
+
+using kgrid [10, 10, 10]
+{'directgap': 1.6988427580058407,
+ 'energy': -5.4328595292526645,
+ 'force': 'na',
+ 'indirectgap': -0.007934507278294211,
+ 'stress': 'na'}
+{'directgap': 1.6988427580058407, 'indirectgap': -0.007934507278294211, 'energy': -5.4328595292526645, 'force': 'na', 'stress': 'na'}
+Time taken 2.755678415298462
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-890 Ge2
+1.0
+3.5261943628070638 1.196611e-10 2.035849771621022
+1.1753977879818787 3.3245278496612793 2.035849771621022
+-4.62335e-10 -3.269202e-10 4.071698544842951
+Ge
+2
+Cartesian
+4.11389125 2.9089637500000003 7.125475
+0.58769875 0.41556625 1.017925
+
+Ge2
+1.0
+3.5261943628070638 1.196611e-10 2.035849771621022
+1.1753977879818787 3.3245278496612793 2.035849771621022
+-4.62335e-10 -3.269202e-10 4.071698544842951
+Ge
+2
+Cartesian
+4.11389125 2.9089637500000003 7.125474999999999
+0.58769875 0.41556625 1.017925
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["Ge", "Ge"]
+add_to_database Set([:Ge])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/els/coef.el.2bdy.Ge.xml.gz
+version 2
+make coefs
+added to cache (:Ge, :Ge)
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/els/coef.el.3bdy.Ge.xml.gz
+version 2
+make coefs
+added to cache (:Ge, :Ge, :Ge)
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+onsite
+make
+-----
+
+  0.115401 seconds (1.07 M allocations: 66.673 MiB, 8.14% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [0.0, 0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0]
+SCF CALC 0001 energy  -9.37187252
+SCF CALC 0002 energy  -9.37187252  en_diff:   0.000000E+00  dq_diff:   8.881784E-16
+
+YES convergence in 2 iters, energy -9.371872515041508 eV   dq = [-0.0, 0.0]
+END SCF ------------------
+
+  0.127854 seconds (138.28 k allocations: 73.002 MiB, 6.66% gc time)
+scf_energy success, done
+
+using kgrid [10, 10, 10]
+{'directgap': 6.240000568278729e-07,
+ 'energy': -9.371872515041508,
+ 'force': 'na',
+ 'indirectgap': -0.7575572710111457,
+ 'stress': 'na'}
+{'directgap': 6.240000568278729e-07, 'indirectgap': -0.7575572710111457, 'energy': -9.371872515041508, 'force': 'na', 'stress': 'na'}
+Time taken 0.6304931640625
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-91 C2
+1.0
+2.1874686952597293 -1.033047e-10 1.2629352933595248
+0.7291565647587371 2.062365242524199 1.2629352933595248
+3.991386e-10 2.822336e-10 2.525871585336393
+C
+2
+Cartesian
+2.55205125 1.80457375 4.4202812499999995
+0.36457874999999995 0.25779625 0.63146875
+
+C2
+1.0
+2.1874686952597293 -1.033047e-10 1.2629352933595248
+0.7291565647587371 2.062365242524199 1.2629352933595248
+3.991386e-10 2.822336e-10 2.525871585336393
+C
+2
+Cartesian
+2.55205125 1.8045737500000003 4.4202812499999995
+0.36457874999999995 0.25779625 0.63146875
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["C", "C"]
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+onsite
+make
+-----
+
+  1.774060 seconds (10.28 M allocations: 651.302 MiB, 16.58% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [0.0, 0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0]
+SCF CALC 0001 energy  -18.90757266
+SCF CALC 0002 energy  -18.90757266  en_diff:   1.208429E-14  dq_diff:   3.552714E-15
+
+YES convergence in 2 iters, energy -18.907572659800707 eV   dq = [-0.0, 0.0]
+END SCF ------------------
+
+  0.569189 seconds (393.53 k allocations: 194.419 MiB, 34.38% gc time)
+scf_energy success, done
+
+using kgrid [14, 14, 14]
+{'directgap': 6.260404488431412,
+ 'energy': -18.907572659800707,
+ 'force': 'na',
+ 'indirectgap': 3.987635357855864,
+ 'stress': 'na'}
+{'directgap': 6.260404488431412, 'indirectgap': 3.987635357855864, 'energy': -18.907572659800707, 'force': 'na', 'stress': 'na'}
+Time taken 4.315509080886841
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-9147 Hf4O8
+1.0
+0.0 5.117400519910129 -0.0129583688619494
+5.192762305644317 0.0 0.0
+0.0 -0.8774675169852882 -5.222730063842967
+Hf O
+4 8
+Cartesian
+2.812754596687923 3.4462760864263267 -1.5340800170578706
+0.2163745966879241 1.2323889135736734 -1.0902449829421301
+2.3800054033120763 0.7936539135736678 -3.7016099829421645
+4.976385403312077 3.0075410864263326 -4.145445017057836
+1.3400411466892086 2.812022861088194 -0.11390039710719847
+3.936421146689209 1.8666421389118084 -2.5104246028928032
+3.852718853310791 1.4279071389118085 -5.121789602892803
+1.2563388533107913 2.373287861088194 -2.7252653971071976
+3.4472594092992064 4.174717789199045 -3.4503354271019817
+0.8508794092992066 -0.37352278919904774 -4.396719572898019
+1.7455005907007939 0.0652122108009522 -1.785354572898019
+4.341880590700793 4.613452789199045 -0.8389704271019819
+
+Hf4O8
+1.0
+0.0 5.117400519910129 -0.0129583688619494
+5.192762305644317 0.0 0.0
+0.0 -0.8774675169852882 -5.222730063842967
+Hf O
+4 8
+Cartesian
+2.8127545966879235 3.4462760864263258 -1.5340800170578706
+0.2163745966879241 1.2323889135736732 -1.0902449829421301
+2.3800054033120763 0.7936539135736678 -3.7016099829421645
+4.976385403312077 3.0075410864263317 -4.145445017057836
+1.3400411466892086 2.812022861088194 -0.11390039710719847
+3.936421146689209 1.866642138911808 -2.5104246028928032
+3.8527188533107912 1.427907138911808 -5.121789602892803
+1.2563388533107913 2.373287861088194 -2.7252653971071976
+3.4472594092992064 4.174717789199044 -3.4503354271019817
+0.8508794092992067 -0.37352278919904763 -4.396719572898019
+1.7455005907007939 0.0652122108009522 -1.785354572898019
+4.341880590700793 4.613452789199045 -0.8389704271019819
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["Hf", "Hf", "Hf", "Hf", "O", "O", "O", "O", "O", "O", "O", "O"]
+add_to_database Set([:Hf])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/els/coef.el.2bdy.Hf.xml.gz
+version 2
+make coefs
+added to cache (:Hf, :Hf)
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/els/coef.el.3bdy.Hf.xml.gz
+version 2
+make coefs
+added to cache (:Hf, :Hf, :Hf)
+add_to_database Set([:Hf, :O])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.2bdy.Hf.O.xml.gz
+version 2
+make coefs
+added to cache (:Hf, :O) twobody
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.3bdy.Hf.O.xml.gz
+version 2
+make coefs
+added to cache (:Hf, :O) threebody
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+onsite
+make
+-----
+
+  3.060282 seconds (24.15 M allocations: 1005.723 MiB, 8.37% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [0.0, 0.0, 0.0, 0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.2, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+SCF CALC 0001 energy  -122.94774289
+SCF CALC 0002 energy  -107.07800279  en_diff:   1.586974E+01  dq_diff:   1.669882E+01
+SCF CALC 0003 energy  -107.06946372  en_diff:   8.539069E-03  dq_diff:   1.494323E-02
+SCF CALC 0004 energy  -109.29164915  en_diff:   2.222185E+00  dq_diff:   1.153607E+00
+SCF CALC 0005 energy  -110.25112652  en_diff:   9.594774E-01  dq_diff:   5.529446E-01
+SCF CALC 0006 energy  -111.09754982  en_diff:   8.464233E-01  dq_diff:   4.682233E-01
+SCF CALC 0007 energy  -111.70489092  en_diff:   6.073411E-01  dq_diff:   3.987641E-01
+SCF CALC 0008 energy  -112.33148436  en_diff:   6.265934E-01  dq_diff:   3.568957E-01
+SCF CALC 0009 energy  -112.70950818  en_diff:   3.780238E-01  dq_diff:   2.540024E-01
+SCF CALC 0010 energy  -113.03460486  en_diff:   3.250967E-01  dq_diff:   1.987028E-01
+SCF CALC 0011 energy  -113.23956431  en_diff:   2.049594E-01  dq_diff:   1.417421E-01
+SCF CALC 0012 energy  -113.41762906  en_diff:   1.780647E-01  dq_diff:   1.125132E-01
+SCF CALC 0013 energy  -113.52981162  en_diff:   1.121826E-01  dq_diff:   7.917080E-02
+SCF CALC 0014 energy  -113.62894376  en_diff:   9.913214E-02  dq_diff:   6.368134E-02
+SCF CALC 0015 energy  -113.69104888  en_diff:   6.210512E-02  dq_diff:   4.440016E-02
+SCF CALC 0016 energy  -113.74662755  en_diff:   5.557867E-02  dq_diff:   3.600525E-02
+SCF CALC 0017 energy  -113.78127421  en_diff:   3.464666E-02  dq_diff:   2.497011E-02
+SCF CALC 0018 energy  -113.81255452  en_diff:   3.128031E-02  dq_diff:   2.034928E-02
+SCF CALC 0019 energy  -113.83196795  en_diff:   1.941343E-02  dq_diff:   1.406443E-02
+SCF CALC 0020 energy  -113.84961496  en_diff:   1.764701E-02  dq_diff:   1.150116E-02
+SCF CALC 0021 energy  -113.86051784  en_diff:   1.090288E-02  dq_diff:   7.927898E-03
+SCF CALC 0022 energy  -113.87049004  en_diff:   9.972197E-03  dq_diff:   6.501892E-03
+SCF CALC 0023 energy  -113.87661976  en_diff:   6.129723E-03  dq_diff:   4.470438E-03
+SCF CALC 0024 energy  -113.88226233  en_diff:   5.642563E-03  dq_diff:   3.677073E-03
+                               reduce mixing:  0.1000   olderr:   0.00871330  newerr:  0.00680319
+SCF CALC 0025 energy  -113.88570965  en_diff:   3.447321E-03  dq_diff:   2.521172E-03
+SCF CALC 0026 energy  -113.88730829  en_diff:   1.598640E-03  dq_diff:   1.040271E-03
+
+YES convergence in 26 iters, energy -113.8873082865644 eV   dq = [-1.594, -1.594, -1.594, -1.594, 0.829, 0.829, 0.829, 0.829, 0.765, 0.765, 0.765, 0.765]
+END SCF ------------------
+
+ 26.967974 seconds (3.48 M allocations: 20.815 GiB, 11.11% gc time)
+scf_energy success, done
+
+using kgrid [6, 6, 6]
+{'directgap': 4.990906993199595,
+ 'energy': -113.8873082865644,
+ 'force': 'na',
+ 'indirectgap': 4.737293656879257,
+ 'stress': 'na'}
+{'directgap': 4.990906993199595, 'indirectgap': 4.737293656879257, 'energy': -113.8873082865644, 'force': 'na', 'stress': 'na'}
+Time taken 39.347607135772705
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-95 Cd2S2
+1.0
+2.0887625897976467 -3.617841913986907 0.0
+2.0887625897976467 3.617841913986907 0.0
+0.0 0.0 6.819638334401707
+Cd S
+2 2
+Cartesian
+2.08876 -1.2059490785599767 3.414658397689294
+2.08876 1.2059490785599767 0.004838397689294674
+2.08876 -1.2059490785599767 5.975985882310722
+2.08876 1.2059490785599767 2.5661658823107216
+
+Cd2S2
+1.0
+2.0887625897976467 -3.617841913986907 0.0
+2.0887625897976467 3.617841913986907 0.0
+0.0 0.0 6.819638334401707
+Cd S
+2 2
+Cartesian
+2.08876 -1.2059490785599767 3.414658397689294
+2.08876 1.2059490785599767 0.004838397689294674
+2.08876 -1.2059490785599767 5.975985882310721
+2.08876 1.2059490785599767 2.5661658823107216
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["Cd", "Cd", "S", "S"]
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+onsite
+make
+-----
+
+  0.464515 seconds (3.17 M allocations: 153.503 MiB, 4.92% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [0.0, 0.0, -0.0, -0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0, 0.0, 0.0]
+SCF CALC 0001 energy  -13.79215637
+SCF CALC 0002 energy  -12.12455462  en_diff:   1.667602E+00  dq_diff:   2.856183E+00
+SCF CALC 0003 energy  -12.18593548  en_diff:   6.138086E-02  dq_diff:   5.148009E-02
+SCF CALC 0004 energy  -12.97045264  en_diff:   7.845172E-01  dq_diff:   7.814044E-01
+SCF CALC 0005 energy  -13.05445651  en_diff:   8.400387E-02  dq_diff:   1.040075E-01
+SCF CALC 0006 energy  -13.09386049  en_diff:   3.940398E-02  dq_diff:   5.091134E-02
+SCF CALC 0007 energy  -13.11322861  en_diff:   1.936812E-02  dq_diff:   2.557197E-02
+SCF CALC 0008 energy  -13.12283113  en_diff:   9.602525E-03  dq_diff:   1.281889E-02
+SCF CALC 0009 energy  -13.12761195  en_diff:   4.780812E-03  dq_diff:   6.417767E-03
+SCF CALC 0010 energy  -13.12999723  en_diff:   2.385283E-03  dq_diff:   3.210973E-03
+SCF CALC 0011 energy  -13.13118859  en_diff:   1.191359E-03  dq_diff:   1.606010E-03
+SCF CALC 0012 energy  -13.13178395  en_diff:   5.953590E-04  dq_diff:   8.031357E-04
+SCF CALC 0013 energy  -13.13208155  en_diff:   2.975993E-04  dq_diff:   4.016006E-04
+SCF CALC 0014 energy  -13.13223033  en_diff:   1.487796E-04  dq_diff:   2.008085E-04
+
+YES convergence in 14 iters, energy -13.132230325656494 eV   dq = [-0.454, -0.454, 0.454, 0.454]
+END SCF ------------------
+
+  2.865625 seconds (460.22 k allocations: 1.507 GiB, 4.96% gc time)
+scf_energy success, done
+
+using kgrid [8, 8, 4]
+{'directgap': 0.8594979001083122,
+ 'energy': -13.132230325656494,
+ 'force': 'na',
+ 'indirectgap': 0.8594979001083122,
+ 'stress': 'na'}
+{'directgap': 0.8594979001083122, 'indirectgap': 0.8594979001083122, 'energy': -13.132230325656494, 'force': 'na', 'stress': 'na'}
+Time taken 4.66004204750061
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-96 ZnSe
+1.0
+3.5008378901472135 6.634685e-10 2.0212097688704245
+1.1669456321546012 3.300620830306097 2.0212097688704254
+-2.5634453e-09 -1.8126293e-09 4.042418546620883
+Zn Se
+1 1
+Cartesian
+0.0 0.0 0.0
+1.1669475 0.825155 2.02121
+
+ZnSe
+1.0
+3.5008378901472135 6.634685e-10 2.0212097688704245
+1.1669456321546012 3.300620830306097 2.0212097688704254
+-2.5634453e-09 -1.8126293e-09 4.042418546620883
+Zn Se
+1 1
+Cartesian
+0.0 0.0 0.0
+1.1669475 0.825155 2.02121
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["Zn", "Se"]
+add_to_database Set([:Zn, :Se])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.2bdy.Zn.Se.xml.gz
+version 2
+make coefs
+added to cache (:Zn, :Se) twobody
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.3bdy.Zn.Se.xml.gz
+version 2
+make coefs
+added to cache (:Zn, :Se) threebody
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+onsite
+make
+-----
+
+  0.251853 seconds (1.86 M allocations: 96.727 MiB, 9.09% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [0.0, -0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0]
+SCF CALC 0001 energy  -6.71103122
+SCF CALC 0002 energy  -6.34834322  en_diff:   3.626880E-01  dq_diff:   1.070732E+00
+SCF CALC 0003 energy  -6.36417881  en_diff:   1.583559E-02  dq_diff:   2.326829E-02
+SCF CALC 0004 energy  -6.51473012  en_diff:   1.505513E-01  dq_diff:   2.564377E-01
+SCF CALC 0005 energy  -6.53480567  en_diff:   2.007556E-02  dq_diff:   4.108140E-02
+SCF CALC 0006 energy  -6.54419198  en_diff:   9.386305E-03  dq_diff:   2.002795E-02
+SCF CALC 0007 energy  -6.54880349  en_diff:   4.611510E-03  dq_diff:   1.005062E-02
+SCF CALC 0008 energy  -6.55108750  en_diff:   2.284011E-03  dq_diff:   5.031933E-03
+SCF CALC 0009 energy  -6.55222407  en_diff:   1.136571E-03  dq_diff:   2.517661E-03
+SCF CALC 0010 energy  -6.55279100  en_diff:   5.669247E-04  dq_diff:   1.259254E-03
+SCF CALC 0011 energy  -6.55307412  en_diff:   2.831220E-04  dq_diff:   6.297330E-04
+SCF CALC 0012 energy  -6.55321559  en_diff:   1.414759E-04  dq_diff:   3.148930E-04
+SCF CALC 0013 energy  -6.55328631  en_diff:   7.071666E-05  dq_diff:   1.574531E-04
+
+YES convergence in 13 iters, energy -6.553286310583204 eV   dq = [-0.355, 0.355]
+END SCF ------------------
+
+  1.835590 seconds (915.01 k allocations: 1.162 GiB, 4.84% gc time)
+scf_energy success, done
+
+using kgrid [10, 10, 10]
+{'directgap': 0.5803001715840045,
+ 'energy': -6.553286310583204,
+ 'force': 'na',
+ 'indirectgap': 0.5803001715840045,
+ 'stress': 'na'}
+{'directgap': 0.5803001715840045, 'indirectgap': 0.5803001715840045, 'energy': -6.553286310583204, 'force': 'na', 'stress': 'na'}
+Time taken 3.260882616043091
+Obtaining 3D dataset 76k ...
+Reference:https://www.nature.com/articles/s41524-020-00440-1
+Other versions:https://doi.org/10.6084/m9.figshare.6815699
+Loading the zipfile...
+Loading completed.
+JVASP-97 InAs
+1.0
+3.778001804400364 3.971646e-10 2.1812297048724414
+1.2593339351745718 3.5619340282250884 2.1812297048724414
+1.1233515e-09 7.943294e-10 4.362460405853479
+In As
+1 1
+Cartesian
+1.2593325 0.8904825 2.18123
+0.0 0.0 0.0
+
+InAs
+1.0
+3.778001804400364 3.971646e-10 2.1812297048724414
+1.2593339351745718 3.5619340282250884 2.1812297048724414
+1.1233515e-09 7.943294e-10 4.362460405853479
+In As
+1 1
+Cartesian
+1.2593325 0.8904825 2.18123
+0.0 0.0 0.0
+
+
+Begin scf_energy-------------
+
+Load TB parameters from file
+prepare atoms ["In", "As"]
+add_to_database Set([:As, :In])
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.2bdy.In.As.xml.gz
+version 2
+make coefs
+added to cache (:As, :In) twobody
+found /home/knc6/.julia/packages/ThreeBodyTB/J2HW2/src/../dats/pbesol/v1.2/binary/coef.el.3bdy.In.As.xml.gz
+version 2
+make coefs
+added to cache (:As, :In) threebody
+
+
+-----
+Construct tight-binding model from crystal structure
+
+distances
+check_frountier
+CHECK FRONTIER - everything fine
+2body
+3body
+onsite
+make
+-----
+
+  0.169521 seconds (1.74 M allocations: 92.761 MiB, 8.69% gc time)
+------
+Do SCF
+Mixing mode: pulay
+Get initial guess from tbc
+DQ: [0.0, -0.0]
+
+Parameters:
+smearing = 0.01 conv_thr = 1.0e-5, iters = 75, mix = 0.5, grid = missing
+
+START SCF ----------------
+dq start[0.0, 0.0]
+SCF CALC 0001 energy  -8.23180992
+SCF CALC 0002 energy  -8.07256313  en_diff:   1.592468E-01  dq_diff:   1.563817E+00
+SCF CALC 0003 energy  -8.07547390  en_diff:   2.910779E-03  dq_diff:   1.432628E-02
+SCF CALC 0004 energy  -8.09584606  en_diff:   2.037216E-02  dq_diff:   1.042727E-01
+SCF CALC 0005 energy  -8.10264120  en_diff:   6.795139E-03  dq_diff:   3.650970E-02
+SCF CALC 0006 energy  -8.10597077  en_diff:   3.329574E-03  dq_diff:   1.824199E-02
+SCF CALC 0007 energy  -8.10761966  en_diff:   1.648881E-03  dq_diff:   9.123670E-03
+SCF CALC 0008 energy  -8.10844011  en_diff:   8.204565E-04  dq_diff:   4.562471E-03
+SCF CALC 0009 energy  -8.10884934  en_diff:   4.092318E-04  dq_diff:   2.281393E-03
+SCF CALC 0010 energy  -8.10905371  en_diff:   2.043667E-04  dq_diff:   1.140736E-03
+SCF CALC 0011 energy  -8.10915583  en_diff:   1.021210E-04  dq_diff:   5.703776E-04
+SCF CALC 0012 energy  -8.10920688  en_diff:   5.104471E-05  dq_diff:   2.851912E-04
+SCF CALC 0013 energy  -8.10923239  en_diff:   2.551859E-05  dq_diff:   1.425963E-04
+
+YES convergence in 13 iters, energy -8.109232394316018 eV   dq = [-0.686, 0.686]
+END SCF ------------------
+
+  0.764636 seconds (458.26 k allocations: 611.311 MiB, 10.42% gc time)
+scf_energy success, done
+
+using kgrid [8, 8, 8]
+{'directgap': 3.263987145946743e-07,
+ 'energy': -8.109232394316018,
+ 'force': 'na',
+ 'indirectgap': 3.263987145946743e-07,
+ 'stress': 'na'}
+{'directgap': 3.263987145946743e-07, 'indirectgap': 3.263987145946743e-07, 'energy': -8.109232394316018, 'force': 'na', 'stress': 'na'}
+
