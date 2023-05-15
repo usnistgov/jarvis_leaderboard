@@ -313,7 +313,17 @@ def get_metric_value(
             tdata, np.repeat(avg, len(tdata))
         )
         results["random_guessing_performance"] = random_guessing_performance
-
+    if metric == "rouge":
+       import evaluate
+       #from datasets import load_metric
+       #metric = load_metric("rouge")
+       #TODO: merge with benchmark instead of using target from csv.zip
+       rouge_score = evaluate.load("rouge")
+       scores = rouge_score.compute(predictions=df['prediction'],references=df['actual'])
+       #scores = rouge_score.compute(predictions=csv_data['prediction'],references=csv_data['target'])
+       rouge=scores['rouge1']
+       #rouge=(calc_rouge_scores(df['target'],df['prediction']))['rouge1']
+       results['res']=rouge
     return results
 
 
