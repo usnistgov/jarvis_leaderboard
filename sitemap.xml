@@ -881,12 +881,42 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_113_ZrO2/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_116_MgO/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_1174_GaAs/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_1306_BaO/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_1312_BP/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_1390_SrO/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_1405_CaO/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_14590_Hf/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -901,6 +931,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_14612_Zr/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_14813_Rb/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
@@ -911,7 +946,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_20290_Sc2O3/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_20326_NaF/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_20793_Y2O3/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -946,7 +991,57 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_25213_Kr/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_25248_Xe/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_34249_HfO2/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_350_ZrO2/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_7809_ZrO2/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_7870_MnO/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_7871_NiO/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_79204_BN/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_816_Al/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_819_Ar/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_834_Be/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -956,12 +1051,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_87128_CoO/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_890_Ge/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_9147_HfO2/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_91_C/</loc>
+         <lastmod>2023-05-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/ES/SinglePropertyPrediction/dft_3d_bulk_modulus_JVASP_92796_La2O3/</loc>
          <lastmod>2023-05-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
