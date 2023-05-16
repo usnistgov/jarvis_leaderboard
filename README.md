@@ -9,7 +9,7 @@ This project provides benchmark-performances of various methods for materials sc
 
 Website: https://pages.nist.gov/jarvis_leaderboard/
 
-# Quick start using GoogleColab notebook examples
+# Quick start using GoogleColab notebook example
 
 1. [Analyzing_data_in_the_JARVIS_Leaderboard.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/Analyzing_data_in_the_JARVIS_Leaderboard.ipynb)
 2. [Upload_benchmark_to_jarvis_leaderboard.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/Upload_benchmark_to_jarvis_leaderboard.ipynb)
