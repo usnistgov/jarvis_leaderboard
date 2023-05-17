@@ -51,6 +51,7 @@ def make_summary_table():
         "TextClass",
         "TokenClass",
         "TextSummary",
+        "TextGen",
         "ImageClass",
         "Spectra",
         "EigenSolver",
@@ -1211,6 +1212,9 @@ def rebuild_pages():
     )
     update_individual_index_md(
         md_path="docs/AI/TextSummary/index.md", key="AI", extra_key="TextSummary"
+    )
+    update_individual_index_md(
+        md_path="docs/AI/TextGen/index.md", key="AI", extra_key="TextGen"
     )
     update_individual_index_md(md_path="docs/QC/index.md", key="QC")
     update_individual_index_md(
