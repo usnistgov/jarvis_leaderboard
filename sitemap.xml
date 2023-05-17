@@ -1341,6 +1341,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/EXP/Spectra/midas_stress_strain_vibroscopy_kevlar129/</loc>
+         <lastmod>2023-05-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/usnistgov/jarvis_leaderboard/EXP/Spectra/nist_isodb_co2_RM_8852/</loc>
          <lastmod>2023-05-17</lastmod>
          <changefreq>daily</changefreq>
