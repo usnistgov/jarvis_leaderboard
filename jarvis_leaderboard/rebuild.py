@@ -205,7 +205,7 @@ def get_metric_value(
     actual_df["id"] = actual_df["id"].astype(str)
     if len(csv_data) != len(actual_df):
         print("Error", csv_path, len(csv_data), len(actual_df))
-        errors.append(csv_path)
+        errors.append([csv_path, len(csv_data), len(actual_df)])
 
     df = pd.merge(csv_data, actual_df, on="id")
     # print('csv',csv_path)
