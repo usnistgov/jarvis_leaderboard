@@ -136,7 +136,7 @@ model.fit(X_train, y_train, verbose=2, validation_data=(X_val, y_val), epochs=30
 pred=model.predict(X_test)
 print(mean_absolute_error(y_test,pred))
 
-f=open('SinglePropertyPrediction-test-formula_energy-ssub-AI-mae.csv','w')
+f=open('AI-SinglePropertyPrediction-formula_energy-ssub-test-mae.csv','w')
 f.write('id,target,prediction\n')
 for i,j,k in zip(test_ids,y_test,pred):
     line=str(i)+','+str(j)+','+str(k)+'\n'
