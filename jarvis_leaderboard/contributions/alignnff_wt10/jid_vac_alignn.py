@@ -103,9 +103,9 @@ dumpjson(data=m, filename="vacancydb_ef.json")
 
 
 
-
 df=pd.read_csv('AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv.zip')
 df=df.drop_duplicates(subset=['id'])
+df['prediction']=df['prediction']+1.0
 df.to_csv('AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv',index=False)
 
 
