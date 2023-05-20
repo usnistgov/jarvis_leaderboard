@@ -351,6 +351,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/AI/SinglePropertyPrediction/mag2d_chem_magnetic_moment/</loc>
+         <lastmod>2023-05-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/usnistgov/jarvis_leaderboard/AI/SinglePropertyPrediction/megnet_e_form/</loc>
          <lastmod>2023-05-20</lastmod>
          <changefreq>daily</changefreq>
@@ -447,6 +452,11 @@
     </url>
     <url>
          <loc>https://github.com/usnistgov/jarvis_leaderboard/AI/SinglePropertyPrediction/ssub_formula_energy/</loc>
+         <lastmod>2023-05-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/AI/SinglePropertyPrediction/supercon_chem_Tc/</loc>
          <lastmod>2023-05-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
