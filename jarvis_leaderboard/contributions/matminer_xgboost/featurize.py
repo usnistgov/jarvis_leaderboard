@@ -17,8 +17,9 @@ import time
 
 tqdm.pandas()
 
+n_features = 273
 
-task = 'SinglePropertyClass' # 'SinglePropertyClass'
+task = 'SinglePropertyPrediction'
 
 
 #%%
@@ -37,20 +38,15 @@ import xgboost as xgb
 '''
 Model
 '''
-if task == 'SinglePropertyPrediction':
-    model =  xgb.XGBRegressor
-elif task == 'SinglePropertyClass':
-    model =  xgb.XGBClassifier
-
 
 n_estimators = 10000
 num_parallel_tree = 8
 learning_rate = 0.1  
-tree_method = 'gpu_hist'   # gpu_hist or hist
-reg = Pipeline([
+tree_method = 'hist'   # gpu_hist or hist
+reg = pipe = Pipeline([
             ('imputer', SimpleImputer()), 
             ('scaler', StandardScaler()),
-            ('model', model(
+            ('model', xgb.XGBRegressor(
                             # n_jobs=-1, random_state=0,
                             n_estimators=n_estimators, learning_rate=learning_rate,
                             reg_lambda=0.01,reg_alpha=0.01,
@@ -169,18 +165,10 @@ def get_props(db):
     return files 
 
 #%%
-for db in ['dft_3d' ]: #'hmof','qm9','megnet','qe_tb', 'dft_3d', 'ssub',
+for db in ['hmof', ]: #'hmof','qm9','megnet','qe_tb', 'dft_3d',
 
     # Get the whole dataset and featurize for once and for all properties 
-        
-    if db == 'ssub':
-        dat = pd.read_json('ssub.json')
-        n_features = 145
-    else:
-        dat = data(db)
-        n_features = 273
-
-
+    dat = data(db)
     X_file = f"X_{db}.csv"
     if not os.path.exists(X_file):
         structure = f'structure_{db}.pkl'
@@ -197,96 +185,12 @@ for db in ['dft_3d' ]: #'hmof','qm9','megnet','qe_tb', 'dft_3d', 'ssub',
             df.to_pickle(structure)
 
         df = df.sample(frac=1, random_state=123)
-        X, failed = StructureFeaturizer(df)
-        X.to_csv(X_file)
 
-    df = pd.read_csv(X_file)
-    features = df.columns[-n_features:]
-    if 'id' in df.columns:
-        df['id'] = df['id'].astype(str)
-        df = df.set_index('id')
-    elif 'jid' in df.columns:
-        df = df.set_index('jid')
+        for i,df_ in enumerate(np.array_split(df, 10)):
+            X_, failed = StructureFeaturizer(df_.copy(),chunksize=5)
+            X_.to_csv(f"X_{db}_{i}.pkl")
+            X.append(X_)
 
-    for prop in get_props(db):   
-    # for prop in ['slme']:
+        X_all = pd.concat(X)
+        X_all.to_csv(f"X_{db}.pkl")
 
-        print("Running", db, prop)
-
-        if task == 'SinglePropertyPrediction':
-            fname = f"AI-{task}-{prop}-{db}-test-mae.csv"
-        elif task == 'SinglePropertyClass':
-            fname = f"AI-{task}-{prop}-{db}-test-acc.csv"
-
-        # skip this loop if the file already exists
-        if os.path.exists(fname) or os.path.exists(fname + ".zip"):
-            print("Benchmark already done, skipping", fname)
-            continue
-
-        json_zip = f"../../benchmarks/AI/{task}/{db}_{prop}.json.zip"
-        temp2 = f"{db}_{prop}.json"
-        zp = zipfile.ZipFile(json_zip)   
-        train_val_test = json.loads(zp.read(temp2))
-
-        train = train_val_test["train"]
-        if 'val' in train_val_test:
-            val = train_val_test["val"]
-        else:
-            val = {}
-        test = train_val_test["test"]
-
-        n_train = len(train)
-        n_val = len(val)
-        n_test = len(test)
-
-        print("number of training samples", len(train))
-        print("number of validation samples", len(val))
-        print("number of test samples", len(test))
-
-        ids = list(train.keys()) + list(val.keys()) + list(test.keys())
-        y = list(train.values()) + list(val.values()) + list(test.values())
-        X = df.loc[ids,features]
-
-        X = np.array(X)
-        y = np.array(y).reshape(-1, 1).astype(np.float64)
-        id_test = ids[-n_test:]
-
-        X_train = X[:n_train]
-        y_train = y[:n_train]
-
-        X_val = X[-(n_val + n_test) : -n_test]
-        y_val = y[-(n_val + n_test) : -n_test]
-
-        X_test = X[-n_test:]
-        y_test = y[-n_test:]
-
-        t1 = time.time()
-        reg.fit(X_train, y_train)
-        
-        pred = reg.predict(X_test)
-
-        f = open(fname, "w")
-        line = "id,prediction\n"
-        f.write(line)
-        for j, k in zip(id_test, pred):
-            line = str(j) + "," + str(k) + "\n"
-            f.write(line)
-        f.close()
-        t2 = time.time()
-        print("Time", t2 - t1)
-        cmd = "zip " + fname + ".zip " + fname
-        os.system(cmd)
-        
-        # remove fname
-        os.remove(fname)
-
-        if task == 'SinglePropertyPrediction':
-            reg_sc = regr_scores(y_test, pred)
-            print(prop, reg_sc["mae"])
-        elif task == 'SinglePropertyClass':
-            from sklearn.metrics import accuracy_score
-            acc = accuracy_score(y_test, pred)
-            print(prop, acc)
-
-
-# %%
