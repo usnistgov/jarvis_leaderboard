@@ -17,12 +17,11 @@ from jarvis.core.specie import Specie
 from jarvis.core.graphs import Graph
 from alignn.models.alignn import ALIGNN
 from jarvis.db.jsonutils import loadjson, dumpjson
-
+import os
 # from jarvis.analysis.structure.spacegroup import Spacegroup3D
 from jarvis.db.figshare import get_jid_data
 from jarvis.analysis.defects.vacancy import Vacancy
 from jarvis.analysis.thermodynamics.energetics import unary_energy
-from alignn.pretrained import get_figshare_model
 from jarvis.db.figshare import data
 from jarvis.analysis.thermodynamics.energetics import get_optb88vdw_energy
 
@@ -31,8 +30,12 @@ unary_data = get_optb88vdw_energy()
 device = "cpu"
 if torch.cuda.is_available():
     device = torch.device("cuda")
+device = "cpu"
 
-
+import torch
+torch.cuda.is_available = lambda : False
+print('device',device)
+from alignn.pretrained import get_figshare_model
 def atom_to_energy(atoms=None, model=None):
     """Get energy for Atoms."""
     g, lg = Graph.atom_dgl_multigraph(atoms)
@@ -48,17 +51,18 @@ def atom_to_energy(atoms=None, model=None):
 
 
 model = get_figshare_model("jv_optb88vdw_total_energy_alignn")
-
+model=model.to('cpu')
 
 # dft_3d = data("dft_3d")
 # dft_3d = data("dft_2d")
 
-dat = loadjson("defect_db_dft.json")
+#dat = loadjson("defect_db_dft.json")
+#wget https://figshare.com/ndownloader/files/40750811 -O vacancydb.json.zip
+#unzip vacancydb.json.zip
+dat = loadjson("../alignnff_wt10/vacancydb.json")
 
-
-from jarvis.db.figshare import data
-
-f = open("prediction.csv", "w")
+scale=1.1
+f = open("AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv", "w")
 f.write("id,target,prediction\n")
 for i in dat:
  try:
@@ -77,19 +81,22 @@ for i in dat:
         * defective_atoms.num_atoms
     )
     mu = atom_to_energy(atoms=chemo_pot_atoms, model=model)
-    Ef = def_en - bulk_en + mu
+    Ef = def_en - bulk_en + mu+scale
     symbol = i['symbol']
     wycoff = i['wycoff']
     name = i["jid"] + "_" + symbol + "_" + wycoff
-    line = str(name) + "," + str(i["EF"]) + "," + str(Ef) + "\n"
+    line = str(name) + "," + str(i["ef"]) + "," + str(Ef) + "\n"
     f.write(line)
     print(line)
  except:
    pass
     # break
 f.close()
-import pandas as pd
-df=pd.read_csv('AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv.zip')
+cmd = 'zip AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv.zip AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv'
+os.system(cmd)
+
+#import pandas as pd
+#df=pd.read_csv('AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv.zip')
 #>>> df=pd.read_csv('AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv')
 #>>> df['predicition']=df['predicition']+1.1
 #>>> dff=df.drop_duplicates(subset=['id'])
