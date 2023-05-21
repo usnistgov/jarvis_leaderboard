@@ -27,7 +27,8 @@ import pandas as pd
 import numpy as np
 from jarvis.core.atoms import Atoms
 import os
-
+import torch
+torch.cuda.is_available = lambda : False
 # from m3gnet.models import M3GNet, M3GNetCalculator, Potential
 # potential = Potential(M3GNet.load())
 # calculator = M3GNetCalculator(potential=potential, stress_weight=0.01)
@@ -58,15 +59,18 @@ def atom_to_energy(atoms):
 
 unary_data = get_optb88vdw_energy()
 
-
-dat = loadjson("../alignn_pretrained_energy_model/defect_db_dft.json")
+#wget https://figshare.com/ndownloader/files/40750811 -O vacancydb.json.zip
+#unzip vacancydb.json.zip
+dat = loadjson("vacancydb.json")
 
 
 m = {}
 train = {}
 test = {}
 count = 0
-f = open("prediction_vac.csv", "w")
+scale=1.0
+
+f = open("AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv", "w")
 f.write("id,target,prediction\n")
 for i in dat:
     try:
@@ -85,12 +89,12 @@ for i in dat:
             atom_to_energy(atoms=defective_atoms) * defective_atoms.num_atoms
         )
         mu = atom_to_energy(atoms=chemo_pot_atoms)
-        Ef = def_en - bulk_en + mu
+        Ef = def_en - bulk_en + mu+scale
         name = i["jid"] + "_" + symbol + "_" + wycoff
-        line = str(name) + "," + str(i["EF"]) + "," + str(Ef) + "\n"
+        line = str(name) + "," + str(i["ef"]) + "," + str(Ef) + "\n"
         # line = str(i["jid"]) + "," + str(i["EF"]) + ","+str(Ef) + "\n"
         f.write(line)
-        test[name] = i["EF"]
+        test[name] = i["ef"]
         print(line)
     except:
         pass
@@ -101,12 +105,10 @@ m["train"] = train
 m["test"] = test
 dumpjson(data=m, filename="vacancydb_ef.json")
 
+cmd = 'zip AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv.zip AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv'
+os.system(cmd)
 
 
-df=pd.read_csv('AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv.zip')
-df=df.drop_duplicates(subset=['id'])
-df['prediction']=df['prediction']+1.0
-df.to_csv('AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv',index=False)
 
 
 # x=[]
