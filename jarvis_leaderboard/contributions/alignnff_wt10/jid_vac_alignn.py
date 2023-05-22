@@ -110,16 +110,41 @@ os.system(cmd)
 
 
 
+df=pd.read_csv('AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv')
+fname='../../benchmarks/AI/SinglePropertyPrediction/vacancydb_oxides_ef.json.zip'
 
-# x=[]
-# for i in glob.glob("*.json"):
-#  x.append(i.split('.json')[0])
-#
-# for i in dft_3d:
-# if i["jid"] not in x:
-#    try:
-#        mem = jid_ef(
-#            model=model, jid=i["jid"]
-#        )  # atoms=Atoms.from_dict(dft_3d[0]['atoms']))
-#    except:
-#        pass
+
+temp='vacancydb_oxides_ef.json'
+z = zipfile.ZipFile(fname)
+json_data = json.loads(z.read(temp))
+list_ids = list(json_data['test'].keys())
+new_df = df[df['id'].isin(list_ids)]
+csv_name = 'AI-SinglePropertyPrediction-ef-'+temp.split('_ef.json')[0]+'-test-mae.csv'
+new_df.to_csv(csv_name,index=False)
+cmd='zip '+csv_name+'.zip '+csv_name
+os.system(cmd)
+
+
+
+fname='../../benchmarks/AI/SinglePropertyPrediction/vacancydb_2D_ef.json.zip'
+temp='vacancydb_2D_ef.json'
+z = zipfile.ZipFile(fname)
+json_data = json.loads(z.read(temp))
+list_ids = list(json_data['test'].keys())
+new_df = df[df['id'].isin(list_ids)]
+csv_name = 'AI-SinglePropertyPrediction-ef-'+temp.split('_ef.json')[0]+'-test-mae.csv'
+new_df.to_csv(csv_name,index=False)
+cmd='zip '+csv_name+'.zip '+csv_name
+os.system(cmd)
+
+fname='../../benchmarks/AI/SinglePropertyPrediction/vacancydb_elements_ef.json.zip'
+temp='vacancydb_elements_ef.json'
+z = zipfile.ZipFile(fname)
+json_data = json.loads(z.read(temp))
+list_ids = list(json_data['test'].keys())
+new_df = df[df['id'].isin(list_ids)]
+csv_name = 'AI-SinglePropertyPrediction-ef-'+temp.split('_ef.json')[0]+'-test-mae.csv'
+new_df.to_csv(csv_name,index=False)
+cmd='zip '+csv_name+'.zip '+csv_name
+os.system(cmd)
+
