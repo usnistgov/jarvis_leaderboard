@@ -94,12 +94,41 @@ for i in dat:
 f.close()
 cmd = 'zip AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv.zip AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv'
 os.system(cmd)
+df=pd.read_csv('AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv')
+fname='../../benchmarks/AI/SinglePropertyPrediction/vacancydb_oxides_ef.json.zip'
 
-#import pandas as pd
-#df=pd.read_csv('AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv.zip')
-#>>> df=pd.read_csv('AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv')
-#>>> df['predicition']=df['predicition']+1.1
-#>>> dff=df.drop_duplicates(subset=['id'])
-#>>> dff.to_csv('AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv')
-#>>> mean_absolute_error(dff['target'],df['predicition'])
+
+temp='vacancydb_oxides_ef.json'
+z = zipfile.ZipFile(fname)
+json_data = json.loads(z.read(temp))
+list_ids = list(json_data['test'].keys())
+new_df = df[df['id'].isin(list_ids)]
+csv_name = 'AI-SinglePropertyPrediction-ef-'+temp.split('_ef.json')[0]+'-test-mae.csv'
+new_df.to_csv(csv_name,index=False)
+cmd='zip '+csv_name+'.zip '+csv_name
+os.system(cmd)
+
+
+
+fname='../../benchmarks/AI/SinglePropertyPrediction/vacancydb_2D_ef.json.zip'
+temp='vacancydb_2D_ef.json'
+z = zipfile.ZipFile(fname)
+json_data = json.loads(z.read(temp))
+list_ids = list(json_data['test'].keys())
+new_df = df[df['id'].isin(list_ids)]
+csv_name = 'AI-SinglePropertyPrediction-ef-'+temp.split('_ef.json')[0]+'-test-mae.csv'
+new_df.to_csv(csv_name,index=False)
+cmd='zip '+csv_name+'.zip '+csv_name
+os.system(cmd)
+
+fname='../../benchmarks/AI/SinglePropertyPrediction/vacancydb_elements_ef.json.zip'
+temp='vacancydb_elements_ef.json'
+z = zipfile.ZipFile(fname)
+json_data = json.loads(z.read(temp))
+list_ids = list(json_data['test'].keys())
+new_df = df[df['id'].isin(list_ids)]
+csv_name = 'AI-SinglePropertyPrediction-ef-'+temp.split('_ef.json')[0]+'-test-mae.csv'
+new_df.to_csv(csv_name,index=False)
+cmd='zip '+csv_name+'.zip '+csv_name
+os.system(cmd)
 
