@@ -232,7 +232,7 @@ import os
 f=open('AI-SinglePropertyPrediction-formula_energy-ssub-test-mae.csv','w')
 f.write('id,target,prediction\n')
 for i,j,k in zip(test_ids,y_test,pred):
-    line=str(i)+','+str(j)+','+str(k)+'\n'
+    line=str(i)+','+str(j)+','+str(k[0])+'\n'
     f.write(line)
 f.close()
 cmd = 'zip AI-SinglePropertyPrediction-formula_energy-ssub-test-mae.csv.zip AI-SinglePropertyPrediction-formula_energy-ssub-test-mae.csv'
