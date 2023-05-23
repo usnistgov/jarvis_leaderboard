@@ -194,7 +194,7 @@ print(mean_absolute_error(y_test,pred))
 import os
 f=open('AI-SinglePropertyPrediction-formula_energy-ssub-test-mae.csv','w')
 f.write('id,target,prediction\n')
-for i,j,k in zip(test_ids,y_test,pred[0]):
+for i,j,k in zip(test_ids,y_test,pred):
     line=str(i)+','+str(j)+','+str(k)+'\n'
     f.write(line)
 f.close()
