@@ -155,8 +155,8 @@ reg = get_model(task)
 
 special_dbs = ['ssub','supercon_chem','mag2d_chem']
 
-#for db in special_dbs + ['hmof','megnet','qe_tb', 'dft_3d',]: # 'hmof','megnet','qe_tb', 'dft_3d', 
-for db in ['qmof',]:
+#for db in special_dbs: # 'hmof','megnet','qe_tb', 'dft_3d', 'snumat',
+for db in ['snumat',]:
 
     # Get the whole dataset and featurize for once and for all properties 
         
@@ -174,6 +174,7 @@ for db in ['qmof',]:
     else:
         dat = data(db)
         n_features = 273
+        col_id = 'structure'
 
     df = pd.DataFrame(dat)
 
@@ -185,7 +186,7 @@ for db in ['qmof',]:
         df['formula']= df['formula'].apply(lambda x: x.replace('!1.5',''))
 
     # X_file = f"X_{db}.csv"
-    X_file = f"../matminer_xgboost/X_{db}.csv"
+    X_file = f"../../../../X_{db}.csv"
 
     if not os.path.exists(X_file):
         # if atomic structure, get the structure
@@ -289,3 +290,5 @@ for db in ['qmof',]:
 
 
 
+
+# %%
