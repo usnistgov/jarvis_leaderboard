@@ -1,1 +1,12 @@
-{"model_name":"VASP GW0","project_url":"https://github.com/usnistgov/jarvis","date_submitted":"05-12-2023","author_email":"daniel.wines@nist.gov","database_version": "12-12-2022", "team_name": "JARVIS", "language": "python,fortran", "os": "linux", "software_used": "jarvis-tools,VASP 6.0", "harware_used": "dobby cluster at NIST, kisir cluster at UMBC"}
+{
+    "model_name": "VASP GW0",
+    "project_url": "https://github.com/usnistgov/jarvis",
+    "date_submitted": "05-12-2023",
+    "author_email": "daniel.wines@nist.gov",
+    "database_version": "12-12-2022",
+    "team_name": "JARVIS",
+    "language": "python,fortran",
+    "os": "linux",
+    "software_used": "jarvis-tools,VASP 6.0",
+    "harware_used": "dobby cluster at NIST, kisir cluster at UMBC"
+}

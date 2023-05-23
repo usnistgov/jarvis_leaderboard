@@ -1,1 +1,13 @@
-{"model_name":"ABINIT","project_url":"www.abinit.org","date_submitted":"05-15-2023","author_email":"alromero@mail.wvu.edu","database_version": "12-12-2022", "team_name": "ABINIT", "time_taken_seconds": 458.17, "language": "python", "os": "linux", "software_used": "abipy, abinit", "harware_used": "thorny HPC wvu"}
+{
+    "model_name": "ABINIT",
+    "project_url": "www.abinit.org",
+    "date_submitted": "05-15-2023",
+    "author_email": "alromero@mail.wvu.edu",
+    "database_version": "12-12-2022",
+    "team_name": "ABINIT",
+    "time_taken_seconds": 458.17,
+    "language": "python",
+    "os": "linux",
+    "software_used": "abipy, abinit",
+    "harware_used": "thorny HPC wvu"
+}
