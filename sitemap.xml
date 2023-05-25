@@ -1376,6 +1376,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/EXP/SinglePropertyPrediction/</loc>
+         <lastmod>2023-05-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/EXP/SinglePropertyPrediction/dft_3d_Tc_supercon_JVASP_1151_MgB2/</loc>
+         <lastmod>2023-05-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/usnistgov/jarvis_leaderboard/EXP/Spectra/</loc>
          <lastmod>2023-05-25</lastmod>
          <changefreq>daily</changefreq>
