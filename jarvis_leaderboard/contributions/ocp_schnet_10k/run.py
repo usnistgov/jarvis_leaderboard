@@ -104,7 +104,7 @@ f.write('id,target,prediction\n')
 #f.write('id,target,scaled_target,prediction\n')
 print('id,actual,scaled,pred')
 
-for ii,i in tqdm(val_df.iterrows()):
+for ii,i in tqdm(test_df.iterrows()):
     fname=i['id']
     atoms=(Atoms.from_dict(i['atoms'])).ase_converter()
     actual=i['relaxed_energy']

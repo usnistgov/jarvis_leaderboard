@@ -4,11 +4,11 @@
     "date_submitted": "01-14-2023",
     "harware_used": "dobby",
     "language": "python",
-    "model_name": "Einstein-LAMMPS",
+    "model_name": "GreenKubo-LAMMPS",
     "os": "linux",
-    "project_url": "https://github.com/lammps/lammps/blob/develop/examples/VISCOSITY/in.einstein.2d",
-    "doi": "https://www.nature.com/articles/sdata2016125",
+    "project_url": "https://github.com/lammps/lammps/blob/develop/examples/VISCOSITY/in.gk.2d",
+    "doi": "https://doi.org/10.1016/j.cpc.2021.108171",
     "software_used": "lammps",
     "team_name": "LAMMPS",
-    "time_taken_seconds": 2739.455
+    "time_taken_seconds": 70.8372
 }
