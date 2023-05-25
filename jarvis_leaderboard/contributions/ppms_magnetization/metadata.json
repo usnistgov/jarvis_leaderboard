@@ -1,0 +1,13 @@
+{
+    "model_name": "PML-PPMS",
+    "project_url": "https://pubs.acs.org/doi/abs/10.1021/acs.nanolett.2c04420",
+    "date_submitted": "01-14-2023",
+    "author_email": "adam.biacchi@nist.gov",
+    "database_version": "12-12-2022",
+    "team_name": "PML-PPMS",
+    "time_taken_seconds":300000,
+    "language": "python",
+    "os": "linux",
+    "software_used": "jarvis-tools",
+    "harware_used": "Magnetization-PPMS"
+}
