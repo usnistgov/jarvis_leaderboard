@@ -317,16 +317,19 @@ def get_metric_value(
         )
         results["random_guessing_performance"] = random_guessing_performance
     if metric == "rouge":
-       import evaluate
-       #from datasets import load_metric
-       #metric = load_metric("rouge")
-       #TODO: merge with benchmark instead of using target from csv.zip
-       rouge_score = evaluate.load("rouge")
-       scores = rouge_score.compute(predictions=df['prediction'],references=df['actual'])
-       #scores = rouge_score.compute(predictions=csv_data['prediction'],references=csv_data['target'])
-       rouge=scores['rouge1']
-       #rouge=(calc_rouge_scores(df['target'],df['prediction']))['rouge1']
-       results['res']=round(rouge,3)
+        import evaluate
+
+        # from datasets import load_metric
+        # metric = load_metric("rouge")
+        # TODO: merge with benchmark instead of using target from csv.zip
+        rouge_score = evaluate.load("rouge")
+        scores = rouge_score.compute(
+            predictions=df["prediction"], references=df["actual"]
+        )
+        # scores = rouge_score.compute(predictions=csv_data['prediction'],references=csv_data['target'])
+        rouge = scores["rouge1"]
+        # rouge=(calc_rouge_scores(df['target'],df['prediction']))['rouge1']
+        results["res"] = round(rouge, 3)
     return results
 
 
@@ -1211,7 +1214,9 @@ def rebuild_pages():
         md_path="docs/AI/TokenClass/index.md", key="AI", extra_key="TokenClass"
     )
     update_individual_index_md(
-        md_path="docs/AI/TextSummary/index.md", key="AI", extra_key="TextSummary"
+        md_path="docs/AI/TextSummary/index.md",
+        key="AI",
+        extra_key="TextSummary",
     )
     update_individual_index_md(
         md_path="docs/AI/TextGen/index.md", key="AI", extra_key="TextGen"
@@ -1223,6 +1228,11 @@ def rebuild_pages():
         extra_key="EigenSolver",
     )
     update_individual_index_md(md_path="docs/EXP/index.md", key="EXP")
+    update_individual_index_md(
+        md_path="docs/EXP/SinglePropertyPrediction/index.md",
+        key="EXP",
+        extra_key="SinglePropertyPrediction",
+    )
     update_individual_index_md(
         md_path="docs/EXP/Spectra/index.md", key="EXP", extra_key="Spectra"
     )
