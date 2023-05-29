@@ -376,6 +376,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/AI/SinglePropertyPrediction/ocp_all_relaxed_energy/</loc>
+         <lastmod>2023-05-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/usnistgov/jarvis_leaderboard/AI/SinglePropertyPrediction/qe_tb_energy_per_atom/</loc>
          <lastmod>2023-05-29</lastmod>
          <changefreq>daily</changefreq>
