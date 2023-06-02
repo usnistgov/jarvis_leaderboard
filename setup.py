@@ -11,7 +11,7 @@ setuptools.setup(
     description="jarvis_leaderboard",
     install_requires=[
         "numpy>=1.19.5",
-        "scipy>=1.6.3",
+        "scipy==1.6.3",
         "jarvis-tools>=2021.07.19",
         "scikit-learn>=0.24.1",
         "pandas>=1.2.4",
