@@ -10,7 +10,7 @@ setuptools.setup(
     author_email="kamal.choudhary@nist.gov",
     description="jarvis_leaderboard",
     install_requires=[
-        "numpy>=1.19.5",
+        "numpy==1.19.5",
         "scipy==1.6.3",
         "jarvis-tools>=2021.07.19",
         "scikit-learn>=0.24.1",
