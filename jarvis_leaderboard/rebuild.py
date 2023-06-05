@@ -9,7 +9,7 @@ import json
 from collections import defaultdict
 import numpy as np
 import matplotlib.pyplot as plt
-
+import requests
 # from mkdocs import utils
 
 # base_url = utils.get_relative_url('.','.')
@@ -1064,6 +1064,8 @@ def rebuild_pages():
                 content.append("<!--table_content-->")
             elif "<!--number_of_contributions-->" in j:
                 content.append("<!--number_of_contributions-->")
+            elif "<!--number_of_contributors-->" in j:
+                content.append("<!--number_of_contributors-->")
             elif "<!--number_of_benchmarks-->" in j:
                 content.append("<!--number_of_benchmarks-->")
             elif "<!--number_of_methods-->" in j:
@@ -1111,6 +1113,21 @@ def rebuild_pages():
                 temp2 = (
                     "<!--number_of_contributions--> - Number of contributions: "
                     + str(n_benchs)
+                    # + str(len(dat))
+                    # + "\n"
+                )
+                content.append(temp2)
+            elif "<!--number_of_contributors-->" in j:
+                n_users=[]
+                rq = requests.get('https://api.github.com/repos/usnistgov/jarvis_leaderboard/contributors').json() 
+                for u in rq:
+                     if u['login'] not in ['dependabot[bot]']:
+                       n_users.append(i)
+
+              
+                temp2 = (
+                    "<!--number_of_contributors--> - Number of contributors: "
+                    + "["+str(len(n_users))+"]"+"(https://github.com/usnistgov/jarvis_leaderboard/graphs/contributors)"
                     # + str(len(dat))
                     # + "\n"
                 )
