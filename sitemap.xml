@@ -531,6 +531,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/AI/SinglePropertyPrediction/vacancydb_oxides_ef_train_test/</loc>
+         <lastmod>2023-06-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/usnistgov/jarvis_leaderboard/AI/Spectra/</loc>
          <lastmod>2023-06-05</lastmod>
          <changefreq>daily</changefreq>
