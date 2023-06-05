@@ -1,2 +1,0 @@
-include jarvis_leaderboard/benchmarks/*/*/*.json.zip
-exclude jarvis_leaderboard/contributions/*/*.csv.zip
