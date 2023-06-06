@@ -34,10 +34,10 @@ torch.cuda.is_available = lambda : False
 # calculator = M3GNetCalculator(potential=potential, stress_weight=0.01)
 # wget https://figshare.com/ndownloader/files/40357663 -O mlearn.json.zip
 
-from alignn.ff.ff import AlignnAtomwiseCalculator, default_path
+from alignn.ff.ff import AlignnAtomwiseCalculator, default_path,wt01_path,wt10_path
 
 # torch.cuda.is_available = lambda : False
-model_path = default_path()
+model_path = wt10_path()
 calculator = AlignnAtomwiseCalculator(path=model_path, stress_wt=0.3)
 
 
@@ -59,9 +59,9 @@ def atom_to_energy(atoms):
 
 unary_data = get_optb88vdw_energy()
 
-#wget https://figshare.com/ndownloader/files/40750811 -O vacancydb.json.zip
+#wget https://figshare.com/ndownloader/files/41075822 -O vacancydb.json.zip
 #unzip vacancydb.json.zip
-dat = loadjson("vacancydb.json")
+dat = loadjson("../alignnff_wt0.1_v1/vacancydb.json")
 
 
 m = {}
@@ -84,12 +84,12 @@ for i in dat:
         chemo_pot_atoms = Atoms.from_dict(
             get_jid_data(jid=chem_pot_jid, dataset="dft_3d")["atoms"]
         )
-        bulk_en = atom_to_energy(atoms=bulk_atoms) * bulk_atoms.num_atoms
+        bulk_enp = atom_to_energy(atoms=bulk_atoms)# * bulk_atoms.num_atoms
         def_en = (
             atom_to_energy(atoms=defective_atoms) * defective_atoms.num_atoms
         )
         mu = atom_to_energy(atoms=chemo_pot_atoms)
-        Ef = def_en - bulk_en + mu+scale
+        Ef = def_en - bulk_enp*(defective_atoms.num_atoms+1) + mu+scale
         name = i["jid"] + "_" + symbol + "_" + wycoff
         line = str(name) + "," + str(i["ef"]) + "," + str(Ef) + "\n"
         # line = str(i["jid"]) + "," + str(i["EF"]) + ","+str(Ef) + "\n"
@@ -107,8 +107,6 @@ dumpjson(data=m, filename="vacancydb_ef.json")
 
 cmd = 'zip AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv.zip AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv'
 os.system(cmd)
-
-
 
 df=pd.read_csv('AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv')
 fname='../../benchmarks/AI/SinglePropertyPrediction/vacancydb_oxides_ef.json.zip'
@@ -147,4 +145,5 @@ csv_name = 'AI-SinglePropertyPrediction-ef-'+temp.split('_ef.json')[0]+'-test-ma
 new_df.to_csv(csv_name,index=False)
 cmd='zip '+csv_name+'.zip '+csv_name
 os.system(cmd)
+
 
