@@ -59,7 +59,7 @@ model=model.to('cpu')
 #dat = loadjson("defect_db_dft.json")
 #wget https://figshare.com/ndownloader/files/40750811 -O vacancydb.json.zip
 #unzip vacancydb.json.zip
-dat = loadjson("../alignnff_wt10/vacancydb.json")
+dat = loadjson("../alignnff_wt0.1_v1/vacancydb.json")
 
 scale=1.1
 f = open("AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv", "w")
@@ -73,15 +73,15 @@ for i in dat:
     chemo_pot_atoms = Atoms.from_dict(
         get_jid_data(jid=chem_pot_jid, dataset="dft_3d")["atoms"]
     )
-    bulk_en = (
-        atom_to_energy(atoms=bulk_atoms, model=model) * bulk_atoms.num_atoms
+    bulk_enp = (
+        atom_to_energy(atoms=bulk_atoms, model=model)# * bulk_atoms.num_atoms
     )
     def_en = (
         atom_to_energy(atoms=defective_atoms, model=model)
         * defective_atoms.num_atoms
     )
     mu = atom_to_energy(atoms=chemo_pot_atoms, model=model)
-    Ef = def_en - bulk_en + mu+scale
+    Ef = def_en - bulk_enp*(defective_atoms.num_atoms+1) + mu+scale
     symbol = i['symbol']
     wycoff = i['wycoff']
     name = i["jid"] + "_" + symbol + "_" + wycoff

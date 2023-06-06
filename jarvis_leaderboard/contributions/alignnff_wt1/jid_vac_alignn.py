@@ -34,10 +34,10 @@ torch.cuda.is_available = lambda : False
 # calculator = M3GNetCalculator(potential=potential, stress_weight=0.01)
 # wget https://figshare.com/ndownloader/files/40357663 -O mlearn.json.zip
 
-from alignn.ff.ff import AlignnAtomwiseCalculator, default_path,wt01_path
+from alignn.ff.ff import AlignnAtomwiseCalculator, default_path,wt01_path,wt1_path
 
 # torch.cuda.is_available = lambda : False
-model_path = wt01_path()
+model_path = wt1_path()
 calculator = AlignnAtomwiseCalculator(path=model_path, stress_wt=0.3)
 
 
@@ -61,14 +61,14 @@ unary_data = get_optb88vdw_energy()
 
 #wget https://figshare.com/ndownloader/files/41075822 -O vacancydb.json.zip
 #unzip vacancydb.json.zip
-dat = loadjson("vacancydb.json")
+dat = loadjson("../alignnff_wt0.1_v1/vacancydb.json")
 
 
 m = {}
 train = {}
 test = {}
 count = 0
-scale=0.7
+scale=1.0
 
 f = open("AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv", "w")
 f.write("id,target,prediction\n")
