@@ -1,0 +1,38 @@
+integrator              = md
+dt                      = 0.002
+nsteps                  = 100000000
+nstxtcout               = 10
+xtc-precision      = 1000
+; This selects the subset of atoms for the .xtc file. You can
+; select multiple groups. By default all atoms will be written.
+xtc-grps         = Protein
+;
+cutoff-scheme           = Verlet
+nstlist                 = 20
+rlist                   = 1.2
+vdwtype                 = Cut-off
+vdw-modifier            = Force-switch
+rvdw_switch             = 1.0
+rvdw                    = 1.2
+coulombtype             = pme
+rcoulomb                = 1.2
+;
+tcoupl                  = Nose-Hoover
+tc_grps                 = Protein TIP3
+tau_t                   = 1.0 1.0
+ref_t                   = 500 500
+;
+pcoupl                  = Parrinello-Rahman
+pcoupltype              = isotropic
+tau_p                   = 5.0
+compressibility         = 4.5e-5
+ref_p                   = 1.0
+;
+constraints             = h-bonds
+constraint_algorithm    = LINCS
+continuation            = yes
+;
+nstcomm                 = 100
+comm_mode               = linear
+comm_grps               = Protein TIP3
+;
