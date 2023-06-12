@@ -1,0 +1,38 @@
+title					= Simulation of SYSTEM
+integrator				= md
+dt						= 0.002
+nsteps					= 125000000
+; Output control
+nstxout					= 5000
+nstvout					= 5000
+nstenergy				= 100
+nstlog					= 5000
+nstxtcout				= 100
+compressed-x-grps			= Protein
+; Neighborsearching
+cutoff-scheme			= Verlet
+ns_type					= grid
+nstlist					= 10
+rcoulomb				= 1.0
+rvdw					= 1.0
+; Bond parameters
+continuation	        = yes
+constraint_algorithm    = lincs	    
+constraints	            = h-bonds	
+lincs_iter	            = 1		    
+lincs_order	            = 4		    
+energygrps				= Protein
+coulombtype				= PME
+tcoupl					= v-rescale
+tc-grps					= Protein   
+tau_t					= 0.2    
+ref_t					= 300      
+; Pressure coupling is on
+;pcoupl					= Parrinello-Rahman
+;pcoupltype				= isotropic
+;tau_p					= 1.0
+;ref_p					= 1.0
+compressibility			= 4.5e-5
+gen_vel					= no
+gen_temp				= 300
+gen_seed				= -1

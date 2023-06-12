@@ -28,16 +28,17 @@ import numpy as np
 from jarvis.core.atoms import Atoms
 import os
 import torch
-torch.cuda.is_available = lambda : False
+
+torch.cuda.is_available = lambda: False
 # from m3gnet.models import M3GNet, M3GNetCalculator, Potential
 # potential = Potential(M3GNet.load())
 # calculator = M3GNetCalculator(potential=potential, stress_weight=0.01)
 # wget https://figshare.com/ndownloader/files/40357663 -O mlearn.json.zip
 
-from alignn.ff.ff import AlignnAtomwiseCalculator, default_path
+from alignn.ff.ff import AlignnAtomwiseCalculator, default_path, wt01_path
 
 # torch.cuda.is_available = lambda : False
-model_path = 'model' #default_path()
+model_path = wt01_path()
 calculator = AlignnAtomwiseCalculator(path=model_path, stress_wt=0.3)
 
 
@@ -59,52 +60,116 @@ def atom_to_energy(atoms):
 
 unary_data = get_optb88vdw_energy()
 
-#wget https://figshare.com/ndownloader/files/40750811 -O vacancydb.json.zip
-#unzip vacancydb.json.zip
-dat = loadjson("vacancydb.json")
+# wget https://figshare.com/ndownloader/files/41075822 -O vacancydb.json.zip
+# unzip vacancydb.json.zip
+dat = loadjson("vacancydb3.json")
 
 
 m = {}
 train = {}
 test = {}
 count = 0
-scale=0.7
+scale = 0.8
+from jarvis.analysis.thermodynamics.energetics import unary_energy
 
 f = open("AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv", "w")
-f.write("id,target,prediction\n")
+f.write("id,target,prediction,prediction_ini,id_ini\n")
 for i in dat:
     try:
-        count += 1
         # print (i)
-        symbol = i["symbol"]
-        wycoff = i["wycoff"]
-        bulk_atoms = Atoms.from_dict(i["bulk_atoms"])
-        defective_atoms = Atoms.from_dict(i["defective_atoms"])
-        chem_pot_jid = unary_data[i["symbol"]]["jid"]
-        chemo_pot_atoms = Atoms.from_dict(
-            get_jid_data(jid=chem_pot_jid, dataset="dft_3d")["atoms"]
+        name = i["id"]
+        # name = i['id'].split('_')[0]+'_'+i['id'].split('_')[1]+'_'+i['id'].split('_')[2]
+        bulk_atoms = Atoms.from_dict(i["vacancy_class"]["atoms"])
+        defective_atoms_ini = Atoms.from_dict(
+            i["vacancy_class"]["defect_structure"]
         )
-        bulk_en = atom_to_energy(atoms=bulk_atoms) * bulk_atoms.num_atoms
-        def_en = (
+        defective_atoms = Atoms.from_dict(i["defective_atoms"])
+        mu = unary_energy(
+            el=i["vacancy_class"]["symbol"]
+        )  # unary_data[i["symbol"]]["jid"]
+        bulk_enp = atom_to_energy(atoms=bulk_atoms)  # * bulk_atoms.num_atoms
+        def_en_relax = (
             atom_to_energy(atoms=defective_atoms) * defective_atoms.num_atoms
         )
-        mu = atom_to_energy(atoms=chemo_pot_atoms)
-        Ef = def_en - bulk_en + mu+scale
-        name = i["jid"] + "_" + symbol + "_" + wycoff
-        line = str(name) + "," + str(i["ef"]) + "," + str(Ef) + "\n"
+        def_en_ini = (
+            atom_to_energy(atoms=defective_atoms_ini)
+            * defective_atoms.num_atoms
+        )
+        Ef_ini = (
+            def_en_ini
+            - bulk_enp * (defective_atoms.num_atoms + 1)
+            + mu
+            + scale
+        )
+        Ef = (
+            def_en_relax
+            - bulk_enp * (defective_atoms.num_atoms + 1)
+            + mu
+            + scale
+        )
+        line = (
+            str(name)
+            + ","
+            + str(i["ef"])
+            + ","
+            + str(Ef)
+            + ","
+            + str(Ef_ini)
+            + ","
+            + str(i["id"])
+            + "\n"
+        )
         # line = str(i["jid"]) + "," + str(i["EF"]) + ","+str(Ef) + "\n"
+        print(line)
         f.write(line)
         test[name] = i["ef"]
-        print(line)
     except:
+        print("Failed for", name)
         pass
         # break
 f.close()
 
-m["train"] = train
-m["test"] = test
-dumpjson(data=m, filename="vacancydb_ef.json")
 
+"""
+df=pd.read_csv('AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv')
+df['ele']=df['id'].apply(lambda x:x.split('_')[1])
+dfO=df[df['ele']=='O']
+m={}
+m['train']={}
+info={}
+for i,ii in df.iterrows():
+   info[ii['id']]=ii['target']
+m['test']=info
+dumpjson(data=m,filename='vacancydb_ef.json')
+
+m={}
+m['train']={}
+info={}
+for i,ii in dfO.iterrows():
+   info[ii['id']]=ii['target']
+m['test']=info
+dumpjson(data=m,filename='vacancydb_oxides_ef.json')
+
+jids=[]
+pp=loadjson('vacancydb2.json')
+for i in pp:
+  if i['material_class']=='2D':
+      jids.append(i['id'])
+dfO.to_csv('AI-SinglePropertyPrediction-ef-vacancydb_oxides-test-mae.csv',index=False)
+df2d=df[df['id'].isin(jids)]
+
+m={}
+m['train']={}
+info={}
+for i,ii in df2d.iterrows():
+   info[ii['id']]=ii['target']
+m['test']=info
+dumpjson(data=m,filename='vacancydb_2D_ef.json')
+
+df2d.to_csv('AI-SinglePropertyPrediction-ef-vacancydb_2D-test-mae.csv',index=False)
+"""
+
+"""
 cmd = 'zip AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv.zip AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv'
 os.system(cmd)
 
@@ -147,3 +212,4 @@ cmd='zip '+csv_name+'.zip '+csv_name
 os.system(cmd)
 
 
+"""

@@ -1,8 +1,10 @@
 #wget https://github.com/hlxin/tinnet/raw/master/data/tinnet_N.db -O tinnet_N.db
+#Email: wangsh@vt.edu
 from jarvis.core.atoms import Atoms
 import os
 from ase.db import connect
 import numpy as np
+
 # main target
 #adsorption energy
 db = connect('tinnet_N.db')
