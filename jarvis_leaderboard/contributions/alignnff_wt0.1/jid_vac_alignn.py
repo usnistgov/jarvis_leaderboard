@@ -167,6 +167,22 @@ m['test']=info
 dumpjson(data=m,filename='vacancydb_2D_ef.json')
 
 df2d.to_csv('AI-SinglePropertyPrediction-ef-vacancydb_2D-test-mae.csv',index=False)
+
+x=get_optb88vdw_energy()
+df['jid']=df['id'].apply(lambda x: x.split('_')[0])
+els=[i['jid'] for i in list(x.values())]
+df_els = df[df['jid'].isin(els)]
+df_els.to_csv('AI-SinglePropertyPrediction-ef-vacancydb_elements-test-mae.csv',index=False)
+
+m={}
+m['train']={}
+info={}
+for i,ii in df_els.iterrows():
+   info[ii['id']]=ii['target']
+m['test']=info
+dumpjson(data=m,filename='vacancydb_elements_ef.json')
+
+
 """
 
 """
