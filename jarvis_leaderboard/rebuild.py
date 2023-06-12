@@ -216,14 +216,15 @@ def get_metric_value(
     results["df"] = df
 
     if metric == "mae":
-        res = round(mean_absolute_error(df["actual"], df["prediction"]), 3)
+        res = round(mean_absolute_error(df["actual"], df["prediction"]), 4)
+        #res = round(mean_absolute_error(df["actual"], df["prediction"]), 3)
         results["res"] = res
         if "qm9_std_jctc" in csv_path:
             # print('scaling[dataset][prop],',scaling[dataset][prop])
             res = round(
                 scaling[dataset][prop]
                 * mean_absolute_error(df["actual"], df["prediction"]),
-                3,
+                4,
             )
             results["res"] = res
             if plot_filename is not None:
@@ -239,7 +240,7 @@ def get_metric_value(
     if metric == "acc":
         # print("ACC",csv_path)
         # print(df, len(df))
-        res = round(accuracy_score(df["actual"], df["prediction"]), 3)
+        res = round(accuracy_score(df["actual"], df["prediction"]), 4)
         # print("res", res)
         results["res"] = res
     if metric == "multimae":
@@ -257,7 +258,7 @@ def get_metric_value(
             reals.append(real)
             preds.append(pred)
             # print('mm',m)
-        results["res"] = round(np.array(maes).sum() / len(maes), 3)
+        results["res"] = round(np.array(maes).sum() / len(maes), 4)
         if plot_filename is not None:
             plt.plot(np.concatenate(reals), np.concatenate(preds), ".")
             plt.savefig(plot_filename)
@@ -329,7 +330,7 @@ def get_metric_value(
         # scores = rouge_score.compute(predictions=csv_data['prediction'],references=csv_data['target'])
         rouge = scores["rouge1"]
         # rouge=(calc_rouge_scores(df['target'],df['prediction']))['rouge1']
-        results["res"] = round(rouge, 3)
+        results["res"] = round(rouge, 4)
     return results
 
 
@@ -447,14 +448,14 @@ def get_metric_value_old(
     # print('actual_df',actual_df)
     results["res"] = "na"
     if metric == "mae":
-        res = round(mean_absolute_error(df["actual"], df["prediction"]), 3)
+        res = round(mean_absolute_error(df["actual"], df["prediction"]), 4)
         results["res"] = res
         if "qm9_std_jctc" in csv_path:
             # print('scaling[dataset][prop],',scaling[dataset][prop])
             res = round(
                 scaling[dataset][prop]
                 * mean_absolute_error(df["actual"], df["prediction"]),
-                3,
+                4,
             )
             results["res"] = res
             # print(csv_path)
@@ -466,7 +467,7 @@ def get_metric_value_old(
     if metric == "acc":
         # print("ACC",csv_path)
         # print(df, len(df))
-        res = round(accuracy_score(df["actual"], df["prediction"]), 3)
+        res = round(accuracy_score(df["actual"], df["prediction"]), 4)
         # print("res", res)
         results["res"] = res
     if metric == "multimae":
@@ -480,7 +481,7 @@ def get_metric_value_old(
             m = mean_absolute_error(real, pred)
             maes.append(m)
             # print('mm',m)
-        results["res"] = round(np.array(maes).sum() / len(maes), 3)
+        results["res"] = round(np.array(maes).sum() / len(maes), 4)
         # results["res"] = round(np.array(maes).sum(), 3)
         # print ('df',df)
         # print('csv_data',csv_data)
