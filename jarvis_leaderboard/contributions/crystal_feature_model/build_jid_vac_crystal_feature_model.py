@@ -5,10 +5,13 @@ import pandas as pd
 from jarvis.core.atoms import Atoms
 from jarvis.db.figshare import data
 from jarvis.db.jsonutils import loadjson
+from matplotlib import pyplot as plt
 from pymatgen.analysis.bond_valence import BVAnalyzer
 from pymatgen.analysis.local_env import CrystalNN
+from pymatgen.analysis.structure_analyzer import OxideType
 from pymatgen.core.composition import Composition
 from pymatgen.core.periodic_table import Species
+from sklearn import linear_model
 from sklearn.metrics import mean_absolute_error
 
 
@@ -217,32 +220,86 @@ Eb_df = pd.read_csv("Eb.csv")
 # get crystal reduction potential (Vr) dataframe
 Vr_df = pd.read_csv("Vr.csv")
 
-# get testing ids
+# get training and testing ids
 train_test = loadjson("vacancydb_oxides_ef_train_test.json")
+train_ids = list(train_test["train"].keys())
 test_ids = list(train_test["test"].keys())
 
-# get testing dataframe
+# get training and testing dataframes
+train_df = df[df["id"].isin(train_ids)].copy()
 test_df = df[df["id"].isin(test_ids)].copy()
 
+# remove AlO2 from training data
+train_df = train_df[train_df["bulk_formula"] != "AlO2"].copy()
+
+# remove peroxides from training data
+for i, row in train_df.iterrows():
+    train_df.loc[i, "oxide_type"] = OxideType(Atoms.from_dict(row["bulk_atoms"]).pymatgen_converter()).parse_oxide()[0]
+train_df = train_df[train_df["oxide_type"] != "peroxide"].copy()
+
+# get oxide types for testing data
+for i, row in test_df.iterrows():
+    test_df.loc[i, "oxide_type"] = OxideType(Atoms.from_dict(row["bulk_atoms"]).pymatgen_converter()).parse_oxide()[0]
+
 # get crystal features
+train_df = get_crystal_features(train_df)
 test_df = get_crystal_features(test_df)
 
-# define crystal feature model coefficients and intercept
-coef = np.array([-0.019038900286219854,  # sumEb coefficient
-                 -2.2746883534165483,  # maxVr coefficient
-                 -0.14154773088192893,  # Eg coefficient
-                 6.76636886359386])  # Ehull coefficient
-intercept = 0.9753102439952461
+# train model
+coefs = []
+intercepts = []
+valid_maes = []
+for i in range(1000):
+    indices = rng.choice(train_df.index, size=10, replace=False)
+    train_X = train_df.loc[indices, ["sumEb", "maxVr", "Eg", "Ehull"]].values
+    train_y = train_df.loc[indices, "ef"].values
+    valid_X = train_df.loc[~train_df.index.isin(indices), ["sumEb", "maxVr", "Eg", "Ehull"]].values
+    valid_y = train_df.loc[~train_df.index.isin(indices), "ef"].values
+    cfm = linear_model.HuberRegressor(max_iter=1000).fit(train_X, train_y)
+    coefs.append(cfm.coef_)
+    intercepts.append(cfm.intercept_)
+    valid_maes.append(mean_absolute_error(valid_y, cfm.predict(valid_X)))
+
+# coefficient statistics
+mean_coef = np.mean(coefs, axis=0)
+std_coef = np.std(coefs, axis=0)
+
+# intercept statistics
+mean_intercept = np.mean(intercepts)
+std_intercept = np.std(intercepts)
+
+# write model to file
+with open("crystal_feature_model.txt", "w") as f:
+    for coef in mean_coef:
+        f.write(f"{coef}\n")
+    f.write(f"{mean_intercept}\n")
+
+# validation statistics
+mean_valid_mae = np.mean(valid_maes)
+std_valid_mae = np.std(valid_maes)
+
+# predict training y values
+train_X = train_df[["sumEb", "maxVr", "Eg", "Ehull"]].values
+train_y = train_df["ef"].values
+train_y_pred = np.dot(train_X, mean_coef) + mean_intercept
+train_mae = mean_absolute_error(train_y, train_y_pred)
 
 # test model
 test_X = test_df[["sumEb", "maxVr", "Eg", "Ehull"]].values
 test_y = test_df["ef"].values
-test_y_pred = np.dot(test_X, coef) + intercept
+test_y_pred = np.dot(test_X, mean_coef) + np.mean(intercepts)
 test_mae = mean_absolute_error(test_y, test_y_pred)
 
-# get results dataframe
-results_df = pd.DataFrame()
-results_df["jid"] = test_df["jid"]
-results_df["target"] = test_y
-results_df["prediction"] = test_y_pred
-results_df.to_csv("AI-SinglePropertyPrediction-ef-vacancydb_oxides_train_test-test-mae.csv")
+# parity plot
+fig, ax = plt.subplots(figsize=(3.25, 3.25))
+ax.plot(train_y_pred, train_y, "o", color="black", label="Training Set", alpha=0.5)
+ax.plot(test_y_pred, test_y, "o", color="red", label="Testing Set", alpha=0.5)
+ax.plot(np.arange(8), np.arange(8), "--", color="black")
+ax.set_xlabel(
+    f"{mean_coef[0]:.1f}$\Sigma E_b${mean_coef[1]:+.1f}$V_r${mean_coef[2]:+.1f}$E_g${mean_coef[3]:+.1f}$E_{{hull}}${np.mean(intercepts):+.1f} (eV)")
+ax.set_ylabel("DFT $E_v$ (eV)")
+ax.text(0.05, 0.9, f"MAE = {train_mae:.2f} eV", transform=ax.transAxes)
+ax.text(0.05, 0.8, f"MAE = {test_mae:.2f} eV", transform=ax.transAxes, color="red")
+ax.legend(loc="lower right")
+plt.tight_layout()
+plt.savefig("parity_plot.png")
