@@ -1,4 +1,3 @@
-from jarvis_leaderboard.rebuild import rebuild_pages
 from jarvis_leaderboard.rebuild import (
     rebuild_pages,
     get_metric_value,
@@ -15,7 +14,7 @@ def test_check_errors():
     assert len(errors) == 0
 
 
-def test_alignn_exfo():
+def test_get_results():
     names, vals = get_results(
         bench_name="AI-SinglePropertyPrediction-formation_energy_peratom-dft_3d-test-mae.csv.zip"
     )
