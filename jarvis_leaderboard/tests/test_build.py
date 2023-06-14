@@ -22,7 +22,7 @@ def test_alignn_exfo():
     assert len(names) > 6
 
 
-def check_metadata_json():
+def test_sanity_check():
     p = check_metadata_json_exists()
     print("check_metadata_json_exists", p)
     assert len(p) == 0
