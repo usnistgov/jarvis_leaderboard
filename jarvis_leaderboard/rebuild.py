@@ -10,6 +10,7 @@ from collections import defaultdict
 import numpy as np
 import matplotlib.pyplot as plt
 import requests
+
 # from mkdocs import utils
 
 # base_url = utils.get_relative_url('.','.')
@@ -217,7 +218,7 @@ def get_metric_value(
 
     if metric == "mae":
         res = round(mean_absolute_error(df["actual"], df["prediction"]), 4)
-        #res = round(mean_absolute_error(df["actual"], df["prediction"]), 3)
+        # res = round(mean_absolute_error(df["actual"], df["prediction"]), 3)
         results["res"] = res
         if "qm9_std_jctc" in csv_path:
             # print('scaling[dataset][prop],',scaling[dataset][prop])
@@ -332,6 +333,81 @@ def get_metric_value(
         # rouge=(calc_rouge_scores(df['target'],df['prediction']))['rouge1']
         results["res"] = round(rouge, 4)
     return results
+
+
+def check_metadata_json_exists():
+
+    search = root_dir + "/contributions"
+    all_dirs = []
+    all_dirs_meta = []
+    all_dirs_with_metadata = []
+    for i in os.listdir(search):
+        all_dirs.append(i)
+        for j in os.listdir(os.path.join(search, i)):
+            if "metadata.json" in j:
+                meta_path = os.path.join(search, i, j)
+                if meta_path not in all_dirs_with_metadata:
+                    all_dirs_with_metadata.append(meta_path)
+                    all_dirs_meta.append(i)
+    problem_dirs = set(all_dirs) - set(all_dirs_meta)
+    return problem_dirs
+
+ def check_metadata_info_exists():
+    search = root_dir + "/contributions/*/" + "metadata.json"
+    all_dirs = []
+    all_dirs_ok = []
+    for i in glob.glob(search):
+        meta_data = loadjson(i)
+        all_dirs.append(i)
+        if (
+            "author_email" in meta_data
+            and "project_url" in meta_data
+            and "model_name" in meta_data
+            and "@" in meta_data["author_email"]
+            and "team_name" in meta_data
+            and "time_taken_seconds" in meta_data
+            and "software_used" in meta_data
+            and "harware_used" in meta_data
+        ):
+            all_dirs_ok.append(i)
+    problem_dirs = set(all_dirs) - set(all_dirs_ok)
+    return problem_dirs
+
+ 
+def check_run_sh_exists():
+
+    search = root_dir + "/contributions"
+    all_dirs = []
+    all_dirs_meta = []
+    all_dirs_with_metadata = []
+    for i in os.listdir(search):
+        all_dirs.append(i)
+        for j in os.listdir(os.path.join(search, i)):
+            if "run.sh" in j:
+                meta_path = os.path.join(search, i, j)
+                if meta_path not in all_dirs_with_metadata:
+                    all_dirs_with_metadata.append(meta_path)
+                    all_dirs_meta.append(i)
+    problem_dirs = set(all_dirs) - set(all_dirs_meta)
+    return problem_dirs
+
+
+def check_at_least_one_csv_zip_exists():
+
+    search = root_dir + "/contributions"
+    all_dirs = []
+    all_dirs_meta = []
+    all_dirs_with_metadata = []
+    for i in os.listdir(search):
+        all_dirs.append(i)
+        for j in os.listdir(os.path.join(search, i)):
+            if "csv.zip" in j:
+                meta_path = os.path.join(search, i, j)
+                if meta_path not in all_dirs_with_metadata:
+                    all_dirs_with_metadata.append(meta_path)
+                    all_dirs_meta.append(i)
+    problem_dirs = set(all_dirs) - set(all_dirs_meta)
+    return problem_dirs
 
 
 def get_results(
@@ -1119,16 +1195,20 @@ def rebuild_pages():
                 )
                 content.append(temp2)
             elif "<!--number_of_contributors-->" in j:
-                n_users=[]
-                rq = requests.get('https://api.github.com/repos/usnistgov/jarvis_leaderboard/contributors').json() 
+                n_users = []
+                rq = requests.get(
+                    "https://api.github.com/repos/usnistgov/jarvis_leaderboard/contributors"
+                ).json()
                 for u in rq:
-                     if u['login'] not in ['dependabot[bot]']:
-                       n_users.append(i)
+                    if u["login"] not in ["dependabot[bot]"]:
+                        n_users.append(i)
 
-              
                 temp2 = (
                     "<!--number_of_contributors--> - Number of contributors: "
-                    + "["+str(len(n_users))+"]"+"(https://github.com/usnistgov/jarvis_leaderboard/graphs/contributors)"
+                    + "["
+                    + str(len(n_users))
+                    + "]"
+                    + "(https://github.com/usnistgov/jarvis_leaderboard/graphs/contributors)"
                     # + str(len(dat))
                     # + "\n"
                 )
