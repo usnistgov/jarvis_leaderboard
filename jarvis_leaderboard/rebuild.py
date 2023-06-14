@@ -352,7 +352,8 @@ def check_metadata_json_exists():
     problem_dirs = set(all_dirs) - set(all_dirs_meta)
     return problem_dirs
 
- def check_metadata_info_exists():
+
+def check_metadata_info_exists():
     search = root_dir + "/contributions/*/" + "metadata.json"
     all_dirs = []
     all_dirs_ok = []
@@ -373,7 +374,7 @@ def check_metadata_json_exists():
     problem_dirs = set(all_dirs) - set(all_dirs_ok)
     return problem_dirs
 
- 
+
 def check_run_sh_exists():
 
     search = root_dir + "/contributions"
