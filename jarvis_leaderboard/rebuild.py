@@ -390,6 +390,17 @@ def check_run_sh_exists():
                     all_dirs_with_metadata.append(meta_path)
                     all_dirs_meta.append(i)
     problem_dirs = set(all_dirs) - set(all_dirs_meta)
+    # for j in problem_dirs:
+    #    p = os.path.join(search, j)
+    #    runsh = os.path.join(p,'run.sh')
+    #    f=open(runsh,'w')
+    #    f.write('#!/bin/bash\n')
+    #    for k in os.listdir(p):
+    #      if '.py' in k:
+    #          print(runsh,k)
+    #          line='python '+k+'\n'
+    #          f.write(line)
+    #    f.close()
     return problem_dirs
 
 
