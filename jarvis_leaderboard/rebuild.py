@@ -368,9 +368,22 @@ def check_metadata_info_exists():
             and "team_name" in meta_data
             and "time_taken_seconds" in meta_data
             and "software_used" in meta_data
-            and "harware_used" in meta_data
+            and "hadrware_used" in meta_data
         ):
             all_dirs_ok.append(i)
+        else:
+            print(i)
+            print(
+                "Check metadata",
+                i,
+                meta_data["author_email"],
+                meta_data["project_url"],
+                meta_data["model_name"],
+                meta_data["team_name"],
+                meta_data["time_taken_seconds"],
+                meta_data["software_used"],
+                meta_data["hardware_used"],
+            )
     problem_dirs = set(all_dirs) - set(all_dirs_ok)
     return problem_dirs
 
@@ -1208,12 +1221,16 @@ def rebuild_pages():
                 content.append(temp2)
             elif "<!--number_of_contributors-->" in j:
                 n_users = []
-                rq = requests.get(
-                    "https://api.github.com/repos/usnistgov/jarvis_leaderboard/contributors"
-                ).json()
-                for u in rq:
-                    if u["login"] not in ["dependabot[bot]"]:
-                        n_users.append(i)
+                try:
+                    rq = requests.get(
+                        "https://api.github.com/repos/usnistgov/jarvis_leaderboard/contributors"
+                    ).json()
+                    for u in rq:
+                        if u["login"] not in ["dependabot[bot]"]:
+                            n_users.append(i)
+                except Exception as exp:
+                    print("Cannot get users", exp)
+                    pass
 
                 temp2 = (
                     "<!--number_of_contributors--> - Number of contributors: "

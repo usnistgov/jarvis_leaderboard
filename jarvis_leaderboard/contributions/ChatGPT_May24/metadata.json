@@ -1,13 +1,1 @@
-{
-    "model_name": "ChatGPT_web",
-    "project_url": "https://chat.openai.com/",
-    "date_submitted": "06-05-2023",
-    "author_email": "knc6@nist.gov",
-    "database_version": "12-12-2022",
-    "team_name": "ChatGPT",
-    "time_taken_seconds": 458.17,
-    "language": "python",
-    "os": "linux",
-    "software_used": "ChatGPT_May24_version",
-    "harware_used": "Chrome"
-}
+{"model_name": "ChatGPT_web", "project_url": "https://chat.openai.com/", "date_submitted": "06-05-2023", "author_email": "knc6@nist.gov", "database_version": "12-12-2022", "team_name": "ChatGPT", "time_taken_seconds": 458.17, "language": "python", "os": "linux", "software_used": "ChatGPT_May24_version", "hardware_used": "Chrome"}

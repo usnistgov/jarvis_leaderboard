@@ -1,14 +1,1 @@
-{
-    "author_email": "knc6@nist.gov",
-    "database_version": "12-12-2022",
-    "date_submitted": "01-14-2023",
-    "harware_used": "dobby",
-    "language": "python",
-    "model_name": "GreenKubo-LAMMPS",
-    "os": "linux",
-    "project_url": "https://github.com/lammps/lammps/blob/develop/examples/VISCOSITY/in.gk.2d",
-    "doi": "https://doi.org/10.1016/j.cpc.2021.108171",
-    "software_used": "lammps",
-    "team_name": "LAMMPS",
-    "time_taken_seconds": 70.8372
-}
+{"author_email": "knc6@nist.gov", "database_version": "12-12-2022", "date_submitted": "01-14-2023", "language": "python", "model_name": "GreenKubo-LAMMPS", "os": "linux", "project_url": "https://github.com/lammps/lammps/blob/develop/examples/VISCOSITY/in.gk.2d", "doi": "https://doi.org/10.1016/j.cpc.2021.108171", "software_used": "lammps", "team_name": "LAMMPS", "time_taken_seconds": 70.8372, "hardware_used": "dobby"}

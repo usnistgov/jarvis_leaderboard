@@ -28,9 +28,11 @@ def test_sanity_check():
     p = check_run_sh_exists()
     print("check_run_sh_exists", p)
     assert len(p) == 0
+    p = check_metadata_info_exists()
+    print("check_metadata_info_exists", p,len(p))
+    assert len(p) == 0
     p = check_at_least_one_csv_zip_exists()
     print("check_at_least_one_csv_zip_exists", p)
     assert len(p) == 0
-    p = check_metadata_info_exists()
-    print("check_metadata_info_exists", p)
-    assert len(p) == 0
+
+# test_sanity_check()

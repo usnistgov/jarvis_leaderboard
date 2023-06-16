@@ -1,12 +1,14 @@
 {
+    "model_name": "biobench",
+    "project_url": "https://github.com/tiwarylab/biobench-jarvis",
     "author_email": "ebeyerle@umd.edu",
     "database_version": "12-12-2022",
+    "team_name": "tiwarylab",
+    "time_taken_seconds":"",
     "date_submitted": "06-07-2023",
     "language": "python,bash",
-    "model_name": "biobench",
     "os": "linux",
-    "project_url": "https://github.com/tiwarylab/biobench-jarvis",
     "doi": "https://zenodo.org/record/8015187",
     "software_used": "gromacs,plumed,numpy,matplotlib,torch",
-    "team_name": "tiwarylab"
+    "hardware_used": ""
 }
