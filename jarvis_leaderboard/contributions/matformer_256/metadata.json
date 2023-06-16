@@ -1,1 +1,13 @@
-{"model_name": "Matformer_256", "project_url": "https://github.com/YKQ98/Matformer", "date_submitted": "06-01-2023", "author_email": "keqiangyan@tamu.edu", "database_version": "12-12-2022", "team_name": "DIVE@TAMU", "time_taken_seconds": 458.17, "language": "python", "os": "linux", "software_used": "jarvis-tools,numpy,scipy,torch,alignn", "hardware_used": "nisaba-cluster at NIST, V100 Tesla GPU"}
+{
+    "model_name": "Matformer_256",
+    "project_url": "https://github.com/YKQ98/Matformer",
+    "date_submitted": "06-01-2023",
+    "author_email": "keqiangyan@tamu.edu",
+    "database_version": "12-12-2022",
+    "team_name": "DIVE@TAMU",
+    "time_taken_seconds": 458.17,
+    "language": "python",
+    "os": "linux",
+    "software_used": "jarvis-tools,numpy,scipy,torch,alignn",
+    "hardware_used": "nisaba-cluster at NIST, V100 Tesla GPU"
+}

@@ -1,1 +1,13 @@
-{"model_name": "XRD-Bruker", "project_url": "https://iopscience.iop.org/article/10.1088/1361-648X/ac1154/meta", "date_submitted": "01-14-2023", "author_email": "knc6@nist.gov", "database_version": "12-12-2022", "team_name": "MML-BrukerD8", "time_taken_seconds": 2000, "language": "python", "os": "linux", "software_used": "jarvis-tools,numpy,scipy,torch,alignn", "hardware_used": "BrukerD8"}
+{
+    "model_name": "XRD-Bruker",
+    "project_url": "https://iopscience.iop.org/article/10.1088/1361-648X/ac1154/meta",
+    "date_submitted": "01-14-2023",
+    "author_email": "knc6@nist.gov",
+    "database_version": "12-12-2022",
+    "team_name": "MML-BrukerD8",
+    "time_taken_seconds": 2000,
+    "language": "python",
+    "os": "linux",
+    "software_used": "jarvis-tools,numpy,scipy,torch,alignn",
+    "hardware_used": "BrukerD8"
+}

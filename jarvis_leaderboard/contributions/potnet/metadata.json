@@ -1,1 +1,12 @@
-{"model_name": "PotNet", "project_url": "https://github.com/divelab/AIRS/tree/main/OpenMat/PotNet", "date_submitted": "06-02-2023", "author_email": "kruskallin@tamu.edu", "team_name": "DIVE@TAMU", "language": "python", "os": "linux", "time_taken_seconds": "", "software_used": "jarvis-tools==2022.9.16,numpy,scipy,torch,torch-cluster,torch-sparse,torch-scatter,torch-geometric,periodictable", "hardware_used": "NVIDIA A100 80GB PCIe"}
+{
+    "model_name": "PotNet",
+    "project_url": "https://github.com/divelab/AIRS/tree/main/OpenMat/PotNet",
+    "date_submitted": "06-02-2023",
+    "author_email": "kruskallin@tamu.edu",
+    "team_name": "DIVE@TAMU",
+    "language": "python",
+    "os": "linux",
+    "time_taken_seconds": "",
+    "software_used": "jarvis-tools==2022.9.16,numpy,scipy,torch,torch-cluster,torch-sparse,torch-scatter,torch-geometric,periodictable",
+    "hardware_used": "NVIDIA A100 80GB PCIe"
+}

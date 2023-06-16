@@ -1,1 +1,13 @@
-{"model_name": "QE-pbesol-tetrahedron", "project_url": "https://www.nature.com/articles/s41524-022-00933-1#Sec9", "date_submitted": "5-10-2023", "author_email": "kevin.garrity@nist.gov", "database_version": "12-12-2022", "team_name": "JARVIS", "time_taken_seconds": 0.0, "language": "python", "os": "linux", "software_used": "quantum espresso", "hardware_used": "raritan, mr-french"}
+{
+    "model_name": "QE-pbesol-tetrahedron",
+    "project_url": "https://www.nature.com/articles/s41524-022-00933-1#Sec9",
+    "date_submitted": "5-10-2023",
+    "author_email": "kevin.garrity@nist.gov",
+    "database_version": "12-12-2022",
+    "team_name": "JARVIS",
+    "time_taken_seconds": 0.0,
+    "language": "python",
+    "os": "linux",
+    "software_used": "quantum espresso",
+    "hardware_used": "raritan, mr-french"
+}

@@ -4,7 +4,7 @@
     "date_submitted": "05-15-2023",
     "author_email": "krogeljt@ornl.gov",
     "team_name": "QMCPACK",
-    "time_taken_seconds":"",
+    "time_taken_seconds": "",
     "software_used": "qmcpack,nexus",
     "hardware_used": "HPC systems at OLCF, ALCF, and SNL",
     "database_version": "12-12-2022",

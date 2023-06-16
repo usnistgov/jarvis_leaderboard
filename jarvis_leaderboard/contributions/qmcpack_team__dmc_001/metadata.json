@@ -9,7 +9,7 @@
     "project_url": "https://qmcpack.org",
     "software_used": "qmcpack,nexus",
     "team_name": "QMCPACK",
-    "time_taken_seconds":"",
+    "time_taken_seconds": "",
     "uncertainty_bulk_modulus_JVASP_816_Al": "0.58 GPa",
     "theory_doi_JVASP_816_Al": "https://doi.org/10.1103/PhysRevB.88.245117",
     "uncertainty_bulk_modulus_JVASP_819_Ar": "0.1 GPa",

@@ -3,7 +3,7 @@
     "project_url": "https://qmcpack.org",
     "author_email": "krogeljt@ornl.gov",
     "team_name": "QMCPACK",
-    "time_taken_seconds" :"",
+    "time_taken_seconds": "",
     "database_version": "12-12-2022",
     "date_submitted": "05-15-2023",
     "software_used": "qmcpack,nexus",

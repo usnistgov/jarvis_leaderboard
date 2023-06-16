@@ -368,22 +368,44 @@ def check_metadata_info_exists():
             and "team_name" in meta_data
             and "time_taken_seconds" in meta_data
             and "software_used" in meta_data
+            and "hardware_used" in meta_data
+        ):
+            all_dirs_ok.append(i)
+    problem_dirs = set(all_dirs) - set(all_dirs_ok)
+    return problem_dirs
+
+
+def old_check_metadata_info_exists():
+    search = root_dir + "/contributions/*/" + "metadata.json"
+    all_dirs = []
+    all_dirs_ok = []
+    for i in glob.glob(search):
+        meta_data = loadjson(i)
+        all_dirs.append(i)
+        if (
+            "author_email" in meta_data
+            and "project_url" in meta_data
+            and "model_name" in meta_data
+            and "@" in meta_data["author_email"]
+            and "team_name" in meta_data
+            and "time_taken_seconds" in meta_data
+            and "software_used" in meta_data
             and "hadrware_used" in meta_data
         ):
             all_dirs_ok.append(i)
-        else:
-            print(i)
-            print(
-                "Check metadata",
-                i,
-                meta_data["author_email"],
-                meta_data["project_url"],
-                meta_data["model_name"],
-                meta_data["team_name"],
-                meta_data["time_taken_seconds"],
-                meta_data["software_used"],
-                meta_data["hardware_used"],
-            )
+        # else:
+        #    print(i)
+        #    print(
+        #        "Check metadata",
+        #        i,
+        #        meta_data["author_email"],
+        #        meta_data["project_url"],
+        #        meta_data["model_name"],
+        #        meta_data["team_name"],
+        #        meta_data["time_taken_seconds"],
+        #        meta_data["software_used"],
+        #        meta_data["hardware_used"],
+        #    )
     problem_dirs = set(all_dirs) - set(all_dirs_ok)
     return problem_dirs
 
