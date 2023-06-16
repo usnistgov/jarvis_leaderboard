@@ -5,7 +5,7 @@
     "author_email": "avanish.iisc@gmail.com",
     "database_version": "12-12-2022",
     "team_name": "MXene_ALIGNN",
-    "time_taken_seconds": 458.17,
+    "time_taken_seconds": 1350,
     "language": "python",
     "os": "linux",
     "software_used": "jarvis-tools,numpy,scipy,torch,alignn",
