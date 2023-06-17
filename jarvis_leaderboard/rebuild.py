@@ -19,7 +19,8 @@ root_dir = os.path.dirname(os.path.abspath(__file__))
 current_dir = os.getcwd()
 clean = True
 errors = []
-
+benchmark_dois = root_dir + "/benchmarks/benchmark_dois.json"
+benchmark_dois = loadjson(benchmark_dois)
 scaling = {
     "qm9_std_jctc": {
         "alpha": 8.172947,
@@ -455,6 +456,32 @@ def check_at_least_one_csv_zip_exists():
                     all_dirs_meta.append(i)
     problem_dirs = set(all_dirs) - set(all_dirs_meta)
     return problem_dirs
+
+
+def get_doi(
+    bench_name="ES-SinglePropertyPrediction-bandgap_JVASP_1002_Si-dft_3d-test-mae.csv.zip",
+):
+    tmp = bench_name.split("-")
+    cat = tmp[0]
+    subcat = tmp[1]
+    prop = tmp[2]
+    dataset = tmp[3]
+    json_zip_name = dataset + "_" + prop + ".json.zip"
+    dois = benchmark_dois[cat][subcat][json_zip_name]
+    return dois
+
+
+def get_all_dois():
+    all_dois = []
+    search = root_dir + "/benchmarks/*/*/*.json.zip"
+    for i in glob.glob(search):
+        tmp = i.split("/")
+        cat = tmp[-3]
+        subcat = tmp[-2]
+        bench = tmp[-1]
+        dois = benchmark_dois[cat][subcat][bench]
+        all_dois.append(dois)
+    return all_dois
 
 
 def get_results(
@@ -1398,3 +1425,5 @@ def rebuild_pages():
 
 if __name__ == "__main__":
     rebuild_pages()
+    # d = get_all_dois()
+    # print(len(d))

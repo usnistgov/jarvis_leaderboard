@@ -1,0 +1,1098 @@
+{
+    "AI": {
+        "ImageClass": {
+            "stem_2d_image_bravais_class.json.zip": [
+                "https://doi.org/10.1021/acs.jcim.2c01533"
+            ]
+        },
+        "MLFF": {
+            "alignn_ff_db_energy.json.zip": [
+                "https://doi.org/10.1039/D2DD00096B"
+            ],
+            "alignn_ff_db_forces.json.zip": [
+                "https://doi.org/10.1039/D2DD00096B"
+            ],
+            "m3gnet_mpf_energy.json.zip": [
+                "https://doi.org/10.1063/1.4812323"
+            ],
+            "m3gnet_mpf_force.json.zip": [
+                "https://doi.org/10.1063/1.4812323"
+            ],
+            "m3gnet_mpf_stress.json.zip": [
+                "https://doi.org/10.1063/1.4812323"
+            ],
+            "mlearn_Cu_energy.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearn_Cu_forces.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearn_Cu_stresses.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearn_Ge_energy.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearn_Ge_forces.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearn_Ge_stresses.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearn_Li_energy.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearn_Li_forces.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearn_Li_stresses.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearn_Mo_energy.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearn_Mo_forces.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearn_Mo_stresses.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearn_Ni_energy.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearn_Ni_forces.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearn_Ni_stresses.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearn_Si_energy.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearn_Si_forces.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearn_Si_stresses.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ]
+        },
+        "SinglePropertyClass": {
+            "dft_3d_magmom_oszicar.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_mbj_bandgap.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_n_powerfact.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_optb88vdw_bandgap.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_p_Seebeck.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_slme.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_spillage.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ]
+        },
+        "SinglePropertyPrediction": {
+            "dft_3d_avg_elec_mass.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_avg_hole_mass.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_kv.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_dfpt_piezo_max_dielectric.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_dfpt_piezo_max_dij.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_ehull.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_encut.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsx.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsy.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsz.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_exfoliation_energy.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_formation_energy_peratom.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_kpoint_length_unit.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_magmom_oszicar.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_max_efg.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_mbj_bandgap.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_mepsx.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_mepsy.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_mepsz.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_n_powerfact.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_n_Seebeck.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_optb88vdw_bandgap.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_optb88vdw_total_energy.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_ph_heat_capacity.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_shear_modulus_gv.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_slme.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_spillage.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "foundry_ml_exp_bandgaps_exp_gap.json.zip": [
+                "https://doi.org/10.18126/wg3u-g8vu"
+            ],
+            "halide_peroskites_HSE_decomp_energy.json.zip": [
+                "https://doi.org/10.1039/D1EE02971A"
+            ],
+            "halide_peroskites_HSE_gap.json.zip": [
+                "https://doi.org/10.1039/D1EE02971A"
+            ],
+            "halide_peroskites_PBE_decomp_energy.json.zip": [
+                "https://doi.org/10.1039/D1EE02971A"
+            ],
+            "halide_peroskites_PBE_gap.json.zip": [
+                "https://doi.org/10.1039/D1EE02971A"
+            ],
+            "halide_peroskites_Ref_ind.json.zip": [
+                "https://doi.org/10.1039/D1EE02971A"
+            ],
+            "hmof_lcd.json.zip": [
+                "https://doi.org/10.1021/acs.jced.2c00583"
+            ],
+            "hmof_max_co2_adsp.json.zip": [
+                "https://doi.org/10.1021/acs.jced.2c00583"
+            ],
+            "hmof_min_co2_adsp.json.zip": [
+                "https://doi.org/10.1021/acs.jced.2c00583"
+            ],
+            "hmof_pld.json.zip": [
+                "https://doi.org/10.1021/acs.jced.2c00583"
+            ],
+            "hmof_surface_area_m2cm3.json.zip": [
+                "https://doi.org/10.1021/acs.jced.2c00583"
+            ],
+            "hmof_surface_area_m2g.json.zip": [
+                "https://doi.org/10.1021/acs.jced.2c00583"
+            ],
+            "hmof_void_fraction.json.zip": [
+                "https://doi.org/10.1021/acs.jced.2c00583"
+            ],
+            "mag2d_chem_magnetic_moment.json.zip": [
+                "https://doi.org/10.1038/s41598-020-72811-z"
+            ],
+            "megnet_e_form.json.zip": [
+                "https://doi.org/10.1063/1.4812323"
+            ],
+            "megnet_gappbe.json.zip": [
+                "https://doi.org/10.1063/1.4812323"
+            ],
+            "mxene275_formation_energy.json.zip": [
+                "https://doi.org/10.1088/2053-1583/ac1059"
+            ],
+            "ocp100k_relaxed_energy.json.zip": [
+                "https://doi.org/10.1021/acscatal.0c04525"
+            ],
+            "ocp10k_relaxed_energy.json.zip": [
+                "https://doi.org/10.1021/acscatal.0c04525"
+            ],
+            "ocp_all_relaxed_energy.json.zip": [
+                "https://doi.org/10.1021/acscatal.0c04525"
+            ],
+            "qe_tb_energy_per_atom.json.zip": [
+                "https://doi.org/10.1103/PhysRevMaterials.7.044603"
+            ],
+            "qe_tb_final_energy.json.zip": [
+                "https://doi.org/10.1103/PhysRevMaterials.7.044603"
+            ],
+            "qe_tb_f_enp.json.zip": [
+                "https://doi.org/10.1103/PhysRevMaterials.7.044603"
+            ],
+            "qe_tb_indir_gap.json.zip": [
+                "https://doi.org/10.1103/PhysRevMaterials.7.044603"
+            ],
+            "qm9_std_jctc_alpha.json.zip": [
+                "https://doi.org/10.1038/sdata.2014.22"
+            ],
+            "qm9_std_jctc_Cv.json.zip": [
+                "https://doi.org/10.1038/sdata.2014.22"
+            ],
+            "qm9_std_jctc_G.json.zip": [
+                "https://doi.org/10.1038/sdata.2014.22"
+            ],
+            "qm9_std_jctc_gap.json.zip": [
+                "https://doi.org/10.1038/sdata.2014.22"
+            ],
+            "qm9_std_jctc_H.json.zip": [
+                "https://doi.org/10.1038/sdata.2014.22"
+            ],
+            "qm9_std_jctc_HOMO.json.zip": [
+                "https://doi.org/10.1038/sdata.2014.22"
+            ],
+            "qm9_std_jctc_LUMO.json.zip": [
+                "https://doi.org/10.1038/sdata.2014.22"
+            ],
+            "qm9_std_jctc_mu.json.zip": [
+                "https://doi.org/10.1038/sdata.2014.22"
+            ],
+            "qm9_std_jctc_R2.json.zip": [
+                "https://doi.org/10.1038/sdata.2014.22"
+            ],
+            "qm9_std_jctc_U.json.zip": [
+                "https://doi.org/10.1038/sdata.2014.22"
+            ],
+            "qm9_std_jctc_U0.json.zip": [
+                "https://doi.org/10.1038/sdata.2014.22"
+            ],
+            "qm9_std_jctc_ZPVE.json.zip": [
+                "https://doi.org/10.1038/sdata.2014.22"
+            ],
+            "qmof_bandgap.json.zip": [
+                "https://doi.org/10.1016/j.matt.2021.02.015"
+            ],
+            "snumat_Band_gap_HSE.json.zip": [
+                "https://doi.org/10.1038/s41597-020-00723-8"
+            ],
+            "ssub_formula_energy.json.zip": [
+                "https://doi.org/10.1007/978-3-540-45280-5_1"
+            ],
+            "supercon_chem_Tc.json.zip": [
+                "https://doi.org/10.1038/s41524-018-0085-8"
+            ],
+            "tinnet_N_ead.json.zip": [
+                "https://doi.org/10.1038/s41467-021-25639-8"
+            ],
+            "vacancydb_2D_ef.json.zip": [
+                "https://doi.org/10.48550/arXiv.2205.08366"
+            ],
+            "vacancydb_ef.json.zip": [
+                "https://doi.org/10.48550/arXiv.2205.08366"
+            ],
+            "vacancydb_elements_ef.json.zip": [
+                "https://doi.org/10.48550/arXiv.2205.08366"
+            ],
+            "vacancydb_oxides_ef.json.zip": [
+                "https://doi.org/10.48550/arXiv.2205.08366"
+            ],
+            "vacancydb_oxides_train_test_ef.json.zip": [
+                "https://doi.org/10.48550/arXiv.2205.08366"
+            ]
+        },
+        "Spectra": {
+            "edos_pdos_ph_dos.json.zip": [
+                "https://doi.org/10.1103/PhysRevMaterials.7.023803"
+            ]
+        },
+        "TextClass": {
+            "arXiv_categories.json.zip": [
+                "https://doi.org/10.48550/arXiv.1905.00075"
+            ],
+            "pubchem_categories.json.zip": [
+                "https://doi.org/10.1093/nar/gkaa971"
+            ]
+        },
+        "TextGen": {
+            "arxiv_gen_text.json.zip": [
+                "https://doi.org/10.48550/arXiv.1905.00075"
+            ]
+        },
+        "TextSummary": {
+            "arxiv_summary_text.json.zip": [
+                "https://doi.org/10.48550/arXiv.1905.00075"
+            ]
+        },
+        "TokenClass": {
+            "mat_scholar_ner_labels.json.zip": [
+                "https://doi.org/10.1021/acs.jcim.9b00470"
+            ]
+        }
+    },
+    "ES": {
+        "SinglePropertyPrediction": {
+            "dft_2d_Tc_supercon_JVASP_646_NbS2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_2d_Tc_supercon_JVASP_655_NbSe2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1002_Si.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_104_TiO2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1130_LiF.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_113_ZrO2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1145_KCl.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_116_MgO.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1174_GaAs.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1180_InN.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1183_InP.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1189_InSb.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1192_CdSe.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1198_ZnTe.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1201_CuCl.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1216_Cu2O.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1267_BaTe.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1294_BaSe.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1300_MgS.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1312_BP.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1315_BaS.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1327_AlP.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1393_GaP.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1405_CaO.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1408_AlSb.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1453_AlCuO2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1702_ZnS.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_17_BN.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_1954_AgCl.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_23_CdTe.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_299_SnSe.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_30_GaN.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_32_Al2O3.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_39_AlN.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_54_MoS2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_57_MoSe2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_5_TiO2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_72_WS2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_75_WSe2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_7630_BAs.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_7678_MgSe.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_7762_MgTe.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_7844_AlN.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_7860_SnTe.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_8003_CdS.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_8082_SrTiO3.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_8158_SiC.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_8169_GaN.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_8566_AgI.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_8583_AgBr.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_890_Ge.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_9147_HfO2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_91_C.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_95_CdS.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_96_ZnSe.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bandgap_JVASP_97_InAs.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_1002_Si.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_1130_LiF.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_113_ZrO2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_116_MgO.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_1174_GaAs.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_1306_BaO.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_1312_BP.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_1390_SrO.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_1405_CaO.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_14590_Hf.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_14604_Ba.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_14606_Ag.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_14612_Zr.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_14813_Rb.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_182_SiC.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_20290_Sc2O3.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_20326_NaF.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_20793_Y2O3.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_21208_Sr.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_23862_NaCl.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_23864_LiCl.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_25065_Li.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_25114_K.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_25180_Ca.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_25213_Kr.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_25248_Xe.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_34249_HfO2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_350_ZrO2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_7809_ZrO2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_7870_MnO.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_7871_NiO.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_79204_BN.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_816_Al.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_819_Ar.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_834_Be.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_867_Cu.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_87128_CoO.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_890_Ge.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_9147_HfO2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_91_C.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_92796_La2O3.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_963_Pd.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_984_Rh.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsx.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsx_JVASP_1312_BP.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsx_JVASP_1327_AlP.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsx_JVASP_1393_GaP.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsx_JVASP_1408_AlSb.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsx_JVASP_1702_ZnS.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsx_JVASP_17_BN.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsx_JVASP_182_SiC.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsx_JVASP_2355_ZnGeP2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsx_JVASP_2376_ZnSiP2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsx_JVASP_23_CdTe.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsx_JVASP_54_MoS2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsx_JVASP_57_MoSe2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsx_JVASP_60_Te2Mo.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsx_JVASP_72_WS2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsx_JVASP_75_WSe2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_epsx_JVASP_8041_HgTe.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_max_piezoelec.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_max_piezoelec_JVASP_110_BaTiO3.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_max_piezoelec_JVASP_1180_InN.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_max_piezoelec_JVASP_1195_ZnO.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_max_piezoelec_JVASP_1240_LiNbO3.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_max_piezoelec_JVASP_1327_AlP.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_max_piezoelec_JVASP_1372_AlAs.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_max_piezoelec_JVASP_1408_AlSb.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_max_piezoelec_JVASP_20778_BeO.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_max_piezoelec_JVASP_30_GaN.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_max_piezoelec_JVASP_3450_TiPbO3.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_max_piezoelec_JVASP_35711_GaSb.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_max_piezoelec_JVASP_39_AlN.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_max_piezoelec_JVASP_41_SiO2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_max_piezoelec_JVASP_57695_BN.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_max_piezoelec_JVASP_7648_ZnS.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_max_piezoelec_JVASP_8047_ZnSe.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_slme.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_slme_JVASP_1174_GaAs.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_slme_JVASP_266_InP.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_slme_JVASP_7112_H6PbCI3N.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_slme_JVASP_7757_CdTe.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_slme_JVASP_8554_InCuSe2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_Tc_supercon.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_Tc_supercon_JVASP_1014_Ta.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_Tc_supercon_JVASP_1151_MgB2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_Tc_supercon_JVASP_11981_Nb3Al.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_Tc_supercon_JVASP_14492_NbO.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_Tc_supercon_JVASP_14837_V.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_Tc_supercon_JVASP_14960_V3Si.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_Tc_supercon_JVASP_15938_Nb3Si.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_Tc_supercon_JVASP_19679_ZrN.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_Tc_supercon_JVASP_19889_NbC.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_Tc_supercon_JVASP_20620_YB6.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_Tc_supercon_JVASP_36335_NbN.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_Tc_supercon_JVASP_816_Al.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_Tc_supercon_JVASP_934_Nb.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_Tc_supercon_JVASP_961_Pb.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "vacancydb_ef.json.zip": [
+                "https://doi.org/10.48550/arXiv.2205.08366"
+            ]
+        },
+        "Spectra": {
+            "dft_3d_dielectric_function.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_dielectric_function_JVASP_1002_Si.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_dielectric_function_JVASP_1174_GaAs.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_dielectric_function_JVASP_266_InP.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_dielectric_function_JVASP_890_Ge.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ]
+        }
+    },
+    "EXP": {
+        "SinglePropertyPrediction": {
+            "dft_3d_Tc_supercon_JVASP_1151_MgB2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ]
+        },
+        "Spectra": {
+            "dft_3d_XRD_JVASP_19821_MgB2.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "midas_stress_strain_vibroscopy_kevlar129.json.zip": [
+                "https://doi.org/10.1177/0040517520918232"
+            ],
+            "nist_isodb_co2_RM_8852.json.zip": [
+                "https://doi.org/10.1007/s10450-018-9958-x"
+            ]
+        }
+    },
+    "FF": {
+        "SinglePropertyPrediction": {
+            "biobench_deltaF.json.zip": [
+                "https://doi.org/10.1021/acs.jctc.1c00431",
+                "https://doi.org/10.1021/acs.jctc.2c00058"
+            ],
+            "biobench_left_handed_population.json.zip": [
+                "https://doi.org/10.1021/acs.jctc.1c00431",
+                "https://doi.org/10.1021/acs.jctc.2c00058"
+            ],
+            "biobench_right_handed_population.json.zip": [
+                "https://doi.org/10.1021/acs.jctc.1c00431",
+                "https://doi.org/10.1021/acs.jctc.2c00058"
+            ],
+            "dft_3d_bulk_modulus_JVASP_1002_Si.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_816_Al.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_bulk_modulus_JVASP_867_Cu.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "lj_2d_liquid_viscosity.json.zip": [
+                "https://doi.org/10.1103/PhysRevA.45.5793"
+            ]
+        }
+    },
+    "QC": {
+        "EigenSolver": {
+            "dft_3d_electron_bands_JVASP_816_Al_WTBH.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ]
+        }
+    }
+}
