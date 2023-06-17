@@ -2,6 +2,7 @@ from jarvis_leaderboard.rebuild import (
     rebuild_pages,
     get_metric_value,
     get_results,
+    get_all_dois,
     check_metadata_json_exists,
     check_run_sh_exists,
     check_at_least_one_csv_zip_exists,
@@ -34,6 +35,8 @@ def test_sanity_check():
     p = check_at_least_one_csv_zip_exists()
     print("check_at_least_one_csv_zip_exists", p)
     assert len(p) == 0
+    p = get_all_dois()
+    print("check all dois exist", len(p))
 
 
-# test_sanity_check()
+test_sanity_check()
