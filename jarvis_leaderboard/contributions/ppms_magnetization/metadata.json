@@ -5,9 +5,9 @@
     "author_email": "adam.biacchi@nist.gov",
     "database_version": "12-12-2022",
     "team_name": "PML-PPMS",
-    "time_taken_seconds":300000,
+    "time_taken_seconds": 300000,
     "language": "python",
     "os": "linux",
     "software_used": "jarvis-tools",
-    "harware_used": "Magnetization-PPMS"
+    "hardware_used": "Magnetization-PPMS"
 }

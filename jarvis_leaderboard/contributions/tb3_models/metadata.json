@@ -9,5 +9,5 @@
     "language": "julia",
     "os": "linux",
     "software_used": "ThreeBodyTB.jl",
-    "harware_used": "lappy"
+    "hardware_used": "lappy"
 }

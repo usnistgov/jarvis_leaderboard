@@ -9,5 +9,5 @@
     "language": "python",
     "os": "linux",
     "software_used": "jarvis-tools,numpy,scipy,tensorflow,kgcnn",
-    "harware_used": "bwUniCluster 2.0+GFB-HPC, V100 Tesla GPU"
+    "hardware_used": "bwUniCluster 2.0+GFB-HPC, V100 Tesla GPU"
 }

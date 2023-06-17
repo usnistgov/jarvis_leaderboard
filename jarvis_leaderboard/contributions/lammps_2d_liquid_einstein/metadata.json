@@ -2,7 +2,6 @@
     "author_email": "knc6@nist.gov",
     "database_version": "12-12-2022",
     "date_submitted": "01-14-2023",
-    "harware_used": "dobby",
     "language": "python",
     "model_name": "Einstein-LAMMPS",
     "os": "linux",
@@ -10,5 +9,6 @@
     "doi": "https://doi.org/10.1016/j.cpc.2021.108171",
     "software_used": "lammps",
     "team_name": "LAMMPS",
-    "time_taken_seconds": 70.5997
+    "time_taken_seconds": 70.5997,
+    "hardware_used": "dobby"
 }

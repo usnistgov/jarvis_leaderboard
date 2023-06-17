@@ -9,5 +9,5 @@
     "language": "python",
     "os": "linux",
     "software_used": "quantum espresso",
-    "harware_used": "raritan, mr-french"
+    "hardware_used": "raritan, mr-french"
 }

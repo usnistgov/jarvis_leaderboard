@@ -2,7 +2,6 @@
     "author_email": "knc6@nist.gov",
     "database_version": "12-12-2022",
     "date_submitted": "01-14-2023",
-    "harware_used": "dobby",
     "language": "python",
     "model_name": "JARVIS-DFT",
     "os": "linux",
@@ -10,5 +9,6 @@
     "doi": "https://doi.org/10.1103/PhysRevB.98.014107",
     "software_used": "jarvis-tools,numpy,scipy,torch,alignn",
     "team_name": "JARVIS",
-    "time_taken_seconds": 2739.455
+    "time_taken_seconds": 2739.455,
+    "hardware_used": "dobby"
 }

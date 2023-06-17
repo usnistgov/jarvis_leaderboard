@@ -9,5 +9,5 @@
     "language": "python",
     "os": "linux",
     "software_used": "jarvis-tools,numpy,scipy,torch,alignn",
-    "harware_used": "BrukerD8"
+    "hardware_used": "BrukerD8"
 }

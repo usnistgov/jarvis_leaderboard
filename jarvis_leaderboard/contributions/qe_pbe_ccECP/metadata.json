@@ -7,7 +7,8 @@
     "team_name": "JARVIS",
     "language": "python,c,fortran",
     "os": "linux",
+    "time_taken_seconds": "",
     "software_used": "quantum espresso v.7.0,ev.x",
-    "harware_used": "raritan-cluster at NIST, dobby cluster at NIST, kisir cluster at UMBC",
-    "bulk_modulus_fitting": "Birch"
+    "bulk_modulus_fitting": "Birch",
+    "hardware_used": "raritan-cluster at NIST, dobby cluster at NIST, kisir cluster at UMBC"
 }

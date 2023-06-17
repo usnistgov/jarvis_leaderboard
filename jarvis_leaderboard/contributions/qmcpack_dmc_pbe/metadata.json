@@ -7,8 +7,8 @@
     "team_name": "JARVIS",
     "language": "python,c++",
     "os": "linux",
+    "time_taken_seconds": "",
     "software_used": "qmcpack v.3.14.0,nexus,qmc-fit",
-    "harware_used": "raritan-cluster at NIST, dobby cluster at NIST, kisir cluster at UMBC",
     "uncertainty_bandgap_JVASP_1002_Si": "0.06375974221 eV",
     "uncertainty_bandgap_JVASP_91_C": "0.06739839817 eV",
     "uncertainty_bandgap_JVASP_1174_GaAs": "0.06442303349 eV",
@@ -17,5 +17,6 @@
     "uncertainty_bulk_modulus_JVASP_1002_Si": "0.9809286306 GPa",
     "uncertainty_bulk_modulus_JVASP_91_C": "19.07361226 GPa",
     "uncertainty_bulk_modulus_JVASP_1174_GaAs": "1.743873121 GPa",
-    "uncertainty_bulk_modulus_JVASP_890_Ge": "2.070849331 GPa"
+    "uncertainty_bulk_modulus_JVASP_890_Ge": "2.070849331 GPa",
+    "hardware_used": "raritan-cluster at NIST, dobby cluster at NIST, kisir cluster at UMBC"
 }
