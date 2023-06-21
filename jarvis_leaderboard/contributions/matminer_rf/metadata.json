@@ -8,5 +8,6 @@
     "os": "linux",
     "time_taken_seconds": "",
     "software_used": "jarvis-tools,matminer,py-xgboost-gpu",
-    "hardware_used": "Alienware Aurora Ryzen Edition Desktop, NVIDIA GeForce RTX 3080 Ti"
+    "hardware_used": "Alienware Aurora Ryzen Edition Desktop, NVIDIA GeForce RTX 3080 Ti",
+    "git_url": []
 }

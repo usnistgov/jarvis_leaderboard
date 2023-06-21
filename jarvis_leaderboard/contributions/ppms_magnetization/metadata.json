@@ -9,5 +9,6 @@
     "language": "python",
     "os": "linux",
     "software_used": "jarvis-tools",
-    "hardware_used": "Magnetization-PPMS"
+    "hardware_used": "Magnetization-PPMS",
+    "git_url": []
 }

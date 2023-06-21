@@ -9,5 +9,9 @@
     "os": "linux",
     "time_taken_seconds": "",
     "software_used": "jarvis-tools,VASP 6.0",
-    "hardware_used": "dobby cluster at NIST, kisir cluster at UMBC"
+    "hardware_used": "dobby cluster at NIST, kisir cluster at UMBC",
+    "git_url": [
+        "https://github.com/usnistgov/jarvis",
+        "https://github.com/usnistgov/jarvis"
+    ]
 }

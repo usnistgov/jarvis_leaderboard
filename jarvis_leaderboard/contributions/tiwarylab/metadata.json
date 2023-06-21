@@ -10,5 +10,8 @@
     "os": "linux",
     "doi": "https://zenodo.org/record/8015187",
     "software_used": "gromacs,plumed,numpy,matplotlib,torch",
-    "hardware_used": ""
+    "hardware_used": "",
+    "git_url": [
+        "https://github.com/tiwarylab/biobench-jarvis"
+    ]
 }

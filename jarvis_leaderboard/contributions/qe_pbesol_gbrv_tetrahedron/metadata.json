@@ -9,5 +9,8 @@
     "language": "python",
     "os": "linux",
     "software_used": "quantum espresso",
-    "hardware_used": "raritan, mr-french"
+    "hardware_used": "raritan, mr-french",
+    "git_url": [
+        "https://github.com/usnistgov/jarvis"
+    ]
 }
