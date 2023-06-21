@@ -25,5 +25,6 @@
     "uncertainty_bulk_modulus_JVASP_9147_HfO2": "3 GPa",
     "theory_doi_JVASP_9147_HfO2": "https://doi.org/10.1103/PhysRevMaterials.2.075001",
     "uncertainty_bulk_modulus_JVASP_7871_NiO": "14 GPa",
-    "theory_doi_JVASP_7871_NiO": "https://doi.org/10.1103/PhysRevMaterials.1.073603"
+    "theory_doi_JVASP_7871_NiO": "https://doi.org/10.1103/PhysRevMaterials.1.073603",
+    "git_url": []
 }

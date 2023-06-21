@@ -18,5 +18,8 @@
     "uncertainty_bulk_modulus_JVASP_91_C": "19.07361226 GPa",
     "uncertainty_bulk_modulus_JVASP_1174_GaAs": "1.743873121 GPa",
     "uncertainty_bulk_modulus_JVASP_890_Ge": "2.070849331 GPa",
-    "hardware_used": "raritan-cluster at NIST, dobby cluster at NIST, kisir cluster at UMBC"
+    "hardware_used": "raritan-cluster at NIST, dobby cluster at NIST, kisir cluster at UMBC",
+    "git_url": [
+        "https://github.com/usnistgov/jarvis"
+    ]
 }

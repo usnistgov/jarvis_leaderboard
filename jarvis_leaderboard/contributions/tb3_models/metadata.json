@@ -9,5 +9,8 @@
     "language": "julia",
     "os": "linux",
     "software_used": "ThreeBodyTB.jl",
-    "hardware_used": "lappy"
+    "hardware_used": "lappy",
+    "git_url": [
+        "https://github.com/usnistgov/ThreeBodyTB.jl/"
+    ]
 }

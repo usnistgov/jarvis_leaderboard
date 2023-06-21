@@ -10,5 +10,8 @@
     "software_used": "jarvis-tools,numpy,scipy,torch,alignn",
     "team_name": "JARVIS",
     "time_taken_seconds": 2739.455,
-    "hardware_used": "dobby"
+    "hardware_used": "dobby",
+    "git_url": [
+        "https://github.com/usnistgov/jarvis"
+    ]
 }

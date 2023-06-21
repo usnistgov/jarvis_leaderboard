@@ -364,6 +364,7 @@ def check_metadata_info_exists():
         if (
             "author_email" in meta_data
             and "project_url" in meta_data
+            and "git_url" in meta_data
             and "model_name" in meta_data
             and "@" in meta_data["author_email"]
             and "team_name" in meta_data
