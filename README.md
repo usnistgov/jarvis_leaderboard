@@ -3,6 +3,8 @@
 [![name](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/Upload_benchmark_to_jarvis_leaderboard.ipynb)
 [![name](https://colab.research.google.com/assets/colab-badge.svg)]([https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/Upload_benchmark_to_jarvis_leaderboard.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/alignn_jarvis_leaderboard.ipynb))
 [![Downloads](https://pepy.tech/badge/jarvis_leaderboard)](https://pepy.tech/project/jarvis_leaderboard)
+[![DOI](https://zenodo.org/badge/514340921.svg)](https://zenodo.org/badge/latestdoi/514340921)
+
 
 
 # JARVIS-Leaderboard:
