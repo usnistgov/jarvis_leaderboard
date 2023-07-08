@@ -38,7 +38,6 @@
     "keep_data_order": false,
     "normalize_graph_level_loss": false,
     "distributed": false,
-    "data_parallel": false,
     "n_early_stopping": null,
     "output_dir": "OutMlearnAll",
     "model": {

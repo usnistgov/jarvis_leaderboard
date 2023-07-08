@@ -385,6 +385,13 @@
     },
     "ES": {
         "SinglePropertyPrediction": {
+            "dft_3d_cubic_lattice_param_a.json.zip": [
+                "https://7id.xray.aps.anl.gov/calculators/crystal_lattice_parameters.html",
+                "http://www.ioffe.ru/SVA/NSM/Semicond",
+                "https://doi.org/10.1103%2FPhysRev.25.753",
+                "https://doi.org/10.1063%2F1.3291117",
+                "http://www.springermaterials.com/docs/info/10201420_50.html"
+            ],
             "dft_2d_Tc_supercon_JVASP_646_NbS2.json.zip": [
                 "https://www.nature.com/articles/s41524-020-00440-1",
                 "https://doi.org/10.48550/arXiv.2305.11842"
