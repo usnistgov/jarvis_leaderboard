@@ -365,9 +365,10 @@ python setup.py develop
 3. [alignn_jarvis_leaderboard.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/alignn_jarvis_leaderboard.ipynb)
 4. [kgcnn_jarvis_leaderboard.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/kgcnn_jarvis_leaderboard.ipynb)
 5. [MatMiner_on_JARVIS_DFT.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/MatMiner_on_JARVIS_DFT.ipynb)
-6. [AtomVision_Image_Classification.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/AtomVisionImageClassification.ipynb)
-7. [Text-generation ChemNLP/HuggingFace.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/ChemNLP_TitleToAbstract.ipynb)
-8. [QuantumComputation for FCC Aluminum.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/Qiskit_based_electronic_bandstructure_latest_qiskit.ipynb)
+6. [Train ALIGNN-FF for FCC Copper](https://github.com/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/Train_ALIGNNFF_Mlearn.ipynb)
+7. [AtomVision_Image_Classification.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/AtomVisionImageClassification.ipynb)
+8. [Text-generation ChemNLP/HuggingFace.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/ChemNLP_TitleToAbstract.ipynb)
+9. [QuantumComputation for FCC Aluminum.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/Qiskit_based_electronic_bandstructure_latest_qiskit.ipynb)
 
 For additional notebooks, visit [JARVIS-Tools-Notebooks](https://github.com/JARVIS-Materials-Design/jarvis-tools-notebooks) collections with more than 60 colab notebooks. 
 
