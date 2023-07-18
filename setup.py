@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="jarvis_leaderboard",  # Replace with your own username
-    version="2023.07.07",
+    version="2023.07.10",
     author="Kamal Choudhary",
     author_email="kamal.choudhary@nist.gov",
     description="jarvis_leaderboard",

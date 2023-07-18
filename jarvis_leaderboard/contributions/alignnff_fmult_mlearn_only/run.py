@@ -10,13 +10,13 @@ import torch
 from ase.stress import full_3x3_to_voigt_6_stress, voigt_6_to_full_3x3_stress
 
 # torch.cuda.is_available = lambda : False
-model_path = "OutDir"
-
+model_path = "."
+#model_path = "/wrk/knc6/Software/alignn_calc/jarvis_leaderboard/jarvis_leaderboard/contributions/alignnff_fmult_mlearn_only/TRAIN/OutCu2"
 # calc = AlignnAtomwiseCalculator(path=model_path)
 calc = AlignnAtomwiseCalculator(
     path=model_path,
     force_mult_natoms=False,
-    force_multiplier=4,
+    force_multiplier=1,
     stress_wt=-4800,
 )
 # export CUDA_VISIBLE_DEVICES=""

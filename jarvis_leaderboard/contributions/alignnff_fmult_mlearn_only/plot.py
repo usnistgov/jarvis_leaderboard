@@ -13,7 +13,7 @@ for ii in glob.glob("*.csv.zip"):
      print(i,j)
      
 
-main_dir = "/wrk/knc6/Software/alignn_calc/jarvis_leaderboard/jarvis_leaderboard/contributions/alignnff_fmult_mlearn_only"
+main_dir = "."
 
 els = ["Si", "Ni", "Cu", "Mo", "Li", "Ge"]
 
