@@ -1,6 +1,6 @@
 #! /bin/bash
 #SBATCH --time=2-00:00:00
-#SBATCH --job-name=dimenet
+#SBATCH --job-name=coNGN
 #SBATCH --nodes=1
 #SBATCH --ntasks=16
 #SBATCH --gres=gpu:1

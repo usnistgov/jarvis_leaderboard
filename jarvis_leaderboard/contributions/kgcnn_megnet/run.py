@@ -1,5 +1,5 @@
 # https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/kgcnn_jarvis_leaderboard.ipynb
-from kgcnn.literature.DimeNetPP import make_crystal_model
+from kgcnn.literature.Megnet import make_crystal_model
 from tensorflow.keras.optimizers import Adam
 from kgcnn.training.scheduler import LinearLearningRateScheduler
 import kgcnn
@@ -7,7 +7,6 @@ import pandas as pd
 import os
 from copy import deepcopy
 from kgcnn.metrics.metrics import ScaledMeanAbsoluteError
-from kgcnn.training.schedule import LinearWarmupExponentialDecay
 from kgcnn.data.transform.scaler.standard import StandardScaler
 from jarvis.core.atoms import Atoms
 from kgcnn.data.crystal import CrystalDataset
@@ -26,27 +25,28 @@ import time
 print("Check:", kgcnn.__kgcnn_version__, "vs. 3.0.1")
 ragged = True
 model_config = {
-    "name": "DimeNetPP",
-    "inputs": [{"shape": [None], "name": "node_number", "dtype": "float32", "ragged": True},
-               {"shape": [None, 3], "name": "node_coordinates", "dtype": "float32", "ragged": True},
-               {"shape": [None, 2], "name": "range_indices", "dtype": "int64", "ragged": True},
-               {"shape": [None, 2], "name": "angle_indices", "dtype": "int64", "ragged": True},
+    'name': "Megnet",
+    'inputs': [{'shape': (None,), 'name': "node_number", 'dtype': 'float32', 'ragged': True},
+               {'shape': (None, 3), 'name': "node_coordinates", 'dtype': 'float32', 'ragged': True},
+               {'shape': (None, 2), 'name': "range_indices", 'dtype': 'int64', 'ragged': True},
+               {'shape': [1], 'name': "charge", 'dtype': 'float32', 'ragged': False},
                {'shape': (None, 3), 'name': "range_image", 'dtype': 'int64', 'ragged': True},
-               {'shape': (3, 3), 'name': "graph_lattice", 'dtype': 'float32', 'ragged': False}
-               ],
-    "input_embedding": {"node": {"input_dim": 95, "output_dim": 128,
-                                 "embeddings_initializer": {"class_name": "RandomUniform",
-                                                            "config": {"minval": -1.7320508075688772,
-                                                                       "maxval": 1.7320508075688772}}}},
-    "emb_size": 128, "out_emb_size": 256, "int_emb_size": 64, "basis_emb_size": 8,
-    "num_blocks": 4, "num_spherical": 7, "num_radial": 6,
-    "cutoff": 5.0, "envelope_exponent": 5,
-    "num_before_skip": 1, "num_after_skip": 2, "num_dense_output": 3,
-    "num_targets": 1, "extensive": False, "output_init": "zeros",
-    "activation": "swish", "verbose": 10,
-    "output_embedding": "graph",
-    "use_output_mlp": False,
-    "output_mlp": {},
+               {'shape': (3, 3), 'name': "graph_lattice", 'dtype': 'float32', 'ragged': False}],
+    'input_embedding': {"node": {"input_dim": 95, "output_dim": 64},
+                        "graph": {"input_dim": 100, "output_dim": 64}},
+    "make_distance": True, "expand_distance": True,
+    'gauss_args': {"bins": 25, "distance": 5, "offset": 0.0, "sigma": 0.4},
+    'meg_block_args': {'node_embed': [64, 32, 32], 'edge_embed': [64, 32, 32],
+                       'env_embed': [64, 32, 32], 'activation': 'kgcnn>softplus2'},
+    'set2set_args': {'channels': 16, 'T': 3, "pooling_method": "sum", "init_qstar": "0"},
+    'node_ff_args': {"units": [64, 32], "activation": "kgcnn>softplus2"},
+    'edge_ff_args': {"units": [64, 32], "activation": "kgcnn>softplus2"},
+    'state_ff_args': {"units": [64, 32], "activation": "kgcnn>softplus2"},
+    'nblocks': 3, 'has_ff': True, 'dropout': None, 'use_set2set': True,
+    'verbose': 10,
+    'output_embedding': 'graph',
+    'output_mlp': {"use_bias": [True, True, True], "units": [32, 16, 1],
+                   "activation": ['kgcnn>softplus2', 'kgcnn>softplus2', 'linear']}
 }
 
 tasks = []
@@ -133,11 +133,9 @@ for task in tasks:
             dataset.prepare_data(file_column_name="file_name", overwrite=True)
             dataset.read_in_memory(label_column_name="label")
             labels = ensure_label_dim(np.array(dataset.get("graph_labels")))
-
             dataset.map_list(
-                method="set_range_periodic", max_distance=5.0, max_neighbours=17
+                method="set_range_periodic", max_distance=5.0, max_neighbours=50
             )
-            dataset.map_list(method="set_angle", allow_multi_edges=True, allow_reverse_edges= True)
 
             return dataset, labels, df, train_dir
 
@@ -158,10 +156,11 @@ for task in tasks:
         dataset_test = dataset[test_index]
         # We can clean the dataset for training.
         # However, for validation or test this would impact the results.
-        invalid_train = dataset_train.clean(["angle_indices", "range_indices"])
-        invalid_val = dataset_val.clean(["angle_indices", "range_indices"])
-        invalid_test = dataset_test.clean(["angle_indices", "range_indices"])
+        invalid_train = dataset_train.clean(model_config["inputs"])
+        invalid_val = dataset_val.clean(model_config["inputs"])
+        invalid_test = dataset_test.clean(model_config["inputs"])
         print("Invalid items:", invalid_train, invalid_val, invalid_test)
+
         # Map to tensor.
         x_train, y_train = (
             dataset_train.tensor(model_config["inputs"]),
@@ -190,12 +189,7 @@ for task in tasks:
         # Compile model.
         model.compile(
             loss="mean_absolute_error",
-            optimizer=Adam(
-                learning_rate=LinearWarmupExponentialDecay(
-                    learning_rate=0.001, warmup_steps=3000.0, decay_steps=4000000.0,
-                    decay_rate=0.01
-                )
-            ),
+            optimizer=Adam(learning_rate=5e-04),
             metrics=["mean_absolute_error", scaled_mae_metric],  # MAE for scaled and rescaled targets.
         )
         # Fit model.
@@ -203,14 +197,13 @@ for task in tasks:
             x_train,
             y_train,
             callbacks=[
-                # LinearLearningRateScheduler(epo_min=10, epo=1000, learning_rate_start=5e-04, learning_rate_stop=1e-05)
+                LinearLearningRateScheduler(epo_min=10, epo=1000, learning_rate_start=5e-04, learning_rate_stop=1e-05)
             ],
             validation_data=(x_val, y_val),
             validation_freq=10,
             shuffle=True,
-            batch_size=16,
-            epochs=780,
-            validation_batch_size=8,
+            batch_size=32,
+            epochs=1000,
             verbose=2,
         )
         # Predict validation and test labels.

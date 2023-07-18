@@ -1,5 +1,5 @@
 {
-    "model_name": "kgcnn_dimenet",
+    "model_name": "kgcnn_coNGN",
     "project_url": "https://github.com/aimat-lab/gcnn_keras",
     "date_submitted": "07-18-2023",
     "author_email": "patrick.reiser@kit.edu",
@@ -8,9 +8,6 @@
     "time_taken_seconds": 0,
     "language": "python",
     "os": "linux",
-    "software_used": "jarvis-tools,numpy,scipy,torch,alignn",
-    "hardware_used": "bwUniCluster 2.0+GFB-HPC, V100 Tesla GPU",
-    "git_url": [
-        "https://github.com/aimat-lab/gcnn_keras"
-    ]
+    "software_used": "jarvis-tools,numpy,scipy,tensorflow,kgcnn",
+    "harware_used": "bwUniCluster 2.0+GFB-HPC, V100 Tesla GPU"
 }
