@@ -5,7 +5,9 @@
     "author_email": "alromero@mail.wvu.edu",
     "database_version": "12-12-2022",
     "team_name": "ABINIT",
-    "time_taken_seconds": 458.17,
+    "time_taken_seconds": {
+        "ES-SinglePropertyPrediction-Tc_supercon_JVASP_1151_MgB2-dft_3d-test-mae.csv.zip": ""
+    },
     "language": "python",
     "os": "linux",
     "software_used": "abipy, abinit",

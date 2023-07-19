@@ -4,7 +4,17 @@
     "date_submitted": "05-15-2023",
     "author_email": "krogeljt@ornl.gov",
     "team_name": "QMCPACK",
-    "time_taken_seconds": "",
+    "time_taken_seconds": {
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_1306_BaO-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_1390_SrO-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_1405_CaO-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_20290_Sc2O3-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_20793_Y2O3-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_7870_MnO-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_7871_NiO-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_87128_CoO-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_92796_La2O3-dft_3d-test-mae.csv.zip": ""
+    },
     "software_used": "qmcpack,nexus",
     "hardware_used": "HPC systems at OLCF, ALCF, and SNL",
     "database_version": "12-12-2022",

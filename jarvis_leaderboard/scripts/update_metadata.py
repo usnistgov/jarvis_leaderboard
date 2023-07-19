@@ -1,8 +1,16 @@
 import glob, json
 from jarvis.db.jsonutils import loadjson, dumpjson
+import pprint
 
 for i in glob.glob("contributions/*/metadata.json"):
     d = loadjson(i)
+    nm = i.replace("metadata.json", "*csv.zip")
+    info = {}
+    for j in glob.glob(nm):
+        # print(j)
+        info[j.split("/")[-1]] = ""
+    d["time_taken_seconds"] = info
+    pprint.pprint(d)
     f = open(i, "w")
     f.write(json.dumps(d, indent=4))
     f.close()

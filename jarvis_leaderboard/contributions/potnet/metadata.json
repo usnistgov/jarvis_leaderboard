@@ -6,7 +6,13 @@
     "team_name": "DIVE@TAMU",
     "language": "python",
     "os": "linux",
-    "time_taken_seconds": "",
+    "time_taken_seconds": {
+        "AI-SinglePropertyPrediction-ehull-dft_3d-test-mae.csv.zip": "",
+        "AI-SinglePropertyPrediction-formation_energy_peratom-dft_3d-test-mae.csv.zip": "",
+        "AI-SinglePropertyPrediction-mbj_bandgap-dft_3d-test-mae.csv.zip": "",
+        "AI-SinglePropertyPrediction-optb88vdw_bandgap-dft_3d-test-mae.csv.zip": "",
+        "AI-SinglePropertyPrediction-optb88vdw_total_energy-dft_3d-test-mae.csv.zip": ""
+    },
     "software_used": "jarvis-tools==2022.9.16,numpy,scipy,torch,torch-cluster,torch-sparse,torch-scatter,torch-geometric,periodictable",
     "hardware_used": "NVIDIA A100 80GB PCIe",
     "git_url": [
