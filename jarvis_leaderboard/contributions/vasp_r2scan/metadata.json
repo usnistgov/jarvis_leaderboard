@@ -6,7 +6,10 @@
     "database_version": "12-12-2022",
     "team_name": "JARVIS",
     "language": "python,fortran",
-    "time_taken_seconds": "",
+    "time_taken_seconds": {
+        "ES-SinglePropertyPrediction-bandgap_JVASP_1002_Si-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_1002_Si-dft_3d-test-mae.csv.zip": ""
+    },
     "os": "linux",
     "software_used": "jarvis-tools,VASP 6.0",
     "hardware_used": "dobby cluster at NIST",

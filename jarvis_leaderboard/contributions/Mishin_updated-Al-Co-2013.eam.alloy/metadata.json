@@ -9,7 +9,9 @@
     "doi": "https://www.nature.com/articles/sdata2016125",
     "software_used": "jarvis-tools,numpy,scipy,torch,alignn",
     "team_name": "JARVIS-FF",
-    "time_taken_seconds": 2739.455,
+    "time_taken_seconds": {
+        "FF-SinglePropertyPrediction-bulk_modulus_JVASP_816_Al-dft_3d-test-mae.csv.zip": ""
+    },
     "hardware_used": "dobby",
     "git_url": []
 }

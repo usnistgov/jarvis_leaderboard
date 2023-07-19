@@ -7,7 +7,16 @@
     "team_name": "JARVIS",
     "language": "python,c++",
     "os": "linux",
-    "time_taken_seconds": "",
+    "time_taken_seconds": {
+        "ES-SinglePropertyPrediction-bandgap_JVASP_1002_Si-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bandgap_JVASP_1174_GaAs-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bandgap_JVASP_890_Ge-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bandgap_JVASP_91_C-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_1002_Si-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_1174_GaAs-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_890_Ge-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_91_C-dft_3d-test-mae.csv.zip": ""
+    },
     "software_used": "qmcpack v.3.14.0,nexus,qmc-fit",
     "uncertainty_bandgap_JVASP_1002_Si": "0.06375974221 eV",
     "uncertainty_bandgap_JVASP_91_C": "0.06739839817 eV",

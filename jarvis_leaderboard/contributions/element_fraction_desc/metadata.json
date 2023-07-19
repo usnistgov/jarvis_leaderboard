@@ -5,7 +5,11 @@
     "author_email": "knc6@nist.gov",
     "database_version": "12-12-2022",
     "team_name": "JARVIS",
-    "time_taken_seconds": 458.17,
+    "time_taken_seconds": {
+        "AI-SinglePropertyPrediction-formula_energy-ssub-test-mae.csv.zip": "",
+        "AI-SinglePropertyPrediction-magnetic_moment-mag2d_chem-test-mae.csv.zip": "",
+        "AI-SinglePropertyPrediction-Tc-supercon_chem-test-mae.csv.zip": ""
+    },
     "language": "python",
     "os": "linux",
     "software_used": "jarvis-tools,numpy,scipy,torch,alignn",

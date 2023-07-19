@@ -5,7 +5,9 @@
     "author_email": "knc6@nist.gov",
     "database_version": "12-12-2022",
     "team_name": "ChatGPT",
-    "time_taken_seconds": 458.17,
+    "time_taken_seconds": {
+        "AI-TextGen-text-arxiv_gen-test-rouge.csv.zip": ""
+    },
     "language": "python",
     "os": "linux",
     "software_used": "ChatGPT_May24_version",

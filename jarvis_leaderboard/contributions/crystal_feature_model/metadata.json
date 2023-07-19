@@ -5,7 +5,9 @@
     "author_email": "wexler@wustl.edu",
     "database_version": "12-12-2022",
     "team_name": "Crystal_Features",
-    "time_taken_seconds": 458.17,
+    "time_taken_seconds": {
+        "AI-SinglePropertyPrediction-ef-vacancydb_oxides_train_test-test-mae.csv.zip": ""
+    },
     "language": "python",
     "os": "linux",
     "software_used": "jarvis-tools,numpy,scipy,torch,alignn",
