@@ -49,6 +49,7 @@ jobs:
         python -m pip install --upgrade pip setuptools
         python setup.py develop
         #python -m pip install -r requirements.txt
+        pip install pymatgen
     - name: Deploy Files
       run: |
         git config user.name "github-actions[bot]"
