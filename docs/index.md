@@ -226,7 +226,7 @@ If you are not familiar with pull requests checkout this [link](https://makeapul
 
 If successful with basic GitHub setup, follow the guidelines:
 
-1.  Got to your forked jarvis_leaderboard repo.
+1.  Go to your forked jarvis_leaderboard repo.
 2.  `git clone https://github.com/USERNAME/jarvis_leaderboard`. NOTE: use your own GitHub USERNAME, e.g. knc6, instead of `usnistgov`
 
      Note if you do not use forked version, you won't be able to make a pull request
