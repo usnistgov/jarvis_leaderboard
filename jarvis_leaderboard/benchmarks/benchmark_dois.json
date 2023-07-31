@@ -372,6 +372,11 @@
                 "https://doi.org/10.48550/arXiv.1905.00075"
             ]
         },
+        "AtomGen": {
+            "dft_3d_Tc_supercon.json.zip": [
+                "https://doi.org/10.1021/acs.jpclett.3c01260"
+            ]
+        },
         "TextSummary": {
             "arxiv_summary_text.json.zip": [
                 "https://doi.org/10.48550/arXiv.1905.00075"
