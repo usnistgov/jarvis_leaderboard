@@ -1,0 +1,163 @@
+data:
+  root_path: ${oc.env:PROJECT_ROOT}/data/supercon
+  prop: prop
+  num_targets: 1
+  niggli: true
+  primitive: false
+  graph_method: crystalnn
+  lattice_scale_method: scale_length
+  preprocess_workers: 1
+  readout: mean
+  max_atoms: 124
+  otf_graph: false
+  eval_model_name: carbon
+  train_max_epochs: 400
+  early_stopping_patience: 10000
+  teacher_forcing_max_epoch: 100
+  datamodule:
+    _target_: cdvae.pl_data.datamodule.CrystDataModule
+    datasets:
+      train:
+        _target_: cdvae.pl_data.dataset.CrystDataset
+        name: Formation energy train
+        path: ${data.root_path}/train.csv
+        prop: ${data.prop}
+        niggli: ${data.niggli}
+        primitive: ${data.primitive}
+        graph_method: ${data.graph_method}
+        lattice_scale_method: ${data.lattice_scale_method}
+        preprocess_workers: ${data.preprocess_workers}
+      val:
+      - _target_: cdvae.pl_data.dataset.CrystDataset
+        name: Formation energy val
+        path: ${data.root_path}/val.csv
+        prop: ${data.prop}
+        niggli: ${data.niggli}
+        primitive: ${data.primitive}
+        graph_method: ${data.graph_method}
+        lattice_scale_method: ${data.lattice_scale_method}
+        preprocess_workers: ${data.preprocess_workers}
+      test:
+      - _target_: cdvae.pl_data.dataset.CrystDataset
+        name: Formation energy test
+        path: ${data.root_path}/test.csv
+        prop: ${data.prop}
+        niggli: ${data.niggli}
+        primitive: ${data.primitive}
+        graph_method: ${data.graph_method}
+        lattice_scale_method: ${data.lattice_scale_method}
+        preprocess_workers: ${data.preprocess_workers}
+    num_workers:
+      train: 0
+      val: 0
+      test: 0
+    batch_size:
+      train: 25
+      val: 25
+      test: 25
+logging:
+  val_check_interval: 5
+  progress_bar_refresh_rate: 20
+  wandb:
+    name: ${expname}
+    project: crystal_generation_mit
+    entity: null
+    log_model: true
+    mode: online
+    group: ${expname}
+  wandb_watch:
+    log: all
+    log_freq: 500
+  lr_monitor:
+    logging_interval: step
+    log_momentum: false
+model:
+  encoder:
+    _target_: cdvae.pl_modules.gnn.DimeNetPlusPlusWrap
+    num_targets: ${data.num_targets}
+    hidden_channels: 128
+    num_blocks: 4
+    int_emb_size: 64
+    basis_emb_size: 8
+    out_emb_channels: 256
+    num_spherical: 7
+    num_radial: 6
+    otf_graph: ${data.otf_graph}
+    cutoff: 7.0
+    max_num_neighbors: 20
+    envelope_exponent: 5
+    num_before_skip: 1
+    num_after_skip: 2
+    num_output_layers: 3
+    readout: ${data.readout}
+  decoder:
+    _target_: cdvae.pl_modules.decoder.GemNetTDecoder
+    hidden_dim: 128
+    latent_dim: ${model.latent_dim}
+    max_neighbors: ${model.max_neighbors}
+    radius: ${model.radius}
+    scale_file: ${oc.env:PROJECT_ROOT}/cdvae/pl_modules/gemnet/gemnet-dT.json
+  _target_: cdvae.pl_modules.model.CDVAE
+  hidden_dim: 256
+  latent_dim: 256
+  fc_num_layers: 1
+  max_atoms: ${data.max_atoms}
+  cost_natom: 1.0
+  cost_coord: 10.0
+  cost_type: 1.0
+  cost_lattice: 10.0
+  cost_composition: 1.0
+  cost_edge: 10.0
+  cost_property: 1.0
+  beta: 0.01
+  teacher_forcing_lattice: true
+  teacher_forcing_max_epoch: ${data.teacher_forcing_max_epoch}
+  max_neighbors: 20
+  radius: 7.0
+  sigma_begin: 10.0
+  sigma_end: 0.01
+  type_sigma_begin: 5.0
+  type_sigma_end: 0.01
+  num_noise_level: 50
+  predict_property: true
+optim:
+  lr_scheduler:
+    _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+    factor: 0.6
+    min_lr: 0.0001
+    patience: 30
+  optimizer:
+    _target_: torch.optim.Adam
+    betas:
+    - 0.9
+    - 0.999
+    eps: 1.0e-08
+    lr: 0.001
+    weight_decay: 0
+  use_lr_scheduler: false
+train:
+  deterministic: false
+  early_stopping:
+    patience: ${data.early_stopping_patience}
+    verbose: false
+  model_checkpoints:
+    save_top_k: 1
+    verbose: false
+  monitor_metric: val_loss
+  monitor_metric_mode: min
+  pl_trainer:
+    accumulate_grad_batches: 1
+    fast_dev_run: false
+    gpus: 0
+    gradient_clip_algorithm: value
+    gradient_clip_val: 0.5
+    max_epochs: ${data.train_max_epochs}
+    num_sanity_val_steps: 2
+    precision: 32
+    profiler: simple
+  random_seed: 42
+expname: supercon_test02
+core:
+  version: 0.0.1
+  tags:
+  - ${now:%Y-%m-%d}
