@@ -5,7 +5,9 @@
     "author_email": "huong.nguyen@nist.gov",
     "database_version": "12-12-2022",
     "team_name": "FACTlab",
-    "time_taken_seconds": 300000,
+    "time_taken_seconds": {
+        "EXP-Spectra-co2_RM_8852-nist_isodb-test-multimae.csv.zip": ""
+    },
     "language": "python",
     "os": "linux",
     "software_used": "jarvis-tools",

@@ -10,6 +10,7 @@ from collections import defaultdict
 import numpy as np
 import matplotlib.pyplot as plt
 import requests
+from jarvis.io.vasp.inputs import Poscar
 
 # from mkdocs import utils
 
@@ -54,6 +55,7 @@ def make_summary_table():
         "TokenClass",
         "TextSummary",
         "TextGen",
+        "AtomGen",
         "ImageClass",
         "Spectra",
         "EigenSolver",
@@ -333,6 +335,39 @@ def get_metric_value(
         rouge = scores["rouge1"]
         # rouge=(calc_rouge_scores(df['target'],df['prediction']))['rouge1']
         results["res"] = round(rouge, 4)
+    if metric == "rmse" and subcat == "AtomGen":
+        print("AtomGen")
+        from pymatgen.analysis.structure_matcher import StructureMatcher
+
+        matcher = StructureMatcher(stol=0.5, angle_tol=10, ltol=0.3)
+        rms = []
+        for m, mm in df.iterrows():
+            try:
+                atoms_target = (
+                    Poscar.from_string(
+                        (mm["actual"].replace("\\n", "\n"))
+                    ).atoms
+                ).pymatgen_converter()
+                atoms_pred = (
+                    Poscar.from_string(
+                        (mm["prediction"].replace("\\n", "\n"))
+                    ).atoms
+                ).pymatgen_converter()
+                # rms_dist = matcher.get_rms_dist(atoms_pred,atoms_target)
+                rms_dist = matcher.get_rms_anonymous(atoms_pred, atoms_target)
+                if rms_dist[0] is not None:
+                    rms.append(rms_dist[0])
+            except Exception as exp:
+                print("exp", exp)
+                pass
+        try:
+            rms = round(np.array(rms).mean(), 4)
+        except:
+            rms = -9999
+            pass
+        results["res"] = rms
+        # import sys
+        # sys.exit()
     return results
 
 
@@ -1397,6 +1432,9 @@ def rebuild_pages():
     )
     update_individual_index_md(
         md_path="docs/AI/TextGen/index.md", key="AI", extra_key="TextGen"
+    )
+    update_individual_index_md(
+        md_path="docs/AI/AtomGen/index.md", key="AI", extra_key="AtomGen"
     )
     update_individual_index_md(md_path="docs/QC/index.md", key="QC")
     update_individual_index_md(

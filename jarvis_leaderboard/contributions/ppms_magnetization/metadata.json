@@ -5,7 +5,9 @@
     "author_email": "adam.biacchi@nist.gov",
     "database_version": "12-12-2022",
     "team_name": "PML-PPMS",
-    "time_taken_seconds": 300000,
+    "time_taken_seconds": {
+        "EXP-SinglePropertyPrediction-Tc_supercon_JVASP_1151_MgB2-dft_3d-test-mae.csv.zip": ""
+    },
     "language": "python",
     "os": "linux",
     "software_used": "jarvis-tools",

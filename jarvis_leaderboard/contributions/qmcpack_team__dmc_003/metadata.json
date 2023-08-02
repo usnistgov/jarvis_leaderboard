@@ -3,7 +3,16 @@
     "project_url": "https://qmcpack.org",
     "author_email": "krogeljt@ornl.gov",
     "team_name": "QMCPACK",
-    "time_taken_seconds": "",
+    "time_taken_seconds": {
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_113_ZrO2-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_14590_Hf-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_14612_Zr-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_34249_HfO2-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_350_ZrO2-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_7809_ZrO2-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_7871_NiO-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_9147_HfO2-dft_3d-test-mae.csv.zip": ""
+    },
     "database_version": "12-12-2022",
     "date_submitted": "05-15-2023",
     "software_used": "qmcpack,nexus",

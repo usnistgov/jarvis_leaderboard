@@ -9,7 +9,9 @@
     "doi": "https://doi.org/10.1103/PhysRevB.98.014107",
     "software_used": "jarvis-tools,numpy,scipy,torch,alignn",
     "team_name": "JARVIS",
-    "time_taken_seconds": 2739.455,
+    "time_taken_seconds": {
+        "ES-SinglePropertyPrediction-bulk_modulus_JVASP_1002_Si-dft_3d-test-mae.csv.zip": ""
+    },
     "hardware_used": "dobby",
     "git_url": [
         "https://github.com/usnistgov/jarvis"

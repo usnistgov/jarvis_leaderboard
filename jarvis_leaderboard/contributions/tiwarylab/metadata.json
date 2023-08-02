@@ -4,7 +4,11 @@
     "author_email": "ebeyerle@umd.edu",
     "database_version": "12-12-2022",
     "team_name": "tiwarylab",
-    "time_taken_seconds": "",
+    "time_taken_seconds": {
+        "FF-SinglePropertyPrediction-deltaF-biobench-test-mae.csv.zip": "",
+        "FF-SinglePropertyPrediction-left_handed_population-biobench-test-mae.csv.zip": "",
+        "FF-SinglePropertyPrediction-right_handed_population-biobench-test-mae.csv.zip": ""
+    },
     "date_submitted": "06-07-2023",
     "language": "python,bash",
     "os": "linux",

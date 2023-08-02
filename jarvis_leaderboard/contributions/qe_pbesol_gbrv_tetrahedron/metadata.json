@@ -5,7 +5,16 @@
     "author_email": "kevin.garrity@nist.gov",
     "database_version": "12-12-2022",
     "team_name": "JARVIS",
-    "time_taken_seconds": 0.0,
+    "time_taken_seconds": {
+        "ES-SinglePropertyPrediction-Tc_supercon_JVASP_1014_Ta-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-Tc_supercon_JVASP_1151_MgB2-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-Tc_supercon_JVASP_14837_V-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-Tc_supercon_JVASP_15938_Nb3Si-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-Tc_supercon_JVASP_19889_NbC-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-Tc_supercon_JVASP_20620_YB6-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-Tc_supercon_JVASP_816_Al-dft_3d-test-mae.csv.zip": "",
+        "ES-SinglePropertyPrediction-Tc_supercon_JVASP_961_Pb-dft_3d-test-mae.csv.zip": ""
+    },
     "language": "python",
     "os": "linux",
     "software_used": "quantum espresso",
