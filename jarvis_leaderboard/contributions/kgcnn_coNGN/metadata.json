@@ -1,5 +1,5 @@
 {
-    "model_name": "kgcnn_dimenetPP",
+    "model_name": "kgcnn_coNGN",
     "project_url": "https://github.com/aimat-lab/gcnn_keras",
     "date_submitted": "05-06-2023",
     "author_email": "patrick.reiser@kit.edu",

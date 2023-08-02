@@ -1,11 +1,11 @@
 {
-    "model_name": "kgcnn_dimenetPP",
+    "model_name": "kgcnn_megnet",
     "project_url": "https://github.com/aimat-lab/gcnn_keras",
     "date_submitted": "05-06-2023",
     "author_email": "patrick.reiser@kit.edu",
     "database_version": "12-12-2022",
     "team_name": "kgcnn",
-    "time_taken_seconds": {
+        "time_taken_seconds": {
         "AI-SinglePropertyPrediction-mepsz-dft_3d-test-mae.csv.zip": "",
         "AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae.csv.zip": "",
         "AI-SinglePropertyPrediction-shear_modulus_gv-dft_3d-test-mae.csv.zip": "",
