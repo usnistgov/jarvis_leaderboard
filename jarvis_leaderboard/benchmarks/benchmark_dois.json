@@ -1056,7 +1056,19 @@
             "dft_3d_Tc_supercon_JVASP_1151_MgB2.json.zip": [
                 "https://www.nature.com/articles/s41524-020-00440-1",
                 "https://doi.org/10.48550/arXiv.2305.11842"
-            ]
+            ],
+            "dft_3d_Tc_supercon_JVASP_19679_ZrN.json.zip": [
+                "https://doi.org/10.1002%2Fsia.740150606"],
+            "dft_3d_Tc_supercon_JVASP_31795_NbSe2.json.zip": [
+                "https://doi.org/10.1016/0031-9163(66)90902-4"],
+            "dft_3d_Tc_supercon_JVASP_30369_NbS2.json.zip": [
+                "https://doi.org/10.1143/JPSJ.45.50"],
+            "dft_3d_Tc_supercon_JVASP_36335_NbN.json.zip": [
+                "https://doi.org/10.1103%2FRevModPhys.35.1"],
+            "dft_3d_Tc_supercon_JVASP_20166_Mo2C.json.zip": [
+                "https://doi.org/10.1038/nmat4374"],
+            "dft_3d_Tc_supercon_JVASP_45_FeSe.json.zip": [
+                "http://dx.doi.org/10.1103/PhysRevB.94.035108"]
         },
         "Spectra": {
             "dft_3d_XRD_JVASP_19821_MgB2.json.zip": [

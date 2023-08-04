@@ -1,5 +1,4 @@
-# Superconducting transition temperature data for [MgB2](https://www.sigmaaldrich.com/US/en/product/aldrich/553913) 
-CAS number: 12007-25-9
+# Superconducting transition temperature data for [FeSe](https://www.alfa.com/en/catalog/031112/) 
 
 <h2>Benchmarks</h2>
 
