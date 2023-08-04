@@ -376,7 +376,7 @@
             "dft_3d_Tc_supercon.json.zip": [
                 "https://doi.org/10.1021/acs.jpclett.3c01260"
             ],
-            "carbon24_energy_per_atom.zip": [
+            "carbon24_energy_per_atom.json.zip": [
                 "https://doi.org/10.1088/0953-8984/23/5/053201"
             ]
         },
