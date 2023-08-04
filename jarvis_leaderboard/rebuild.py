@@ -483,15 +483,42 @@ def check_at_least_one_csv_zip_exists():
     all_dirs_meta = []
     all_dirs_with_metadata = []
     for i in os.listdir(search):
-        all_dirs.append(i)
-        for j in os.listdir(os.path.join(search, i)):
-            if "csv.zip" in j:
-                meta_path = os.path.join(search, i, j)
-                if meta_path not in all_dirs_with_metadata:
-                    all_dirs_with_metadata.append(meta_path)
-                    all_dirs_meta.append(i)
+        tmp_path = os.path.join(search, i)
+        if os.path.isdir(tmp_path):
+            all_dirs.append(i)
+            for j in os.listdir(tmp_path):
+                if "csv.zip" in j:
+                    meta_path = os.path.join(search, i, j)
+                    if meta_path not in all_dirs_with_metadata:
+                        all_dirs_with_metadata.append(meta_path)
+                        all_dirs_meta.append(i)
     problem_dirs = set(all_dirs) - set(all_dirs_meta)
     return problem_dirs
+
+
+def check_json_zip_exists_for_csv_zip():
+
+    search = root_dir + "/contributions"
+    # print('search',search)
+    problem_csv = []
+    for i in os.listdir(search):
+        tmp_path = os.path.join(search, i)
+        if os.path.isdir(tmp_path):
+            for j in os.listdir(tmp_path):
+                if "csv.zip" in j:
+                    tmp = j.split("-")
+                    # print(tmp)
+                    bench_path = root_dir + "/benchmarks"
+                    fname = tmp[3] + "_" + tmp[2] + ".json.zip"
+
+                    json_path = os.path.join(bench_path, tmp[0], tmp[1], fname)
+
+                    if not os.path.exists(json_path):
+                        print(json_path)
+                        problem_csv.append(json_path)
+
+    # ES-Spectra-dielectric_function_JVASP_266_InP-dft_3d-test-multimae.csv.zip
+    return problem_csv
 
 
 def get_doi(
@@ -1464,5 +1491,6 @@ def rebuild_pages():
 
 if __name__ == "__main__":
     rebuild_pages()
+    # x = check_json_zip_exists_for_csv_zip()
     # d = get_all_dois()
     # print(len(d))
