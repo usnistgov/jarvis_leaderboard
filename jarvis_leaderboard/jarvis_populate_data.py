@@ -64,9 +64,12 @@ def get_dataset(
     # fname = os.path.join(root_dir, "dataset", method, task, temp)
     # fname = os.path.join("jarvis_leaderboard", "dataset", method, task, temp)
     print("dataset file to be used", fname)
-    #if method=='ES' and task=='SinglePropertyPrediction':
-       
-    if dataset in ["dft_3d", "dft_2d", "qe_tb"]:
+    # if method=='ES' and task=='SinglePropertyPrediction':
+
+    if dataset != "na":  # in ["dft_3d", "dft_2d", "qe_tb"]:
+        # if dataset in ["dft_3d", "dft_2d", "qe_tb"]:
+        print("Currently for atomistic datasets only.")
+        print("https://jarvis-tools.readthedocs.io/en/master/databases.html")
         dat = data(dataset)
         info = {}
         for i in dat:
