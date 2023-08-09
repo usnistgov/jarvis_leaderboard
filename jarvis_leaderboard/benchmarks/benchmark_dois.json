@@ -344,6 +344,21 @@
             "tinnet_OH_ead.json.zip": [
                 "https://doi.org/10.1038/s41467-021-25639-8"
             ],
+            "AGRA_O_ead.json.zip": [
+                "https://doi.org/10.1063/5.0140487"
+            ],
+            "AGRA_OH_ead.json.zip": [
+                "https://doi.org/10.1063/5.0140487"
+            ],
+            "AGRA_CO_ead.json.zip": [
+                "https://doi.org/10.1063/5.0140487"
+            ],
+            "AGRA_CHO_ead.json.zip": [
+                "https://doi.org/10.1063/5.0140487"
+            ],
+            "AGRA_COOH_ead.json.zip": [
+                "https://doi.org/10.1063/5.0140487"
+            ],
             "vacancydb_2D_ef.json.zip": [
                 "https://doi.org/10.48550/arXiv.2205.08366"
             ],
