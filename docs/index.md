@@ -198,8 +198,9 @@ A GitHub username and a basic familiarity with GitHub is needed to work with the
 If you do not have a GitHub account, sign up for one at: [https://github.com/signup](https://github.com/signup)
 Related article: [https://www.toolsqa.com/git/how-to-create-github-account/](https://www.toolsqa.com/git/how-to-create-github-account)
 
+
 <p align="center">
-   <img src="https://github.com/usnistgov/jarvis_leaderboard/blob/develop/jarvis_leaderboard/images/github1.png" alt="GitHub"  width="600"/>
+   <img src="https://raw.githubusercontent.com/usnistgov/jarvis_leaderboard/develop/jarvis_leaderboard/images/github1.png" alt="GitHub"  width="600"/>
 </p>
 
 Suppose you choose your username as “knc6”, you’ll have a webpage at [https://github.com/knc6](https://github.com/knc6) . Ofcourse, choose some other username of your choice, but for the following demo, we will use the “knc6” as an example username. 
@@ -208,24 +209,27 @@ Suppose you choose your username as “knc6”, you’ll have a webpage at [http
 
 Once you have the GitHub account, go to the website [https://github.com/usnistgov/jarvis_leaderboard](https://github.com/usnistgov/jarvis_leaderboard). Here [`Fork`](https://github.com/usnistgov/jarvis_leaderboard/fork) (make your own copy) of the JARVIS-Leaderbord repo by clicking on the “Fork” button. Also, feel free to click on the “Star” button if you like the JARVIS-Leaderboard project.
 
+
 <p align="center">
-   <img src="https://github.com/usnistgov/jarvis_leaderboard/blob/develop/jarvis_leaderboard/images/github2.png" alt="GitHub"  width="600"/>
+   <img src="https://raw.githubusercontent.com/usnistgov/jarvis_leaderboard/develop/jarvis_leaderboard/images/github2.png" alt="GitHub"  width="600"/>
 </p>
 
 
 Now, go to your forked version of the JARVIS-Leaderboard. For a username “knc6”, you’ll have a repo at [https://github.com/knc6/jarvis_leaderboard](https://github.com/knc6/jarvis_leaderboard). Notice, we have “knc6” in the URL instead of usnistgov. Ofcourse, use your own username instead of knc6.
 
 
+
 <p align="center">
-   <img src="https://github.com/usnistgov/jarvis_leaderboard/blob/develop/jarvis_leaderboard/images/github3.png" alt="GitHub"  width="600"/>
+   <img src="https://raw.githubusercontent.com/usnistgov/jarvis_leaderboard/develop/jarvis_leaderboard/images/github3.png" alt="GitHub"  width="600"/>
 </p>
 
 
 Now, we will make a pull request (request to contribute your edits in the main repo).
 If you are not familiar with pull requests checkout this [link](https://makeapullrequest.com/)
 
+
 <p align="center">
-   <img src="https://github.com/usnistgov/jarvis_leaderboard/blob/develop/jarvis_leaderboard/images/github4.png" alt="GitHub"  width="600"/>
+   <img src="https://raw.githubusercontent.com/usnistgov/jarvis_leaderboard/develop/jarvis_leaderboard/images/github4.png" alt="GitHub"  width="600"/>
 </p>
 
 
