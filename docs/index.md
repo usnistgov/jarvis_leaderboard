@@ -5,22 +5,50 @@
 </div>
 -->
 
-# Table of Contents
-* [Introduction](#intro)
-* [Summary table](#summary)
-* [Quick start using colab](#colab)
-* [Terminologies](#terminologies)
-* [List of benchmarks](#example)
-* [Tree diagram](#tree)
-* [How to contribute](#howto)
-* [License](#license)
-* [Citation](#citation)
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+<div class="row">
+<div class="column">
+<h1 id="table-of-contents">Table of Contents</h1>
+<ul>
+<li><a href="#intro">Introduction</a></li>
+<li><a href="#summary">Summary table</a></li>
+<li><a href="#colab">Quick start using colab</a></li>
+<li><a href="#terminologies">Terminologies</a></li>
+<li><a href="#example">List of benchmarks</a></li>
+<li><a href="#tree">Tree diagram</a></li>
+<li><a href="#howto">How to contribute</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#citation">Citation</a></li>
+</ul> 
+</div>
+<div class="column">
+<iframe width="420" align="center" height="215" src="https://www.youtube.com/embed/QDx3jSIwpMo?autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
 
 <a name="intro"></a>
 # JARVIS Leaderboard (Introduction)
 
 This project provides benchmark-performances of various methods for materials science applications using the datasets available in [JARVIS-Tools databases](https://jarvis-tools.readthedocs.io/en/master/databases.html). Some of the categories are: [Artificial Intelligence (AI)](./AI), [Electronic Structure (ES)](./ES), [Force-field (FF)](./FF), [Quantum Computation (QC)](./QC) and [Experiments (EXP)](./EXP). There are a variety of properties included in the benchmark.
 In addition to prediction results, we attempt to capture the underlyig software, hardware and instrumental frameworks to enhance reproducibility. This project is a part of the [NIST-JARVIS](https://jarvis.nist.gov) infrastructure.
+
 
 <!--number_of_contributors--> - Number of contributors: [20](https://github.com/usnistgov/jarvis_leaderboard/graphs/contributors)
 
@@ -35,9 +63,6 @@ In addition to prediction results, we attempt to capture the underlyig software,
 <!-- [Learn how to add benchmarks below](#add) -->
 <!-- <p style="text-align:center;"><img align="middle" src="https://www.ctcms.nist.gov/~knc6/images/logo/jarvis-mission.png"  width="40%" height="20%"></p>-->
 
-
-
- 
 
 <!--
 <a name="add"></a>
@@ -282,7 +307,7 @@ If successful with basic GitHub setup, follow the guidelines:
 
   Now add changes, `git add jarvis_leaderboard/contributions/vasp_pbe_teamX`
 
-  Commit your changes, `git commmit -m 'Adding my PBE Si result.'`
+  Commit your changes, `git commit -m 'Adding my PBE Si result.'`
 
   `git push`
 
@@ -357,11 +382,13 @@ Notes:
 
 1.  Create a `json.zip` file in the `jarvis_leaderboard/benchmarks` folder under respective sub-category, e.g.:
 
-    e.g. `jarvis_leaderboard/benchmarks/AI/SinglePropertyPrediction/dft_3d_exfoliation_energy.json.zip`.      
+    e.g. `jarvis_leaderboard/benchmarks/AI/SinglePropertyPrediction/dft_3d_exfoliation_energy.json.zip`.     
+
+    An example of a new json.zip ([mydb_myprop.json](https://gist.github.com/knc6/056c30ed3f26eed898c44c2dc41cab0b)) file can be found here as well. 
  
 2.  In the `.json` file should have `train`, `val`, `test` keys with array of ids and their values.
 
-    Note `train` and 'val` can be empty dictionaries if the benchmarks are other than AI method
+    Note `train` and `val` can be empty dictionaries if the benchmarks are other than AI method
 
 3.  Add a .md file, e.g.: `jarvis_leaderboard/docs/AI/SinglePropertyPrediction/exfoliation_energy.md`. This is where contributions performers will be kept and website info will be generated.
 
