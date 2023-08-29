@@ -174,6 +174,7 @@ python setup.py develop
 13. [Pretrained OpenCatalystProject Model.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/ocp_load_pretrained_models.ipynb)
 14. [GPAW colab.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/GPAW_Colab.ipynb)
 15. [Quantum Espresso colab.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/LK99_GoogleColab_QE.ipynb)
+16. [ocp20_load_pretrained_models.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/ocp_load_pretrained_models.ipynb)
 
 For additional notebooks, visit [JARVIS-Tools-Notebooks](https://github.com/JARVIS-Materials-Design/jarvis-tools-notebooks) collections with more than 60 colab notebooks. 
 
