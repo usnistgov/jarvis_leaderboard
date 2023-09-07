@@ -30,23 +30,11 @@ import os
 import torch
 
 torch.cuda.is_available = lambda: False
-# from m3gnet.models import M3GNet, M3GNetCalculator, Potential
-# potential = Potential(M3GNet.load())
-# calculator = M3GNetCalculator(potential=potential, stress_weight=0.01)
-# wget https://figshare.com/ndownloader/files/40357663 -O mlearn.json.zip
-
 from alignn.ff.ff import AlignnAtomwiseCalculator, default_path, wt01_path
 
 # torch.cuda.is_available = lambda : False
 model_path = wt01_path()
 calculator = AlignnAtomwiseCalculator(path=model_path, stress_wt=0.3)
-
-
-# from m3gnet.models import M3GNet, M3GNetCalculator, Potential
-# potential = Potential(M3GNet.load())
-# calculator = M3GNetCalculator(potential=potential, stress_weight=0.01)
-# wget https://figshare.com/ndownloader/files/40357663 -O mlearn.json.zip
-
 
 def atom_to_energy(atoms):
     num_atoms = atoms.num_atoms
