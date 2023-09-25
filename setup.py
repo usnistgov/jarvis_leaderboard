@@ -24,7 +24,7 @@ setuptools.setup(
         "evaluate==0.4.0",
         "nltk==3.8.1",
         "rouge-score==0.1.2",
-        "fsspec==2023.6.0",
+        "fsspec==2023.9.2",
         "aiohttp==3.8.5",
         # "alignn>=2022.10.23",
         # "flake8>=3.9.1",
