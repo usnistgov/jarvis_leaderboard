@@ -108,7 +108,7 @@ typeguard==2.13.3
 typing_extensions==4.5.0
 tzdata==2023.3
 uncertainties==3.1.7
-urllib3==1.26.15
+urllib3==1.26.17
 watchdog==3.0.0
 Werkzeug==2.2.3
 wrapt==1.14.1
