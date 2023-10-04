@@ -28,7 +28,7 @@ networkx @ file:///croot/networkx_1678964333703/work
 numpy @ file:///croot/numpy_and_numpy_base_1672336185480/work
 packaging==23.0
 pandas==2.0.0
-Pillow==9.4.0
+Pillow==10.0.1
 psutil==5.9.4
 pycodestyle==2.10.0
 pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
