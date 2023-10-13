@@ -19,7 +19,7 @@ setuptools.setup(
         "mkdocs==1.5.2",
         "mkdocs-material==9.0.5",
         "pydantic==2.3.0",
-        "markdown==3.2.1",
+        "markdown==3.5",
         "absl-py==1.4.0",
         "nltk==3.8.1",
         # "evaluate==0.4.0",
