@@ -134,7 +134,6 @@ def get_metric_value(
     csv_path="../contributions/alignn_model/AI-SinglePropertyPrediction-formation_energy_peratom-dft_3d-test-mae.csv.zip",
     plot_filename=None,
 ):
-
     fname = csv_path.split("/")[-1].split(".csv.zip")[0]
     contribution = csv_path.split("/")[-2]
     temp = fname.split("-")
@@ -322,19 +321,30 @@ def get_metric_value(
         )
         results["random_guessing_performance"] = random_guessing_performance
     if metric == "rouge":
-        import evaluate
-
+        # Due to dependency conflicts now avoiding evaluate package
+        # import evaluate
         # from datasets import load_metric
         # metric = load_metric("rouge")
         # TODO: merge with benchmark instead of using target from csv.zip
-        rouge_score = evaluate.load("rouge")
-        scores = rouge_score.compute(
-            predictions=df["prediction"], references=df["actual"]
-        )
+        # rouge_score = evaluate.load("rouge")
+        # scores = rouge_score.compute(
+        #    predictions=df["prediction"], references=df["actual"]
+        # )
         # scores = rouge_score.compute(predictions=csv_data['prediction'],references=csv_data['target'])
-        rouge = scores["rouge1"]
+        # rouge = scores["rouge1"]
         # rouge=(calc_rouge_scores(df['target'],df['prediction']))['rouge1']
-        results["res"] = round(rouge, 4)
+        # results["res"] = round(rouge, 4)
+        # print('rouge eval',rouge)
+        from rouge import Rouge
+
+        rouge = Rouge()
+        hypothesis = df["prediction"]
+        reference = df["actual"]
+        scores = rouge.get_scores(hypothesis, reference, avg=True)["rouge-1"][
+            "r"
+        ]
+        results["res"] = round(scores, 4)
+        print("rouge scores", scores)
     if metric == "rmse" and subcat == "AtomGen":
         print("AtomGen")
         from pymatgen.analysis.structure_matcher import StructureMatcher
@@ -372,7 +382,6 @@ def get_metric_value(
 
 
 def check_metadata_json_exists():
-
     search = root_dir + "/contributions"
     all_dirs = []
     all_dirs_meta = []
@@ -448,7 +457,6 @@ def old_check_metadata_info_exists():
 
 
 def check_run_sh_exists():
-
     search = root_dir + "/contributions"
     all_dirs = []
     all_dirs_meta = []
@@ -477,7 +485,6 @@ def check_run_sh_exists():
 
 
 def check_at_least_one_csv_zip_exists():
-
     search = root_dir + "/contributions"
     all_dirs = []
     all_dirs_meta = []
@@ -497,7 +504,6 @@ def check_at_least_one_csv_zip_exists():
 
 
 def check_json_zip_exists_for_csv_zip():
-
     search = root_dir + "/contributions"
     # print('search',search)
     problem_csv = []
