@@ -17,7 +17,7 @@ setuptools.setup(
         "pandas>=1.2.4",
         "rouge>=1.0.1",
         "mkdocs==1.5.2",
-        "mkdocs-material==9.0.5",
+        "mkdocs-material==9.4.5",
         "pydantic==2.3.0",
         "markdown==3.2.1",
         "absl-py==1.4.0",
