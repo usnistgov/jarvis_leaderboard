@@ -16,7 +16,7 @@ setuptools.setup(
         "scikit-learn>=0.24.1",
         "pandas>=1.2.4",
         "rouge>=1.0.1",
-        "mkdocs==1.5.2",
+        "mkdocs==1.5.3",
         "mkdocs-material==9.0.5",
         "pydantic==2.3.0",
         "markdown==3.2.1",
