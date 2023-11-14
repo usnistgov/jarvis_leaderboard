@@ -18,7 +18,7 @@ setuptools.setup(
         "rouge>=1.0.1",
         "mkdocs==1.5.2",
         "mkdocs-material==9.0.5",
-        "pydantic==2.3.0",
+        "pydantic==2.5.0",
         "markdown==3.2.1",
         "absl-py==1.4.0",
         "nltk==3.8.1",
