@@ -188,6 +188,9 @@ theme:
             name: Switch to light mode
         primary: 'teal'
         accent: 'light blue'
+  # Plugins
+  plugins:
+    - search:
     # +----------------------------------------------------------------------------------------------------+
     # |                                                                                                    |
     # | The "scheme" option is used to define the Color Scheme used by Material.                           |
@@ -316,9 +319,9 @@ theme:
   
   # Search
   #
-  #- search.highlight # Search will highlight the searched word(s) on the page.*
-  #- search.share     # Adds an option to share a search query link.*
-  #- search.suggest   # Search will suggest the likeliest completion for a word.*
+  - search.highlight # Search will highlight the searched word(s) on the page.*
+  - search.share     # Adds an option to share a search query link.*
+  - search.suggest   # Search will suggest the likeliest completion for a word.*
   
   # Table of Contents
   #

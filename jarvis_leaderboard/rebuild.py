@@ -553,7 +553,7 @@ def get_benchmark_description(
         (benchmark_descriptions["Category"] == cat)
         & (benchmark_descriptions["Sub-category"] == subcat)
         & (benchmark_descriptions["Benchmark"] == dataset + "_" + prop)
-    ]["Description"].values[0]
+    ]["Description"].fillna('Coming soon').values[0]
     if desc == "NaN":
         print("NaN", bench_name)
         desc = ""
