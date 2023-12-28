@@ -1,4 +1,6 @@
 # Model for bandgap
+<!--benchmark_description-->
+
 
 <h2>Model benchmarks</h2>
 

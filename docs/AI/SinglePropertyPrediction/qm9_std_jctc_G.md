@@ -1,4 +1,6 @@
 # Model for G
+<!--benchmark_description--> - Description: nan
+
 
 <h2>Model benchmarks</h2>
 
@@ -14,5 +16,5 @@
     <th>Notes</th>
   </tr>
  </thead>
-<!--table_content--><tr><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model" target="_blank">alignn_model</a></td><td>qm9_std_jctc</td><td>0.013</td><td>JARVIS</td><td>130829</td><td>01-14-2023</td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model/AI-SinglePropertyPrediction-G-qm9_std_jctc-test-mae.csv.zip" target="_blank">CSV</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/AI/SinglePropertyPrediction/qm9_std_jctc_G.json.zip" target="_blank">JSON</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model/run.sh " target="_blank">run.sh</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model/metadata.json " target="_blank">Info</a></td></tr><!--table_content-->
+<!--table_content--><tr><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model" target="_blank">alignn_model</a></td><td>qm9_std_jctc</td><td>0.0133</td><td>ALIGNN</td><td>130829</td><td>01-14-2023</td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model/AI-SinglePropertyPrediction-G-qm9_std_jctc-test-mae.csv.zip" target="_blank">CSV</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/AI/SinglePropertyPrediction/qm9_std_jctc_G.json.zip" target="_blank">JSON</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model/run.sh " target="_blank">run.sh</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model/metadata.json " target="_blank">Info</a></td></tr><!--table_content-->
 </table>

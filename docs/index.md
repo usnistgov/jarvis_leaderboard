@@ -111,27 +111,27 @@ body {
     </div>
   </div>
 
-
-  <div class="column">
-    <div class="card">
-      <h3>Benchmark Datasets</h3>
-      <p>18</p>
-      <a href="https://pages.nist.gov/jarvis/databases/" >See All Datasets</a>
-    </div>
-  </div>
-
   <div class="column">
     <div class="card">
       <h3>Example Notebooks</h3>
       <p>Notebooks: 16</p>
-      <a href="./Colab" >See All Notebooks</a>
+      <a href="./notebooks" >See All Notebooks</a>
+    </div>
+  </div>
+
+
+  <div class="column">
+    <div class="card">
+      <h3>Methodologies</h3>
+      <p>Available Methods: 159</p>
+      <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions">Learn more</a>
     </div>
   </div>
 
   <div class="column">
     <div class="card">
       <h3>Contribution Guide</h3>
-      <p>Number of contributors: 20</p>
+      <p>Number of contributors: <a href="https://github.com/usnistgov/jarvis_leaderboard/graphs/contributors" >20</a></p>
       <a href="./guide" >Learn more</a>
     </div>
   </div>

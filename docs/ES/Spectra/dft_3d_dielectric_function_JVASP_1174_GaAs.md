@@ -1,4 +1,6 @@
 # Model for dielectric_function_JVASP_1174_GaAs
+<!--benchmark_description--> - Description: This is a benchmark to evaluate how accurately an ES model can predict the dielectric function (spectra) for GaAs (JVASP-1174) experimental results are used as a ground truth for comparison and the multi-mean absolute error (multi-MAE) with respect to the experimental value is used as an accuracy metric
+
 
 <h2>Model benchmarks</h2>
 <table style="width:100%" id="j_table">

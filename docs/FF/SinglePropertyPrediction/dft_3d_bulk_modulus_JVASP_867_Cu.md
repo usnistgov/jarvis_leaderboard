@@ -1,4 +1,6 @@
 # Model for bulk_modulus_JVASP_867_Cu
+<!--benchmark_description--> - Description: This is a benchmark to evaluate how accurately an ES model can predict bulk modulus of diamond copper (JVASP-867).
+
 
 <h2>Model benchmarks</h2>
 <table style="width:100%" id="j_table">

@@ -1,4 +1,6 @@
 # Model for Tc_supercon_JVASP_646_NbS2
+<!--benchmark_description--> - Description: This is a benchmark to evaluate how accurately an ES model can predict the superconducting transition temperature (Tc) of NbS2 (JARVIS-2D: JVASP-646), experimental results are used as a ground truth for comparison and the mean absolute error (MAE) with respect to the experimental value is used as an accuracy metric
+
 
 <h2>Model benchmarks</h2>
 <table style="width:100%" id="j_table">

@@ -1,4 +1,6 @@
 # Model for [halide perovskite](https://doi.org/10.1039/D1EE02971A) Refractive index
+<!--benchmark_description--> - Description: This is a benchmark to evaluate how accurately an AI model can predict refractive index using the Halide perovskite dataset of Prof. Arun Mannodi at Purdue. Here we use mean absolute error (MAE) to compare models with respect to DFT accuracy. External links: https://github.com/mannodiarun
+
 
 <h2>Model benchmarks</h2>
 
@@ -14,5 +16,5 @@
     <th>Notes</th>
   </tr>
  </thead>
-<!--table_content--><tr><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model" target="_blank">alignn_model</a></td><td>halide_peroskites</td><td>0.048</td><td>ALIGNN</td><td>229</td><td>01-14-2023</td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model/AI-SinglePropertyPrediction-PBE_decomp_energy-halide_peroskites-test-mae.csv.zip" target="_blank">CSV</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/AI/SinglePropertyPrediction/halide_peroskites_PBE_decomp_energy.json.zip" target="_blank">JSON</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model/run.sh " target="_blank">run.sh</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model/metadata.json " target="_blank">Info</a></td></tr><!--table_content-->
+<!--table_content--><tr><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model" target="_blank">alignn_model</a></td><td>halide_peroskites</td><td>0.0233</td><td>ALIGNN</td><td>229</td><td>01-14-2023</td><td><a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model/AI-SinglePropertyPrediction-Ref_ind-halide_peroskites-test-mae.csv.zip" target="_blank">CSV</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/benchmarks/AI/SinglePropertyPrediction/halide_peroskites_Ref_ind.json.zip" target="_blank">JSON</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model/run.sh " target="_blank">run.sh</a>, <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions/alignn_model/metadata.json " target="_blank">Info</a></td></tr><!--table_content-->
 </table>

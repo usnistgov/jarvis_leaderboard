@@ -1,4 +1,6 @@
 # Model for carbon material design
+<!--benchmark_description--> - Description: This is a benchmark to evaluate how accurately a generative model can generate atomic structures with desired formation energy per atom using the carbon24 dataset. The dataset contains different types of chemical formula and atomic structures. Here we use root mean squared error (RMSE) for bond lengths to compare models. External links: https://github.com/txie-93/cdvae, https://arxiv.org/abs/2110.06197, 
+
 
 <h2>Model benchmarks</h2>
 

@@ -1,4 +1,6 @@
 # Model for [Vacancy formation energy with defined train-test splits](https://arxiv.org/abs/2205.08366) for oxides
+<!--benchmark_description-->
+
 
 <h2>Model benchmarks</h2>
 

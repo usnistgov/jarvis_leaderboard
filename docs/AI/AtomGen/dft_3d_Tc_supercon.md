@@ -1,4 +1,7 @@
 # Model for 3D superconductor design
+<!--benchmark_description--> - Description: This is a benchmark to evaluate how accurately a generative model can generate atomic structures with desired super critical transition temperature (Tc) using the JARVIS-DFT (dft_3d) dataset. The dataset contains different types of chemical formula and atomic structures. Here we use root mean squared error (RMSE) for bondlengths to compare models. External links: https://github.com/txie-93/cdvae, https://arxiv.org/abs/2110.06197, https://pubs.acs.org/doi/10.1021/acs.jpclett.3c01260
+
+
 
 <h2>Model benchmarks</h2>
 
