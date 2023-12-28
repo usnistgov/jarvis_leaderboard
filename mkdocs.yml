@@ -174,9 +174,9 @@ theme:
   palette:
       - media: "(prefers-color-scheme: dark)"
         scheme: default
-        toggle:
-            icon: material/toggle-switch-off-outline
-            name: Switch to dark mode
+        #toggle:
+        #    icon: material/toggle-switch-off-outline
+        #    name: Switch to dark mode
         primary: 'teal'
         accent: 'light blue'
         #primary: blue
