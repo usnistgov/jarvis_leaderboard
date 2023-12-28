@@ -1,4 +1,6 @@
 # Model for [2D MXene](https://cmr.fysik.dtu.dk/c2db/c2db.html) formation energy
+<!--benchmark_description--> - Description: nan
+
 
 <h2>Model benchmarks</h2>
 

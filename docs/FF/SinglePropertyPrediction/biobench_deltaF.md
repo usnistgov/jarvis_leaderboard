@@ -1,4 +1,6 @@
 # Model for deltaF_biobench
+<!--benchmark_description--> - Description: This is a benchmark to evaluate how accurately an FF model can predict bulk free energy difference of peptides.
+
 
 <h2>Model benchmarks</h2>
 <table style="width:100%" id="j_table">

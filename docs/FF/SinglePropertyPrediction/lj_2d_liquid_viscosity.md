@@ -1,4 +1,6 @@
 # Model for 2D LJ liquid viscosity
+<!--benchmark_description--> - Description: This is a benchmark to evaluate how accurately an FF model can predict viscosity of Lennard-Jones liquid.
+
 
 [Source](https://github.com/lammps/lammps/tree/develop/examples/VISCOSITY)
 

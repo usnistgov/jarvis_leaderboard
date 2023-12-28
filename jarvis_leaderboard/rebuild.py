@@ -38,6 +38,7 @@ scaling = {
         "Cv": 4.067492,
     }
 }
+benchmark_descriptions = pd.read_csv(root_dir + "/benchmarks/descriptions.csv")
 
 
 def mean_absolute_deviation(data, axis=None):
@@ -540,6 +541,25 @@ def get_doi(
     return dois
 
 
+def get_benchmark_description(
+    bench_name="ES-SinglePropertyPrediction-bandgap_JVASP_1002_Si-dft_3d-test-mae.csv.zip",
+):
+    tmp = bench_name.split("-")
+    cat = tmp[0]
+    subcat = tmp[1]
+    prop = tmp[2]
+    dataset = tmp[3]
+    desc = benchmark_descriptions[
+        (benchmark_descriptions["Category"] == cat)
+        & (benchmark_descriptions["Sub-category"] == subcat)
+        & (benchmark_descriptions["Benchmark"] == dataset + "_" + prop)
+    ]["Description"].values[0]
+    if desc == "NaN":
+        print("NaN", bench_name)
+        desc = ""
+    return desc
+
+
 def get_all_dois():
     all_dois = []
     search = root_dir + "/benchmarks/*/*/*.json.zip"
@@ -966,6 +986,16 @@ def rebuild_pages(
                 if "<!--table_content-->" in j:
                     temp = temp + j
                     content.append(temp)
+                elif "<!--benchmark_description-->" in j:
+                    bench_desc = get_benchmark_description(fname)
+                    temp2 = (
+                        "<!--benchmark_description--> - Description: "
+                        + str(bench_desc)
+                        # + str(num_data)
+                        # + str(len(dat))
+                        # + "\n"
+                    )
+                    content.append(temp2)
                 else:
                     content.append(j)
             # filedata = filedata.replace('<!--table_content-->', temp)
@@ -974,6 +1004,7 @@ def rebuild_pages(
                 file.write("\n".join(content))
     # print("dat", dat)
     print("mdfiles", len(set(md_files)))
+    print("exclude_benchs", len(exclude_benchs))
 
     def update_individual_index_md(
         md_path="docs/ES/index.md", key="ES", extra_key="-", homepage=[]
@@ -993,6 +1024,7 @@ def rebuild_pages(
         # print ('index pages',homepage)
         # print("dat", dat)
         # print("errors", errors, len(errors))
+        # Keep only selected on homepage
         selected = defaultdict()
         for name in homepage:
             # print(md_path,name)
@@ -1068,6 +1100,9 @@ def rebuild_pages(
         for i, j in selected.items():
             if len(md_path.split("/")) == 2:
                 # if md_path == "docs/index.md":
+                # desc = get_benchmark_description(i)
+                # print('len 2',i,desc)
+                # temp+=desc
                 temp = (
                     temp
                     + "<tr>"
@@ -1137,6 +1172,7 @@ def rebuild_pages(
                     + "</tr>"
                 )
             elif len(md_path.split("/")) == 3:
+                # print('len 3',i)
                 base = "."
                 temp = (
                     temp
@@ -1145,7 +1181,6 @@ def rebuild_pages(
                     + '<a href= "'
                     + base
                     + "/"
-                    # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
                     + j["category"]
                     # + j["method"]
                     + '" target="_blank">'
@@ -1214,6 +1249,10 @@ def rebuild_pages(
                     + "</tr>"
                 )
             elif len(md_path.split("/")) == 4:
+                # print('len 4',i)
+                # desc = get_benchmark_description(i)
+                # print('len 4',i,desc)
+                # temp+=desc
                 base = "."
                 temp = (
                     temp
@@ -1310,6 +1349,11 @@ def rebuild_pages(
                 content.append("<!--number_of_methods-->")
             elif "<!--number_of_datapoints-->" in j:
                 content.append("<!--number_of_datapoints-->")
+            # elif "<!--benchmark_description-->" in j:
+            #    content.append("<!--benchmark_description-->")
+            #    print('benchmark_description-')
+            #    import sys
+            #    sys.exit()
             else:
                 content.append(j)
         with open(md_path, "w") as file:

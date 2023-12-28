@@ -1,4 +1,6 @@
 # Model for bulk_modulus_JVASP_816_Al
+<!--benchmark_description--> - Description: This is a benchmark to evaluate how accurately an ES model can predict bulk modulus of diamond aluminum (JVASP-816).
+
 
 <h2>Model benchmarks</h2>
 <table style="width:100%" id="j_table">

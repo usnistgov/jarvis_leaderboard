@@ -1,4 +1,6 @@
 # Model for [Vacancy formation energy](https://arxiv.org/abs/2205.08366) for elements
+<!--benchmark_description--> - Description: nan
+
 
 <h2>Model benchmarks</h2>
 

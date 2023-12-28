@@ -1,4 +1,6 @@
 # Model for ALIGNN-FF energy
+<!--benchmark_description-->
+
 
 <h2>Model benchmarks</h2>
 
