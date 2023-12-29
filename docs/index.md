@@ -89,7 +89,7 @@ body {
 
   <div class="column">
     <div class="card">
-      <h3>Force-field (FF)</h3>
+      <h3>Force-field (FF)/potentials</h3>
       <p>Contributions: 169</p>
       <a href="./FF" >See All Benchmarks</a>
     </div>
@@ -134,7 +134,7 @@ body {
   <div class="column">
     <div class="card">
       <h3>Contribution Guide</h3>
-      <p>Number of contributors: <a href="https://github.com/usnistgov/jarvis_leaderboard/graphs/contributors" >20</a></p>
+      <p>Contributors: <a href="https://github.com/usnistgov/jarvis_leaderboard/graphs/contributors" >20</a></p>
       <a href="./guide" >Learn more</a>
     </div>
   </div>
