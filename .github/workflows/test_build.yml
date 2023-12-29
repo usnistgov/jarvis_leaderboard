@@ -21,6 +21,8 @@ jobs:
         #pip install codecov
         python setup.py develop
         #python -m pip install -r requirements.txt
+        echo 'PIP FREEZE'
+        pip freeze
     - name: Build site
       run: |
         # flake8 --ignore E203,W503 --exclude=tests --statistics --count --exit-zero jarvis_leaderboard
