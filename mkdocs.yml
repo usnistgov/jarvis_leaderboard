@@ -182,7 +182,7 @@ theme:
         #primary: blue
         #accent: blue
       - media: "(prefers-color-scheme: light)"
-        scheme: slate
+        scheme: light
         #toggle:
         #    icon: material/toggle-switch
         #    name: Switch to light mode
