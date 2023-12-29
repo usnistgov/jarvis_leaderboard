@@ -1,5 +1,9 @@
 # Guide
 
+# External Resources
+- [Powerpoint slides](https://lnkd.in/eNg4w6Cz)
+- [YouTube video](https://www.youtube.com/embed/QDx3jSIwpMo?autoplay=1&mute=1)
+
 # Terminologies used in this project
 
  - Categories: are of following types [Artificial Intelligence (AI)](./AI), [Electronic Structure (ES)](./ES), [Force-field (FF)](./FF), [Quantum Computation (QC)](./QC) and [Experiments (EXP)](./EXP). Each of these categories are divided into sub-categories. These sub-categories include single-property-prediction, single-property-classification, machine-learning force-fields, text-classification, text-token classification, text-generation, image classification, image-segmentation, image-generation, spectra-prediction, and eigensolver. These categories and sub-categories are highly flexible and new entries can be easily added.
