@@ -81,7 +81,7 @@ body {
 
   <div class="column">
     <div class="card">
-      <h3>Electronic Structure (ES)</h3>
+      <h3>Electronic Struct. (ES)</h3>
       <p>Contributions: 786</p>
       <a href="./ES" >See All Benchmarks</a>
     </div>
@@ -94,6 +94,7 @@ body {
       <a href="./FF" >See All Benchmarks</a>
     </div>
   </div>
+
   <div class="column">
     <div class="card">
       <h3>Quantum Comput. (QC) </h3>
@@ -102,6 +103,8 @@ body {
     </div>
   </div>
 
+</div>
+<div class="row">
 
   <div class="column">
     <div class="card">
