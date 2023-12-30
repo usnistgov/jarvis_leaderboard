@@ -769,7 +769,7 @@ def get_metric_value_old(
 
 def rebuild_pages(
     exclude_benchs=["AI-AtomGen-heat_ref-perov5-test-rmse.csv.zip"],
-    debug_one=True,
+    debug_one=False,
 ):
     print("Rebuilding web:")
     unique_fname = []
