@@ -11,6 +11,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import requests
 from jarvis.io.vasp.inputs import Poscar
+import plotly.graph_objects as go
 
 # from mkdocs import utils
 
@@ -541,25 +542,6 @@ def get_doi(
     return dois
 
 
-def get_benchmark_description(
-    bench_name="ES-SinglePropertyPrediction-bandgap_JVASP_1002_Si-dft_3d-test-mae.csv.zip",
-):
-    tmp = bench_name.split("-")
-    cat = tmp[0]
-    subcat = tmp[1]
-    prop = tmp[2]
-    dataset = tmp[3]
-    desc = benchmark_descriptions[
-        (benchmark_descriptions["Category"] == cat)
-        & (benchmark_descriptions["Sub-category"] == subcat)
-        & (benchmark_descriptions["Benchmark"] == dataset + "_" + prop)
-    ]["Description"].fillna('Coming soon').values[0]
-    if desc == "NaN":
-        print("NaN", bench_name)
-        desc = ""
-    return desc
-
-
 def get_all_dois():
     all_dois = []
     search = root_dir + "/benchmarks/*/*/*.json.zip"
@@ -601,6 +583,61 @@ def get_results(
     names = np.array(names)
     names = names[order]
     return names, vals
+
+
+def get_plotly(
+    bench_name="ES-SinglePropertyPrediction-bandgap_JVASP_1002_Si-dft_3d-test-mae.csv.zip",
+):
+    # print('bench',bench_name)
+    if "csv.zip" not in bench_name:
+        bench_name = bench_name + ".csv.zip"
+    names, vals = get_results(bench_name=bench_name)
+    # print('names',names)
+    # print('vals',vals)
+    nm_tmp = bench_name.split(".csv.zip")[0].split("-")
+    plt_dat = [go.Bar(x=list(names), y=list(vals))]
+
+    layout = {
+        "yaxis": {"title": nm_tmp[-1].upper() + " (" + nm_tmp[2] + ")"},
+        #'yaxis': {'title': 'Proportion (%)'},
+        "title": {"text": bench_name.split(".csv.zip")[0]},
+        "title_x": 0.5,
+    }
+    fig = go.Figure(data=plt_dat, layout=layout)
+    tmp_out = str(fig.to_html(full_html=False, include_plotlyjs="cdn"))
+    return tmp_out.replace("\n", " ").replace("  ", " ")
+
+
+def get_benchmark_description(
+    bench_name="ES-SinglePropertyPrediction-bandgap_JVASP_1002_Si-dft_3d-test-mae.csv.zip",
+    include_plot=True,
+    include_doi=True,
+):
+    tmp = bench_name.split("-")
+    cat = tmp[0]
+    subcat = tmp[1]
+    prop = tmp[2]
+    dataset = tmp[3]
+    desc = (
+        benchmark_descriptions[
+            (benchmark_descriptions["Category"] == cat)
+            & (benchmark_descriptions["Sub-category"] == subcat)
+            & (benchmark_descriptions["Benchmark"] == dataset + "_" + prop)
+        ]["Description"]
+        .fillna("Coming soon")
+        .values[0]
+    )
+    if include_plot:
+        tmp_out = get_plotly(bench_name=bench_name)
+        desc = desc + "<br>" + tmp_out
+    if include_doi:
+        tmp_dois = get_doi(bench_name=bench_name)
+        doi_text = "Reference(s): " + ",".join(tmp_dois) + "<br>"
+        desc = desc + "<br>" + doi_text
+    if desc == "NaN":
+        print("NaN", bench_name)
+        desc = ""
+    return desc
 
 
 def get_metric_value_old(
@@ -732,6 +769,7 @@ def get_metric_value_old(
 
 def rebuild_pages(
     exclude_benchs=["AI-AtomGen-heat_ref-perov5-test-rmse.csv.zip"],
+    debug_one=True,
 ):
     print("Rebuilding web:")
     unique_fname = []
@@ -788,10 +826,14 @@ def rebuild_pages(
             for j in filedata:
                 if "<!--table_content-->" in j:
                     content.append("<!--table_content-->")
+                elif "<!--benchmark_description-->" in j:
+                    content.append("<!--benchmark_description-->")
                 else:
                     content.append(j)
             with open(md_path, "w") as file:
                 file.write("\n".join(content))
+        if debug_one:
+            break
     # jarvis_leaderboard/dataset/AI/dft_3d_exfoliation_energy.json
     dat = []
     md_files = []
@@ -1002,6 +1044,8 @@ def rebuild_pages(
 
             with open(md_path, "w") as file:
                 file.write("\n".join(content))
+        if debug_one:
+            break
     # print("dat", dat)
     print("mdfiles", len(set(md_files)))
     print("exclude_benchs", len(exclude_benchs))

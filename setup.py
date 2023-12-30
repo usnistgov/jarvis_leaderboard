@@ -20,6 +20,7 @@ setuptools.setup(
         "mkdocs-material>=9.0.5",
         "pydantic>=2.3.0",
         "markdown>=3.2.1",
+        "plotly",
         "absl-py==1.4.0",
         "nltk==3.8.1",
         # "evaluate==0.4.0",
