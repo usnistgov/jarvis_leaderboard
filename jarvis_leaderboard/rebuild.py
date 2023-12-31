@@ -1080,7 +1080,7 @@ def rebuild_pages(
                 # for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
 
                 if key in i and extra_key in i:
-                    #TODO: Distinguish MLFF and FF
+                    # TODO: Distinguish MLFF and FF
                     p = i.split("/")[-1].split(".csv.zip")[0]
                     homepage.append(p)
         # print ('index pages',homepage)
@@ -1161,6 +1161,7 @@ def rebuild_pages(
         )
         for i, j in selected.items():
             if len(md_path.split("/")) == 2:
+                # e.g.https://pages.nist.gov/jarvis_leaderboard/
                 # if md_path == "docs/index.md":
                 # desc = get_benchmark_description(i)
                 # print('len 2',i,desc)
@@ -1169,35 +1170,25 @@ def rebuild_pages(
                     temp
                     + "<tr>"
                     + "<td>"
-                    + '<a href="./'
+                    # + '<a href="./'
                     + j["category"]
-                    # + j["method"]
-                    + '" target="_blank">'
-                    + j["category"]
-                    # + j["method"]
-                    + "</a>"
-                    # + j["method"]
+                    # + '" target="_blank">'
+                    # + j["category"]
+                    # + "</a>"
+                    + "</td>"
+                    + "<td>"
+                    # + '<a href="./'
+                    # + j["category"]
+                    # + "/"
+                    + j["subcat"]
+                    # + '" target="_blank">'
+                    # + j["subcat"]
+                    # + "</a>"
                     + "</td>"
                     + "<td>"
                     + '<a href="./'
-                    # + j["dataset"]+'_'
-                    + j["category"]
-                    # + j["method"]
-                    + "/"
-                    + j["subcat"]
-                    # + j["submod"]
-                    + '" target="_blank">'
-                    + j["subcat"]
-                    # + j["submod"]
-                    + "</a>"
-                    # + j["submod"]
-                    + "</td>"
-                    + "<td>"
-                    + '<a href="./'
-                    # + j["method"]
                     + j["category"]
                     + "/"
-                    # + j["submod"]
                     + j["subcat"]
                     + "/"
                     + j["dataset"]
@@ -1208,7 +1199,6 @@ def rebuild_pages(
                     + "_"
                     + j["prop"]
                     + "</a>"
-                    # + j["prop"]
                     + "</td>"
                     + "<td>"
                     + j["team"]
@@ -1228,55 +1218,39 @@ def rebuild_pages(
                     + "<td>"
                     + str(j["dataset_size"])
                     + "</td>"
-                    # + "<td>"
-                    # + str(j["date_submitted"])
-                    # + "</td>"
                     + "</tr>"
                 )
             elif len(md_path.split("/")) == 3:
+                # e.g.https://pages.nist.gov/jarvis_leaderboard/EXP/
                 # print('len 3',i)
                 base = "."
                 temp = (
                     temp
                     + "<tr>"
                     + "<td>"
-                    + '<a href= "'
-                    + base
-                    + "/"
+                    # + '<a href= "'
+                    # + base
+                    # + "/"
                     + j["category"]
-                    # + j["method"]
-                    + '" target="_blank">'
-                    + j["category"]
-                    # + j["method"]
-                    + "</a>"
-                    # + j["method"]
+                    # + '" target="_blank">'
+                    # + j["category"]
+                    # + "</a>"
+                    + "</td>"
+                    + "<td>"
+                    # + '<a href= "'
+                    # + base
+                    # + "/"
+                    + j["subcat"]
+                    # + '" target="_blank">'
+                    # + j["subcat"]
+                    # + "</a>"
                     + "</td>"
                     + "<td>"
                     + '<a href= "'
                     + base
                     + "/"
-                    # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
-                    # + j["method"]
-                    # + "/"
                     + j["subcat"]
-                    # + j["submod"]
-                    + '" target="_blank">'
-                    + j["subcat"]
-                    # + j["submod"]
-                    + "</a>"
-                    # + j["submod"]
-                    + "</td>"
-                    + "<td>"
-                    + '<a href= "'
-                    + base
                     + "/"
-                    # + '<a href="http://127.0.0.1:8000/knc6/jarvis_leaderboard/'
-                    # + j["method"]
-                    # + "/"
-                    + j["subcat"]
-                    # + j["submod"]
-                    + "/"
-                    # + "/"
                     + j["dataset"]
                     + "_"
                     + j["prop"]
