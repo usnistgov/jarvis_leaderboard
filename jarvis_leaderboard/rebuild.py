@@ -558,10 +558,13 @@ def get_all_dois():
 def get_results(
     bench_name="ES-SinglePropertyPrediction-bandgap_JVASP_1002_Si-dft_3d-test-mae.csv.zip",
     include_random=False,
+    include_all_results=False,
 ):
     search = root_dir + "/contributions/*/" + bench_name
     vals = []
     names = []
+    if include_all_results:
+        results = []
     # for i in glob.glob("../contributions/*/AI-MLFF-forces-mlearn_Si-test-multimae.csv.zip"):
     for i in glob.glob(search):
         # print(i)
@@ -573,8 +576,11 @@ def get_results(
         val = res["res"]
         vals.append(val)
         names.append(i.split("/")[-2])
+        if include_all_results:
+            results.append(res)
     if include_random:
         vals.append(rand)
+
     vals = np.array(vals)
     order = np.argsort(vals)
     vals = vals[order]
@@ -582,6 +588,8 @@ def get_results(
         names.append("Random")
     names = np.array(names)
     names = names[order]
+    if include_all_results:
+        return names, vals, results
     return names, vals
 
 
@@ -591,7 +599,12 @@ def get_plotly(
     # print('bench',bench_name)
     if "csv.zip" not in bench_name:
         bench_name = bench_name + ".csv.zip"
-    names, vals = get_results(bench_name=bench_name)
+    names, vals, all_res = get_results(
+        bench_name=bench_name, include_all_results=True
+    )
+    proj_urls = []
+    for i in all_res:
+        proj_urls.append(i["project_url"])
     # print('names',names)
     # print('vals',vals)
     nm_tmp = bench_name.split(".csv.zip")[0].split("-")
@@ -605,7 +618,7 @@ def get_plotly(
     }
     fig = go.Figure(data=plt_dat, layout=layout)
     tmp_out = str(fig.to_html(full_html=False, include_plotlyjs="cdn"))
-    return tmp_out.replace("\n", " ").replace("  ", " ")
+    return tmp_out.replace("\n", " ").replace("  ", " "), list(set(proj_urls))
 
 
 def get_benchmark_description(
@@ -618,6 +631,7 @@ def get_benchmark_description(
     subcat = tmp[1]
     prop = tmp[2]
     dataset = tmp[3]
+    proj_urls = []
     desc = (
         benchmark_descriptions[
             (benchmark_descriptions["Category"] == cat)
@@ -628,11 +642,14 @@ def get_benchmark_description(
         .values[0]
     )
     if include_plot:
-        tmp_out = get_plotly(bench_name=bench_name)
+        tmp_out, proj_urls = get_plotly(bench_name=bench_name)
         desc = desc + "<br>" + tmp_out
     if include_doi:
-        tmp_dois = get_doi(bench_name=bench_name)
-        doi_text = "Reference(s): " + ",".join(tmp_dois) + "<br>"
+        tmp_dois = [
+            str("[") + i + str("](") + i + ")"
+            for i in list(set(get_doi(bench_name=bench_name) + proj_urls))
+        ]
+        doi_text = "Reference(s): " + ", ".join(tmp_dois) + "<br>"
         desc = desc + "<br>" + doi_text
     if desc == "NaN":
         print("NaN", bench_name)
@@ -769,7 +786,7 @@ def get_metric_value_old(
 
 def rebuild_pages(
     exclude_benchs=["AI-AtomGen-heat_ref-perov5-test-rmse.csv.zip"],
-    debug_one=False,
+    debug_one=True,
 ):
     print("Rebuilding web:")
     unique_fname = []
