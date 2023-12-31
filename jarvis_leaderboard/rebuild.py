@@ -786,7 +786,7 @@ def get_metric_value_old(
 
 def rebuild_pages(
     exclude_benchs=["AI-AtomGen-heat_ref-perov5-test-rmse.csv.zip"],
-    debug_one=True,
+    debug_one=False,
 ):
     print("Rebuilding web:")
     unique_fname = []
@@ -1080,6 +1080,7 @@ def rebuild_pages(
                 # for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
 
                 if key in i and extra_key in i:
+                    #TODO: Distinguish MLFF and FF
                     p = i.split("/")[-1].split(".csv.zip")[0]
                     homepage.append(p)
         # print ('index pages',homepage)
