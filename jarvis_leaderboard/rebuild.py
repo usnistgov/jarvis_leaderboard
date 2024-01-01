@@ -40,6 +40,7 @@ scaling = {
     }
 }
 benchmark_descriptions = pd.read_csv(root_dir + "/benchmarks/descriptions.csv")
+# TODO: Merge benchmark_dois and benchmark_descriptions
 
 
 def mean_absolute_deviation(data, axis=None):
@@ -124,6 +125,110 @@ def make_summary_table():
         if "<!--summary_table-->" in j:
             temp = j + line
             content.append(temp)
+        elif "<h3>Artificial intelligence (AI)</h3><p>Contributions:" in j:
+            with open("docs/AI/index.md", "r") as temp_file:
+                temp_filedata = temp_file.read().splitlines()
+                for k in temp_filedata:
+                    if "<!--number_of_contributions-->" in k:
+                        num_temp = int(k.split(":")[-1])
+                        break
+            temp = (
+                "<h3>Artificial intelligence (AI)</h3><p>Contributions: "
+                + str(num_temp)
+                + "</p>"
+            )
+            content.append(temp)
+
+        elif "<h3>Electronic Struct. (ES)</h3><p>Contributions:" in j:
+            with open("docs/ES/index.md", "r") as temp_file:
+                temp_filedata = temp_file.read().splitlines()
+                for k in temp_filedata:
+                    if "<!--number_of_contributions-->" in k:
+                        num_temp = int(k.split(":")[-1])
+                        break
+            temp = (
+                "<h3>Electronic Struct. (ES)</h3><p>Contributions: "
+                + str(num_temp)
+                + "</p>"
+            )
+            content.append(temp)
+
+        elif "<h3>Force-field (FF)/potentials</h3><p>Contributions" in j:
+            with open("docs/FF/index.md", "r") as temp_file:
+                temp_filedata = temp_file.read().splitlines()
+                for k in temp_filedata:
+                    if "<!--number_of_contributions-->" in k:
+                        num_temp = int(k.split(":")[-1])
+                        break
+            temp = (
+                "<h3>Force-field (FF)/potentials</h3><p>Contributions "
+                + str(num_temp)
+                + "</p>"
+            )
+            content.append(temp)
+
+        elif "<h3>Quantum Comput. (QC) </h3><p>Contributions:" in j:
+            with open("docs/QC/index.md", "r") as temp_file:
+                temp_filedata = temp_file.read().splitlines()
+                for k in temp_filedata:
+                    if "<!--number_of_contributions-->" in k:
+                        num_temp = int(k.split(":")[-1])
+                        break
+            temp = (
+                "<h3>Quantum Comput. (QC) </h3><p>Contributions: "
+                + str(num_temp)
+                + "</p>"
+            )
+            content.append(temp)
+        elif "<h3>Experiments (EXP)</h3><p>Contributions:" in j:
+            with open("docs/EXP/index.md", "r") as temp_file:
+                temp_filedata = temp_file.read().splitlines()
+                for k in temp_filedata:
+                    if "<!--number_of_contributions-->" in k:
+                        num_temp = int(k.split(":")[-1])
+                        break
+            temp = (
+                "<h3>Experiments (EXP)</h3><p>Contributions: "
+                + str(num_temp)
+                + "</p>"
+            )
+            content.append(temp)
+
+        elif "<h3>Contribution Guide</h3><p>Contributors:" in j:
+            n_users = []
+            try:
+                rq = requests.get(
+                    "https://api.github.com/repos/usnistgov/jarvis_leaderboard/contributors"
+                ).json()
+                for u in rq:
+                    if u["login"] not in ["dependabot[bot]"]:
+                        n_users.append(i)
+            except Exception as exp:
+                print("Cannot get users", exp)
+                pass
+
+            temp = (
+                '<h3>Contribution Guide</h3><p>Contributors: <a href="https://github.com/usnistgov/jarvis_leaderboard/graphs/contributors" >'
+                + str(len(n_users))
+                + "</a></p>"
+            )
+            content.append(temp)
+
+        elif "<h3>Methodologies</h3><p>Available Methods:" in j:
+            n_methods = 0
+            for n in glob.glob(
+                "jarvis_leaderboard/contributions/*/metadata.json"
+            ):
+                # for i in glob.glob("jarvis_leaderboard/benchmarks/*/metadata.json"):
+                n_methods += 1
+
+            temp = (
+                "<h3>Methodologies</h3><p>Available Methods:"
+                + str(n_methods)
+                + "</p>"
+            )
+            content.append(temp)
+
         else:
             content.append(j)
     # filedata = filedata.replace('<!--table_content-->', temp)
@@ -1079,7 +1184,8 @@ def rebuild_pages(
             for i in glob.glob("jarvis_leaderboard/contributions/*/*.csv.zip"):
                 # for i in glob.glob("jarvis_leaderboard/benchmarks/*/*.csv.zip"):
 
-                if key in i and extra_key in i:
+                if i.split("/")[-1].split("-")[0] == key and extra_key in i:
+                    # if key in i and extra_key in i:
                     # TODO: Distinguish MLFF and FF
                     p = i.split("/")[-1].split(".csv.zip")[0]
                     homepage.append(p)
@@ -1514,10 +1620,8 @@ def rebuild_pages(
         # x.append(i.split('/')[-1].split('.csv.zip')[0])
     y = sorted(y)
     print("Files", len(x))
-    # print(x, len(x))
-    update_individual_index_md(md_path="docs/index.md", homepage=y)
-    # update_individual_index_md(md_path="docs/index.md", homepage=homepage)
-    # update_individual_index_md(md_path="docs/index.md",homepage=sorted(x))
+    # update_individual_index_md(md_path="docs/index.md", homepage=y)
+    update_individual_index_md(md_path="docs/index.md", homepage=homepage)
     update_individual_index_md(md_path="docs/ES/index.md", key="ES")
     update_individual_index_md(md_path="docs/FF/index.md", key="FF")
     update_individual_index_md(
