@@ -1,0 +1,18 @@
+{
+    "author_email": "lucas.hale@nist.gov",
+    "database_version": "12-12-2022",
+    "date_submitted": "01-03-2024",
+    "language": "python",
+    "model_name": "iprPy",
+    "os": "linux",
+    "project_url": "https://www.ctcms.nist.gov/potentials/",
+    "doi": "10.18434/m37",
+    "software_used": "LAMMPS,atomman,iprPy",
+    "team_name": "IPR",
+    "time_taken_seconds": {
+        "FF-SinglePropertyPrediction-bulk_modulus_JVASP_816_Al-dft_3d-test-mae.csv.zip": "",
+        "FF-SinglePropertyPrediction-bulk_modulus_JVASP_1002_Si-dft_3d-test-mae.csv.zip": ""
+    },
+    "hardware_used": "laptop, 1 core",
+    "git_url": []
+}
