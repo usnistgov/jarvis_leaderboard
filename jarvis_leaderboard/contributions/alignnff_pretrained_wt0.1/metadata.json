@@ -1,0 +1,23 @@
+{
+    "model_name": "ALIGNN",
+    "project_url": "https://pubs.rsc.org/en/content/articlehtml/2023/dd/d2dd00096b",
+    "date_submitted": "01-14-2023",
+    "author_email": "knc6@nist.gov",
+    "database_version": "12-12-2022",
+    "team_name": "JARVIS",
+    "time_taken_seconds": {
+        "AI-MLFF-energy-alignn_ff_db-test-mae.csv.zip": "",
+        "AI-SinglePropertyPrediction-ef-vacancydb-test-mae.csv.zip": "",
+        "AI-SinglePropertyPrediction-ef-vacancydb_2D-test-mae.csv.zip": "",
+        "AI-SinglePropertyPrediction-ef-vacancydb_elements-test-mae.csv.zip": "",
+        "AI-SinglePropertyPrediction-ef-vacancydb_oxides-test-mae.csv.zip": ""
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "jarvis-tools,numpy,scipy,torch,alignn",
+    "hardware_used": "nisaba-cluster at NIST, V100 Tesla GPU",
+    "git_url": [
+        "https://github.com/usnistgov/jarvis",
+        "https://github.com/usnistgov/alignn"
+    ]
+}

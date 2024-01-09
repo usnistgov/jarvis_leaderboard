@@ -1,0 +1,19 @@
+{
+    "model_name": "SNAP",
+    "project_url": "https://github.com/materialsvirtuallab/maml/",
+    "date_submitted": "01-14-2023",
+    "author_email": "ongsp@ucsd.edu",
+    "database_version": "12-12-2022",
+    "team_name": "SNAP",
+    "time_taken_seconds": {
+        "AI-MLFF-energy-mlearn_Si-test-mae.csv.zip": "",
+        "AI-MLFF-forces-mlearn_Si-test-multimae.csv.zip": ""
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "jarvis-tools,numpy,scipy,torch,alignn",
+    "hardware_used": "nisaba-cluster at NIST, V100 Tesla GPU",
+    "git_url": [
+        "https://github.com/materialsvirtuallab/maml/"
+    ]
+}
