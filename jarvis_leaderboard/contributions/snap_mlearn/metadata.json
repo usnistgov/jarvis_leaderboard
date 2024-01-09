@@ -1,12 +1,24 @@
 {
     "model_name": "SNAP",
-    "project_url": "https://github.com/materialsvirtuallab/maml/",
+    "project_url": "https://github.com/materialsvirtuallab/maml",
     "date_submitted": "01-14-2023",
-    "author_email": "ongsp@ucsd.edu",
+    "author_email": "knc6@nist.gov",
     "database_version": "12-12-2022",
-    "team_name": "SNAP",
+    "team_name": "JARVIS",
     "time_taken_seconds": {
+        "AI-MLFF-energy-alignn_ff_db-test-mae.csv.zip": "",
+        "AI-MLFF-energy-mlearn_Cu-test-mae.csv.zip": "",
+        "AI-MLFF-energy-mlearn_Ge-test-mae.csv.zip": "",
+        "AI-MLFF-energy-mlearn_Li-test-mae.csv.zip": "",
+        "AI-MLFF-energy-mlearn_Mo-test-mae.csv.zip": "",
+        "AI-MLFF-energy-mlearn_Ni-test-mae.csv.zip": "",
         "AI-MLFF-energy-mlearn_Si-test-mae.csv.zip": "",
+        "AI-MLFF-forces-alignn_ff_db-test-multimae.csv.zip": "",
+        "AI-MLFF-forces-mlearn_Cu-test-multimae.csv.zip": "",
+        "AI-MLFF-forces-mlearn_Ge-test-multimae.csv.zip": "",
+        "AI-MLFF-forces-mlearn_Li-test-multimae.csv.zip": "",
+        "AI-MLFF-forces-mlearn_Mo-test-multimae.csv.zip": "",
+        "AI-MLFF-forces-mlearn_Ni-test-multimae.csv.zip": "",
         "AI-MLFF-forces-mlearn_Si-test-multimae.csv.zip": ""
     },
     "language": "python",
@@ -14,6 +26,6 @@
     "software_used": "jarvis-tools,numpy,scipy,torch,alignn",
     "hardware_used": "nisaba-cluster at NIST, V100 Tesla GPU",
     "git_url": [
-        "https://github.com/materialsvirtuallab/maml/"
+        "https://github.com/materialsvirtuallab/maml"
     ]
 }
