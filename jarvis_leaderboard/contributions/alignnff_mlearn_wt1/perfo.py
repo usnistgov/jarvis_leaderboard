@@ -1,6 +1,6 @@
 import glob
 from jarvis_leaderboard.rebuild import get_metric_value,get_results
-for ii in glob.glob('jarvis_leaderboard/jarvis_leaderboard/contributions/alignnff_mlearn_ls6/*.csv.zip'):
+for ii in glob.glob('jarvis_leaderboard/jarvis_leaderboard/contributions/alignnff_mlearn_nisab_1/*.csv.zip'):
   #if 'multimae' in ii:
      bname=ii.split('/')[-1]
      print(bname)
