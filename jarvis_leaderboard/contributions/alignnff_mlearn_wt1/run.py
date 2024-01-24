@@ -1,4 +1,5 @@
-#conda activate /work/03943/kamalch/ls6/Software/alignn
+# conda activate /wrk/knc6/Software/mini_alignn
+# https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/Train_ALIGNNFF_Mlearn.ipynb
 import os,json,torch
 from jarvis.core.atoms import Atoms
 from jarvis.db.jsonutils import loadjson, dumpjson
@@ -22,31 +23,17 @@ mlearn = json.loads(
         )
     )
 example_config = loadjson("config_mlearn_cu.json")
-example_config["n_train"] = 0 
-example_config["n_val"] = 0 
-example_config["n_test"] = 0
-example_config["model"]["graphwise_weight"] = 1
-example_config["model"]["gradwise_weight"] = 1
-example_config["model"]["add_reverse_forces"] = True
-example_config["model"]["lg_on_fly"] = True
-example_config["model"]["alignn_layers"] = 4
-example_config["epochs"] = 300
-example_config["batch_size"] = 2
-example_config["keep_data_order"] = True
 
 run_dir='./'
-elements = ["Si","Cu","Mo","Ni","Ge","Mo","Li"]
+elements = ["Si"] #,"Cu","Mo","Ni","Ge","Mo","Li"]
 mem = []
-train_energies = []
-train_forces = []
-train_stresses = []
-train_structures = []
-dir_name = "alff2_comb" 
-cmd='rm -rf '+dir_name
-os.system(cmd)
-if not os.path.exists(dir_name):
-    os.makedirs(dir_name)
 for element in elements:
+    os.chdir(run_dir)
+    dir_name = "alff2_wt_1_determ" + element
+    cmd='rm -rf '+dir_name
+    os.system(cmd)
+    if not os.path.exists(dir_name):
+        os.makedirs(dir_name)
     benchmark_energies = (
         "jarvis_leaderboard/jarvis_leaderboard/benchmarks/AI/MLFF/mlearn_"
         + element
@@ -59,12 +46,25 @@ for element in elements:
     )
     train_ids = list(energies["train"].keys())
     test_ids = list(energies["test"].keys())
-    example_config["n_train"] += len(train_ids)
-    example_config["n_val"] += len(test_ids)
-    example_config["n_test"] += len(test_ids)
-    #config_name = dir_name + "/config_" + "comb" + ".json"
-    #dumpjson(data=example_config, filename=config_name)
+    example_config["n_train"] = len(train_ids)
+    example_config["n_val"] = len(test_ids)
+    example_config["n_test"] = len(test_ids)
+    example_config["model"]["graphwise_weight"] = 1
+    example_config["model"]["gradwise_weight"] = 1
+    example_config["model"]["add_reverse_forces"] = True
+    example_config["model"]["lg_on_fly"] = True
+    example_config["model"]["alignn_layers"] = 4
+    example_config["epochs"] = 200
+    example_config["batch_size"] = 2
 
+    example_config["keep_data_order"] = True
+    config_name = dir_name + "/config_" + element + ".json"
+    dumpjson(data=example_config, filename=config_name)
+
+    train_energies = []
+    train_forces = []
+    train_stresses = []
+    train_structures = []
     for i in mlearn:
         if i["jid"] in train_ids:
             # print(i)
@@ -81,22 +81,16 @@ for element in elements:
             info["stresses"] = i["stresses"]
             mem.append(info)
     # Val same as test
-for element in elements:
-    benchmark_energies = (
-        "jarvis_leaderboard/jarvis_leaderboard/benchmarks/AI/MLFF/mlearn_"
-        + element
-        + "_energy.json.zip"
-    )
-
-    temp_energies = benchmark_energies.split("/")[-1].split(".zip")[0]
-    energies = json.loads(
-        zipfile.ZipFile(benchmark_energies).read(temp_energies)
-    )
-    train_ids = list(energies["train"].keys())
-    test_ids = list(energies["test"].keys())
+    test_energies = []
+    test_forces = []
+    test_stresses = []
+    test_structures = []
     for i in mlearn:
         if i["jid"] in test_ids:
             # print(i)
+            test_energies.append(i["energy"])
+            test_forces.append(i["forces"])
+            test_stresses.append(i["stresses"])
             atoms = Atoms.from_dict(i["atoms"])
             info = {}
             info["jid"] = i["jid"]
@@ -106,23 +100,18 @@ for element in elements:
             info["forces"] = i["forces"]
             info["stresses"] = i["stresses"]
             mem.append(info)
-for element in elements:
-    benchmark_energies = (
-        "jarvis_leaderboard/jarvis_leaderboard/benchmarks/AI/MLFF/mlearn_"
-        + element
-        + "_energy.json.zip"
-    )
-
-    temp_energies = benchmark_energies.split("/")[-1].split(".zip")[0]
-    energies = json.loads(
-        zipfile.ZipFile(benchmark_energies).read(temp_energies)
-    )
-    train_ids = list(energies["train"].keys())
-    test_ids = list(energies["test"].keys())
+    test_energies = []
+    test_forces = []
+    test_stresses = []
+    test_structures = []
     for i in mlearn:
         if i["jid"] in test_ids:
             # print(i)
+            test_energies.append(i["energy"])
+            test_forces.append(i["forces"])
+            test_stresses.append(i["stresses"])
             atoms = Atoms.from_dict(i["atoms"])
+            #test_structures.append(atoms.pymatgen_converter())
             info = {}
             info["jid"] = i["jid"]
             info["atoms"] = i["atoms"]
@@ -131,26 +120,24 @@ for element in elements:
             info["forces"] = i["forces"]
             info["stresses"] = i["stresses"]
             mem.append(info)
-filename = dir_name + "/id_prop.json"
-cfilename = dir_name + "/config_comb.json"
-dumpjson(data=mem, filename=filename)
-dumpjson(data=example_config, filename=cfilename)
-cmd = (
-    "train_folder_ff.py --root_dir "
-    + dir_name
-    + " --config "
-    + cfilename
-    + " --output_dir "
-    + dir_name
-)
-#cmd="train_folder_ff.py -h"
+    filename = dir_name + "/id_prop.json"
+    dumpjson(data=mem, filename=filename)
+    cmd = (
+        "train_folder_ff.py --root_dir "
+        + dir_name
+        + " --config "
+        + config_name
+        + " --output_dir "
+        + dir_name
+    )
+    #cmd="train_folder_ff.py -h"
 
-print(cmd)
-#os.system(cmd)
-subprocess.call(cmd, stdout=PIPE,shell=True)
+    print(cmd)
+    os.system(cmd)
+    #subprocess.call(cmd, stdout=PIPE,shell=True)
     #p1 = Popen(cmd, stdout=PIPE, shell=True)
 
-for element in elements:
+
 ################
     model_path = dir_name
 
@@ -158,7 +145,7 @@ for element in elements:
     calc = AlignnAtomwiseCalculator(
         path=model_path,
         force_mult_natoms=False,
-        force_multiplier=1,
+        force_multiplier=2,
         stress_wt=-4800,
     )
 
