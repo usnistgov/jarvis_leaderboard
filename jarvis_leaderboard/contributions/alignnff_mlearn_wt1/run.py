@@ -26,6 +26,7 @@ example_config = loadjson("config_mlearn_cu.json")
 
 run_dir='./'
 elements = ["Si"] #,"Cu","Mo","Ni","Ge","Mo","Li"]
+elements = ["Cu","Mo","Ni","Ge","Mo","Li"]
 mem = []
 for element in elements:
     os.chdir(run_dir)
@@ -133,8 +134,8 @@ for element in elements:
     #cmd="train_folder_ff.py -h"
 
     print(cmd)
-    os.system(cmd)
-    #subprocess.call(cmd, stdout=PIPE,shell=True)
+    #os.system(cmd)
+    subprocess.call(cmd, stdout=PIPE,shell=True)
     #p1 = Popen(cmd, stdout=PIPE, shell=True)
 
 
