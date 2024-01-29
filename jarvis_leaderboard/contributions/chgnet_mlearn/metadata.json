@@ -1,0 +1,29 @@
+{
+    "model_name": "CHGNET",
+    "project_url": "https://github.com/CederGroupHub/chgnet",
+    "date_submitted": "01-29-2024",
+    "author_email": "knc6@nist.gov",
+    "database_version": "12-12-2022",
+    "team_name": "CHGNET",
+    "time_taken_seconds": {
+        "AI-MLFF-energy-mlearn_Cu-test-mae.csv.zip": "",
+        "AI-MLFF-energy-mlearn_Ge-test-mae.csv.zip": "",
+        "AI-MLFF-energy-mlearn_Li-test-mae.csv.zip": "",
+        "AI-MLFF-energy-mlearn_Mo-test-mae.csv.zip": "",
+        "AI-MLFF-energy-mlearn_Ni-test-mae.csv.zip": "",
+        "AI-MLFF-energy-mlearn_Si-test-mae.csv.zip": "",
+        "AI-MLFF-forces-mlearn_Cu-test-multimae.csv.zip": "",
+        "AI-MLFF-forces-mlearn_Ge-test-multimae.csv.zip": "",
+        "AI-MLFF-forces-mlearn_Li-test-multimae.csv.zip": "",
+        "AI-MLFF-forces-mlearn_Mo-test-multimae.csv.zip": "",
+        "AI-MLFF-forces-mlearn_Ni-test-multimae.csv.zip": "",
+        "AI-MLFF-forces-mlearn_Si-test-multimae.csv.zip": ""
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "jarvis-tools,numpy,scipy,torch,m3gnet",
+    "hardware_used": "nisaba-cluster at NIST, V100 Tesla GPU",
+    "git_url": [
+        "https://github.com/CederGroupHub/chgnet"
+    ]
+}
