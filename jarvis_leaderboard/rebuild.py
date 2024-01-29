@@ -363,12 +363,15 @@ def get_metric_value(
             real = np.array(v["actual"].split(";"), dtype="float")
             # real = np.array(v["target"].split(";"), dtype="float")
             pred = np.array(v["prediction"].split(";"), dtype="float")
-            m = mean_absolute_error(real, pred)
-            maes.append(m)
+            # m = mean_absolute_error(real, pred)
+            # maes.append(m)
             reals.append(real)
             preds.append(pred)
             # print('mm',m)
-        results["res"] = round(np.array(maes).sum() / len(maes), 4)
+        # results["res"] = round(np.array(maes).sum() / len(maes), 4)
+        results["res"] = mean_absolute_error(
+            np.concatenate(reals), np.concatenate(preds)
+        )
         if plot_filename is not None:
             plt.plot(np.concatenate(reals), np.concatenate(preds), ".")
             plt.savefig(plot_filename)
