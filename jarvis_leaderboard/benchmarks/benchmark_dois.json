@@ -384,6 +384,9 @@
             "arXiv_categories.json.zip": [
                 "https://doi.org/10.48550/arXiv.1905.00075"
             ],
+            "mmlu_test_quiz.json.zip": [
+                "https://doi.org/10.48550/arXiv.2009.03300"
+            ],
             "pubchem_categories.json.zip": [
                 "https://doi.org/10.1093/nar/gkaa971"
             ]
