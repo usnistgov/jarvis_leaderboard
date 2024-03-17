@@ -29,6 +29,11 @@ parser.add_argument(
     help="Name of identifier in a dataset: id or jid",
 )
 parser.add_argument(
+    "--out_format",
+    default="poscar",
+    help="Fileoutput format, poscar/cif",
+)
+parser.add_argument(
     "--output_path",
     default="DataPath",
     help="Path for storing the training data.",
@@ -49,6 +54,7 @@ def get_dataset(
     task="",
     id_tag="",
     filename="dataset_info.json",
+    out_format="poscar",
 ):
     b_info = {}
     b_info["benchmark_file"] = benchmark_file
@@ -90,21 +96,57 @@ def get_dataset(
         id_prop = os.path.join(output_path, "id_prop.csv")
         f = open(id_prop, "w")
         for i, j in train.items():
-            line = str(i) + "," + str(j) + "\n"
+            if out_format == "poscar":
+                line = str(i) + "," + str(j) + "\n"
+                pos_name = os.path.join(output_path, str(i))
+            elif out_format == "cif":
+                # line = str(i) + ".cif," + str(j) + "\n"
+                line = str(i) + "," + str(j) + "\n"
+                pos_name = os.path.join(output_path, str(i) + ".cif")
+            else:
+                raise ValueError(out_format)
             f.write(line)
-            pos_name = os.path.join(output_path, str(i))
-            info[i].write_poscar(pos_name)
+            if out_format == "poscar":
+                info[i].write_poscar(pos_name)
+            elif out_format == "cif":
+                info[i].write_cif(filename=pos_name)
+            else:
+                raise ValueError(out_format)
         for i, j in val.items():
-            line = str(i) + "," + str(j) + "\n"
+            if out_format == "poscar":
+                line = str(i) + "," + str(j) + "\n"
+                pos_name = os.path.join(output_path, str(i))
+            elif out_format == "cif":
+                line = str(i) + "," + str(j) + "\n"
+                # line = str(i) + ".cif," + str(j) + "\n"
+                pos_name = os.path.join(output_path, str(i) + ".cif")
+            else:
+                raise ValueError(out_format)
             f.write(line)
-            pos_name = os.path.join(output_path, str(i))
-            info[i].write_poscar(pos_name)
+            if out_format == "poscar":
+                info[i].write_poscar(pos_name)
+            elif out_format == "cif":
+                info[i].write_cif(filename=pos_name)
+            else:
+                raise ValueError(out_format)
 
         for i, j in test.items():
-            line = str(i) + "," + str(j) + "\n"
+            if out_format == "poscar":
+                line = str(i) + "," + str(j) + "\n"
+                pos_name = os.path.join(output_path, str(i))
+            elif out_format == "cif":
+                # line = str(i) + ".cif," + str(j) + "\n"
+                line = str(i) + "," + str(j) + "\n"
+                pos_name = os.path.join(output_path, str(i) + ".cif")
+            else:
+                raise ValueError(out_format)
             f.write(line)
-            pos_name = os.path.join(output_path, str(i))
-            info[i].write_poscar(pos_name)
+            if out_format == "poscar":
+                info[i].write_poscar(pos_name)
+            elif out_format == "cif":
+                info[i].write_cif(filename=pos_name)
+            else:
+                raise ValueError(out_format)
         f.close()
         print("number of training samples", len(train))
         print("number of validation samples", len(val))
@@ -127,6 +169,7 @@ if __name__ == "__main__":
     prop = benchmark_file.split("-")[2]
     dataset = benchmark_file.split("-")[3]
     output_path = args.output_path
+    out_format = args.out_format
     # method = benchmark_file.split("-")[4]
     # task = benchmark_file.split("-")[0]
     id_tag = args.id_tag
@@ -137,6 +180,7 @@ if __name__ == "__main__":
     print("method", method)
     print("task", task)
     print("id_tag", id_tag)
+    print("out_format", out_format)
 
     info = get_dataset(
         benchmark_file=benchmark_file,
@@ -146,4 +190,5 @@ if __name__ == "__main__":
         method=method,
         task=task,
         id_tag=id_tag,
+        out_format=out_format,
     )
