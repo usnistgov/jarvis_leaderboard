@@ -38,5 +38,6 @@ def test_sanity_check():
     p = get_all_dois()
     print("check all dois exist", len(p))
 
-
+#p = check_metadata_json_exists()
+#print('p',p)
 #test_sanity_check()
