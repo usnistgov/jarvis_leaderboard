@@ -39,4 +39,4 @@ def test_sanity_check():
     print("check all dois exist", len(p))
 
 
-test_sanity_check()
+#test_sanity_check()
