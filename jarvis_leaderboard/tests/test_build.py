@@ -37,7 +37,7 @@ def test_sanity_check():
     assert len(p) == 0
     p = get_all_dois()
     print("check all dois exist", len(p))
-
+#p = check_at_least_one_csv_zip_exists()
 #p = check_metadata_json_exists()
 #print('p',p)
 #test_sanity_check()
