@@ -5,7 +5,7 @@ name: Deploy Site
 on:
   push:
     branches:
-      - master
+      - main
       
 permissions:
   contents: write
