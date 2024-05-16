@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="jarvis_leaderboard",  # Replace with your own username
-    version="2024.2.26",
+    version="2024.4.26",
     author="Kamal Choudhary",
     author_email="kamal.choudhary@nist.gov",
     description="jarvis_leaderboard",
@@ -41,6 +41,8 @@ setuptools.setup(
     ],
     package_data={
         "jarvis_leaderboard": [
+            "benchmarks/benchmark_dois.json",
+            "benchmarks/descriptions.csv",
             "benchmarks/ES/*/*.json.zip",
             "benchmarks/EXP/*/*.json.zip",
             "benchmarks/FF/*/*.json.zip",
@@ -65,5 +67,5 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires=">=3.7",
+    python_requires=">=3.8",
 )
