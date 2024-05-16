@@ -236,6 +236,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/AI/SinglePropertyPrediction/dft_3d_Tc_supercon_hydride/</loc>
+         <lastmod>2024-05-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/usnistgov/jarvis_leaderboard/AI/SinglePropertyPrediction/dft_3d_Tc_supercon_hydride_plus_bulk/</loc>
+         <lastmod>2024-05-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/usnistgov/jarvis_leaderboard/AI/SinglePropertyPrediction/dft_3d_avg_elec_mass/</loc>
          <lastmod>2024-05-16</lastmod>
          <changefreq>daily</changefreq>
