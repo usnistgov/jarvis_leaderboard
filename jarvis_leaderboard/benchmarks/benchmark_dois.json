@@ -203,6 +203,16 @@
                 "https://www.nature.com/articles/s41524-020-00440-1",
                 "https://doi.org/10.48550/arXiv.2305.11842"
             ],
+            "dft_3d_Tc_supercon_hydride.json.zip": [
+                "https://iopscience.iop.org/article/10.1088/2752-5724/ad4a94",
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_Tc_supercon_hydride_plus_bulk.json.zip": [
+                "https://iopscience.iop.org/article/10.1088/2752-5724/ad4a94",
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
             "dft_3d_ph_heat_capacity.json.zip": [
                 "https://www.nature.com/articles/s41524-020-00440-1",
                 "https://doi.org/10.48550/arXiv.2305.11842"
