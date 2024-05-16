@@ -138,7 +138,7 @@ body {
 
 !!! Reference
 
-    [Large Scale Benchmark of Materials Design Methods, arXiv: 2306.11688 (2023) ](https://arxiv.org/abs/2306.11688)
+    [JARVIS-Leaderboard: a large scale benchmark of materials design methods, Nature npj Computational Materials volume 10, 93 (2024)](https://www.nature.com/articles/s41524-024-01259-w)
 
 
 
@@ -161,10 +161,12 @@ body {
 <a name="intro"></a>
 # Introduction
 
-This project provides benchmark-performances of various methods for materials science applications using the datasets available in [JARVIS-Tools databases](https://jarvis-tools.readthedocs.io/en/master/databases.html). Some of the categories are: [Artificial Intelligence (AI)](./AI), [Electronic Structure (ES)](./ES), [Force-field (FF)](./FF), [Quantum Computation (QC)](./QC) and [Experiments (EXP)](./EXP). There are a variety of properties included in the benchmark.
-In addition to prediction results, we attempt to capture the underlyig software, hardware and instrumental frameworks to enhance reproducibility. This project is a part of the [NIST-JARVIS](https://jarvis.nist.gov) infrastructure.
+This project provides benchmark performances of various methods for materials science applications using the datasets available in [JARVIS-Tools databases](https://pages.nist.gov/jarvis/databases/). Some of the categories are: [Artificial Intelligence (AI)](./AI), [Electronic Structure (ES)](./ES), [Force-field (FF)](./FF), [Quantum Computation (QC)](./QC) and [Experiments (EXP)](./EXP). A variety of properties are included in the benchmark.
 
-Usually, codes are kept in GitHub/GitLab etc., data is kept in Zenodo/Figshare/NIST Materials data etc., we recommend keeping the benchmarks in the JARVIS-Leaderboard to enhance reproducibility and transparency. 
+Typically, codes are kept in platforms like GitHub/GitLab, and data is stored in repositories like Zenodo/Figshare/NIST Materials Data. We recommend keeping the benchmarks in the JARVIS-Leaderboard to enhance reproducibility and transparency.
+
+In addition to prediction results, we aim to capture the underlying software, hardware, and instrumental frameworks to enhance reproducibility. This project is a part of the [NIST-JARVIS](https://jarvis.nist.gov) infrastructure.
+
 
 <!--number_of_benchmarks--> - Number of benchmarks: 296
 
