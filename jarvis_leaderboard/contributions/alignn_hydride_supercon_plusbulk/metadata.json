@@ -1,0 +1,17 @@
+{
+    "model_name": "ALIGNN",
+    "project_url": "https://iopscience.iop.org/article/10.1088/2752-5724/ad4a94",
+    "date_submitted": "05-16-2024",
+    "author_email": "daniel.wines@nist.gov",
+    "team_name": "ALIGNN",
+    "time_taken_seconds": {
+        "AI-SinglePropertyPrediction-Tc_supercon_hydride_plus_bulk-dft_3d-test-mae.csv.zip": "24672"
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "jarvis-tools,numpy,scipy,torch,alignn",
+    "hardware_used": "nisaba-cluster at NIST, V100 Tesla GPU",
+    "git_url": [
+        "https://github.com/usnistgov/alignn"
+    ]
+}
