@@ -1,0 +1,20 @@
+{
+    "model_name": "ALIGNN",
+    "project_url": "https://www.nature.com/articles/s41524-021-00650-1",
+    "date_submitted": "01-14-2023",
+    "author_email": "knc6@nist.gov",
+    "database_version": "12-12-2022",
+    "team_name": "ALIGNN",
+    "time_taken_seconds": {
+        "AI-SinglePropertyClass-mbj_bandgap-dft_3d-test-acc.csv.zip": "",
+        "AI-SinglePropertyClass-optb88vdw_bandgap-dft_3d-test-acc.csv.zip": "",
+        "AI-SinglePropertyPrediction-formation_energy_peratom-dft_3d-test-mae.csv.zip": ""
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "jarvis-tools,numpy,scipy,torch,atomgpt",
+    "hardware_used": "nisaba-cluster at NIST, V100 Tesla GPU",
+    "git_url": [
+        "https://github.com/usnistgov/atomgpt"
+    ]
+}
