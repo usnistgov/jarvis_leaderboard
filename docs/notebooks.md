@@ -12,7 +12,7 @@ Quick start using GoogleColab notebook examples
 
 [GPAW colab.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/GPAW_Colab.ipynb)
 
-[Quantum Espresso colab.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/LK99_GoogleColab_QE.ipynb)
+[Quantum Espresso colab.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/JARVIS_QuantumEspressoColab_Basic_Example.ipynb)
 
 
 ## Machine-learning regression model for atomistic properties
