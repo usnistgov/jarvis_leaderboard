@@ -1,4 +1,4 @@
-# Guide
+# Detailed Guide
 
 # External Resources
 - [Powerpoint slides](https://lnkd.in/eNg4w6Cz)
