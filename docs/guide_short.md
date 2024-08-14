@@ -1,4 +1,4 @@
-# Guide to JARVIS-Leaderboard
+# Short Guide to JARVIS-Leaderboard
 
 ## Introduction
 JARVIS-Leaderboard is an open-source, community-driven platform that facilitates benchmarking and enhances reproducibility in materials design. Users can set up benchmarks with custom tasks and contribute datasets, code, and meta-data. The platform covers five main categories: Artificial Intelligence (AI), Electronic Structure (ES), Force-fields (FF), Quantum Computation (QC), and Experiments (EXP).
