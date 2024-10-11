@@ -8,6 +8,8 @@ import pandas as pd
 import os
 
 root_dir = os.path.dirname(os.path.abspath(__file__))
+
+
 def catalysis_mat(
     benchmarks=[
         "AI-SinglePropertyPrediction-ead-tinnet_N-test-mae.csv.zip",
@@ -25,7 +27,7 @@ def catalysis_mat(
         "AI-SinglePropertyPrediction-ead-",
         "-test-mae.csv.zip",
     ],
-    md_path='catalysis_mat.md',
+    md_path="catalysis_mat.md",
     width=800,
     height=800,
     desired_order=[],
@@ -66,39 +68,56 @@ def catalysis_mat(
     df = pd.DataFrame(dat, index=row_names, columns=column_names)
     # print(df)
     if not desired_order:
-       desired_order = column_names
+        desired_order = column_names
     # Reindex the DataFrame to have both rows and columns in the desired order
     df_reordered = df.reindex(index=desired_order, columns=column_names)
 
     # Display the reordered DataFrame
     print(df_reordered)
-    #fig = px.imshow(df, text_auto=True)
+    # fig = px.imshow(df, text_auto=True)
     fig = px.imshow(df_reordered, text_auto=True)
     fig.update_layout(
-    width=width,  # Set the width of the figure
-    height=height  # Set the height of the figure
+        width=width,  # Set the width of the figure
+        height=height,  # Set the height of the figure
     )
     htm = fig.to_html()
     tmp_out = str(fig.to_html(full_html=False, include_plotlyjs="cdn"))
-    tmp_out= tmp_out.replace("\n", " ").replace("  ", " ")
-    md_path=os.path.join(root_dir,"..","docs","Special",md_path)
-    with open(md_path,'r') as file:
+    tmp_out = tmp_out.replace("\n", " ").replace("  ", " ")
+    md_path = os.path.join(root_dir, "..", "docs", "Special", md_path)
+    with open(md_path, "r") as file:
         filedata = file.read().splitlines()
-    content=[]
+    content = []
     for j in filedata:
-                if "<!--table_content-->" in j:
-                    content.append("<!--table_content-->")
-                elif "<!--benchmark_description-->" in j:
-                    content.append("<!--benchmark_description-->")
-                else:
-                    content.append(j)
-    filedata="\n".join(content)
-    filedata=filedata.replace("<!--table_content-->","<!--table_content-->"+tmp_out)
+        if "<!--table_content-->" in j:
+            content.append("<!--table_content-->")
+        elif "<!--benchmark_description-->" in j:
+            content.append("<!--benchmark_description-->")
+        else:
+            content.append(j)
+    filedata = "\n".join(content)
+    filedata = filedata.replace(
+        "<!--table_content-->", "<!--table_content-->" + tmp_out
+    )
     with open(md_path, "w") as file:
         file.write(filedata)
 
 
-if __name__=="__main__":
-   htm=catalysis_mat(desired_order=['tinnet_N', 'tinnet_O', 'tinnet_OH', 'AGRA_O', 'AGRA_OH', 'AGRA_CO', 'AGRA_COOH', 'AGRA_CHO','alignnff_pretrained_wt0.1','CHGNet_pretrained','MACE_pretrained','MATGL_pretrained'])
-   #htm=catalysis_mat()
-   print(htm)
+if __name__ == "__main__":
+    htm = catalysis_mat(
+        desired_order=[
+            "tinnet_N",
+            "tinnet_O",
+            "tinnet_OH",
+            "AGRA_O",
+            "AGRA_OH",
+            "AGRA_CO",
+            "AGRA_COOH",
+            "AGRA_CHO",
+            "alignnff_pretrained_wt0.1",
+            "CHGNet_pretrained",
+            "MACE_pretrained",
+            "MATGL_pretrained",
+        ]
+    )
+    # htm=catalysis_mat()
+    print(htm)
