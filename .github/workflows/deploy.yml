@@ -54,6 +54,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "actions@github.com"
             python jarvis_leaderboard/rebuild.py
+            python jarvis_leaderboard/specialized_benchmarks.py
             mkdocs build
             #rm -r /tmp/site
             cp -r site /tmp

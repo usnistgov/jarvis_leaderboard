@@ -12,6 +12,7 @@ import matplotlib.pyplot as plt
 import requests
 from jarvis.io.vasp.inputs import Poscar
 import plotly.graph_objects as go
+from scipy import stats
 
 # from mkdocs import utils
 
@@ -240,6 +241,7 @@ def make_summary_table():
 def get_metric_value(
     csv_path="../contributions/alignn_model/AI-SinglePropertyPrediction-formation_energy_peratom-dft_3d-test-mae.csv.zip",
     plot_filename=None,
+    metric=None,
 ):
     fname = csv_path.split("/")[-1].split(".csv.zip")[0]
     contribution = csv_path.split("/")[-2]
@@ -249,7 +251,8 @@ def get_metric_value(
     prop = temp[2]
     dataset = temp[3]
     data_split = temp[4]
-    metric = temp[-1]
+    if metric is None:
+        metric = temp[-1]
 
     results = {}
     results["category"] = category
@@ -324,7 +327,9 @@ def get_metric_value(
     # print('actual_df',actual_df)
     results["res"] = "na"
     results["df"] = df
-
+    if metric == "pearsonr":
+        res = round(stats.pearsonr(df["actual"], df["prediction"])[0], 2)
+        results["res"] = res
     if metric == "mae":
         res = round(mean_absolute_error(df["actual"], df["prediction"]), 4)
         # res = round(mean_absolute_error(df["actual"], df["prediction"]), 3)
@@ -667,6 +672,7 @@ def get_results(
     bench_name="ES-SinglePropertyPrediction-bandgap_JVASP_1002_Si-dft_3d-test-mae.csv.zip",
     include_random=False,
     include_all_results=False,
+    metric=None,
 ):
     search = root_dir + "/contributions/*/" + bench_name
     vals = []
@@ -676,7 +682,7 @@ def get_results(
     # for i in glob.glob("../contributions/*/AI-MLFF-forces-mlearn_Si-test-multimae.csv.zip"):
     for i in glob.glob(search):
         # print(i)
-        res = get_metric_value(csv_path=i)
+        res = get_metric_value(csv_path=i,metric=metric)
         # print (res['res'],res['random_guessing_performance'])
         if include_random:
             rand = res["random_guessing_performance"]
