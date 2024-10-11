@@ -103,21 +103,21 @@ def catalysis_mat(
 
 
 if __name__ == "__main__":
-    #htm = catalysis_mat(
-    #    desired_order=[
-    #        "tinnet_N",
-    #        "tinnet_O",
-    #        "tinnet_OH",
-    #        "AGRA_O",
-    #        "AGRA_OH",
-    #        "AGRA_CO",
-    #        "AGRA_COOH",
-    #        "AGRA_CHO",
-    #        "alignnff_pretrained_wt0.1",
-    #        "CHGNet_pretrained",
-    #        "MACE_pretrained",
-    #        "MATGL_pretrained",
-    #    ]
-    #)
-    htm=catalysis_mat()
+    htm = catalysis_mat(
+        desired_order=[
+            "tinnet_N",
+            "tinnet_O",
+            "tinnet_OH",
+            "AGRA_O",
+            "AGRA_OH",
+            "AGRA_CO",
+            "AGRA_COOH",
+            "AGRA_CHO",
+            "alignnff_pretrained_wt0.1",
+            "CHGNet_pretrained",
+            "MACE_pretrained",
+            "MATGL_pretrained",
+        ]
+    )
+    #htm=catalysis_mat()
     print(htm)
