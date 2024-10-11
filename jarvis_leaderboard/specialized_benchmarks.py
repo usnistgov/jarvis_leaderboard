@@ -34,10 +34,10 @@ def catalysis_mat(
 ):
     # Find all methods that have contributions for the above benchmarks
     mem = {}
-    for i in glob.glob("contributions/*/*.csv.zip"):
+    for i in glob.glob("jarvis_leaderboard/contributions/*/*.csv.zip"):
         for j in benchmarks:
             if j in i:
-                tmp = i.split("/")[1]
+                tmp = i.split("/")[2]
                 for r in replacements:
                     tmp = tmp.replace(r, "")
                 mem[tmp] = {}
