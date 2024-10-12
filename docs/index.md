@@ -128,7 +128,7 @@ body {
   <div class="column">
     <div class="card">
 <h3>Contribution Guide</h3><p>Contributors: <a href="https://github.com/usnistgov/jarvis_leaderboard/graphs/contributors" >20</a></p>
-      <a href="./guide" >Learn more</a>
+      <a href="./guide/guide_short" >Learn more</a>
     </div>
   </div>
 
