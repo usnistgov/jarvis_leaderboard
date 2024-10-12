@@ -31,7 +31,7 @@ jobs:
             conda create -n "$env_name" python=${{ matrix.python-version }} -y
 
             echo "Activating environment: $env_name"
-            source activate "$env_name"
+            conda activate "$env_name"
 
             echo "Running $script"
             chmod +x "$script"
