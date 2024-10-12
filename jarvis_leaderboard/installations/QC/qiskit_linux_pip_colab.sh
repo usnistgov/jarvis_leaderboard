@@ -1,0 +1,2 @@
+pip  install jarvis-tools==2021.7.10 qiskit-terra==0.18.0 qiskit-aer==0.8.2 numpy==1.19.5 matplotlib==3.2.2 requests==2.23.0 scipy==1.4.1 joblib==1.0.1 tqdm==4.41.1 toolz==0.11.1 xmltodict==0.12.0 qiskit-terra==0.18.0 qiskit-aer==0.8.2 qiskit-ibmq-provider==0.15.0 qiskit-ignis==0.6.0 qiskit-aqua==0.9.4
+# Example: https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/JARVIS_LAMMPS_tutorial.ipynb

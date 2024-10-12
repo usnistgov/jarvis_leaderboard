@@ -1,4 +1,4 @@
-name: Test AI Installations
+name: Test QC Installations
 
 on: [push, pull_request]
 
@@ -25,7 +25,7 @@ jobs:
       - name: Run installation scripts
         shell: bash -l {0}
         run: |
-          for script in jarvis_leaderboard/installations/AI/*.sh; do
+          for script in jarvis_leaderboard/installations/QC/*.sh; do
             # Extract script name to use as the environment name (without extension)
             env_name=$(basename "$script" .sh)-${{ matrix.python-version }}
             echo "Creating Conda environment: $env_name with Python ${{ matrix.python-version }}"
