@@ -168,7 +168,10 @@ In addition to prediction results, we aim to capture the underlying software, ha
 As a minimum check, we test rebuilding of the leaderboard and installations of software using GitHub actions.
 
 ![Leaderboard actions](https://github.com/usnistgov/jarvis_leaderboard/actions/workflows/test_build.yml/badge.svg)
-![Leaderboard installation actions](https://github.com/usnistgov/jarvis_leaderboard/actions/workflows/install_ai.yml/badge.svg)
+![Leaderboard AI installation actions](https://github.com/usnistgov/jarvis_leaderboard/actions/workflows/install_ai.yml/badge.svg)
+![Leaderboard ES installation actions](https://github.com/usnistgov/jarvis_leaderboard/actions/workflows/install_es.yml/badge.svg)
+![Leaderboard FF installation actions](https://github.com/usnistgov/jarvis_leaderboard/actions/workflows/install_ff.yml/badge.svg)
+![Leaderboard QC installation actions](https://github.com/usnistgov/jarvis_leaderboard/actions/workflows/install_qc.yml/badge.svg)
 
 
 <!--number_of_benchmarks--> - Number of benchmarks: 296
