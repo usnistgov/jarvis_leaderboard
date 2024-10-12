@@ -23,9 +23,10 @@ jobs:
       # Step 3: Run all installation scripts for each Python version
       - name: Run installation scripts with multiple Python versions
         run: |
-          # Initialize Conda for this shell session
-          source $HOME/miniconda/etc/profile.d/conda.sh
-          
+          # Ensure the shell is set up for Conda
+          echo "Setting up Conda..."
+          source $HOME/miniconda/bin/activate
+
           for script in jarvis_leaderboard/installations/AI/*.sh; do
             # Extract script name to use as the environment name (without extension)
             env_name=$(basename "$script" .sh)-${{ matrix.python-version }}
@@ -44,4 +45,3 @@ jobs:
             conda deactivate
             conda env remove -n "$env_name"
           done
-
