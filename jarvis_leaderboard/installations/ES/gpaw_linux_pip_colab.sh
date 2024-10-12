@@ -2,6 +2,7 @@
 sudo apt-get update
 sudo apt-get install libxc-dev
 sudo apt install python3-mpi4py cython3 libxc-dev gpaw-data
+pip -q install ase 
 pip -q install gpaw
 gpaw test
 
