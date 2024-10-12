@@ -1,6 +1,9 @@
 # CatalysisMat [WIP]
 
-https://doi.org/10.26434/chemrxiv-2024-hj733
+Pearson Correlation Coefficient (PCC) values representing the generalizability of GNN models in catalysis-related datasets. The table compares problem-specific GNN models (first eight rows) with generalized or unified models. The values provide insights into the performance and transferability of GNN models across different adsorption environments, illustrating their potential to predict catalytic behavior in both targeted and broad catalytic systems.
+
+Reference: [https://doi.org/10.26434/chemrxiv-2024-hj733](https://doi.org/10.26434/chemrxiv-2024-hj733)
+
 
 <!--benchmark_description-->
 

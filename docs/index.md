@@ -128,7 +128,7 @@ body {
   <div class="column">
     <div class="card">
 <h3>Contribution Guide</h3><p>Contributors: <a href="https://github.com/usnistgov/jarvis_leaderboard/graphs/contributors" >20</a></p>
-      <a href="./guide" >Learn more</a>
+      <a href="./guide/guide_short" >Learn more</a>
     </div>
   </div>
 
@@ -164,8 +164,11 @@ body {
 This project provides benchmark performances of various methods for materials science applications using the datasets available in [JARVIS-Tools databases](https://pages.nist.gov/jarvis/databases/). Some of the categories are: [Artificial Intelligence (AI)](./AI), [Electronic Structure (ES)](./ES), [Force-field (FF)](./FF), [Quantum Computation (QC)](./QC) and [Experiments (EXP)](./EXP). A variety of properties are included in the benchmark.
 
 Typically, codes are kept in platforms like GitHub/GitLab, and data is stored in repositories like Zenodo/Figshare/NIST Materials Data. We recommend keeping the benchmarks in the JARVIS-Leaderboard to enhance reproducibility and transparency.
-
 In addition to prediction results, we aim to capture the underlying software, hardware, and instrumental frameworks to enhance reproducibility. This project is a part of the [NIST-JARVIS](https://jarvis.nist.gov) infrastructure.
+As a minimum check, we test rebuilding of the leaderboard and installations of software using GitHub actions.
+
+![Leaderboard actions](https://github.com/usnistgov/jarvis_leaderboard/actions/workflows/test_build.yml/badge.svg)
+![Leaderboard installation actions](https://github.com/usnistgov/jarvis_leaderboard/actions/workflows/install_ai.yml/badge.svg)
 
 
 <!--number_of_benchmarks--> - Number of benchmarks: 296
@@ -176,7 +179,6 @@ In addition to prediction results, we aim to capture the underlying software, ha
 
 <!-- [Learn how to add benchmarks below](#add) -->
 <!-- <p style="text-align:center;"><img align="middle" src="https://www.ctcms.nist.gov/~knc6/images/logo/jarvis-mission.png"  width="40%" height="20%"></p>-->
-
 
 
 
