@@ -1,4 +1,5 @@
 ![Leaderboard actions](https://github.com/usnistgov/jarvis_leaderboard/actions/workflows/test_build.yml/badge.svg)
+![Leaderboard installation actions](https://github.com/usnistgov/jarvis_leaderboard/actions/workflows/install_ai.yml/badge.svg)
 ![GitHub repo size](https://img.shields.io/github/repo-size/usnistgov/jarvis_leaderboard)
 [![name](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/Upload_benchmark_to_jarvis_leaderboard.ipynb)
 [![name](https://colab.research.google.com/assets/colab-badge.svg)]([https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/Upload_benchmark_to_jarvis_leaderboard.ipynb](https://colab.research.google.com/github/knc6/jarvis-tools-notebooks/blob/master/jarvis-tools-notebooks/alignn_jarvis_leaderboard.ipynb))
