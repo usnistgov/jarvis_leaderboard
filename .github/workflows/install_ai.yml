@@ -8,7 +8,6 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.10"]  # Matrix with different Python versions
-
     steps:
       # Step 1: Check out the repository
       - name: Check out code
@@ -19,29 +18,25 @@ jobs:
         uses: conda-incubator/setup-miniconda@v2
         with:
           auto-update-conda: true
+          python-version: ${{ matrix.python-version }}
+          activate-environment: test_env
 
       # Step 3: Run all installation scripts for each Python version
-      - name: Run installation scripts with multiple Python versions
+      - name: Run installation scripts
+        shell: bash -l {0}
         run: |
-          # Ensure the shell is set up for Conda
-          echo "Setting up Conda..."
-          source $HOME/miniconda/bin/activate
-
           for script in jarvis_leaderboard/installations/AI/*.sh; do
             # Extract script name to use as the environment name (without extension)
             env_name=$(basename "$script" .sh)-${{ matrix.python-version }}
-
             echo "Creating Conda environment: $env_name with Python ${{ matrix.python-version }}"
             conda create -n "$env_name" python=${{ matrix.python-version }} -y
-
             echo "Activating environment: $env_name"
             conda activate "$env_name"
-
             echo "Running $script"
             chmod +x "$script"
             bash "$script" || { echo "Error: $script failed"; exit 1; }
-
-            echo "Deactivating and removing environment: $env_name"
+            echo "Deactivating environment: $env_name"
             conda deactivate
-            conda env remove -n "$env_name"
+            echo "Removing environment: $env_name"
+            conda env remove -n "$env_name" -y
           done
