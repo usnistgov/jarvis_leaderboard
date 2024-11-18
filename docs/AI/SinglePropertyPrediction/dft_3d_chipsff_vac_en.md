@@ -1,0 +1,1 @@
+#Vacancy Energy of CHIPS-FF Materials

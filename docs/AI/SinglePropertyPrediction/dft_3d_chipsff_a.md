@@ -1,0 +1,1 @@
+#Lattice Constant of CHIPS-FF Materials
