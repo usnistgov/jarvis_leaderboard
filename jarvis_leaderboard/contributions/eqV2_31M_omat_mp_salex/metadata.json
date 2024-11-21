@@ -1,0 +1,15 @@
+{
+    "model_name": "CHIPS-FF",
+    "project_url": "https://github.com/usnistgov/chipsff",
+    "date_submitted": "11-01-2024",
+    "author_email": "daniel.wines@nist.gov",
+    "team_name": "JARVIS",
+    "language": "python",
+    "time_taken_seconds": {},
+    "os": "linux",
+    "software_used": "jarvis-tools,numpy,scipy,torch,alignn",
+    "hardware_used": "mr-french at NIST",
+    "git_url": [
+        "https://github.com/usnistgov/chipsff"
+    ]
+}

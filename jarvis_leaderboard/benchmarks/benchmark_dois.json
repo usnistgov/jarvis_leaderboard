@@ -376,6 +376,46 @@
             "AGRA_COOH_ead.json.zip": [
                 "https://doi.org/10.1063/5.0140487"
             ],
+            "dft_3d_chipsff_a.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_chipsff_b.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_chipsff_c.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_chipsff_vol.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_chipsff_form_en.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_chipsff_c11.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_chipsff_c44.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_chipsff_kv.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_chipsff_surf_en.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_chipsff_vac_en.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
             "vacancydb_2D_ef.json.zip": [
                 "https://doi.org/10.48550/arXiv.2205.08366"
             ],
