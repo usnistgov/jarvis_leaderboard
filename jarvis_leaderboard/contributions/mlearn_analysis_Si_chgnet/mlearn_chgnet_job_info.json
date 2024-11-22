@@ -1,0 +1,8 @@
+{
+    "calculator_type": "chgnet",
+    "mlearn_elements": [
+        "Si"
+    ],
+    "forces_mae_Si": 0.1882768692298737,
+    "stresses_mae_Si": 1.0509281487542672
+}

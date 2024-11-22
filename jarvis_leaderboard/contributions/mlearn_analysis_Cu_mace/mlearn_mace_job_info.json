@@ -1,0 +1,8 @@
+{
+    "calculator_type": "mace",
+    "mlearn_elements": [
+        "Cu"
+    ],
+    "forces_mae_Cu": 0.05867654491702182,
+    "stresses_mae_Cu": 0.9461480640633075
+}

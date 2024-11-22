@@ -1,0 +1,78 @@
+2024-11-05 16:34:51,415 - INFO - Filtered dataset to 294 entries containing element 'Ni'
+2024-11-05 16:34:58,323 - INFO - Processed 1/294 structures.
+2024-11-05 16:36:03,775 - INFO - Processed 11/294 structures.
+2024-11-05 16:37:07,719 - INFO - Processed 21/294 structures.
+2024-11-05 16:38:11,306 - INFO - Processed 31/294 structures.
+2024-11-05 16:38:48,020 - INFO - Processed 41/294 structures.
+2024-11-05 16:39:23,384 - INFO - Processed 51/294 structures.
+2024-11-05 16:40:28,359 - INFO - Processed 61/294 structures.
+2024-11-05 16:41:33,366 - INFO - Processed 71/294 structures.
+2024-11-05 16:42:38,569 - INFO - Processed 81/294 structures.
+2024-11-05 16:43:43,075 - INFO - Processed 91/294 structures.
+2024-11-05 16:44:48,565 - INFO - Processed 101/294 structures.
+2024-11-05 16:45:53,373 - INFO - Processed 111/294 structures.
+2024-11-05 16:46:58,438 - INFO - Processed 121/294 structures.
+2024-11-05 16:48:03,560 - INFO - Processed 131/294 structures.
+2024-11-05 16:49:08,379 - INFO - Processed 141/294 structures.
+2024-11-05 16:50:14,132 - INFO - Processed 151/294 structures.
+2024-11-05 16:51:20,867 - INFO - Processed 161/294 structures.
+2024-11-05 16:52:27,626 - INFO - Processed 171/294 structures.
+2024-11-05 16:53:35,173 - INFO - Processed 181/294 structures.
+2024-11-05 16:54:41,660 - INFO - Processed 191/294 structures.
+2024-11-05 16:55:48,629 - INFO - Processed 201/294 structures.
+2024-11-05 16:56:55,521 - INFO - Processed 211/294 structures.
+2024-11-05 16:58:03,104 - INFO - Processed 221/294 structures.
+2024-11-05 16:59:10,319 - INFO - Processed 231/294 structures.
+2024-11-05 17:00:17,426 - INFO - Processed 241/294 structures.
+2024-11-05 17:01:24,157 - INFO - Processed 251/294 structures.
+2024-11-05 17:02:32,058 - INFO - Processed 261/294 structures.
+2024-11-05 17:03:25,806 - INFO - Processed 271/294 structures.
+2024-11-05 17:04:31,192 - INFO - Processed 281/294 structures.
+2024-11-05 17:05:37,376 - INFO - Processed 291/294 structures.
+2024-11-05 17:05:57,818 - INFO - Saved force comparison data to 'mlearn_analysis_Ni_mace-alexandria/AI-MLFF-forces-mlearn_Ni-test-multimae.csv'
+2024-11-05 17:05:57,824 - INFO - Saved stress comparison data to 'mlearn_analysis_Ni_mace-alexandria/AI-MLFF-stresses-mlearn_Ni-test-multimae.csv'
+2024-11-05 17:05:57,975 - INFO - Zipped data to 'mlearn_analysis_Ni_mace-alexandria/AI-MLFF-forces-mlearn_Ni-test-multimae.csv.zip'
+2024-11-05 17:05:57,982 - INFO - Zipped data to 'mlearn_analysis_Ni_mace-alexandria/AI-MLFF-stresses-mlearn_Ni-test-multimae.csv.zip'
+2024-11-05 17:05:58,018 - INFO - Forces MAE for element 'Ni': 0.098945 eV/Å
+2024-11-05 17:05:58,022 - INFO - Stresses MAE for element 'Ni': 7.745002 GPa
+2024-11-05 17:06:00,583 - INFO - Saved parity plot for Forces as 'mlearn_analysis_Ni_mace-alexandria/forces_parity_plot_Ni.png'
+2024-11-05 17:06:01,080 - INFO - Saved parity plot for Stresses as 'mlearn_analysis_Ni_mace-alexandria/stresses_parity_plot_Ni.png'
+2024-11-06 15:20:02,699 - INFO - Filtered dataset to 294 entries containing element 'Ni'
+2024-11-06 15:20:08,947 - INFO - Processed 1/294 structures.
+2024-11-06 15:20:50,887 - INFO - Processed 11/294 structures.
+2024-11-06 15:21:32,385 - INFO - Processed 21/294 structures.
+2024-11-06 15:22:14,084 - INFO - Processed 31/294 structures.
+2024-11-06 15:22:37,620 - INFO - Processed 41/294 structures.
+2024-11-06 15:23:00,263 - INFO - Processed 51/294 structures.
+2024-11-06 15:23:42,437 - INFO - Processed 61/294 structures.
+2024-11-06 15:24:24,778 - INFO - Processed 71/294 structures.
+2024-11-06 15:25:06,889 - INFO - Processed 81/294 structures.
+2024-11-06 15:25:49,137 - INFO - Processed 91/294 structures.
+2024-11-06 15:26:33,649 - INFO - Processed 101/294 structures.
+2024-11-06 15:27:18,874 - INFO - Processed 111/294 structures.
+2024-11-06 15:28:04,366 - INFO - Processed 121/294 structures.
+2024-11-06 15:28:48,275 - INFO - Processed 131/294 structures.
+2024-11-06 15:29:30,441 - INFO - Processed 141/294 structures.
+2024-11-06 15:30:12,869 - INFO - Processed 151/294 structures.
+2024-11-06 15:30:55,488 - INFO - Processed 161/294 structures.
+2024-11-06 15:31:38,666 - INFO - Processed 171/294 structures.
+2024-11-06 15:32:21,830 - INFO - Processed 181/294 structures.
+2024-11-06 15:33:04,832 - INFO - Processed 191/294 structures.
+2024-11-06 15:33:48,334 - INFO - Processed 201/294 structures.
+2024-11-06 15:34:31,774 - INFO - Processed 211/294 structures.
+2024-11-06 15:35:14,975 - INFO - Processed 221/294 structures.
+2024-11-06 15:35:58,501 - INFO - Processed 231/294 structures.
+2024-11-06 15:36:41,944 - INFO - Processed 241/294 structures.
+2024-11-06 15:37:25,034 - INFO - Processed 251/294 structures.
+2024-11-06 15:38:08,562 - INFO - Processed 261/294 structures.
+2024-11-06 15:38:43,288 - INFO - Processed 271/294 structures.
+2024-11-06 15:39:25,402 - INFO - Processed 281/294 structures.
+2024-11-06 15:40:07,929 - INFO - Processed 291/294 structures.
+2024-11-06 15:40:20,890 - INFO - Saved force comparison data to 'mlearn_analysis_Ni_mace-alexandria/AI-MLFF-forces-mlearn_Ni-test-multimae.csv'
+2024-11-06 15:40:20,894 - INFO - Saved stress comparison data to 'mlearn_analysis_Ni_mace-alexandria/AI-MLFF-stresses-mlearn_Ni-test-multimae.csv'
+2024-11-06 15:40:21,043 - INFO - Zipped data to 'mlearn_analysis_Ni_mace-alexandria/AI-MLFF-forces-mlearn_Ni-test-multimae.csv.zip'
+2024-11-06 15:40:21,050 - INFO - Zipped data to 'mlearn_analysis_Ni_mace-alexandria/AI-MLFF-stresses-mlearn_Ni-test-multimae.csv.zip'
+2024-11-06 15:40:21,073 - INFO - Forces MAE for element 'Ni': 0.098945 eV/Å
+2024-11-06 15:40:21,076 - INFO - Stresses MAE for element 'Ni': 4.030565 GPa
+2024-11-06 15:40:22,410 - INFO - Saved parity plot for Forces as 'mlearn_analysis_Ni_mace-alexandria/forces_parity_plot_Ni.png'
+2024-11-06 15:40:22,861 - INFO - Saved parity plot for Stresses as 'mlearn_analysis_Ni_mace-alexandria/stresses_parity_plot_Ni.png'

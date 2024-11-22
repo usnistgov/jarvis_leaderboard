@@ -1,0 +1,62 @@
+2024-11-05 16:35:45,478 - INFO - Filtered dataset to 217 entries containing element 'Mo'
+2024-11-05 16:35:47,895 - INFO - Processed 1/217 structures.
+2024-11-05 16:36:09,534 - INFO - Processed 11/217 structures.
+2024-11-05 16:36:32,074 - INFO - Processed 21/217 structures.
+2024-11-05 16:36:53,769 - INFO - Processed 31/217 structures.
+2024-11-05 16:37:15,288 - INFO - Processed 41/217 structures.
+2024-11-05 16:37:36,908 - INFO - Processed 51/217 structures.
+2024-11-05 16:37:59,077 - INFO - Processed 61/217 structures.
+2024-11-05 16:38:22,011 - INFO - Processed 71/217 structures.
+2024-11-05 16:38:44,804 - INFO - Processed 81/217 structures.
+2024-11-05 16:39:07,683 - INFO - Processed 91/217 structures.
+2024-11-05 16:39:30,986 - INFO - Processed 101/217 structures.
+2024-11-05 16:39:54,649 - INFO - Processed 111/217 structures.
+2024-11-05 16:40:18,296 - INFO - Processed 121/217 structures.
+2024-11-05 16:40:38,518 - INFO - Processed 131/217 structures.
+2024-11-05 16:40:49,960 - INFO - Processed 141/217 structures.
+2024-11-05 16:41:11,920 - INFO - Processed 151/217 structures.
+2024-11-05 16:41:33,922 - INFO - Processed 161/217 structures.
+2024-11-05 16:41:55,751 - INFO - Processed 171/217 structures.
+2024-11-05 16:42:17,599 - INFO - Processed 181/217 structures.
+2024-11-05 16:42:39,598 - INFO - Processed 191/217 structures.
+2024-11-05 16:43:00,056 - INFO - Processed 201/217 structures.
+2024-11-05 16:43:19,992 - INFO - Processed 211/217 structures.
+2024-11-05 16:43:33,258 - INFO - Saved force comparison data to 'mlearn_analysis_Mo_mace-alexandria/AI-MLFF-forces-mlearn_Mo-test-multimae.csv'
+2024-11-05 16:43:33,262 - INFO - Saved stress comparison data to 'mlearn_analysis_Mo_mace-alexandria/AI-MLFF-stresses-mlearn_Mo-test-multimae.csv'
+2024-11-05 16:43:33,323 - INFO - Zipped data to 'mlearn_analysis_Mo_mace-alexandria/AI-MLFF-forces-mlearn_Mo-test-multimae.csv.zip'
+2024-11-05 16:43:33,328 - INFO - Zipped data to 'mlearn_analysis_Mo_mace-alexandria/AI-MLFF-stresses-mlearn_Mo-test-multimae.csv.zip'
+2024-11-05 16:43:33,339 - INFO - Forces MAE for element 'Mo': 0.343284 eV/Å
+2024-11-05 16:43:33,341 - INFO - Stresses MAE for element 'Mo': 10.212083 GPa
+2024-11-05 16:43:34,245 - INFO - Saved parity plot for Forces as 'mlearn_analysis_Mo_mace-alexandria/forces_parity_plot_Mo.png'
+2024-11-05 16:43:34,637 - INFO - Saved parity plot for Stresses as 'mlearn_analysis_Mo_mace-alexandria/stresses_parity_plot_Mo.png'
+2024-11-06 15:19:21,108 - INFO - Filtered dataset to 217 entries containing element 'Mo'
+2024-11-06 15:19:23,785 - INFO - Processed 1/217 structures.
+2024-11-06 15:19:49,143 - INFO - Processed 11/217 structures.
+2024-11-06 15:20:14,692 - INFO - Processed 21/217 structures.
+2024-11-06 15:20:39,066 - INFO - Processed 31/217 structures.
+2024-11-06 15:21:04,207 - INFO - Processed 41/217 structures.
+2024-11-06 15:21:31,235 - INFO - Processed 51/217 structures.
+2024-11-06 15:21:56,329 - INFO - Processed 61/217 structures.
+2024-11-06 15:22:22,562 - INFO - Processed 71/217 structures.
+2024-11-06 15:22:48,916 - INFO - Processed 81/217 structures.
+2024-11-06 15:23:16,214 - INFO - Processed 91/217 structures.
+2024-11-06 15:23:42,288 - INFO - Processed 101/217 structures.
+2024-11-06 15:24:09,327 - INFO - Processed 111/217 structures.
+2024-11-06 15:24:36,864 - INFO - Processed 121/217 structures.
+2024-11-06 15:24:59,417 - INFO - Processed 131/217 structures.
+2024-11-06 15:25:13,025 - INFO - Processed 141/217 structures.
+2024-11-06 15:25:38,647 - INFO - Processed 151/217 structures.
+2024-11-06 15:26:04,113 - INFO - Processed 161/217 structures.
+2024-11-06 15:26:29,660 - INFO - Processed 171/217 structures.
+2024-11-06 15:26:54,859 - INFO - Processed 181/217 structures.
+2024-11-06 15:27:20,313 - INFO - Processed 191/217 structures.
+2024-11-06 15:27:44,333 - INFO - Processed 201/217 structures.
+2024-11-06 15:28:07,458 - INFO - Processed 211/217 structures.
+2024-11-06 15:28:22,688 - INFO - Saved force comparison data to 'mlearn_analysis_Mo_mace-alexandria/AI-MLFF-forces-mlearn_Mo-test-multimae.csv'
+2024-11-06 15:28:22,693 - INFO - Saved stress comparison data to 'mlearn_analysis_Mo_mace-alexandria/AI-MLFF-stresses-mlearn_Mo-test-multimae.csv'
+2024-11-06 15:28:22,761 - INFO - Zipped data to 'mlearn_analysis_Mo_mace-alexandria/AI-MLFF-forces-mlearn_Mo-test-multimae.csv.zip'
+2024-11-06 15:28:22,768 - INFO - Zipped data to 'mlearn_analysis_Mo_mace-alexandria/AI-MLFF-stresses-mlearn_Mo-test-multimae.csv.zip'
+2024-11-06 15:28:22,782 - INFO - Forces MAE for element 'Mo': 0.343284 eV/Å
+2024-11-06 15:28:22,784 - INFO - Stresses MAE for element 'Mo': 2.620328 GPa
+2024-11-06 15:28:24,040 - INFO - Saved parity plot for Forces as 'mlearn_analysis_Mo_mace-alexandria/forces_parity_plot_Mo.png'
+2024-11-06 15:28:24,513 - INFO - Saved parity plot for Stresses as 'mlearn_analysis_Mo_mace-alexandria/stresses_parity_plot_Mo.png'

@@ -1,0 +1,8 @@
+{
+    "calculator_type": "sevennet",
+    "mlearn_elements": [
+        "Ni"
+    ],
+    "forces_mae_Ni": 0.0887041668456283,
+    "stresses_mae_Ni": 1.346542985411733
+}

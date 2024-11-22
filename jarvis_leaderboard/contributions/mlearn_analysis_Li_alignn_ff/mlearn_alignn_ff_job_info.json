@@ -1,0 +1,8 @@
+{
+    "calculator_type": "alignn_ff",
+    "mlearn_elements": [
+        "Li"
+    ],
+    "forces_mae_Li": 0.1895976271397354,
+    "stresses_mae_Li": 0.434175910933301
+}

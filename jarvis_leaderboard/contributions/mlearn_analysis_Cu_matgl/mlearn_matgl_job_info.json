@@ -1,0 +1,8 @@
+{
+    "calculator_type": "matgl",
+    "mlearn_elements": [
+        "Cu"
+    ],
+    "forces_mae_Cu": 0.12383392711868263,
+    "stresses_mae_Cu": 1.6320352079339664
+}

@@ -1,0 +1,8 @@
+{
+    "calculator_type": "eqV2_31M_omat_mp_salex",
+    "mlearn_elements": [
+        "Li"
+    ],
+    "forces_mae_Li": 0.006596184239007061,
+    "stresses_mae_Li": 0.1904206900846113
+}

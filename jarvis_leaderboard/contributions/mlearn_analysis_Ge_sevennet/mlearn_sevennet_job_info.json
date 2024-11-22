@@ -1,0 +1,8 @@
+{
+    "calculator_type": "sevennet",
+    "mlearn_elements": [
+        "Ge"
+    ],
+    "forces_mae_Ge": 0.13070385655483477,
+    "stresses_mae_Ge": 0.8972114868212063
+}
