@@ -73,7 +73,7 @@ body {
 <div class="row">
   <div class="column">
     <div class="card">
-<h3>Artificial intelligence (AI)</h3><p>Contributions: 680</p>
+<h3>Artificial intelligence (AI)</h3><p>Contributions: 745</p>
 
       <a href="./AI" >See All Benchmarks</a>
     </div>
@@ -120,7 +120,7 @@ body {
 
   <div class="column">
     <div class="card">
-<h3>Methodologies</h3><p>Available Methods:406</p>
+<h3>Methodologies</h3><p>Available Methods:411</p>
       <a href="https://github.com/usnistgov/jarvis_leaderboard/tree/main/jarvis_leaderboard/contributions">Learn more</a>
     </div>
   </div>
@@ -174,11 +174,11 @@ As a minimum check, we test rebuilding of the leaderboard and installations of s
 ![Leaderboard QC installation actions](https://github.com/usnistgov/jarvis_leaderboard/actions/workflows/install_qc.yml/badge.svg)
 
 
-<!--number_of_benchmarks--> - Number of benchmarks: 306
+<!--number_of_benchmarks--> - Number of benchmarks: 308
 
-<!--number_of_contributions--> - Number of contributions: 1734
+<!--number_of_contributions--> - Number of contributions: 1799
 
-<!--number_of_datapoints--> - Number of datapoints: 8748583
+<!--number_of_datapoints--> - Number of datapoints: 8748771
 
 <!-- [Learn how to add benchmarks below](#add) -->
 <!-- <p style="text-align:center;"><img align="middle" src="https://www.ctcms.nist.gov/~knc6/images/logo/jarvis-mission.png"  width="40%" height="20%"></p>-->
@@ -189,7 +189,7 @@ As a minimum check, we test rebuilding of the leaderboard and installations of s
 A brief summary table is given below:
 
 
-<!--summary_table--><table style="width:100%" id="j_table"><thead><td>Category/Sub-cat.</td><td>SinglePropertyPrediction</td><td>SinglePropertyClass</td><td>MLFF</td><td>TextClass</td><td>TokenClass</td><td>TextSummary</td><td>TextGen</td><td>AtomGen</td><td>ImageClass</td><td>Spectra</td><td>EigenSolver</td><tr><td>AI</td><td><a href="./AI/SinglePropertyPrediction" target="_blank">504</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">21</a></td><td><a href="./AI/MLFF" target="_blank">116</a></td><td><a href="./AI/TextClass" target="_blank">28</a></td><td><a href="./AI/TokenClass" target="_blank">1</a></td><td><a href="./AI/TextSummary" target="_blank">1</a></td><td><a href="./AI/TextGen" target="_blank">3</a></td><td><a href="./AI/AtomGen" target="_blank">3</a></td><td><a href="./AI/ImageClass" target="_blank">2</a></td><td><a href="./AI/Spectra" target="_blank">1</a></td><td>-</td><tr><tr><td>ES</td><td><a href="./ES/SinglePropertyPrediction" target="_blank">732</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./ES/Spectra" target="_blank">10</a></td><td>-</td><tr><tr><td>FF</td><td><a href="./FF/SinglePropertyPrediction" target="_blank">282</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><tr><tr><td>QC</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./QC/EigenSolver" target="_blank">6</a></td><tr><tr><td>EXP</td><td><a href="./EXP/SinglePropertyPrediction" target="_blank">7</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./EXP/Spectra" target="_blank">18</a></td><td>-</td><tr></table>
+<!--summary_table--><table style="width:100%" id="j_table"><thead><td>Category/Sub-cat.</td><td>SinglePropertyPrediction</td><td>SinglePropertyClass</td><td>MLFF</td><td>TextClass</td><td>TokenClass</td><td>TextSummary</td><td>TextGen</td><td>AtomGen</td><td>ImageClass</td><td>Spectra</td><td>EigenSolver</td><tr><td>AI</td><td><a href="./AI/SinglePropertyPrediction" target="_blank">569</a></td><td><a href="./AI/SinglePropertyClass" target="_blank">21</a></td><td><a href="./AI/MLFF" target="_blank">116</a></td><td><a href="./AI/TextClass" target="_blank">28</a></td><td><a href="./AI/TokenClass" target="_blank">1</a></td><td><a href="./AI/TextSummary" target="_blank">1</a></td><td><a href="./AI/TextGen" target="_blank">3</a></td><td><a href="./AI/AtomGen" target="_blank">3</a></td><td><a href="./AI/ImageClass" target="_blank">2</a></td><td><a href="./AI/Spectra" target="_blank">1</a></td><td>-</td><tr><tr><td>ES</td><td><a href="./ES/SinglePropertyPrediction" target="_blank">732</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./ES/Spectra" target="_blank">10</a></td><td>-</td><tr><tr><td>FF</td><td><a href="./FF/SinglePropertyPrediction" target="_blank">282</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><tr><tr><td>QC</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./QC/EigenSolver" target="_blank">6</a></td><tr><tr><td>EXP</td><td><a href="./EXP/SinglePropertyPrediction" target="_blank">7</a></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td><a href="./EXP/Spectra" target="_blank">18</a></td><td>-</td><tr></table>
 
 
 
