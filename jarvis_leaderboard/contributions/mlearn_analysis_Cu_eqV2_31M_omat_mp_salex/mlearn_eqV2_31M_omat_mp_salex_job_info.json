@@ -1,0 +1,8 @@
+{
+    "calculator_type": "eqV2_31M_omat_mp_salex",
+    "mlearn_elements": [
+        "Cu"
+    ],
+    "forces_mae_Cu": 0.0057693113383053465,
+    "stresses_mae_Cu": 0.9164108360938416
+}

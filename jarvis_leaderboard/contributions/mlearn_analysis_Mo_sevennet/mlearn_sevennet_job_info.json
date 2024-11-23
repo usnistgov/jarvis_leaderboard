@@ -1,0 +1,8 @@
+{
+    "calculator_type": "sevennet",
+    "mlearn_elements": [
+        "Mo"
+    ],
+    "forces_mae_Mo": 0.36472561825270067,
+    "stresses_mae_Mo": 1.7057683964366068
+}

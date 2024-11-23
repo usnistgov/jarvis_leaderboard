@@ -1,0 +1,8 @@
+{
+    "calculator_type": "orb-v2",
+    "mlearn_elements": [
+        "Cu"
+    ],
+    "forces_mae_Cu": 0.015046933639025055,
+    "stresses_mae_Cu": 0.8733650784061342
+}

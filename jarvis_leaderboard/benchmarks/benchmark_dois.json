@@ -27,7 +27,13 @@
             "mlearn_Cu_forces.json.zip": [
                 "https://doi.org/10.1021/acs.jpca.9b08723"
             ],
+            "mlearnall_Cu_forces.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
             "mlearn_Cu_stresses.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearnall_Cu_stresses.json.zip": [
                 "https://doi.org/10.1021/acs.jpca.9b08723"
             ],
             "mlearn_Ge_energy.json.zip": [
@@ -36,7 +42,13 @@
             "mlearn_Ge_forces.json.zip": [
                 "https://doi.org/10.1021/acs.jpca.9b08723"
             ],
+            "mlearnall_Ge_forces.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
             "mlearn_Ge_stresses.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearnall_Ge_stresses.json.zip": [
                 "https://doi.org/10.1021/acs.jpca.9b08723"
             ],
             "mlearn_Li_energy.json.zip": [
@@ -45,7 +57,13 @@
             "mlearn_Li_forces.json.zip": [
                 "https://doi.org/10.1021/acs.jpca.9b08723"
             ],
+            "mlearnall_Li_forces.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
             "mlearn_Li_stresses.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearnall_Li_stresses.json.zip": [
                 "https://doi.org/10.1021/acs.jpca.9b08723"
             ],
             "mlearn_Mo_energy.json.zip": [
@@ -54,7 +72,13 @@
             "mlearn_Mo_forces.json.zip": [
                 "https://doi.org/10.1021/acs.jpca.9b08723"
             ],
+            "mlearnall_Mo_forces.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
             "mlearn_Mo_stresses.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearnall_Mo_stresses.json.zip": [
                 "https://doi.org/10.1021/acs.jpca.9b08723"
             ],
             "mlearn_Ni_energy.json.zip": [
@@ -63,13 +87,25 @@
             "mlearn_Ni_forces.json.zip": [
                 "https://doi.org/10.1021/acs.jpca.9b08723"
             ],
+            "mlearnall_Ni_forces.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
             "mlearn_Ni_stresses.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearnall_Ni_stresses.json.zip": [
                 "https://doi.org/10.1021/acs.jpca.9b08723"
             ],
             "mlearn_Si_energy.json.zip": [
                 "https://doi.org/10.1021/acs.jpca.9b08723"
             ],
             "mlearn_Si_forces.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearnall_Si_forces.json.zip": [
+                "https://doi.org/10.1021/acs.jpca.9b08723"
+            ],
+            "mlearnall_Si_stresses.json.zip": [
                 "https://doi.org/10.1021/acs.jpca.9b08723"
             ],
             "mlearn_Si_stresses.json.zip": [
@@ -375,6 +411,46 @@
             ],
             "AGRA_COOH_ead.json.zip": [
                 "https://doi.org/10.1063/5.0140487"
+            ],
+            "dft_3d_chipsff_a.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_chipsff_b.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_chipsff_c.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_chipsff_vol.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_chipsff_form_en.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_chipsff_c11.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_chipsff_c44.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_chipsff_kv.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_chipsff_surf_en.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
+            ],
+            "dft_3d_chipsff_vac_en.json.zip": [
+                "https://www.nature.com/articles/s41524-020-00440-1",
+                "https://doi.org/10.48550/arXiv.2305.11842"
             ],
             "vacancydb_2D_ef.json.zip": [
                 "https://doi.org/10.48550/arXiv.2205.08366"

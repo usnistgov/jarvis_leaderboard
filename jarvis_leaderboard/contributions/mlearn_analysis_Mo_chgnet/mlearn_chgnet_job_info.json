@@ -1,0 +1,8 @@
+{
+    "calculator_type": "chgnet",
+    "mlearn_elements": [
+        "Mo"
+    ],
+    "forces_mae_Mo": 0.36066965387668204,
+    "stresses_mae_Mo": 1.8205988261840451
+}

@@ -1,0 +1,8 @@
+{
+    "calculator_type": "matgl",
+    "mlearn_elements": [
+        "Si"
+    ],
+    "forces_mae_Si": 0.2256098429229601,
+    "stresses_mae_Si": 1.621926240072994
+}

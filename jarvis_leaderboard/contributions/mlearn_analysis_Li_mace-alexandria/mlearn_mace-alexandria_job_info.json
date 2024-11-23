@@ -1,0 +1,8 @@
+{
+    "calculator_type": "mace-alexandria",
+    "mlearn_elements": [
+        "Li"
+    ],
+    "forces_mae_Li": 0.025130639164981892,
+    "stresses_mae_Li": 0.6710063720243422
+}

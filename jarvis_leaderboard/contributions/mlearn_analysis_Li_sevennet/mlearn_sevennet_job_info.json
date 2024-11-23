@@ -1,0 +1,8 @@
+{
+    "calculator_type": "sevennet",
+    "mlearn_elements": [
+        "Li"
+    ],
+    "forces_mae_Li": 0.050912809549211124,
+    "stresses_mae_Li": 0.22860574442191778
+}

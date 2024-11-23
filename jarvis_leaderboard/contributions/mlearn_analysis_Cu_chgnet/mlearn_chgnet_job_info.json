@@ -1,0 +1,8 @@
+{
+    "calculator_type": "chgnet",
+    "mlearn_elements": [
+        "Cu"
+    ],
+    "forces_mae_Cu": 0.057766269953694695,
+    "stresses_mae_Cu": 0.7825148805802685
+}

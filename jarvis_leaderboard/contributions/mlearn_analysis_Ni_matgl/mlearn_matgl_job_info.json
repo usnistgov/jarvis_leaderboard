@@ -1,0 +1,8 @@
+{
+    "calculator_type": "matgl",
+    "mlearn_elements": [
+        "Ni"
+    ],
+    "forces_mae_Ni": 0.06870969282971763,
+    "stresses_mae_Ni": 3.182254358003979
+}
