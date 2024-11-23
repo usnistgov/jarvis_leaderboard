@@ -1,0 +1,8 @@
+{
+    "calculator_type": "orb-v2",
+    "mlearn_elements": [
+        "Li"
+    ],
+    "forces_mae_Li": 0.01813756956797843,
+    "stresses_mae_Li": 0.23257791508971778
+}

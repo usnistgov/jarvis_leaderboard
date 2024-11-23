@@ -1,0 +1,8 @@
+{
+    "calculator_type": "orb-v2",
+    "mlearn_elements": [
+        "Si"
+    ],
+    "forces_mae_Si": 0.0679009180072522,
+    "stresses_mae_Si": 0.8717744205819727
+}

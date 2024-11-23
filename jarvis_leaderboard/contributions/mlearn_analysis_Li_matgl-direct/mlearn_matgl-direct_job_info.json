@@ -1,0 +1,8 @@
+{
+    "calculator_type": "matgl-direct",
+    "mlearn_elements": [
+        "Li"
+    ],
+    "forces_mae_Li": 0.03102841476565417,
+    "stresses_mae_Li": 0.3803296603329105
+}

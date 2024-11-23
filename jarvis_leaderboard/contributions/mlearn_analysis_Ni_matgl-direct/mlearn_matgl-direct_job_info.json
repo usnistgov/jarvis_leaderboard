@@ -1,0 +1,8 @@
+{
+    "calculator_type": "matgl-direct",
+    "mlearn_elements": [
+        "Ni"
+    ],
+    "forces_mae_Ni": 0.1144225652401461,
+    "stresses_mae_Ni": 2.778955295498623
+}

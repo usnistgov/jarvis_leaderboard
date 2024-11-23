@@ -1,0 +1,70 @@
+2024-11-05 21:39:26,478 - INFO - Filtered dataset to 253 entries containing element 'Ge'
+2024-11-05 21:39:40,973 - INFO - Processed 1/253 structures.
+2024-11-05 21:41:28,715 - INFO - Processed 11/253 structures.
+2024-11-05 21:42:54,250 - INFO - Processed 21/253 structures.
+2024-11-05 21:44:21,954 - INFO - Processed 31/253 structures.
+2024-11-05 21:46:00,006 - INFO - Processed 41/253 structures.
+2024-11-05 21:47:40,502 - INFO - Processed 51/253 structures.
+2024-11-05 21:49:58,148 - INFO - Processed 61/253 structures.
+2024-11-05 21:52:06,107 - INFO - Processed 71/253 structures.
+2024-11-05 21:53:34,376 - INFO - Processed 81/253 structures.
+2024-11-05 21:55:03,361 - INFO - Processed 91/253 structures.
+2024-11-05 21:56:21,137 - INFO - Processed 101/253 structures.
+2024-11-05 21:58:02,506 - INFO - Processed 111/253 structures.
+2024-11-05 22:00:22,401 - INFO - Processed 121/253 structures.
+2024-11-05 22:02:23,080 - INFO - Processed 131/253 structures.
+2024-11-05 22:04:09,833 - INFO - Processed 141/253 structures.
+2024-11-05 22:05:52,525 - INFO - Processed 151/253 structures.
+2024-11-05 22:07:39,074 - INFO - Processed 161/253 structures.
+2024-11-05 22:08:33,379 - INFO - Processed 171/253 structures.
+2024-11-05 22:11:00,129 - INFO - Processed 181/253 structures.
+2024-11-05 22:13:00,739 - INFO - Processed 191/253 structures.
+2024-11-05 22:15:06,961 - INFO - Processed 201/253 structures.
+2024-11-05 22:16:18,773 - INFO - Processed 211/253 structures.
+2024-11-05 22:17:20,882 - INFO - Processed 221/253 structures.
+2024-11-05 22:18:22,795 - INFO - Processed 231/253 structures.
+2024-11-05 22:19:14,814 - INFO - Processed 241/253 structures.
+2024-11-05 22:20:18,649 - INFO - Processed 251/253 structures.
+2024-11-05 22:20:31,238 - INFO - Saved force comparison data to 'mlearn_analysis_Ge_eqV2_31M_omat_mp_salex/AI-MLFF-forces-mlearn_Ge-test-multimae.csv'
+2024-11-05 22:20:31,245 - INFO - Saved stress comparison data to 'mlearn_analysis_Ge_eqV2_31M_omat_mp_salex/AI-MLFF-stresses-mlearn_Ge-test-multimae.csv'
+2024-11-05 22:20:31,374 - INFO - Zipped data to 'mlearn_analysis_Ge_eqV2_31M_omat_mp_salex/AI-MLFF-forces-mlearn_Ge-test-multimae.csv.zip'
+2024-11-05 22:20:31,384 - INFO - Zipped data to 'mlearn_analysis_Ge_eqV2_31M_omat_mp_salex/AI-MLFF-stresses-mlearn_Ge-test-multimae.csv.zip'
+2024-11-05 22:20:31,416 - INFO - Forces MAE for element 'Ge': 0.028218 eV/Å
+2024-11-05 22:20:31,421 - INFO - Stresses MAE for element 'Ge': 1.474816 GPa
+2024-11-05 22:20:33,785 - INFO - Saved parity plot for Forces as 'mlearn_analysis_Ge_eqV2_31M_omat_mp_salex/forces_parity_plot_Ge.png'
+2024-11-05 22:20:34,659 - INFO - Saved parity plot for Stresses as 'mlearn_analysis_Ge_eqV2_31M_omat_mp_salex/stresses_parity_plot_Ge.png'
+2024-11-06 20:15:16,944 - INFO - Filtered dataset to 253 entries containing element 'Ge'
+2024-11-06 20:15:21,269 - INFO - Processed 1/253 structures.
+2024-11-06 20:16:00,727 - INFO - Processed 11/253 structures.
+2024-11-06 20:16:40,089 - INFO - Processed 21/253 structures.
+2024-11-06 20:17:19,335 - INFO - Processed 31/253 structures.
+2024-11-06 20:17:58,596 - INFO - Processed 41/253 structures.
+2024-11-06 20:18:37,671 - INFO - Processed 51/253 structures.
+2024-11-06 20:19:16,909 - INFO - Processed 61/253 structures.
+2024-11-06 20:19:56,195 - INFO - Processed 71/253 structures.
+2024-11-06 20:20:36,287 - INFO - Processed 81/253 structures.
+2024-11-06 20:21:16,501 - INFO - Processed 91/253 structures.
+2024-11-06 20:21:56,671 - INFO - Processed 101/253 structures.
+2024-11-06 20:22:36,935 - INFO - Processed 111/253 structures.
+2024-11-06 20:23:17,369 - INFO - Processed 121/253 structures.
+2024-11-06 20:23:57,809 - INFO - Processed 131/253 structures.
+2024-11-06 20:24:38,389 - INFO - Processed 141/253 structures.
+2024-11-06 20:25:18,602 - INFO - Processed 151/253 structures.
+2024-11-06 20:25:58,995 - INFO - Processed 161/253 structures.
+2024-11-06 20:26:15,584 - INFO - Processed 171/253 structures.
+2024-11-06 20:27:14,203 - INFO - Processed 181/253 structures.
+2024-11-06 20:28:21,755 - INFO - Processed 191/253 structures.
+2024-11-06 20:29:27,334 - INFO - Processed 201/253 structures.
+2024-11-06 20:30:14,001 - INFO - Processed 211/253 structures.
+2024-11-06 20:31:00,837 - INFO - Processed 221/253 structures.
+2024-11-06 20:31:48,344 - INFO - Processed 231/253 structures.
+2024-11-06 20:32:27,852 - INFO - Processed 241/253 structures.
+2024-11-06 20:33:16,583 - INFO - Processed 251/253 structures.
+2024-11-06 20:33:26,111 - INFO - Saved force comparison data to 'mlearn_analysis_Ge_eqV2_31M_omat_mp_salex/AI-MLFF-forces-mlearn_Ge-test-multimae.csv'
+2024-11-06 20:33:26,116 - INFO - Saved stress comparison data to 'mlearn_analysis_Ge_eqV2_31M_omat_mp_salex/AI-MLFF-stresses-mlearn_Ge-test-multimae.csv'
+2024-11-06 20:33:26,195 - INFO - Zipped data to 'mlearn_analysis_Ge_eqV2_31M_omat_mp_salex/AI-MLFF-forces-mlearn_Ge-test-multimae.csv.zip'
+2024-11-06 20:33:26,201 - INFO - Zipped data to 'mlearn_analysis_Ge_eqV2_31M_omat_mp_salex/AI-MLFF-stresses-mlearn_Ge-test-multimae.csv.zip'
+2024-11-06 20:33:26,217 - INFO - Forces MAE for element 'Ge': 0.028218 eV/Å
+2024-11-06 20:33:26,219 - INFO - Stresses MAE for element 'Ge': 0.847363 GPa
+2024-11-06 20:33:27,610 - INFO - Saved parity plot for Forces as 'mlearn_analysis_Ge_eqV2_31M_omat_mp_salex/forces_parity_plot_Ge.png'
+2024-11-06 20:33:28,041 - INFO - Saved parity plot for Stresses as 'mlearn_analysis_Ge_eqV2_31M_omat_mp_salex/stresses_parity_plot_Ge.png'

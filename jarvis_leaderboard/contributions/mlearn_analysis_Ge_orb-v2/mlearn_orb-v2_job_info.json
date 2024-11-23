@@ -1,0 +1,8 @@
+{
+    "calculator_type": "orb-v2",
+    "mlearn_elements": [
+        "Ge"
+    ],
+    "forces_mae_Ge": 0.06036823732527623,
+    "stresses_mae_Ge": 0.6689165250433147
+}

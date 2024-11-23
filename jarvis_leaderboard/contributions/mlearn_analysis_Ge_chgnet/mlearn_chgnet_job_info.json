@@ -1,0 +1,8 @@
+{
+    "calculator_type": "chgnet",
+    "mlearn_elements": [
+        "Ge"
+    ],
+    "forces_mae_Ge": 0.20674905084891626,
+    "stresses_mae_Ge": 0.892920900028619
+}

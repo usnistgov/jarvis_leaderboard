@@ -1,0 +1,8 @@
+{
+    "calculator_type": "mace-alexandria",
+    "mlearn_elements": [
+        "Cu"
+    ],
+    "forces_mae_Cu": 0.05520413843965128,
+    "stresses_mae_Cu": 1.3789098612006476
+}

@@ -1,0 +1,8 @@
+{
+    "calculator_type": "mace",
+    "mlearn_elements": [
+        "Ge"
+    ],
+    "forces_mae_Ge": 0.20250914296619402,
+    "stresses_mae_Ge": 0.9869619804778348
+}

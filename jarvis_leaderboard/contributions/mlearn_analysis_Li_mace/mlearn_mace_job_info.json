@@ -1,0 +1,8 @@
+{
+    "calculator_type": "mace",
+    "mlearn_elements": [
+        "Li"
+    ],
+    "forces_mae_Li": 0.03500126641942033,
+    "stresses_mae_Li": 0.23755626474658392
+}

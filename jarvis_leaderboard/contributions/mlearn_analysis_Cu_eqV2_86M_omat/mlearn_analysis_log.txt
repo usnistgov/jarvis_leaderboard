@@ -1,0 +1,78 @@
+2024-11-05 21:38:49,724 - INFO - Filtered dataset to 293 entries containing element 'Cu'
+2024-11-05 21:39:08,702 - INFO - Processed 1/293 structures.
+2024-11-05 21:42:05,087 - INFO - Processed 11/293 structures.
+2024-11-05 21:44:59,688 - INFO - Processed 21/293 structures.
+2024-11-05 21:47:54,329 - INFO - Processed 31/293 structures.
+2024-11-05 21:49:39,162 - INFO - Processed 41/293 structures.
+2024-11-05 21:51:29,478 - INFO - Processed 51/293 structures.
+2024-11-05 21:54:26,026 - INFO - Processed 61/293 structures.
+2024-11-05 21:57:22,301 - INFO - Processed 71/293 structures.
+2024-11-05 22:00:18,601 - INFO - Processed 81/293 structures.
+2024-11-05 22:03:14,674 - INFO - Processed 91/293 structures.
+2024-11-05 22:06:11,034 - INFO - Processed 101/293 structures.
+2024-11-05 22:09:07,458 - INFO - Processed 111/293 structures.
+2024-11-05 22:12:04,050 - INFO - Processed 121/293 structures.
+2024-11-05 22:14:58,799 - INFO - Processed 131/293 structures.
+2024-11-05 22:17:51,324 - INFO - Processed 141/293 structures.
+2024-11-05 22:20:43,732 - INFO - Processed 151/293 structures.
+2024-11-05 22:24:10,221 - INFO - Processed 161/293 structures.
+2024-11-05 22:27:46,201 - INFO - Processed 171/293 structures.
+2024-11-05 22:31:28,430 - INFO - Processed 181/293 structures.
+2024-11-05 22:34:54,869 - INFO - Processed 191/293 structures.
+2024-11-05 22:38:30,635 - INFO - Processed 201/293 structures.
+2024-11-05 22:41:59,608 - INFO - Processed 211/293 structures.
+2024-11-05 22:45:41,498 - INFO - Processed 221/293 structures.
+2024-11-05 22:49:10,363 - INFO - Processed 231/293 structures.
+2024-11-05 22:52:45,662 - INFO - Processed 241/293 structures.
+2024-11-05 22:56:11,298 - INFO - Processed 251/293 structures.
+2024-11-05 22:59:46,812 - INFO - Processed 261/293 structures.
+2024-11-05 23:02:27,563 - INFO - Processed 271/293 structures.
+2024-11-05 23:05:17,967 - INFO - Processed 281/293 structures.
+2024-11-05 23:09:03,079 - INFO - Processed 291/293 structures.
+2024-11-05 23:09:38,475 - INFO - Saved force comparison data to 'mlearn_analysis_Cu_eqV2_86M_omat/AI-MLFF-forces-mlearn_Cu-test-multimae.csv'
+2024-11-05 23:09:38,480 - INFO - Saved stress comparison data to 'mlearn_analysis_Cu_eqV2_86M_omat/AI-MLFF-stresses-mlearn_Cu-test-multimae.csv'
+2024-11-05 23:09:38,633 - INFO - Zipped data to 'mlearn_analysis_Cu_eqV2_86M_omat/AI-MLFF-forces-mlearn_Cu-test-multimae.csv.zip'
+2024-11-05 23:09:38,641 - INFO - Zipped data to 'mlearn_analysis_Cu_eqV2_86M_omat/AI-MLFF-stresses-mlearn_Cu-test-multimae.csv.zip'
+2024-11-05 23:09:38,670 - INFO - Forces MAE for element 'Cu': 0.005642 eV/Å
+2024-11-05 23:09:38,673 - INFO - Stresses MAE for element 'Cu': 4.021112 GPa
+2024-11-05 23:09:40,975 - INFO - Saved parity plot for Forces as 'mlearn_analysis_Cu_eqV2_86M_omat/forces_parity_plot_Cu.png'
+2024-11-05 23:09:41,405 - INFO - Saved parity plot for Stresses as 'mlearn_analysis_Cu_eqV2_86M_omat/stresses_parity_plot_Cu.png'
+2024-11-06 20:15:19,317 - INFO - Filtered dataset to 293 entries containing element 'Cu'
+2024-11-06 20:15:38,222 - INFO - Processed 1/293 structures.
+2024-11-06 20:18:34,661 - INFO - Processed 11/293 structures.
+2024-11-06 20:21:29,210 - INFO - Processed 21/293 structures.
+2024-11-06 20:24:23,696 - INFO - Processed 31/293 structures.
+2024-11-06 20:26:08,541 - INFO - Processed 41/293 structures.
+2024-11-06 20:27:58,220 - INFO - Processed 51/293 structures.
+2024-11-06 20:30:54,292 - INFO - Processed 61/293 structures.
+2024-11-06 20:33:49,870 - INFO - Processed 71/293 structures.
+2024-11-06 20:36:43,367 - INFO - Processed 81/293 structures.
+2024-11-06 20:39:36,643 - INFO - Processed 91/293 structures.
+2024-11-06 20:42:29,821 - INFO - Processed 101/293 structures.
+2024-11-06 20:45:24,605 - INFO - Processed 111/293 structures.
+2024-11-06 20:48:19,642 - INFO - Processed 121/293 structures.
+2024-11-06 20:51:14,234 - INFO - Processed 131/293 structures.
+2024-11-06 20:54:08,542 - INFO - Processed 141/293 structures.
+2024-11-06 20:57:03,289 - INFO - Processed 151/293 structures.
+2024-11-06 21:00:32,048 - INFO - Processed 161/293 structures.
+2024-11-06 21:04:14,637 - INFO - Processed 171/293 structures.
+2024-11-06 21:08:00,354 - INFO - Processed 181/293 structures.
+2024-11-06 21:11:29,074 - INFO - Processed 191/293 structures.
+2024-11-06 21:15:07,621 - INFO - Processed 201/293 structures.
+2024-11-06 21:18:40,430 - INFO - Processed 211/293 structures.
+2024-11-06 21:22:25,693 - INFO - Processed 221/293 structures.
+2024-11-06 21:25:57,156 - INFO - Processed 231/293 structures.
+2024-11-06 21:29:32,923 - INFO - Processed 241/293 structures.
+2024-11-06 21:32:58,609 - INFO - Processed 251/293 structures.
+2024-11-06 21:36:33,709 - INFO - Processed 261/293 structures.
+2024-11-06 21:39:14,114 - INFO - Processed 271/293 structures.
+2024-11-06 21:42:04,371 - INFO - Processed 281/293 structures.
+2024-11-06 21:45:47,784 - INFO - Processed 291/293 structures.
+2024-11-06 21:46:23,069 - INFO - Saved force comparison data to 'mlearn_analysis_Cu_eqV2_86M_omat/AI-MLFF-forces-mlearn_Cu-test-multimae.csv'
+2024-11-06 21:46:23,074 - INFO - Saved stress comparison data to 'mlearn_analysis_Cu_eqV2_86M_omat/AI-MLFF-stresses-mlearn_Cu-test-multimae.csv'
+2024-11-06 21:46:23,228 - INFO - Zipped data to 'mlearn_analysis_Cu_eqV2_86M_omat/AI-MLFF-forces-mlearn_Cu-test-multimae.csv.zip'
+2024-11-06 21:46:23,235 - INFO - Zipped data to 'mlearn_analysis_Cu_eqV2_86M_omat/AI-MLFF-stresses-mlearn_Cu-test-multimae.csv.zip'
+2024-11-06 21:46:23,264 - INFO - Forces MAE for element 'Cu': 0.005641 eV/Å
+2024-11-06 21:46:23,267 - INFO - Stresses MAE for element 'Cu': 0.785134 GPa
+2024-11-06 21:46:25,566 - INFO - Saved parity plot for Forces as 'mlearn_analysis_Cu_eqV2_86M_omat/forces_parity_plot_Cu.png'
+2024-11-06 21:46:26,031 - INFO - Saved parity plot for Stresses as 'mlearn_analysis_Cu_eqV2_86M_omat/stresses_parity_plot_Cu.png'

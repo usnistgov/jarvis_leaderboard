@@ -1,0 +1,8 @@
+{
+    "calculator_type": "eqV2_153M_omat",
+    "mlearn_elements": [
+        "Li"
+    ],
+    "forces_mae_Li": 0.0042284903650996585,
+    "stresses_mae_Li": 0.20645194169057218
+}

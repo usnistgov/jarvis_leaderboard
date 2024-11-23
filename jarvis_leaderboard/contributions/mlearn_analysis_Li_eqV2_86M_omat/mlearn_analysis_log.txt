@@ -1,0 +1,72 @@
+2024-11-05 21:38:49,942 - INFO - Filtered dataset to 270 entries containing element 'Li'
+2024-11-05 21:38:59,294 - INFO - Processed 1/270 structures.
+2024-11-05 21:40:25,040 - INFO - Processed 11/270 structures.
+2024-11-05 21:41:50,389 - INFO - Processed 21/270 structures.
+2024-11-05 21:43:15,410 - INFO - Processed 31/270 structures.
+2024-11-05 21:44:41,408 - INFO - Processed 41/270 structures.
+2024-11-05 21:46:08,144 - INFO - Processed 51/270 structures.
+2024-11-05 21:47:34,638 - INFO - Processed 61/270 structures.
+2024-11-05 21:49:01,178 - INFO - Processed 71/270 structures.
+2024-11-05 21:50:27,867 - INFO - Processed 81/270 structures.
+2024-11-05 21:51:53,674 - INFO - Processed 91/270 structures.
+2024-11-05 21:53:18,876 - INFO - Processed 101/270 structures.
+2024-11-05 21:54:43,851 - INFO - Processed 111/270 structures.
+2024-11-05 21:56:08,586 - INFO - Processed 121/270 structures.
+2024-11-05 21:57:33,377 - INFO - Processed 131/270 structures.
+2024-11-05 21:58:58,416 - INFO - Processed 141/270 structures.
+2024-11-05 22:00:23,371 - INFO - Processed 151/270 structures.
+2024-11-05 22:01:48,387 - INFO - Processed 161/270 structures.
+2024-11-05 22:03:13,578 - INFO - Processed 171/270 structures.
+2024-11-05 22:04:38,357 - INFO - Processed 181/270 structures.
+2024-11-05 22:06:03,320 - INFO - Processed 191/270 structures.
+2024-11-05 22:07:28,502 - INFO - Processed 201/270 structures.
+2024-11-05 22:08:33,585 - INFO - Processed 211/270 structures.
+2024-11-05 22:09:23,367 - INFO - Processed 221/270 structures.
+2024-11-05 22:09:27,833 - INFO - Processed 231/270 structures.
+2024-11-05 22:09:32,258 - INFO - Processed 241/270 structures.
+2024-11-05 22:10:56,456 - INFO - Processed 251/270 structures.
+2024-11-05 22:12:21,294 - INFO - Processed 261/270 structures.
+2024-11-05 22:13:00,133 - INFO - Saved force comparison data to 'mlearn_analysis_Li_eqV2_86M_omat/AI-MLFF-forces-mlearn_Li-test-multimae.csv'
+2024-11-05 22:13:00,138 - INFO - Saved stress comparison data to 'mlearn_analysis_Li_eqV2_86M_omat/AI-MLFF-stresses-mlearn_Li-test-multimae.csv'
+2024-11-05 22:13:00,210 - INFO - Zipped data to 'mlearn_analysis_Li_eqV2_86M_omat/AI-MLFF-forces-mlearn_Li-test-multimae.csv.zip'
+2024-11-05 22:13:00,217 - INFO - Zipped data to 'mlearn_analysis_Li_eqV2_86M_omat/AI-MLFF-stresses-mlearn_Li-test-multimae.csv.zip'
+2024-11-05 22:13:00,230 - INFO - Forces MAE for element 'Li': 0.004266 eV/Å
+2024-11-05 22:13:00,233 - INFO - Stresses MAE for element 'Li': 0.799478 GPa
+2024-11-05 22:13:01,442 - INFO - Saved parity plot for Forces as 'mlearn_analysis_Li_eqV2_86M_omat/forces_parity_plot_Li.png'
+2024-11-05 22:13:01,900 - INFO - Saved parity plot for Stresses as 'mlearn_analysis_Li_eqV2_86M_omat/stresses_parity_plot_Li.png'
+2024-11-06 20:15:23,680 - INFO - Filtered dataset to 270 entries containing element 'Li'
+2024-11-06 20:15:32,883 - INFO - Processed 1/270 structures.
+2024-11-06 20:16:57,268 - INFO - Processed 11/270 structures.
+2024-11-06 20:18:20,756 - INFO - Processed 21/270 structures.
+2024-11-06 20:19:44,199 - INFO - Processed 31/270 structures.
+2024-11-06 20:21:08,675 - INFO - Processed 41/270 structures.
+2024-11-06 20:22:33,884 - INFO - Processed 51/270 structures.
+2024-11-06 20:23:58,931 - INFO - Processed 61/270 structures.
+2024-11-06 20:25:24,375 - INFO - Processed 71/270 structures.
+2024-11-06 20:26:49,904 - INFO - Processed 81/270 structures.
+2024-11-06 20:28:15,220 - INFO - Processed 91/270 structures.
+2024-11-06 20:29:40,346 - INFO - Processed 101/270 structures.
+2024-11-06 20:31:05,761 - INFO - Processed 111/270 structures.
+2024-11-06 20:32:30,816 - INFO - Processed 121/270 structures.
+2024-11-06 20:33:56,029 - INFO - Processed 131/270 structures.
+2024-11-06 20:35:21,061 - INFO - Processed 141/270 structures.
+2024-11-06 20:36:46,360 - INFO - Processed 151/270 structures.
+2024-11-06 20:38:11,830 - INFO - Processed 161/270 structures.
+2024-11-06 20:39:37,123 - INFO - Processed 171/270 structures.
+2024-11-06 20:41:02,432 - INFO - Processed 181/270 structures.
+2024-11-06 20:42:27,507 - INFO - Processed 191/270 structures.
+2024-11-06 20:43:52,733 - INFO - Processed 201/270 structures.
+2024-11-06 20:44:57,619 - INFO - Processed 211/270 structures.
+2024-11-06 20:45:47,504 - INFO - Processed 221/270 structures.
+2024-11-06 20:45:52,012 - INFO - Processed 231/270 structures.
+2024-11-06 20:45:56,462 - INFO - Processed 241/270 structures.
+2024-11-06 20:47:19,998 - INFO - Processed 251/270 structures.
+2024-11-06 20:48:44,206 - INFO - Processed 261/270 structures.
+2024-11-06 20:49:22,872 - INFO - Saved force comparison data to 'mlearn_analysis_Li_eqV2_86M_omat/AI-MLFF-forces-mlearn_Li-test-multimae.csv'
+2024-11-06 20:49:22,877 - INFO - Saved stress comparison data to 'mlearn_analysis_Li_eqV2_86M_omat/AI-MLFF-stresses-mlearn_Li-test-multimae.csv'
+2024-11-06 20:49:22,948 - INFO - Zipped data to 'mlearn_analysis_Li_eqV2_86M_omat/AI-MLFF-forces-mlearn_Li-test-multimae.csv.zip'
+2024-11-06 20:49:22,956 - INFO - Zipped data to 'mlearn_analysis_Li_eqV2_86M_omat/AI-MLFF-stresses-mlearn_Li-test-multimae.csv.zip'
+2024-11-06 20:49:22,969 - INFO - Forces MAE for element 'Li': 0.004266 eV/Å
+2024-11-06 20:49:22,972 - INFO - Stresses MAE for element 'Li': 0.200764 GPa
+2024-11-06 20:49:24,170 - INFO - Saved parity plot for Forces as 'mlearn_analysis_Li_eqV2_86M_omat/forces_parity_plot_Li.png'
+2024-11-06 20:49:24,621 - INFO - Saved parity plot for Stresses as 'mlearn_analysis_Li_eqV2_86M_omat/stresses_parity_plot_Li.png'

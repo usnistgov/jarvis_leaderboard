@@ -1,0 +1,8 @@
+{
+    "calculator_type": "matgl-direct",
+    "mlearn_elements": [
+        "Ge"
+    ],
+    "forces_mae_Ge": 0.260182745565693,
+    "stresses_mae_Ge": 1.4930905819436757
+}

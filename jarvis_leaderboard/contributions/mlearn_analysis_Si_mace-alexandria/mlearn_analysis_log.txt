@@ -1,0 +1,66 @@
+2024-11-05 16:21:52,366 - INFO - Filtered dataset to 239 entries containing element 'Si'
+2024-11-05 16:21:56,418 - INFO - Processed 1/239 structures.
+2024-11-05 16:22:28,483 - INFO - Processed 11/239 structures.
+2024-11-05 16:22:59,750 - INFO - Processed 21/239 structures.
+2024-11-05 16:23:30,446 - INFO - Processed 31/239 structures.
+2024-11-05 16:24:01,387 - INFO - Processed 41/239 structures.
+2024-11-05 16:24:32,804 - INFO - Processed 51/239 structures.
+2024-11-05 16:24:56,769 - INFO - Processed 61/239 structures.
+2024-11-05 16:25:14,472 - INFO - Processed 71/239 structures.
+2024-11-05 16:25:46,520 - INFO - Processed 81/239 structures.
+2024-11-05 16:26:18,459 - INFO - Processed 91/239 structures.
+2024-11-05 16:26:49,645 - INFO - Processed 101/239 structures.
+2024-11-05 16:27:21,630 - INFO - Processed 111/239 structures.
+2024-11-05 16:27:53,726 - INFO - Processed 121/239 structures.
+2024-11-05 16:28:24,181 - INFO - Processed 131/239 structures.
+2024-11-05 16:28:55,027 - INFO - Processed 141/239 structures.
+2024-11-05 16:29:25,800 - INFO - Processed 151/239 structures.
+2024-11-05 16:29:56,063 - INFO - Processed 161/239 structures.
+2024-11-05 16:30:28,261 - INFO - Processed 171/239 structures.
+2024-11-05 16:31:00,516 - INFO - Processed 181/239 structures.
+2024-11-05 16:31:31,816 - INFO - Processed 191/239 structures.
+2024-11-05 16:32:03,731 - INFO - Processed 201/239 structures.
+2024-11-05 16:32:35,772 - INFO - Processed 211/239 structures.
+2024-11-05 16:33:06,475 - INFO - Processed 221/239 structures.
+2024-11-05 16:33:34,589 - INFO - Processed 231/239 structures.
+2024-11-05 16:34:00,042 - INFO - Saved force comparison data to 'mlearn_analysis_Si_mace-alexandria/AI-MLFF-forces-mlearn_Si-test-multimae.csv'
+2024-11-05 16:34:00,049 - INFO - Saved stress comparison data to 'mlearn_analysis_Si_mace-alexandria/AI-MLFF-stresses-mlearn_Si-test-multimae.csv'
+2024-11-05 16:34:00,128 - INFO - Zipped data to 'mlearn_analysis_Si_mace-alexandria/AI-MLFF-forces-mlearn_Si-test-multimae.csv.zip'
+2024-11-05 16:34:00,135 - INFO - Zipped data to 'mlearn_analysis_Si_mace-alexandria/AI-MLFF-stresses-mlearn_Si-test-multimae.csv.zip'
+2024-11-05 16:34:00,154 - INFO - Forces MAE for element 'Si': 0.202006 eV/Å
+2024-11-05 16:34:00,157 - INFO - Stresses MAE for element 'Si': 3.214603 GPa
+2024-11-05 16:34:01,850 - INFO - Saved parity plot for Forces as 'mlearn_analysis_Si_mace-alexandria/forces_parity_plot_Si.png'
+2024-11-05 16:34:02,325 - INFO - Saved parity plot for Stresses as 'mlearn_analysis_Si_mace-alexandria/stresses_parity_plot_Si.png'
+2024-11-06 15:19:17,572 - INFO - Filtered dataset to 239 entries containing element 'Si'
+2024-11-06 15:19:20,568 - INFO - Processed 1/239 structures.
+2024-11-06 15:19:47,495 - INFO - Processed 11/239 structures.
+2024-11-06 15:20:13,671 - INFO - Processed 21/239 structures.
+2024-11-06 15:20:40,002 - INFO - Processed 31/239 structures.
+2024-11-06 15:21:06,356 - INFO - Processed 41/239 structures.
+2024-11-06 15:21:32,680 - INFO - Processed 51/239 structures.
+2024-11-06 15:21:53,090 - INFO - Processed 61/239 structures.
+2024-11-06 15:22:07,601 - INFO - Processed 71/239 structures.
+2024-11-06 15:22:34,285 - INFO - Processed 81/239 structures.
+2024-11-06 15:23:00,998 - INFO - Processed 91/239 structures.
+2024-11-06 15:23:27,827 - INFO - Processed 101/239 structures.
+2024-11-06 15:23:54,698 - INFO - Processed 111/239 structures.
+2024-11-06 15:24:21,505 - INFO - Processed 121/239 structures.
+2024-11-06 15:24:47,697 - INFO - Processed 131/239 structures.
+2024-11-06 15:25:13,591 - INFO - Processed 141/239 structures.
+2024-11-06 15:25:39,510 - INFO - Processed 151/239 structures.
+2024-11-06 15:26:05,467 - INFO - Processed 161/239 structures.
+2024-11-06 15:26:31,400 - INFO - Processed 171/239 structures.
+2024-11-06 15:26:57,252 - INFO - Processed 181/239 structures.
+2024-11-06 15:27:23,094 - INFO - Processed 191/239 structures.
+2024-11-06 15:27:49,127 - INFO - Processed 201/239 structures.
+2024-11-06 15:28:15,395 - INFO - Processed 211/239 structures.
+2024-11-06 15:28:41,480 - INFO - Processed 221/239 structures.
+2024-11-06 15:29:04,954 - INFO - Processed 231/239 structures.
+2024-11-06 15:29:25,857 - INFO - Saved force comparison data to 'mlearn_analysis_Si_mace-alexandria/AI-MLFF-forces-mlearn_Si-test-multimae.csv'
+2024-11-06 15:29:25,861 - INFO - Saved stress comparison data to 'mlearn_analysis_Si_mace-alexandria/AI-MLFF-stresses-mlearn_Si-test-multimae.csv'
+2024-11-06 15:29:25,930 - INFO - Zipped data to 'mlearn_analysis_Si_mace-alexandria/AI-MLFF-forces-mlearn_Si-test-multimae.csv.zip'
+2024-11-06 15:29:25,936 - INFO - Zipped data to 'mlearn_analysis_Si_mace-alexandria/AI-MLFF-stresses-mlearn_Si-test-multimae.csv.zip'
+2024-11-06 15:29:25,951 - INFO - Forces MAE for element 'Si': 0.202006 eV/Å
+2024-11-06 15:29:25,953 - INFO - Stresses MAE for element 'Si': 2.887782 GPa
+2024-11-06 15:29:26,921 - INFO - Saved parity plot for Forces as 'mlearn_analysis_Si_mace-alexandria/forces_parity_plot_Si.png'
+2024-11-06 15:29:27,314 - INFO - Saved parity plot for Stresses as 'mlearn_analysis_Si_mace-alexandria/stresses_parity_plot_Si.png'

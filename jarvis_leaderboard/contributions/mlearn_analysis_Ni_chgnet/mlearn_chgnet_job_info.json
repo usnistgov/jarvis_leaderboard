@@ -1,0 +1,8 @@
+{
+    "calculator_type": "chgnet",
+    "mlearn_elements": [
+        "Ni"
+    ],
+    "forces_mae_Ni": 0.0587748951705304,
+    "stresses_mae_Ni": 1.2063939326176962
+}

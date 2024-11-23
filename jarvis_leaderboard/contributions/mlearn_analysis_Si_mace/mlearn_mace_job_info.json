@@ -1,0 +1,8 @@
+{
+    "calculator_type": "mace",
+    "mlearn_elements": [
+        "Si"
+    ],
+    "forces_mae_Si": 0.14933250225715855,
+    "stresses_mae_Si": 1.051308195374489
+}
