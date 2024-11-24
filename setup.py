@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="jarvis_leaderboard",  # Replace with your own username
-    version="2024.10.10",
+    version="2024.10.30",
     author="Kamal Choudhary",
     author_email="kamal.choudhary@nist.gov",
     description="jarvis_leaderboard",
@@ -16,22 +16,13 @@ setuptools.setup(
         "scikit-learn>=0.24.1",
         "pandas>=1.2.4",
         "rouge>=1.0.1",
-        "mkdocs>=1.5.2",
-        "mkdocs-material>=9.0.5",
         "pydantic>=2.3.0",
         "markdown>=3.2.1",
         "plotly",
         "absl-py==1.4.0",
         "nltk==3.8.1",
-        # "evaluate==0.4.0",
-        # "rouge-score==0.1.2",
-        # "fsspec==2023.9.0",
-        # "aiohttp==3.8.5",
-        # "datasets==2.14.5",
-        # "alignn>=2022.10.23",
-        # "flake8>=3.9.1",
-        # "pycodestyle>=2.7.0",
-        # "pydocstyle>=6.0.0",
+        # "mkdocs>=1.5.2",
+        # "mkdocs-material>=9.0.5",
     ],
     scripts=[
         "jarvis_leaderboard/jarvis_populate_data.py",
