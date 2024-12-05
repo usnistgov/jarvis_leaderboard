@@ -190,12 +190,13 @@ if __name__ == "__main__":
         "AI-SinglePropertyPrediction-a-dft_3d_chipsff-test-mae.csv.zip",
         "AI-SinglePropertyPrediction-b-dft_3d_chipsff-test-mae.csv.zip",
         "AI-SinglePropertyPrediction-c-dft_3d_chipsff-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-vol-dft_3d_chipsff-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-form_en-dft_3d_chipsff-test-mae.csv.zip",
         "AI-SinglePropertyPrediction-c11-dft_3d_chipsff-test-mae.csv.zip",
         "AI-SinglePropertyPrediction-c44-dft_3d_chipsff-test-mae.csv.zip",
-        "AI-SinglePropertyPrediction-form_en-dft_3d_chipsff-test-mae.csv.zip",
         "AI-SinglePropertyPrediction-kv-dft_3d_chipsff-test-mae.csv.zip",
         "AI-SinglePropertyPrediction-surf_en-dft_3d_chipsff-test-mae.csv.zip",
-        "AI-SinglePropertyPrediction-vol-dft_3d_chipsff-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-vac_en-dft_3d_chipsff-test-mae.csv.zip",
     ]
 
     process_benchmarks(
