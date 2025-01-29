@@ -110,7 +110,7 @@ tzdata==2023.3
 uncertainties==3.1.7
 urllib3==1.26.15
 watchdog==3.0.0
-Werkzeug==2.2.3
+Werkzeug==3.0.1
 wrapt==1.14.1
 xarray==2023.1.0
 xmltodict==0.13.0
