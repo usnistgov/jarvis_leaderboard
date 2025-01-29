@@ -1,0 +1,9 @@
+{
+    "author_email": "kevin.garrity@nist.gov",
+    "date_submitted": "03-22-2024",
+    "language": "julia",
+    "model_name": "ThreeBodyTB.jl",
+    "os": "linux",
+    "project_url": "https://github.com/usnistgov/ThreeBodyTB.jl",
+    "hardware_used": "laptop",
+}
