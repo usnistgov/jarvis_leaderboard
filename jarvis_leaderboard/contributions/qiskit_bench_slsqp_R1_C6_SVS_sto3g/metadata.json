@@ -1,0 +1,18 @@
+{
+    "model_name": "BenchQC",
+    "project_url": "https://iopscience.iop.org/article/10.1088/1361-648X/ac1154/meta",
+    "date_submitted": "01-14-2023",
+    "author_email": "nia.rodney-pollard@nist.gov",
+    "database_version": "12-12-2022",
+    "team_name": "JARVIS",
+    "time_taken_seconds": {
+        "QC-EigenSolver-electron_bands_JVASP_816_Al_WTBH-dft_3d-test-multimae.csv.zip": ""
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "jarvis-tools,numpy,scipy,qiskit",
+    "hardware_used": "google colab",
+    "git_url": [
+        "https://github.com/usnistgov/benchqc"
+    ]
+}
