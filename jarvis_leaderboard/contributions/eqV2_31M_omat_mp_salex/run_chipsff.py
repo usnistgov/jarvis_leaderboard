@@ -17,16 +17,8 @@ def analyze_multiple_structures(
     jid_list, calculator_types, chemical_potentials_file, **kwargs
 ):
     """
-    Analyzes multiple structures with multiple calculators and aggregates error metrics.
-
-    Args:
-        jid_list (List[str]): List of JIDs to analyze.
-        calculator_types (List[str]): List of calculator types to use.
-        chemical_potentials_file (str): Path to the chemical potentials JSON file.
-        **kwargs: Additional keyword arguments for analysis settings.
-
-    Returns:
-        None
+    Analyzes multiple structures (by JID) with multiple calculators
+    and aggregates error metrics.
     """
     composite_error_data = {}
 
@@ -44,14 +36,10 @@ def analyze_multiple_structures(
                 jid=jid,
                 calculator_type=calculator_type,
                 chemical_potentials_file=chemical_potentials_file,
-                bulk_relaxation_settings=kwargs.get(
-                    "bulk_relaxation_settings"
-                ),
+                bulk_relaxation_settings=kwargs.get("bulk_relaxation_settings"),
                 phonon_settings=kwargs.get("phonon_settings"),
                 properties_to_calculate=kwargs.get("properties_to_calculate"),
-                use_conventional_cell=kwargs.get(
-                    "use_conventional_cell", False
-                ),
+                use_conventional_cell=kwargs.get("use_conventional_cell", False),
                 surface_settings=kwargs.get("surface_settings"),
                 defect_settings=kwargs.get("defect_settings"),
                 phonon3_settings=kwargs.get("phonon3_settings"),
@@ -90,11 +78,16 @@ def analyze_multiple_interfaces(
     film_index="1_1_0",
     substrate_index="1_1_0",
 ):
+    """
+    Analyzes multiple film/substrate JIDs for interface properties
+    with multiple calculators.
+    """
     for calculator_type in calculator_types:
         for film_jid in film_jid_list:
             for substrate_jid in substrate_jid_list:
                 print(
-                    f"Analyzing interface between {film_jid} and {substrate_jid} with {calculator_type}..."
+                    f"Analyzing interface between {film_jid} and {substrate_jid} "
+                    f"with {calculator_type}..."
                 )
                 analyzer = MaterialsAnalyzer(
                     calculator_type=calculator_type,
@@ -108,30 +101,24 @@ def analyze_multiple_interfaces(
 
 
 def plot_composite_scorecard(df):
-
+    """
+    Creates a heatmap scorecard of error metrics for multiple calculator types.
+    """
     fig = px.imshow(
         df, text_auto=True, aspect="auto", labels=dict(color="Error")
     )
 
     # Update layout for larger font sizes
     fig.update_layout(
-        font=dict(size=24),  # Adjust the font size
-        coloraxis_colorbar=dict(
-            title_font=dict(size=18), tickfont=dict(size=18)
-        ),
+        font=dict(size=24),
+        coloraxis_colorbar=dict(title_font=dict(size=18), tickfont=dict(size=18)),
     )
+    # Optionally adjust the text font size in cells
+    fig.update_traces(textfont=dict(size=18))
 
-    # Optionally adjust the text font size for cells
-    fig.update_traces(textfont=dict(size=18))  # Adjust text size in cells
     fname_plot = "composite_error_scorecard.png"
     fig.write_image(fname_plot)
     fig.show()
-
-
-# Ensure that the necessary modules and functions are imported
-# from your existing codebase, such as `data`, `Atoms`, `voigt_6_to_full_3x3_stress`, etc.
-# Example:
-# from your_module import data, Atoms, voigt_6_to_full_3x3_stress, loadjson
 
 
 def main():
@@ -146,45 +133,34 @@ def main():
     )
     args = parser.parse_args()
 
+    # Load the JSON file, parse into CHIPSFFConfig
     input_file = loadjson(args.input_file)
     input_file_data = CHIPSFFConfig(**input_file)
     pprint.pprint(input_file_data.dict())
 
-    # Check if scaling test is requested
+    # 1) Check if scaling test is requested
     if input_file_data.scaling_test:
         print("Running scaling test...")
         scaling_analyzer = ScalingAnalyzer(input_file_data)
         scaling_analyzer.run()
-    else:
-        # Determine the list of JIDs
-        if input_file_data.jid:
-            jid_list = [input_file_data.jid]
-        elif input_file_data.jid_list:
-            jid_list = input_file_data.jid_list
-        else:
-            jid_list = []
+        return  # Done.
 
-        # Determine the list of calculators
+    # 2) If a local structure_path is provided, handle that scenario
+    if input_file_data.structure_path:
+        # Decide which calculators to run
         if input_file_data.calculator_type:
-            calculator_list = [input_file_data.calculator_type]
+            calc_list = [input_file_data.calculator_type]
         elif input_file_data.calculator_types:
-            calculator_list = input_file_data.calculator_types
+            calc_list = input_file_data.calculator_types
         else:
-            calculator_list = []
+            raise ValueError("No calculator_type or calculator_types specified for structure_path.")
 
-        # Handle film and substrate IDs for interface analysis
-        film_jids = input_file_data.film_id if input_file_data.film_id else []
-        substrate_jids = (
-            input_file_data.substrate_id
-            if input_file_data.substrate_id
-            else []
-        )
-
-        # Scenario 5: Batch Processing for Multiple JIDs and Calculators
-        if input_file_data.jid_list and input_file_data.calculator_types:
-            analyze_multiple_structures(
-                jid_list=input_file_data.jid_list,
-                calculator_types=input_file_data.calculator_types,
+        for calc_type in calc_list:
+            print(f"Analyzing local file {input_file_data.structure_path} with {calc_type}...")
+            calc_settings = input_file_data.calculator_settings.get(calc_type, {})
+            analyzer = MaterialsAnalyzer(
+                structure_path=input_file_data.structure_path,
+                calculator_type=calc_type,
                 chemical_potentials_file=input_file_data.chemical_potentials_file,
                 bulk_relaxation_settings=input_file_data.bulk_relaxation_settings,
                 phonon_settings=input_file_data.phonon_settings,
@@ -194,105 +170,151 @@ def main():
                 defect_settings=input_file_data.defect_settings,
                 phonon3_settings=input_file_data.phonon3_settings,
                 md_settings=input_file_data.md_settings,
-                calculator_settings=input_file_data.calculator_settings,  # Pass calculator-specific settings
+                calculator_settings=calc_settings,
             )
-        else:
-            # Scenario 1 & 3: Single or Multiple JIDs with Single or Multiple Calculators
-            if jid_list and tqdm(calculator_list, total=len(calculator_list)):
-                for jid in tqdm(jid_list, total=len(jid_list)):
-                    for calculator_type in calculator_list:
-                        print(f"Analyzing {jid} with {calculator_type}...")
-                        # Fetch calculator-specific settings
-                        calc_settings = (
-                            input_file_data.calculator_settings.get(
-                                calculator_type, {}
-                            )
-                        )
-                        analyzer = MaterialsAnalyzer(
-                            jid=jid,
-                            calculator_type=calculator_type,
-                            chemical_potentials_file=input_file_data.chemical_potentials_file,
-                            bulk_relaxation_settings=input_file_data.bulk_relaxation_settings,
-                            phonon_settings=input_file_data.phonon_settings,
-                            properties_to_calculate=input_file_data.properties_to_calculate,
-                            use_conventional_cell=input_file_data.use_conventional_cell,
-                            surface_settings=input_file_data.surface_settings,
-                            defect_settings=input_file_data.defect_settings,
-                            phonon3_settings=input_file_data.phonon3_settings,
-                            md_settings=input_file_data.md_settings,
-                            calculator_settings=calc_settings,  # Pass calculator-specific settings
-                        )
-                        analyzer.run_all()
+            analyzer.run_all()
 
-        # Proceed with other scenarios that don't overlap with jid_list and calculator_types
-        # Scenario 2 & 4: Interface Calculations (Multiple Calculators and/or JIDs)
-        if film_jids and substrate_jids and calculator_list:
-            for film_jid, substrate_jid in zip(film_jids, substrate_jids):
+        # Return after finishing local-file scenario to avoid
+        # mixing with JID-based or interface-based logic below
+        return
+
+    # 3) Otherwise, proceed with JID-based or interface-based logic
+
+    # Determine the list of JIDs
+    if input_file_data.jid:
+        jid_list = [input_file_data.jid]
+    elif input_file_data.jid_list:
+        jid_list = input_file_data.jid_list
+    else:
+        jid_list = []
+
+    # Determine the list of calculators
+    if input_file_data.calculator_type:
+        calculator_list = [input_file_data.calculator_type]
+    elif input_file_data.calculator_types:
+        calculator_list = input_file_data.calculator_types
+    else:
+        calculator_list = []
+
+    # Handle film and substrate IDs for interface analysis
+    film_jids = input_file_data.film_jid if input_file_data.film_jid else []
+    substrate_jids = (
+        input_file_data.substrate_jid
+        if input_file_data.substrate_jid
+        else []
+    )
+
+    # Scenario 5: Batch Processing for Multiple JIDs and Calculators
+    if input_file_data.jid_list and input_file_data.calculator_types:
+        analyze_multiple_structures(
+            jid_list=input_file_data.jid_list,
+            calculator_types=input_file_data.calculator_types,
+            chemical_potentials_file=input_file_data.chemical_potentials_file,
+            bulk_relaxation_settings=input_file_data.bulk_relaxation_settings,
+            phonon_settings=input_file_data.phonon_settings,
+            properties_to_calculate=input_file_data.properties_to_calculate,
+            use_conventional_cell=input_file_data.use_conventional_cell,
+            surface_settings=input_file_data.surface_settings,
+            defect_settings=input_file_data.defect_settings,
+            phonon3_settings=input_file_data.phonon3_settings,
+            md_settings=input_file_data.md_settings,
+            calculator_settings=input_file_data.calculator_settings,
+        )
+
+    else:
+        # Scenario 1 & 3: Single or Multiple JIDs with Single or Multiple Calculators
+        if jid_list and tqdm(calculator_list, total=len(calculator_list)):
+            for jid in tqdm(jid_list, total=len(jid_list)):
                 for calculator_type in calculator_list:
-                    print(
-                        f"Analyzing interface between {film_jid} and {substrate_jid} with {calculator_type}..."
-                    )
+                    print(f"Analyzing {jid} with {calculator_type}...")
                     # Fetch calculator-specific settings
-                    calc_settings = input_file_data.calculator_settings.get(
-                        calculator_type, {}
+                    calc_settings = (
+                        input_file_data.calculator_settings.get(calculator_type, {})
                     )
                     analyzer = MaterialsAnalyzer(
+                        jid=jid,
                         calculator_type=calculator_type,
                         chemical_potentials_file=input_file_data.chemical_potentials_file,
-                        film_jid=film_jid,
-                        substrate_jid=substrate_jid,
-                        film_index=input_file_data.film_index,
-                        substrate_index=input_file_data.substrate_index,
                         bulk_relaxation_settings=input_file_data.bulk_relaxation_settings,
                         phonon_settings=input_file_data.phonon_settings,
                         properties_to_calculate=input_file_data.properties_to_calculate,
-                        calculator_settings=calc_settings,  # Pass calculator-specific settings
+                        use_conventional_cell=input_file_data.use_conventional_cell,
+                        surface_settings=input_file_data.surface_settings,
+                        defect_settings=input_file_data.defect_settings,
+                        phonon3_settings=input_file_data.phonon3_settings,
+                        md_settings=input_file_data.md_settings,
+                        calculator_settings=calc_settings,
                     )
-                    analyzer.analyze_interfaces()
+                    analyzer.run_all()
 
-        # Continue with other independent scenarios
-        # Scenario 6: MLearn Forces Comparison
-        if input_file_data.mlearn_elements and input_file_data.calculator_type:
-            print(
-                f"Running mlearn forces comparison for elements {input_file_data.mlearn_elements} with {input_file_data.calculator_type}..."
-            )
-            mlearn_analyzer = MLearnForcesAnalyzer(
-                calculator_type=input_file_data.calculator_type,
-                mlearn_elements=input_file_data.mlearn_elements,
-                calculator_settings=input_file_data.calculator_settings.get(
-                    input_file_data.calculator_type, {}
-                ),
-            )
-            mlearn_analyzer.run()
+    # Scenario 2 & 4: Interface Calculations (Multiple Calculators and/or JIDs)
+    if film_jids and substrate_jids and calculator_list:
+        for film_jid, substrate_jid in zip(film_jids, substrate_jids):
+            for calculator_type in calculator_list:
+                print(
+                    f"Analyzing interface between {film_jid} and {substrate_jid} "
+                    f"with {calculator_type}..."
+                )
+                # Fetch calculator-specific settings
+                calc_settings = input_file_data.calculator_settings.get(calculator_type, {})
+                analyzer = MaterialsAnalyzer(
+                    calculator_type=calculator_type,
+                    chemical_potentials_file=input_file_data.chemical_potentials_file,
+                    film_jid=film_jid,
+                    substrate_jid=substrate_jid,
+                    film_index=input_file_data.film_index,
+                    substrate_index=input_file_data.substrate_index,
+                    bulk_relaxation_settings=input_file_data.bulk_relaxation_settings,
+                    phonon_settings=input_file_data.phonon_settings,
+                    properties_to_calculate=input_file_data.properties_to_calculate,
+                    calculator_settings=calc_settings,
+                )
+                analyzer.analyze_interfaces()
 
-        # Scenario 7: AlignnFF Forces Comparison
-        if input_file_data.alignn_ff_db and input_file_data.calculator_type:
-            print(
-                f"Running AlignnFF forces comparison with {input_file_data.calculator_type}..."
-            )
-            alignn_ff_analyzer = AlignnFFForcesAnalyzer(
-                calculator_type=input_file_data.calculator_type,
-                num_samples=input_file_data.num_samples,
-                calculator_settings=input_file_data.calculator_settings.get(
-                    input_file_data.calculator_type, {}
-                ),
-            )
-            alignn_ff_analyzer.run()
+    # Scenario 6: MLearn Forces Comparison
+    if input_file_data.mlearn_elements and input_file_data.calculator_type:
+        print(
+            f"Running mlearn forces comparison for elements "
+            f"{input_file_data.mlearn_elements} with {input_file_data.calculator_type}..."
+        )
+        mlearn_analyzer = MLearnForcesAnalyzer(
+            calculator_type=input_file_data.calculator_type,
+            mlearn_elements=input_file_data.mlearn_elements,
+            calculator_settings=input_file_data.calculator_settings.get(
+                input_file_data.calculator_type, {}
+            ),
+        )
+        mlearn_analyzer.run()
 
-        # Scenario 8: MPTrj Forces Comparison
-        if input_file_data.mptrj and input_file_data.calculator_type:
-            print(
-                f"Running MPTrj forces comparison with {input_file_data.calculator_type}..."
-            )
-            mptrj_analyzer = MPTrjAnalyzer(
-                calculator_type=input_file_data.calculator_type,
-                num_samples=input_file_data.num_samples,
-                calculator_settings=input_file_data.calculator_settings.get(
-                    input_file_data.calculator_type, {}
-                ),
-            )
-            mptrj_analyzer.run()
+    # Scenario 7: AlignnFF Forces Comparison
+    if input_file_data.alignn_ff_db and input_file_data.calculator_type:
+        print(
+            f"Running AlignnFF forces comparison with {input_file_data.calculator_type}..."
+        )
+        alignn_ff_analyzer = AlignnFFForcesAnalyzer(
+            calculator_type=input_file_data.calculator_type,
+            num_samples=input_file_data.num_samples,
+            calculator_settings=input_file_data.calculator_settings.get(
+                input_file_data.calculator_type, {}
+            ),
+        )
+        alignn_ff_analyzer.run()
+
+    # Scenario 8: MPTrj Forces Comparison
+    if input_file_data.mptrj and input_file_data.calculator_type:
+        print(
+            f"Running MPTrj forces comparison with {input_file_data.calculator_type}..."
+        )
+        mptrj_analyzer = MPTrjAnalyzer(
+            calculator_type=input_file_data.calculator_type,
+            num_samples=input_file_data.num_samples,
+            calculator_settings=input_file_data.calculator_settings.get(
+                input_file_data.calculator_type, {}
+            ),
+        )
+        mptrj_analyzer.run()
 
 
 if __name__ == "__main__":
     main()
+
