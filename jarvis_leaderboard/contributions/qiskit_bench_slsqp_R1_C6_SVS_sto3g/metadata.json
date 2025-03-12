@@ -1,0 +1,18 @@
+{
+    "model_name": "BenchQC",
+    "project_url": "https://arxiv.org/abs/2502.09595",
+    "date_submitted": "02-13-2025",
+    "author_email": "nia.rodney-pollard@nist.gov",
+    "database_version": "02-13-2025",
+    "team_name": "JARVIS",
+    "time_taken_seconds": {
+        "QC-SinglePropertyPrediction-total_energy_Al-BenchQC-test-mae.csv.zip": ""
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "jarvis-tools,numpy,scipy,pyscf,qiskit",
+    "hardware_used": "google colab",
+    "git_url": [
+        "https://github.com/usnistgov/benchqc"
+    ]
+}
