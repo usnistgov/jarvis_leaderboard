@@ -1,0 +1,18 @@
+{
+    "model_name": "ClosureGap",
+    "project_url": "https://github.com/yaxigu/closuregap-jarvis",
+    "date_submitted": "07-22-2026",
+    "author_email": "alisagu05@outlook.com",
+    "database_version": "dft_3d 94k (figshare 6815699), 93902 entries, accessed 2026-07-22",
+    "team_name": "ClosureGap",
+    "time_taken_seconds": {
+        "AI-SinglePropertyPrediction-optb88vdw_bandgap-dft_3d-test-mae.csv.zip": ""
+    },
+    "language": "python",
+    "os": "linux",
+    "software_used": "jarvis-tools,closuregap_jarvis",
+    "hardware_used": "CPU only (composition-based ridge regressor)",
+    "git_url": [
+        "https://github.com/yaxigu/closuregap-jarvis"
+    ]
+}
