@@ -1,0 +1,14 @@
+{
+    "model_name": "zim_boost",
+    "project_url": "https://github.com/usnistgov/jarvis_leaderboard",
+    "date_submitted": "07-26-2026",
+    "author_email": "yshrain@outlook.com",
+    "team_name": "yshrain",
+    "language": "python",
+    "os": "windows",
+    "software_used": "jarvis-tools,matminer,pymatgen,scikit-learn,lightgbm",
+    "hardware_used": "Laptop, AMD/Intel CPU + NVIDIA GeForce RTX 4080 Laptop GPU (CPU-only training)",
+    "time_taken_seconds": {"AI-SinglePropertyPrediction-Tc-supercon_chem-test-mae.csv.zip": 900},
+    "git_url": [],
+    "notes": "Zero-inflated median model: 24.4% of SuperCon labels are exactly Tc=0, and MAE is minimised by the conditional median, not the conditional mean. A LightGBM P(Tc=0) classifier gates an ensemble of positive-part regressors (matminer/Magpie + superconductivity-physics descriptors: charge-balanced cuprate hole doping with the Presland-Tallon dome, Matthias valence-electron rules, isotope-effect mass proxies). All model selection by 5-fold CV on the official train split only; the official test split was evaluated exactly once."
+}
