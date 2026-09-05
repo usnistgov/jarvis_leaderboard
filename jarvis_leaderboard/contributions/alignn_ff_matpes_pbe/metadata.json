@@ -1,0 +1,11 @@
+{
+  "model_name": "ALIGNN-FF MATPES-PBE",
+  "project_url": "https://github.com/atomgptlab/alignn",
+  "date_submitted": "08-17-2026",
+  "author_email": "writetokamal.1989@gmail.com",
+  "database_version": "08-2026",
+  "team_name": "AtomGPTLab",
+  "time_taken_seconds": {
+    "AI-SinglePropertyPrediction-e_form-wbm-test-mae.csv.zip": ""
+  }
+}

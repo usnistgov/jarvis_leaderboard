@@ -1,0 +1,12 @@
+{
+  "model_name": "ALIGNN-FF MPtrj (ep46)",
+  "project_url": "https://github.com/atomgptlab/alignn",
+  "date_submitted": "08-08-2026",
+  "author_email": "writetokamal.1989@gmail.com",
+  "database_version": "08-2026",
+  "team_name": "AtomGPTLab",
+  "time_taken_seconds": {
+    "AI-SinglePropertyPrediction-e_form-wbm-test-mae.csv.zip": "",
+    "AI-AtomGen-relaxed_structure-wbm-test-rmse.csv.zip": ""
+  }
+}
