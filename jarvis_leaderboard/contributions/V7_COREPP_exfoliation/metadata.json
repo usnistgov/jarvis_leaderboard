@@ -1,0 +1,11 @@
+{
+  "model_name": "V7_COREPP_exfoliation",
+  "team_name": "V7_COREPP",
+  "author_email": "kamran.soleimani@acuvizionai.be",
+  "project_url": "https://acuvizionai.com/",
+  "git_url": "https://github.com/AcuVizionAI/V7_COREPP_exfoliation",
+  "date_submitted": "10-15-2026",
+  "time_taken_seconds": "not recorded for the historical training run",
+  "software_used": "PyTorch 2.5.1; numpy 1.26.4; pandas 2.3.3; pymatgen 2025.10.7; scipy 1.15.2; monty 2025.3.3",
+  "hardware_used": "Training: NVIDIA GeForce RTX 3090; standalone replay: CPU"
+}

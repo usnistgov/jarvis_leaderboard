@@ -1,0 +1,6 @@
+numpy==1.26.4
+pandas==2.3.3
+torch==2.5.1
+pymatgen==2025.10.7
+scipy==1.15.2
+monty==2025.3.3
