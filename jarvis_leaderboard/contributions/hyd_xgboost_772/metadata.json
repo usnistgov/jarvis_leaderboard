@@ -1,0 +1,15 @@
+{
+  "model_name": "hyd_xgboost_772",
+  "project_url": "https://github.com/YMG912/jarvis_leaderboard/tree/hyd-magmom-xgboost-772/jarvis_leaderboard/contributions/hyd_xgboost_772",
+  "date_submitted": "10-31-2026",
+  "team_name": "hyd-team",
+  "language": "Python",
+  "os": "Windows and Linux",
+  "database_version": "12-12-2022",
+  "software_used": "XGBoost 3.4.1, matminer 0.10.1, pymatgen 2026.10.24, numpy 2.5.4",
+  "hardware_used": "NVIDIA A100-SXM4-80GB for training; CPU for prediction",
+  "time_taken_seconds": {
+    "AI-SinglePropertyClass-magmom_oszicar-dft_3d-test-acc.csv.zip": ""
+  },
+  "git_url": []
+}
