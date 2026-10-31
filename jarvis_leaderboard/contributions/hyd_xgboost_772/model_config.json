@@ -1,0 +1,43 @@
+{
+  "family": "XGBoost",
+  "features": 772,
+  "feature_sources": "structure and fixed elemental priors only",
+  "threshold": 0.475,
+  "threshold_source": "training-internal grouped holdouts",
+  "parameters": {
+    "max_depth": 8,
+    "reg_lambda": 8,
+    "colsample_bytree": 0.6,
+    "subsample": 0.85,
+    "min_child_weight": 3
+  },
+  "rounds": 960,
+  "models": [
+    {
+      "file": "xgb-all-d8-l8-s17.ubj",
+      "sha256": "46d1903eaa2d0dd52d1437dcff24a4f9b9879c63f97445928c1db4e4d779284b",
+      "seed": 17,
+      "rounds": 960
+    },
+    {
+      "file": "xgb-all-d8-l8-s43.ubj",
+      "sha256": "b5a09ecfc1c06605ba6f2441d5a654a655ab9f65e20a23911a9104e810e97ea5",
+      "seed": 43,
+      "rounds": 960
+    },
+    {
+      "file": "xgb-all-d8-l8-s97.ubj",
+      "sha256": "6a3158d3cf4e41a983d8495178b0dc7a8be38fc286aa174348cb5709a8f931c3",
+      "seed": 97,
+      "rounds": 960
+    }
+  ],
+  "training_seed": [
+    17,
+    43,
+    97
+  ],
+  "validation_accuracy": 0.9567132733192875,
+  "model_family_ranking": "selected based on observed development validation",
+  "test_label_values_used": false
+}

@@ -1,0 +1,389 @@
+{
+  "test_included": false,
+  "description": "Enriched structure features with grouped XGBoost/LightGBM/CatBoost comparison; frozen without official validation selection",
+  "feature_views": {
+    "base434": 434,
+    "all": null
+  },
+  "split_seeds": [
+    17,
+    43,
+    97
+  ],
+  "final_seeds": [
+    17,
+    43,
+    97
+  ],
+  "internal_fraction": 0.15,
+  "max_rounds": 5000,
+  "early_stopping_rounds": 150,
+  "threads": 8,
+  "shortlist_count": 6,
+  "max_ensemble_configs": 4,
+  "pair_weight_grid": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "threshold_grid": [
+    0.35,
+    0.375,
+    0.4,
+    0.425,
+    0.45,
+    0.475,
+    0.5,
+    0.525,
+    0.55,
+    0.575,
+    0.6,
+    0.625,
+    0.65
+  ],
+  "refit_round_multiplier": 1,
+  "max_search_seconds": 2100,
+  "max_total_seconds": 2550,
+  "candidates": [
+    {
+      "name": "xgb-base-d10-l3-c8",
+      "family": "xgboost",
+      "feature_view": "base434",
+      "params": {
+        "max_depth": 10,
+        "reg_lambda": 3,
+        "colsample_bytree": 0.8,
+        "subsample": 0.9,
+        "min_child_weight": 1,
+        "max_bin": 512,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "name": "xgb-base-d10-l8-c5",
+      "family": "xgboost",
+      "feature_view": "base434",
+      "params": {
+        "max_depth": 10,
+        "reg_lambda": 8,
+        "colsample_bytree": 0.5,
+        "subsample": 0.85,
+        "min_child_weight": 3
+      }
+    },
+    {
+      "name": "xgb-all-d6-l3",
+      "family": "xgboost",
+      "feature_view": "all",
+      "params": {
+        "max_depth": 6,
+        "reg_lambda": 3,
+        "colsample_bytree": 0.85,
+        "subsample": 0.9,
+        "min_child_weight": 1,
+        "max_bin": 512
+      }
+    },
+    {
+      "name": "xgb-all-d8-l3",
+      "family": "xgboost",
+      "feature_view": "all",
+      "params": {
+        "max_depth": 8,
+        "reg_lambda": 3,
+        "colsample_bytree": 0.8,
+        "subsample": 0.9,
+        "min_child_weight": 1,
+        "max_bin": 512
+      }
+    },
+    {
+      "name": "xgb-all-d8-l8",
+      "family": "xgboost",
+      "feature_view": "all",
+      "params": {
+        "max_depth": 8,
+        "reg_lambda": 8,
+        "colsample_bytree": 0.6,
+        "subsample": 0.85,
+        "min_child_weight": 3
+      }
+    },
+    {
+      "name": "xgb-all-d10-l3-c8",
+      "family": "xgboost",
+      "feature_view": "all",
+      "params": {
+        "max_depth": 10,
+        "reg_lambda": 3,
+        "colsample_bytree": 0.8,
+        "subsample": 0.9,
+        "min_child_weight": 1,
+        "max_bin": 512,
+        "learning_rate": 0.05
+      }
+    },
+    {
+      "name": "xgb-all-d10-l8-c5",
+      "family": "xgboost",
+      "feature_view": "all",
+      "params": {
+        "max_depth": 10,
+        "reg_lambda": 8,
+        "colsample_bytree": 0.5,
+        "subsample": 0.85,
+        "min_child_weight": 3
+      }
+    },
+    {
+      "name": "xgb-all-d10-l8-c9",
+      "family": "xgboost",
+      "feature_view": "all",
+      "params": {
+        "max_depth": 10,
+        "reg_lambda": 8,
+        "colsample_bytree": 0.9,
+        "subsample": 0.85,
+        "min_child_weight": 3
+      }
+    },
+    {
+      "name": "xgb-all-d10-l20",
+      "family": "xgboost",
+      "feature_view": "all",
+      "params": {
+        "max_depth": 10,
+        "reg_lambda": 20,
+        "colsample_bytree": 0.75,
+        "subsample": 0.9,
+        "min_child_weight": 2,
+        "max_bin": 512
+      }
+    },
+    {
+      "name": "xgb-all-d12-l3",
+      "family": "xgboost",
+      "feature_view": "all",
+      "params": {
+        "max_depth": 12,
+        "reg_lambda": 3,
+        "colsample_bytree": 0.8,
+        "subsample": 0.9,
+        "min_child_weight": 1,
+        "max_bin": 512
+      }
+    },
+    {
+      "name": "xgb-all-d12-l8",
+      "family": "xgboost",
+      "feature_view": "all",
+      "params": {
+        "max_depth": 12,
+        "reg_lambda": 8,
+        "colsample_bytree": 0.6,
+        "subsample": 0.85,
+        "min_child_weight": 3
+      }
+    },
+    {
+      "name": "xgb-all-d12-l20",
+      "family": "xgboost",
+      "feature_view": "all",
+      "params": {
+        "max_depth": 12,
+        "reg_lambda": 20,
+        "colsample_bytree": 0.9,
+        "subsample": 0.85,
+        "min_child_weight": 3
+      }
+    },
+    {
+      "name": "xgb-all-d14-l20",
+      "family": "xgboost",
+      "feature_view": "all",
+      "params": {
+        "max_depth": 14,
+        "reg_lambda": 20,
+        "colsample_bytree": 0.7,
+        "subsample": 0.85,
+        "min_child_weight": 5
+      }
+    },
+    {
+      "name": "xgb-all-leaf64",
+      "family": "xgboost",
+      "feature_view": "all",
+      "params": {
+        "max_depth": 0,
+        "grow_policy": "lossguide",
+        "max_leaves": 64,
+        "reg_lambda": 5,
+        "colsample_bytree": 0.8,
+        "subsample": 0.9,
+        "min_child_weight": 3,
+        "max_bin": 512
+      }
+    },
+    {
+      "name": "xgb-all-leaf128",
+      "family": "xgboost",
+      "feature_view": "all",
+      "params": {
+        "max_depth": 0,
+        "grow_policy": "lossguide",
+        "max_leaves": 128,
+        "reg_lambda": 10,
+        "colsample_bytree": 0.7,
+        "subsample": 0.9,
+        "min_child_weight": 5
+      }
+    },
+    {
+      "name": "xgb-all-ward4",
+      "family": "xgboost",
+      "feature_view": "all",
+      "params": {
+        "max_depth": 8,
+        "num_parallel_tree": 4,
+        "reg_lambda": 0.01,
+        "reg_alpha": 0.01,
+        "colsample_bytree": 0.3,
+        "colsample_bylevel": 0.5,
+        "subsample": 0.9,
+        "min_child_weight": 1
+      }
+    },
+    {
+      "name": "lgb-all-l31-m10",
+      "family": "lightgbm",
+      "feature_view": "all",
+      "params": {
+        "num_leaves": 31,
+        "min_child_samples": 10,
+        "colsample_bytree": 0.8,
+        "subsample": 0.85,
+        "subsample_freq": 1,
+        "reg_lambda": 3,
+        "reg_alpha": 0.05,
+        "max_bin": 255
+      }
+    },
+    {
+      "name": "lgb-all-l31-m30",
+      "family": "lightgbm",
+      "feature_view": "all",
+      "params": {
+        "num_leaves": 31,
+        "min_child_samples": 30,
+        "colsample_bytree": 0.65,
+        "subsample": 0.85,
+        "subsample_freq": 1,
+        "reg_lambda": 10,
+        "reg_alpha": 0.05,
+        "max_bin": 255
+      }
+    },
+    {
+      "name": "lgb-all-l63-m10",
+      "family": "lightgbm",
+      "feature_view": "all",
+      "params": {
+        "num_leaves": 63,
+        "min_child_samples": 10,
+        "colsample_bytree": 0.8,
+        "subsample": 0.85,
+        "subsample_freq": 1,
+        "reg_lambda": 3,
+        "reg_alpha": 0.05,
+        "max_bin": 255
+      }
+    },
+    {
+      "name": "lgb-all-l63-m30",
+      "family": "lightgbm",
+      "feature_view": "all",
+      "params": {
+        "num_leaves": 63,
+        "min_child_samples": 30,
+        "colsample_bytree": 0.65,
+        "subsample": 0.85,
+        "subsample_freq": 1,
+        "reg_lambda": 10,
+        "reg_alpha": 0.05,
+        "max_bin": 255
+      }
+    },
+    {
+      "name": "lgb-all-l127-m10",
+      "family": "lightgbm",
+      "feature_view": "all",
+      "params": {
+        "num_leaves": 127,
+        "min_child_samples": 10,
+        "colsample_bytree": 0.8,
+        "subsample": 0.85,
+        "subsample_freq": 1,
+        "reg_lambda": 3,
+        "reg_alpha": 0.05,
+        "max_bin": 255
+      }
+    },
+    {
+      "name": "lgb-all-l127-m30",
+      "family": "lightgbm",
+      "feature_view": "all",
+      "params": {
+        "num_leaves": 127,
+        "min_child_samples": 30,
+        "colsample_bytree": 0.65,
+        "subsample": 0.85,
+        "subsample_freq": 1,
+        "reg_lambda": 10,
+        "reg_alpha": 0.05,
+        "max_bin": 255
+      }
+    },
+    {
+      "name": "lgb-all-l255-m10",
+      "family": "lightgbm",
+      "feature_view": "all",
+      "params": {
+        "num_leaves": 255,
+        "min_child_samples": 10,
+        "colsample_bytree": 0.8,
+        "subsample": 0.85,
+        "subsample_freq": 1,
+        "reg_lambda": 3,
+        "reg_alpha": 0.05,
+        "max_bin": 255
+      }
+    },
+    {
+      "name": "lgb-all-l255-m30",
+      "family": "lightgbm",
+      "feature_view": "all",
+      "params": {
+        "num_leaves": 255,
+        "min_child_samples": 30,
+        "colsample_bytree": 0.65,
+        "subsample": 0.85,
+        "subsample_freq": 1,
+        "reg_lambda": 10,
+        "reg_alpha": 0.05,
+        "max_bin": 255
+      }
+    },
+    {
+      "name": "cat-all-d8-l3",
+      "family": "catboost",
+      "feature_view": "all",
+      "max_rounds": 1800,
+      "params": {
+        "depth": 8,
+        "l2_leaf_reg": 3,
+        "learning_rate": 0.08
+      }
+    }
+  ],
+  "data_manifest_sha256": "026573eb09f06b7bc5c9812a5fe5bcb5488db33fba4dc53bcb1676277c5c5ac6"
+}
