@@ -1,0 +1,17 @@
+{
+    "model_name": "QV-JLB-Blend-v1",
+    "project_url": "https://quantavane.com",
+    "date_submitted": "11-11-2026",
+    "author_email": "arhan@quantavane.com",
+    "database_version": "jarvis-tools figshare files 41266233 (mxene275) and 44619562 (halide_peroskites)",
+    "team_name": "Quantavane",
+    "time_taken_seconds": {
+        "AI-SinglePropertyPrediction-formation_energy-mxene275-test-mae.csv.zip": 4.9,
+        "AI-SinglePropertyPrediction-HSE_gap-halide_peroskites-test-mae.csv.zip": 3.5
+    },
+    "language": "python",
+    "os": "macos",
+    "software_used": "numpy,scikit-learn,lightgbm,catboost,matminer,pymatgen,jarvis-tools",
+    "hardware_used": "Apple M5 Pro CPU, 4 threads",
+    "git_url": []
+}
