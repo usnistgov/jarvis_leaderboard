@@ -1,0 +1,9 @@
+numpy==2.4.6
+scipy==1.17.1
+scikit-learn==1.6.1
+lightgbm==4.7.0
+catboost==1.2.10
+pandas==2.3.3
+pymatgen==2026.10.24
+matminer==0.10.1
+jarvis-tools>=2024.5.10
