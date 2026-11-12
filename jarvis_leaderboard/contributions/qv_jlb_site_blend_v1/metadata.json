@@ -1,0 +1,16 @@
+{
+    "model_name": "QV-JLB-Site-Blend-v1",
+    "project_url": "https://quantavane.com",
+    "date_submitted": "11-12-2026",
+    "author_email": "arhan@quantavane.com",
+    "database_version": "jarvis-tools figshare file 40978943 (tinnet_O)",
+    "team_name": "Quantavane",
+    "time_taken_seconds": {
+        "AI-SinglePropertyPrediction-ead-tinnet_O-test-mae.csv.zip": 14.3
+    },
+    "language": "python",
+    "os": "macos",
+    "software_used": "numpy,scikit-learn,lightgbm,catboost,matminer,pymatgen,jarvis-tools",
+    "hardware_used": "Apple M5 Pro CPU, 4 threads",
+    "git_url": []
+}
